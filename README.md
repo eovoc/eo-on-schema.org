@@ -1,5 +1,7 @@
 # eo-on-schema.org
 
+This repository was initiated by the ESA `EOVOC` project, supported by the [Belgian Science Policy Office](https://www.belspo.be/belspo/index_en.stm).
+
 ## Table of contents
 
 ## Resources
@@ -11,6 +13,8 @@
 Issue 1.0, September 2019.]
 * Tools
   * tbd
+* Implementations
+  * https://geo.spacebel.be/opensearch/readme.html
 * Related work
   * [ESIPFed/science-on-schema.org, "Schema.org Publishing Guidelines for the
 Geosciences"](https://github.com/ESIPFed/science-on-schema.org), https://doi.org/10.5281/zenodo.3736235
