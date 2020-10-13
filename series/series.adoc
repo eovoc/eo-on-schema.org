@@ -87,26 +87,7 @@ Range: Text
 
 
 
-=== GeoJSON EOPAD Metadata Encoding
 
-==== Requirements class: Feature
-
-The Feature object represents the EO application/service metadata a.k.a. EOPAD metadata.  It inherits all properties of the GeoJSON Feature object.  In addition, it may contain an optional @context property.  The @context properties shall typically be absent in the GeoJSON encoding and implicitly refer to the normative @context defined in <<Annex-B,Annex B>>.
-
-[#img_object_feature,reftext='{figure-caption} {counter:figure-num}']
-.Feature Schema
-image::diagrams/figure1.png[align="center"]
-
-Service/applications can be distinguished from EO collections and EO products via their Feature type.  The feature type corresponds to  the _dct:type_ property (JSON-LD) as per the resource type and spatial data service type defined in <<GeoDCAT-AP>> and its JSON equivalent _kind_ that is defined in <<OGC17-047,OGC 17-047>>.  A code list for services/application similar to http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory[INSPIRE Classification of Spatial Services] allows distinguishing different service categories, including _human interaction services_.
-
-
-
-and here is a second example with include statement
-
-[source,json]
-----
-include::./examples/example1.json[]
-----
 
 == Property Mapping
 
