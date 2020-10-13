@@ -16,7 +16,7 @@ This repository was initiated by the ESA `EOVOC` project, supported by the [Belg
   * [Google Dataset Search Tool Capabilities White Paper, CEOS.WGISS.GDSTC
 Issue 1.0, September 2019.]
 * Tools
-  * tbd
+  * [Diagram editor PlantUML](https://plantuml-editor.kkeisuke.com/)
 * Implementations
   * https://geo.spacebel.be/opensearch/readme.html
 * Related work
