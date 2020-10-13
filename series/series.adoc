@@ -31,6 +31,12 @@ a| @type +
 Fixed value: "Dataset"
 | One (mandatory)
 
+a| @id +
+~$.@id~
+| Unique identifier for the collection (IRI).
+| Range: String
+| Zero or one (optional)
+
 a| description +
 ~$.description~
 | A description of the collection.
@@ -175,6 +181,9 @@ a| date +
 
 a| doi +
 ~$.properties.doi~        | adms:identifier  |   $.identifier.value   |   https://schema.org/value   |  <<table_object_propertyvalue>>
+
+a| id +
+~$.id~                     | @id           |   $.@id                |                              |  <<table_object_dataset>>
 
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |   $.identifier        |  https://schema.org/identifier |  <<table_object_dataset>>
