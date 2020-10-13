@@ -50,16 +50,38 @@ Range: Text
 [source,json]
 ----
 {
-	"actualTerm": "ENVISAT",
-	"query": {
-		"count": "1",
-		"searchTerms": "vegetation",
-		"startIndex": "1",
-		"sru:recordSchema": "server-choice",
-		"eo:platform": "ENVISAT"
+	"@context": "http://schema.org",
+	"@type": "Dataset",
+	"name": "PROBA-V S1 TOA 1KM: product resolution data, best-quality daily synthesis. Maximum Value Compositing (MVC)is applied.",
+	"alternateName": "urn:ogc:def:EOP:VITO:PROBAV_S1-TOA_1KM_V001",
+	"description": "Level 3 data products are variables mapped on uniform space-time grid scales and are the result of combiningmultiple scenes (e.g. S1/S10) to cover the user’s region of interest.",
+	"provider": {
+		"@type": "Organization",
+		"name": "VITO (Flemish Institute for Technological Research)",
+		"address": {
+			"@type": "PostalAddress",
+			"addressCountry": "Belgium",
+			"addressLocality": "Mol",
+			"postalCode": "B-2400",
+			"streetAddress": "Boeretang 200"
+		},
+		"telephone": "+32 14 33 68 14",
+		"faxNumber": "+32 14 32 27 95",
+		"email": "helpdeskticket@vgt.vito.be",
+		"url": "http://proba-v.vgt.vito.be/"
 	},
-	"requestUrl": "http://fedeo.esa.int/opensearch/request?query=vegetation&startRecord=1&maximumRecords=1&httpAccept=application/geo%2Bjson&&platform=ENVISAT",
-	"count": "1"
+	"dateModified": "2018-10-23T15:52:07Z",
+	"keywords": "EARTH SCIENCE>LAND SURFACE>LAND USE/LAND COVER, EARTH SCIENCE>CLIMATEINDICATORS>CRYOSPHERIC INDICATORS>SNOW COVER, Land cover, Cloud, Radiometric quality, Shadow, Snow, landuse, proba, environmental monitoring facilities, land cover, Proba-V",
+	"temporal": "2013-10-16T00:00:00Z/2018-12-31T00:00:00Z",
+	"spatial": {
+		"@type": "Place",
+		"geo": {
+			"@type": "GeoShape",
+			"polygon": "-56.0 -180.0 -56.0 180.0 75.0 180.0 75.0 -180.0 -56.0 -180.0"
+		}
+	},
+	"image": "http://geo.spacebel.be/opensearch/images/vito.png",
+	"thumbnailUrl": "http://geo.spacebel.be/opensearch/images/vito.png"
 }
 ----
 
