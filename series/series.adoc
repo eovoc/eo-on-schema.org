@@ -91,18 +91,23 @@ Range: Text
 
 == Property Mapping
 
-=== OGC17-084r1
+=== OGC17-084r1 Metadata
 
 |===
-| Property |  schema.org | schema.org Reference | Reference
+| GeoJSON Property | JSON-LD Property |   schema.org | schema.org Reference | Reference
 
 a| abstract +
-~$.properties.abstract~     |  $.description      | https://schema.org/description  |    <<table_object_dataset>>
+~$.properties.abstract~     | dct:description |  $.description      | https://schema.org/description  |    <<table_object_dataset>>
 
 a| title +
-~$.properties.title~        | $.name              | https://schema.org/name |    <<table_object_dataset>>
+~$.properties.title~        | dct:title |  $.name              | https://schema.org/name |    <<table_object_dataset>>
 
 |===
+
+=== STAC Collection Metadata
+
+TBD.
+
 
 
 
