@@ -66,5 +66,5 @@ and here is a second example with include statement
 
 [source,json]
 ----
-include::./code/example1.json[]
+include::./examples/example1.json[]
 ----
