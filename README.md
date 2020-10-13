@@ -4,6 +4,10 @@ This repository was initiated by the ESA `EOVOC` project, supported by the [Belg
 
 ## Table of contents
 
+* [Encoding for EO Collections](./series/)
+* [Encoding for EO Services](./services/) - Future work
+* [Encoding for EO Granules](./datasets/) - Future work
+
 ## Resources
 
 * References
