@@ -7,7 +7,7 @@ This chapter defines the encoding of the different parts of the Data Model.  We 
 
 [#img_object_term,reftext='{figure-caption} {counter:figure-num}']
 .Dataset Schema
-image::images/Dataset.png[align="center"]
+image::diagrams/Dataset.png[align="center"]
 
 The complete decription of Term is given in <<table_object_dataset>>.  
 
