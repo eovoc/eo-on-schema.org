@@ -152,3 +152,21 @@ and here is a second example with include statement
 ----
 include::./examples/example1.json[]
 ----
+
+== Property Mapping
+
+=== OGC17-084r1
+
+|===
+| Property |  schema.org | Reference | Notes
+
+a| abstract +
+~$.properties.abstract~     |  $.description      | https://schema.org/description  |    
+
+a| title +
+~$.properties.title~        | $.name              | https://schema.org/name |    
+
+|===
+
+
+
