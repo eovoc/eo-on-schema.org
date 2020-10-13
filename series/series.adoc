@@ -1,7 +1,7 @@
 [[Chapter-3]]
 == EO Collections
 
-This section defines the encoding of Earth Observation collection metadata.  We use a presentation which is similar to the GeoJSON Encoding Specifications in <<OGC17-003>>, <<OGC17-047>> and <<OGC17-084>>.  The graphical notation is borrowed from https://github.com/ESIPFed/science-on-schema.org/tree/master/assets/diagrams[science-on-schema.org]. The diagrams are prepared with PlantUML.
+This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and <<OGC17-084r1>>.  The graphical notation is borrowed from https://github.com/ESIPFed/science-on-schema.org/tree/master/assets/diagrams[science-on-schema.org]. The diagrams are prepared with PlantUML.
 
 ==== Dataset
 
