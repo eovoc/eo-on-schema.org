@@ -94,13 +94,13 @@ Range: Text
 === OGC17-084r1
 
 |===
-| Property |  schema.org | Reference | Notes
+| Property |  schema.org | schema.org Reference | Reference
 
 a| abstract +
-~$.properties.abstract~     |  $.description      | https://schema.org/description  |    
+~$.properties.abstract~     |  $.description      | https://schema.org/description  |    <<table_object_dataset>>
 
 a| title +
-~$.properties.title~        | $.name              | https://schema.org/name |    
+~$.properties.title~        | $.name              | https://schema.org/name |    <<table_object_dataset>>
 
 |===
 
