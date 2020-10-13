@@ -1,0 +1,3 @@
+== README.md
+
+SPARQL queries defining mapping between OGC 17-084r1 and Schema.org.  A mapping from GeoDCAT-AP to schema.org is available at https://github.com/ec-jrc/dcat-ap-to-schema-org.
