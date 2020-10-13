@@ -5,7 +5,7 @@ This section defines the encoding of Earth Observation collection metadata.  We 
 
 === Dataset
 
-[#img_object_term,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_dataset,reftext='{figure-caption} {counter:figure-num}']
 .Dataset Schema
 image::diagrams/Dataset.png[align="center"]
 
@@ -102,10 +102,15 @@ Range: DateTime or Text
 ----
 
 
-=== identifier
+=== PropertyValue (identifier)
 
+[#img_object_propertyvalue,reftext='{figure-caption} {counter:figure-num}']
+.Dataset Schema
+image::diagrams/PropertyValue.png[align="center"]
 
-.DOI encoding example
+The complete decription of PropertyValue is given in <<table_object_propertyvalue>>.  
+
+.PropertyValue encoding example
 [source,json]
 ----
 {
