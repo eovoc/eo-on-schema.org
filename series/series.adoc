@@ -43,7 +43,7 @@ a| identifier +
 | Identifier given to the collection.
 | Domain: Thing +
 Range: Text or Url or PropertyValue +
-See also section TBD.
+See also <<table_object_propertyvalue>>.
 | Zero or one (optional)
 
 a| name +
@@ -110,6 +110,30 @@ image::diagrams/PropertyValue.png[align="center"]
 
 The complete decription of PropertyValue is given in <<table_object_propertyvalue>>.  
 
+[#table_object_propertyvalue,reftext='{table-caption} {counter:table-num}']
+.PropertyValue object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @context +
+~$.@context~
+| Optional context property.
+| Range: String +
+Fixed value: "https://schema.org"
+| Zero or one (optional)
+
+a| @type +
+~$.@type~
+| Type of the object. This property has the fixed value "Dataset".
+| Range: String +
+Fixed value: "Dataset"
+| One (mandatory)
+
+
+|===
+
+
 .PropertyValue encoding example
 [source,json]
 ----
@@ -150,7 +174,7 @@ a| date +
 ~$.properties.date~       | dct:date |   $.temporal            |  https://schema.org/temporal | 
 
 a| doi +
-~$.properties.doi~        | adms:identifier  |             |   | 
+~$.properties.doi~        | adms:identifier  |   $.identifier.value   |   https://schema.org/value   |  <<table_object_propertyvalue>>
 
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |   $.identifier        |  https://schema.org/identifier |  <<table_object_dataset>>
