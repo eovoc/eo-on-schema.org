@@ -1,0 +1,33 @@
+{
+"@context" : "http://schema.org",
+"@type" : "Dataset",
+"name" : "SE1_OPER_SEA_GEC_1P_19780804T060819_19780804T060834_000547_0061_0772_036E",
+"alternateName" : "SE1_OPER_SEA_GEC_1P_19780804T060819_19780804T060834_000547_0061_0772_036E",
+"description" : "SE1_OPER_SEA_GEC_1P_19780804T060819_19780804T060834_000547_0061_0772_036E",
+"dateModified" : "2018-11-28T16:11:21Z",
+"temporal" : "1978-08-04T06:08:19Z/1978-08-04T06:08:34Z",
+"spatial" : {
+"@type" : "Place",
+"geo" : {
+"@type" : "GeoShape",
+"polygon" : "38.116318 3.097823 38.105167 4.621621 36.923042 4.596236 36.933731 3.096291 38.116318 3.097823",
+"box" : "36.923042 3.096291 38.116318 4.621621"
+}
+},
+"image" : "http://tpmds.
+eo.esa.int/oads/meta/Seasat/browse/SE1_OPER_SEA_GEC_1P_19780804T060819_19780804T060834_000547_0061_07
+72_036E.ZIP_BID.PNG",
+"thumbnailUrl" : "http://tpmds.
+eo.esa.int/oads/meta/Seasat/browse/SE1_OPER_SEA_GEC_1P_19780804T060819_19780804T060834_000547_0061_07
+72_036E.ZIP_BID.PNG",
+"url" : "https://tpmds.
+eo.esa.int/oads/data/Seasat/SE1_OPER_SEA_GEC_1P_19780804T060819_19780804T060834_000547_0061_0772_036
+E.ZIP",
+"encoding" : {
+"@type" : "MediaObject",
+"contentUrl" : "https://tpmds.
+eo.esa.int/oads/data/Seasat/SE1_OPER_SEA_GEC_1P_19780804T060819_19780804T060834_000547_0061_0772_036
+E.ZIP",
+"encodingFormat" : "application/x-binary"
+}
+}
