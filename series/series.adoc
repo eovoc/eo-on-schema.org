@@ -114,7 +114,18 @@ The complete decription of PropertyValue is given in <<table_object_propertyvalu
 [source,json]
 ----
 {
-
+	"@context": {
+		"@vocab": "https://schema.org/"
+	},
+	"@type": "Dataset",
+	"name": "ESA Sea Surface Temperature Climate Change Initiative (ESA SST CCI): GHRSST Multi-Product ensemble (GMPE)",
+	"identifier": {
+		"@id": "https://doi.org/10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA",
+		"@type": "PropertyValue",
+		"propertyID": "https://registry.identifiers.org/registry/doi",
+		"value": "doi:10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA",
+		"url": "https://doi.org/10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA"
+	}
 }
 ----
 
