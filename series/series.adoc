@@ -3,6 +3,68 @@
 
 This chapter defines the encoding of the different parts of the Data Model.  We use a presentation which is similar to the GeoJSON Encoding Specifications in <<OGC17-003>>, <<OGC17-047>> and <<OGC17-084>>.
 
+==== Dataset
+
+[#img_object_term,reftext='{figure-caption} {counter:figure-num}']
+.Dataset Schema
+image::images/Dataset.png[align="center"]
+
+The complete decription of Term is given in <<table_object_dataset>>.  
+
+[#table_object_dataset,reftext='{table-caption} {counter:table-num}']
+.Dataset object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @context +
+~$.@context~
+| Optional context property.
+| Range: String +
+Fixed value: "https://schema.org"
+| Zero or one (optional)
+
+a| @type +
+~$.@type~
+| Type of the object. This property has the fixed value "Dataset".
+| Range: String +
+Fixed value: "Dataset"
+| One (mandatory)
+
+a| name +
+~$.name~
+| The name of the collection.
+| Domain: Thing +
+Range: Text
+| One (mandatory)
+
+a| description +
+~$.description~
+| A description of the collection.
+| Domain: Thing +
+Range: Text
+| Zero or one (optional)
+|===
+
+.Dataset encoding example
+[source,json]
+----
+{
+	"actualTerm": "ENVISAT",
+	"query": {
+		"count": "1",
+		"searchTerms": "vegetation",
+		"startIndex": "1",
+		"sru:recordSchema": "server-choice",
+		"eo:platform": "ENVISAT"
+	},
+	"requestUrl": "http://fedeo.esa.int/opensearch/request?query=vegetation&startRecord=1&maximumRecords=1&httpAccept=application/geo%2Bjson&&platform=ENVISAT",
+	"count": "1"
+}
+----
+
+
+
 === GeoJSON EOPAD Metadata Encoding
 
 ==== Requirements class: Feature
