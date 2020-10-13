@@ -3,7 +3,7 @@
 
 This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and <<OGC17-084r1>>.  The graphical notation is borrowed from https://github.com/ESIPFed/science-on-schema.org/tree/master/assets/diagrams[science-on-schema.org]. The diagrams are prepared with PlantUML.
 
-==== Dataset
+=== Dataset
 
 [#img_object_term,reftext='{figure-caption} {counter:figure-num}']
 .Dataset Schema
@@ -31,6 +31,21 @@ a| @type +
 Fixed value: "Dataset"
 | One (mandatory)
 
+a| description +
+~$.description~
+| A description of the collection.
+| Domain: Thing +
+Range: Text
+| Zero or one (optional)
+
+a| identifier +
+~$.identifier~
+| Identifier given to the collection.
+| Domain: Thing +
+Range: Text or Url or PropertyValue +
+See also section TBD.
+| Zero or one (optional)
+
 a| name +
 ~$.name~
 | The name of the collection.
@@ -38,11 +53,12 @@ a| name +
 Range: Text
 | One (mandatory)
 
-a| description +
-~$.description~
-| A description of the collection.
-| Domain: Thing +
-Range: Text
+
+a| temporal +
+~$.temporal~
+| Date or range of dates relevant for the resource.  For example: "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z"
+| Domain: Dataset +
+Range: DateTime or Text
 | Zero or one (optional)
 |===
 
@@ -86,7 +102,16 @@ Range: Text
 ----
 
 
+=== identifier
 
+
+.DOI encoding example
+[source,json]
+----
+{
+
+}
+----
 
 
 == Property Mapping
@@ -98,6 +123,21 @@ Range: Text
 
 a| abstract +
 ~$.properties.abstract~     | dct:description |  $.description      | https://schema.org/description  |    <<table_object_dataset>>
+
+a| created +
+~$.properties.created~     | dct:created |                |  |    
+
+a| created +
+~$.properties.isPrimaryTopicOf.created~    | dct:created |                |  | 
+
+a| date +
+~$.properties.date~       | dct:date |   $.temporal            |  https://schema.org/temporal | 
+
+a| doi +
+~$.properties.doi~        | adms:identifier  |             |   | 
+
+a| identifier +
+~$.properties.identifier~   | dct:identifier |   $.identifier        |  https://schema.org/identifier |  <<table_object_dataset>>
 
 a| title +
 ~$.properties.title~        | dct:title |  $.name              | https://schema.org/name |    <<table_object_dataset>>
