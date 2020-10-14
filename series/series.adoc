@@ -111,10 +111,11 @@ Range: DateTime or Text
 === PropertyValue (identifier)
 
 [#img_object_propertyvalue,reftext='{figure-caption} {counter:figure-num}']
-.Dataset Schema
+.PropertyValue Schema
 image::diagrams/PropertyValue.png[align="center"]
 
-The complete decription of PropertyValue is given in <<table_object_propertyvalue>>.  
+The complete decription of PropertyValue is given in <<table_object_propertyvalue>>. 
+The encoding of `identifier` with a `PropertyValue` corresponds to the encoding proposed by <<ESIPFed>>.  The `propertyID` should use an URL from the registry at https://registry.identifiers.org/registry.
 
 [#table_object_propertyvalue,reftext='{table-caption} {counter:table-num}']
 .PropertyValue object properties
@@ -198,5 +199,29 @@ a| title +
 TBD.
 
 
+== References
+
+.to be moved to a separate file
+
+=== Normative references
+
+* [[JSON]]http://www.ietf.org/rfc/rfc7159.txt[RFC 7159, The JavaScript Object Notation (JSON) Data Interchange Format, March 2014]
+* [[GeoJSON]]https://tools.ietf.org/html/rfc7946[RFC 7946, The GeoJSON Format]
+
+* [[DCAT]]https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabulary (DCAT), W3C Recommendation 16 January 2014]
+* [[LDP]]https://www.w3.org/TR/ldp/[Linked Data Platform 1.0, W3C Recommendation 26 February 2015]
+* [[JSON-LD]]https://www.w3.org/TR/json-ld/[JSON-LD 1.0, A JSON-based Serialization for Linked Data, W3C Recommendation 16 January 2014]
+
+
+=== Other references
+
+* [[JSON-LD-1.1]] https://www.w3.org/TR/json-ld11/[JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Working Draft 14 December 2018]
+* [[DCAT-2019]] https://w3c.github.io/dxwg/dcat/[Data Catalog Vocabulary (DCAT) - Revised edition, W3C Editor's Draft 24 April 2019]
+* [[JSONPath]]http://goessner.net/articles/JsonPath/index.html[JSONPath]
+* [[JSON-Schema]]https://tools.ietf.org/html/draft-zyp-json-schema-04[JSON Schema]
+
+* [[RD34]] https://www.w3.org/TR/shacl/[Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017]
+* [[RD35]] https://www.w3.org/TR/shacl-ucr/[SHACL Use Cases and Requirements, W3C Working Group Note, 20 July 2017]
+* [[ESIPFed]] https://github.com/ESIPFed/science-onschema.org[ESIPFed/science-on-schema.org, "Schema.org Publishing Guidelines for the Geosciences", V1.1.0], https://doi.org/10.5281/zenodo.3736235
 
 
