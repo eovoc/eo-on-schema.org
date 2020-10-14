@@ -107,6 +107,38 @@ Range: DateTime or Text
 }
 ----
 
+==== Dates
+
+[#img_object_dates,reftext='{figure-caption} {counter:figure-num}']
+.Dates Schema
+image::diagrams/Dates.png[align="center"]
+
+The complete overview of date related properties is given in <<table_object_dates>>.  
+
+[#table_object_dates,reftext='{table-caption} {counter:table-num}']
+.Dates object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+
+a| temporal +
+~$.temporal~
+| Date or range of dates relevant for the resource.  For example: "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z"
+| Domain: Dataset +
+Range: DateTime or Text
+| Zero or one (optional)
+|===
+
+.Dates encoding example
+[source,json]
+----
+{
+
+	
+}
+----
+
 
 === PropertyValue (identifier)
 
