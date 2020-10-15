@@ -340,7 +340,7 @@ a| created +
 ~$.properties.isPrimaryTopicOf.created~    | dct:created |      https://schema.org/dateCreated[$.subjectOf.dateCreated]   |   <<table_object_listitem>>
 
 a| date +
-~$.properties.date~       | dct:date |              https://schema.org/temporal[$.temporal ]   | 
+~$.properties.date~       | dct:date |              https://schema.org/temporal[$.temporal ]   |  <<table_object_dates>>
 
 a| doi +
 ~$.properties.doi~        | adms:identifier  |      https://schema.org/value[$.identifier.value]   |  <<table_object_propertyvalue>>
