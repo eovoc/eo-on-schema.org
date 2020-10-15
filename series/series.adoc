@@ -3,7 +3,7 @@
 == Table of contents
 
 * <<eo-collections,2. EO Collections>>
-** <<dataset,2.1 Dataset>>
+** <<data-identification,2.1 Data identification>>
 * <<property-mapping,B. Property Mapping>>
 * <<references,C. References>>
 ** <<normative-references,Normative References>>
@@ -13,7 +13,7 @@
 
 This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and <<OGC17-084r1>>.  The graphical notation is borrowed from <<ESIPFed>>. The diagrams are prepared with PlantUML.
 
-=== 2.1 Dataset
+=== 2.1 Data Identification
 
 [#img_object_dataset,reftext='{figure-caption} {counter:figure-num}']
 .Dataset Schema
@@ -22,7 +22,7 @@ image::diagrams/Dataset.png[align="center"]
 The complete decription of Dataset is given in <<table_object_dataset>>.  
 
 [#table_object_dataset,reftext='{table-caption} {counter:table-num}']
-.Dataset object properties
+.Data Identification properties
 [cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
 |===
 |JSON Property | Definition | Data type and values | Multiplicity and use
@@ -91,7 +91,7 @@ Range: Number or Text
 | Zero or one (optional)
 |===
 
-.Dataset encoding example
+.Data Identification encoding example
 [source,json]
 ----
 {
@@ -253,8 +253,14 @@ a| lang +
 a| lang +
 ~$.properties.isPrimaryTopicOf.lang~        | dct:language |                |  |    
 
+a| published +
+~$.properties.published~     | dct:issued |                |  |    
+
 a| title +
-~$.properties.title~        | dct:title |  $.name              | https://schema.org/name |    <<table_object_dataset>>
+~$.properties.title~        | dct:title   |  $.name              | https://schema.org/name |    <<table_object_dataset>>
+
+a| updated +
+~$.properties.updated~     | dct:modified  |                     |                         |    
 
 a| versionInfo +
 ~$.properties.versionInfo~        | owl:versionInfo |  $.version              | https://schema.org/version |    <<table_object_dataset>>
