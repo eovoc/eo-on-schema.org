@@ -17,6 +17,7 @@ This repository was initiated by the ESA `EOVOC` project, supported by the [Belg
 Issue 1.0, September 2019.]
 * Tools
   * [Diagram editor PlantUML](https://plantuml-editor.kkeisuke.com/)
+  * [Google structured Data Testing Tool](https://search.google.com/structured-data/testing-tool) - deprecated
 * Implementations
   * https://geo.spacebel.be/opensearch/readme.html
 * Related work
