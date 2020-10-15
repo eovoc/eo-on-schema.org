@@ -2,11 +2,11 @@
 
 == Table of contents
 
-* <<eo-collections,2. EO Collections>>
-** <<metadata-information,2.1 Metadata Information>>
-** <<data-identification,2.2 Data Identification>>
-** <<descriptive-keywords,2.3 Descriptive Keywords>>
-*** <<defined-term,2.3.1 DefinedTerm>>
+* <<2-eo-collections,2. EO Collections>>
+** <<21-metadata-information,2.1 Metadata Information>>
+** <<22-data-identification,2.2 Data Identification>>
+** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
+*** <<231-defined-term,2.3.1 DefinedTerm>>
 * <<property-mapping,B. Property Mapping>>
 * <<references,C. References>>
 ** <<normative-references,C.1 Normative References>>
