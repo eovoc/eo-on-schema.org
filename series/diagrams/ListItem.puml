@@ -18,21 +18,21 @@ linetype Ortho
 }
 
 Class Dataset
-Class DataDownload
+Class ListItem
 Class Language
 
 
-Dataset -down-> DataDownload : "subjectOf"
+Dataset -down-> ListItem : "subjectOf"
 
-DataDownload -down-> (DateTime) : "dateCreated,\ndateModified,\ndatePublished"
+ListItem -down-> (DateTime) : "dateCreated,\ndateModified,\ndatePublished"
 
-DataDownload -down-> (Date) : "dateCreated,\ndateModified,\ndatePublished"
+ListItem -down-> (Date) : "dateCreated,\ndateModified,\ndatePublished"
 
-DataDownload -right-> (Text) : "encodingFormat,\ninLanguage"
+ListItem -right-> (Text) : "encodingFormat,\ninLanguage"
 
-DataDownload --> (URL) : "encodingFormat"
+ListItem --> (URL) : "encodingFormat"
 
-DataDownload -left-> Language : "inLanguage"
+ListItem -left-> Language : "inLanguage"
 
 
 
