@@ -150,8 +150,30 @@ a| temporal +
 | Date or range of dates relevant for the resource.  For example: "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z"
 | Domain: Dataset +
 Range: DateTime or Text
+| One (Mandatory)
+
+a| dateCreated +
+~$.dateCreated~
+| Date of creation of the resource.
+| Domain: CreativeWork +
+Range: Date or Datetime
+| Zero or one (optional)
+
+a| dateModified +
+~$.dateModified~
+| Date of last update of the resource.
+| Domain: CreativeWork +
+Range: Date or Datetime
+| One (Mandatory)
+
+a| datePublished +
+~$.datePublished~
+| Date of publication of the resource.
+| Domain: CreativeWork +
+Range: Date or Datetime
 | Zero or one (optional)
 |===
+
 
 .Dates encoding example
 [source,json]
@@ -230,7 +252,7 @@ a| bibliographicCitation +
 ~$.properties.bibliographicCitation~     | dct:bibliographicCitation |  $.citation      | https://schema.org/citation  |    <<table_object_dataset>>
 
 a| created +
-~$.properties.created~     | dct:created |                |  |    
+~$.properties.created~                   | dct:created               |  $.dateCreated    |  https://schema.org/dateCreated |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
 
 a| created +
 ~$.properties.isPrimaryTopicOf.created~    | dct:created |                |  | 
@@ -254,13 +276,13 @@ a| lang +
 ~$.properties.isPrimaryTopicOf.lang~        | dct:language |                |  |    
 
 a| published +
-~$.properties.published~     | dct:issued |                |  |    
+~$.properties.published~     | dct:issued |   $.datePublished	             |  https://schema.org/datePublished	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.   
 
 a| title +
 ~$.properties.title~        | dct:title   |  $.name              | https://schema.org/name |    <<table_object_dataset>>
 
 a| updated +
-~$.properties.updated~     | dct:modified  |                     |                         |    
+~$.properties.updated~     | dct:modified  |  $.dateModified       |   https://schema.org/dateModified     |    <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
 
 a| versionInfo +
 ~$.properties.versionInfo~        | owl:versionInfo |  $.version              | https://schema.org/version |    <<table_object_dataset>>
@@ -300,5 +322,7 @@ TBD.
 	SHACL Use Cases and Requirements, W3C Working Group Note, 20 July 2017, https://www.w3.org/TR/shacl-ucr/
 [[ESIPFed]][ESIPFed]::
 	"Schema.org Publishing Guidelines for the Geosciences", V1.1.0, https://doi.org/10.5281/zenodo.3736235, https://github.com/ESIPFed/science-onschema.org
+[[DCAT-AP-SDO]][DCAT-AP-SDO]::
+	DCAT-AP to Schema.org Mapping, Unofficial Draft 13 September 2019, https://ec-jrc.github.io/dcat-ap-to-schema-org/
 
 
