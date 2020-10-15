@@ -131,7 +131,7 @@ a| description +
 | A description of the collection.
 | Domain: Thing +
 Range: Text
-| Zero or one (optional)
+| One (mandatory)
 
 a| identifier +
 ~$.identifier~
@@ -260,6 +260,8 @@ Range: Date or Datetime
 {
 	"@context": "http://schema.org",
 	"@type": "Dataset",
+	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
+	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
 	"temporal": "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z",
 	"dateCreated": "1999-07-01T23:59:00Z",
 	"datePublished": "1999-07-02T08:00:00Z",
