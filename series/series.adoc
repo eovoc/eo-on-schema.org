@@ -47,6 +47,13 @@ a| @id +
 | Range: String
 | Zero or one (optional)
 
+a| citation +
+~$.citation~
+| A bibliographic reference for the resource.
+| Domain: CreativeWork +
+Range: Text
+| Zero or one (optional)
+
 a| description +
 ~$.description~
 | A description of the collection.
@@ -62,6 +69,13 @@ Range: Text or Url or PropertyValue +
 See also <<table_object_propertyvalue>>.
 | Zero or one (optional)
 
+a| inLanguage +
+~$.inLanguage~
+| Resource language code, not empty, e.g. "en" (English)..
+| Domain: CreativeWork +
+Range: Language or Text
+| Zero or one (optional)
+
 a| name +
 ~$.name~
 | The name of the collection.
@@ -69,12 +83,11 @@ a| name +
 Range: Text
 | One (mandatory)
 
-
-a| temporal +
-~$.temporal~
-| Date or range of dates relevant for the resource.  For example: "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z"
-| Domain: Dataset +
-Range: DateTime or Text
+a| version +
+~$.version~
+| Version number or other version designation of the resource.
+| Domain: CreativeWork +
+Range: Number or Text
 | Zero or one (optional)
 |===
 
@@ -213,6 +226,9 @@ Fixed value: "Dataset"
 a| abstract +
 ~$.properties.abstract~     | dct:description |  $.description      | https://schema.org/description  |    <<table_object_dataset>>
 
+a| bibliographicCitation +
+~$.properties.bibliographicCitation~     | dct:bibliographicCitation |  $.citation      | https://schema.org/citation  |    <<table_object_dataset>>
+
 a| created +
 ~$.properties.created~     | dct:created |                |  |    
 
@@ -231,8 +247,17 @@ a| id +
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |   $.identifier        |  https://schema.org/identifier |  <<table_object_dataset>>
 
+a| lang +
+~$.properties.lang~        | dct:language |  $.inLanguage              | https://schema.org/inLanguage |    <<table_object_dataset>>
+
+a| lang +
+~$.properties.isPrimaryTopicOf.lang~        | dct:language |                |  |    
+
 a| title +
 ~$.properties.title~        | dct:title |  $.name              | https://schema.org/name |    <<table_object_dataset>>
+
+a| versionInfo +
+~$.properties.versionInfo~        | owl:versionInfo |  $.version              | https://schema.org/version |    <<table_object_dataset>>
 
 |===
 
@@ -255,13 +280,14 @@ TBD.
 	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Recommendation 16 July 2020, https://www.w3.org/TR/json-ld11/
 [[LDP]][LDP]::
 	Linked Data Platform 1.0, W3C Recommendation 26 February 2015, https://www.w3.org/TR/ldp/
+[[OGC17-084r1]]::
+	OGC17-084r1, EO Collection GeoJSON(-LD) Encoding, TBD.
 [[SHACL]][SHACL]:: 
 	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
 
 === C.2 Other references
 
-[[JSON-LD-1.1]][JSON-LD-1.1]::
-	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Working Draft 14 December 2018, https://www.w3.org/TR/json-ld11/
+
 [[JSONPath]][JSONPath]::
 	JSONPath, http://goessner.net/articles/JsonPath/index.html
 [[SHACL-UC]][SHACL-UC]::  
