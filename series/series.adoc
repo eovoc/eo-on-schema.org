@@ -52,10 +52,26 @@ Range: Date or Datetime
 
 a| datePublished +
 ~$.datePublished~
-| Date of publication of the metadata document.
+| Date of first availability of the metadata document.
 | Domain: CreativeWork +
 Range: Date or Datetime
 | Zero or one (optional)
+
+a| encodingFormat +
+~$.encodingFormat~
+| An established standard to which the metadata conforms. Encoded with `encodingFormat` (e.g. media type such as "application/vnd.iso.19139-2+xml") as proposed by <<ESIPFed>>.
+| Domain: CreativeWork or MediaObject +
+Range: Text or URL
+| Zero or one (optional)
+
+
+a| inLanguage +
+~$.inLanguage~
+| Resource language code, not empty, e.g. "en" (English).
+| Domain: CreativeWork +
+Range: Language or Text
+| Zero or one (optional)
+
 |===
 
 
@@ -307,11 +323,14 @@ a| abstract +
 a| bibliographicCitation +
 ~$.properties.bibliographicCitation~     | dct:bibliographicCitation |  $.citation      | https://schema.org/citation  |    <<table_object_dataset>>
 
+a| conformsTo +
+~$.properties.isPrimaryTopicOf.conformsTo~   | dct:conformsTo |                |   https://schema.org/encodingFormat   | 
+
 a| created +
 ~$.properties.created~                   | dct:created               |  $.dateCreated    |  https://schema.org/dateCreated |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
 
 a| created +
-~$.properties.isPrimaryTopicOf.created~    | dct:created |                |  | 
+~$.properties.isPrimaryTopicOf.created~    | dct:created |                |    | 
 
 a| date +
 ~$.properties.date~       | dct:date |   $.temporal            |  https://schema.org/temporal | 
