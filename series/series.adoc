@@ -116,7 +116,7 @@ Fixed value: "Dataset"
 a| @id +
 ~$.@id~
 | Unique identifier for the collection (IRI).
-| Range: String
+| Range: URL
 | Zero or one (optional)
 
 a| citation +
@@ -254,12 +254,16 @@ Range: Date or Datetime
 |===
 
 
-.Dates encoding example
+.DataDates encoding example
 [source,json]
 ----
 {
-
-	
+	"@context": "http://schema.org",
+	"@type": "Dataset",
+	"temporal": "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z",
+	"dateCreated": "1999-07-01T23:59:00Z",
+	"datePublished": "1999-07-02T08:00:00Z",
+	"dateModified": "2004-01-01T08:00:00Z"
 }
 ----
 
