@@ -322,58 +322,58 @@ Fixed value: "Dataset"
 === B.1 OGC17-084r1 Metadata
 
 |===
-| GeoJSON Property | JSON-LD Property |   schema.org | schema.org Reference | Reference
+| GeoJSON Property | JSON-LD Property |   schema.org  Reference
 
 a| abstract +
-~$.properties.abstract~     | dct:description |  $.description      | https://schema.org/description  |    <<table_object_dataset>>
+~$.properties.abstract~     | dct:description |         https://schema.org/description[$.description]        |    <<table_object_dataset>>
 
 a| bibliographicCitation +
-~$.properties.bibliographicCitation~     | dct:bibliographicCitation |  $.citation      | https://schema.org/citation  |    <<table_object_dataset>>
+~$.properties.bibliographicCitation~   | dct:bibliographicCitation | https://schema.org/citation[$.citation]  |    <<table_object_dataset>>
 
 a| conformsTo +
-~$.properties.isPrimaryTopicOf.conformsTo~   | dct:conformsTo |  $.subjectOf.encodingFormat   |   https://schema.org/encodingFormat   |    <<table_object_listitem>>.  See also <<ESIPFed>>.
+~$.properties.isPrimaryTopicOf.conformsTo~   | dct:conformsTo |     https://schema.org/encodingFormat[$.subjectOf.encodingFormat]   |    <<table_object_listitem>>.  See also <<ESIPFed>>.
 
 a| created +
-~$.properties.created~                   | dct:created               |  $.dateCreated    |  https://schema.org/dateCreated |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
+~$.properties.created~                   | dct:created      |  https://schema.org/dateCreated[$.dateCreated] |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
 
 a| created +
-~$.properties.isPrimaryTopicOf.created~    | dct:created |   $.subjectOf.dateCreated             |  https://schema.org/dateCreated   |   <<table_object_listitem>>
+~$.properties.isPrimaryTopicOf.created~    | dct:created |      https://schema.org/dateCreated[$.subjectOf.dateCreated]   |   <<table_object_listitem>>
 
 a| date +
-~$.properties.date~       | dct:date |   $.temporal            |  https://schema.org/temporal | 
+~$.properties.date~       | dct:date |              https://schema.org/temporal[$.temporal ]   | 
 
 a| doi +
-~$.properties.doi~        | adms:identifier  |   $.identifier.value   |   https://schema.org/value   |  <<table_object_propertyvalue>>
+~$.properties.doi~        | adms:identifier  |      https://schema.org/value[$.identifier.value]   |  <<table_object_propertyvalue>>
 
 a| id +
-~$.id~                     | @id           |   $.@id                |                              |  <<table_object_dataset>>
+~$.id~                     | @id           |   $.@id                                           |  <<table_object_dataset>>
 
 a| identifier +
-~$.properties.identifier~   | dct:identifier |   $.identifier        |  https://schema.org/identifier |  <<table_object_dataset>>
+~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[$.identifier] |  <<table_object_dataset>>
 
 a| lang +
-~$.properties.lang~        | dct:language |  $.inLanguage              | https://schema.org/inLanguage |    <<table_object_dataset>>
+~$.properties.lang~        | dct:language |                https://schema.org/inLanguage[$.inLanguage] |    <<table_object_dataset>>
 
 a| lang +
-~$.properties.isPrimaryTopicOf.lang~        | dct:language | $.subjectOf.inLanguage     |    https://schema.org/inLanguage   |    <<table_object_listitem>>
+~$.properties.isPrimaryTopicOf.lang~        | dct:language |      https://schema.org/inLanguage[$.subjectOf.inLanguage]   |    <<table_object_listitem>>
 
 a| published +
-~$.properties.published~     | dct:issued |   $.datePublished	             |  https://schema.org/datePublished	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
+~$.properties.published~     | dct:issued |   	     https://schema.org/datePublished[$.datePublished]	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
 
 a| published +
-~$.properties.isPrimaryTopicOf.published~     | dct:issued |   $.subjectOf.datePublished	             |  https://schema.org/datePublished	 |    <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
+~$.properties.isPrimaryTopicOf.published~     | dct:issued |   	   https://schema.org/datePublished[$.subjectOf.datePublished]	 |    <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
 
 a| title +
-~$.properties.title~        | dct:title   |  $.name              | https://schema.org/name |    <<table_object_dataset>>
+~$.properties.title~        | dct:title   |             https://schema.org/name[$.name] |    <<table_object_dataset>>
 
 a| updated +
-~$.properties.updated~     | dct:modified  |  $.dateModified       |   https://schema.org/dateModified     |    <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
+~$.properties.updated~     | dct:modified  |       https://schema.org/dateModified[$.dateModified]     |    <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
 
 a| updated +
-~$.properties.isPrimaryTopicOf.updated~     | dct:modified  |  $.subjectOf.dateModified       |   https://schema.org/dateModified     |     <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
+~$.properties.isPrimaryTopicOf.updated~     | dct:modified  |     https://schema.org/dateModified[$.subjectOf.dateModified]     |     <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
 
 a| versionInfo +
-~$.properties.versionInfo~        | owl:versionInfo |  $.version              | https://schema.org/version |    <<table_object_dataset>>
+~$.properties.versionInfo~        | owl:versionInfo |              https://schema.org/version[$.version] |    <<table_object_dataset>>
 
 |===
 
