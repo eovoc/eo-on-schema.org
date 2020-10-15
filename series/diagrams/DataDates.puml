@@ -1,0 +1,31 @@
+@startuml
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+Class Dataset
+
+
+
+Dataset -right-> (Text) : "temporal"
+Dataset -down-> (DateTime) : "temporal,\ndateCreated,\ndateModified,\ndatePublished"
+
+Dataset -up-> (Date) : "dateCreated,\ndateModified,\ndatePublished"
+
+
+
+@enduml
