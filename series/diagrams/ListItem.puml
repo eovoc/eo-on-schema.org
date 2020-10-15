@@ -28,11 +28,9 @@ DataDownload -down-> (DateTime) : "dateCreated,\ndateModified,\ndatePublished"
 
 DataDownload -down-> (Date) : "dateCreated,\ndateModified,\ndatePublished"
 
-DataDownload -right-> (Text) : "encodingFormat"
+DataDownload -right-> (Text) : "encodingFormat,\ninLanguage"
 
 DataDownload --> (URL) : "encodingFormat"
-
-DataDownload -right-> (Text) : "inLanguage"
 
 DataDownload -left-> Language : "inLanguage"
 
