@@ -5,10 +5,11 @@
 * <<eo-collections,2. EO Collections>>
 ** <<metadata-information,2.1 Metadata Information>>
 ** <<data-identification,2.2 Data Identification>>
+** <<descriptive-keywords,2.3 Descriptive Keywords>>
 * <<property-mapping,B. Property Mapping>>
 * <<references,C. References>>
-** <<normative-references,Normative References>>
-** <<other-references,Other References>>
+** <<normative-references,C.1 Normative References>>
+** <<other-references,C.2 Other References>>
 
 == 2. EO Collections
 
@@ -290,7 +291,7 @@ Range: Date or Datetime
 ----
 
 
-=== PropertyValue (identifier)
+==== PropertyValue (identifier)
 
 [#img_object_propertyvalue,reftext='{figure-caption} {counter:figure-num}']
 .PropertyValue Schema
@@ -342,6 +343,100 @@ Fixed value: "Dataset"
 }
 ----
 
+=== 2.3 Descriptive Keywords
+
+[#img_object_descriptivekeywords,reftext='{figure-caption} {counter:figure-num}']
+.Metadata Descriptive Keywords
+image::diagrams/DescriptiveKeywords.png[align="center"]
+
+The complete list of descriptive keyword properties is given in <<table_object_descriptivekeywords>>.
+The properties are grouped in a `Listitem` as proposed by <<DCAT-AP-SDO>>.  <<ESIPFed>> proposes an alternative presentation using a `DataDownload`.
+
+[#table_object_descriptivekeywords,reftext='{table-caption} {counter:table-num}']
+.Descriptive keyword object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| keywords +
+~$.keywords~
+| Free keywords not belonging to a controlled vocabulary related to the resource.  Multiple entries in a keywords list are typically delimited by commas.
+| Domain: CreativeWork
+| Range: Text, URL, DefinedTerm +
+See <<table_object_definedterm>>
+| Zero or more (optional)
+
+
+|===
+
+
+.Descriptive keywords encoding example
+[source,json]
+----
+{
+
+}
+----
+
+==== 2.3.1 DefinedTerm
+
+[#img_object_definedterm,reftext='{figure-caption} {counter:figure-num}']
+.DefinedTerm schema
+image::diagrams/DefinedTerm.png[align="center"]
+
+The complete list of DefinedTerm properties is given in <<table_object_definedterm>>.
+
+
+[#table_object_definedterm,reftext='{table-caption} {counter:table-num}']
+.DefinedTerm object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @type +
+~$.keywords[*].@type~
+| Type of the object. This property has the fixed value "DefinedTerm".
+| Range: String +
+Fixed value: "DefinedTerm"
+| One (mandatory)
+
+a| @id +
+~$.keywords[*].@id~
+| Identification of the keyword (URI).
+| Range: URL
+| Zero or one (optional)
+
+a| name +
+~$.keywords[*].name~
+| Human readable representation of the keyword.
+| Domain: DefinedTerm +
+Range: Text 
+| Zero or one (optional)
+
+a| inDefinedTermSet +
+~$.keywords[*].inDefinedTermSet~
+| Identification of the code list or scheme defining the keyword.
+| Domain: DefinedTerm +
+Range: URL 
+| Zero or one (optional)
+
+|===
+
+
+.DefinedTerm encoding example
+[source,json]
+----
+{
+	"@context": "http://schema.org",
+	"@type": "DefinedTerm",
+	"@id": "http://www.eionet.europa.eu/gemet/concept/4612",
+	"name": "Land cover",
+	"inDefinedTermSet": "http://www.eionet.europa.eu/gemet/"
+}
+----
+
+
+
 
 == B. Property Mapping
 
@@ -355,6 +450,9 @@ a| abstract +
 
 a| bibliographicCitation +
 ~$.properties.bibliographicCitation~   | dct:bibliographicCitation | https://schema.org/citation[$.citation]  |    <<table_object_dataset>>
+
+a| Category +
+                       | skos:Concept |                https://schema.org/DefinedTerm[DefinedTerm] |    <<table_object_definedterm>>
 
 a| conformsTo +
 ~$.properties.isPrimaryTopicOf.conformsTo~   | dct:conformsTo |     https://schema.org/encodingFormat[$.subjectOf.encodingFormat]   |    <<table_object_listitem>>.  See also <<ESIPFed>>.
