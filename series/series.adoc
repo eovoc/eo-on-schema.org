@@ -6,6 +6,7 @@
 ** <<metadata-information,2.1 Metadata Information>>
 ** <<data-identification,2.2 Data Identification>>
 ** <<descriptive-keywords,2.3 Descriptive Keywords>>
+*** <<defined-term,2.3.1 DefinedTerm>>
 * <<property-mapping,B. Property Mapping>>
 * <<references,C. References>>
 ** <<normative-references,C.1 Normative References>>
