@@ -21,7 +21,7 @@ This section defines the encoding of Earth Observation collection metadata.  We 
 image::diagrams/ListItem.png[align="center"]
 
 The complete list of metadata information properties is given in <<table_object_listitem>>.
-The properties are grouped in a `Listitem` as proposed by <<DCAT-AP-SDO>>.  <<ESIPFed> proposes an alternative presentation using a `DataDownload`.
+The properties are grouped in a `Listitem` as proposed by <<DCAT-AP-SDO>>.  <<ESIPFed>> proposes an alternative presentation using a `DataDownload`.
 
 [#table_object_listitem,reftext='{table-caption} {counter:table-num}']
 .ListItem object properties
@@ -38,21 +38,21 @@ Fixed value: "ListItem"
 
 a| dateCreated +
 ~$.dateCreated~
-| Date of creation of the resource.
+| Date of creation of the metadata document.
 | Domain: CreativeWork +
 Range: Date or Datetime
 | Zero or one (optional)
 
 a| dateModified +
 ~$.dateModified~
-| Date of last update of the resource.
+| Date of last update of the metadata document.
 | Domain: CreativeWork +
 Range: Date or Datetime
 | One (Mandatory)
 
 a| datePublished +
 ~$.datePublished~
-| Date of publication of the resource.
+| Date of publication of the metadata document.
 | Domain: CreativeWork +
 Range: Date or Datetime
 | Zero or one (optional)
