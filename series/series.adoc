@@ -6,11 +6,11 @@
 ** <<21-metadata-information,2.1 Metadata Information>>
 ** <<22-data-identification,2.2 Data Identification>>
 ** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
-*** <<231-defined-term,2.3.1 DefinedTerm>>
-* <<property-mapping,B. Property Mapping>>
-* <<references,C. References>>
-** <<normative-references,C.1 Normative References>>
-** <<other-references,C.2 Other References>>
+*** <<231-definedterm,2.3.1 DefinedTerm>>
+* <<b-property-mapping,B. Property Mapping>>
+* <<c-references,C. References>>
+** <<c1-normative-references,C.1 Normative References>>
+** <<c2-other-references,C.2 Other References>>
 
 == 2. EO Collections
 
