@@ -155,6 +155,13 @@ a| name +
 Range: Text
 | One (mandatory)
 
+a| subjectOf +
+~$.subjectOf~
+| Version number or other version designation of the resource.
+| Domain: Thing +
+Range: ListItem/DataDownload (<<table_object_listitem>>)
+| Zero or one (optional)
+
 a| version +
 ~$.version~
 | Version number or other version designation of the resource.
@@ -324,13 +331,13 @@ a| bibliographicCitation +
 ~$.properties.bibliographicCitation~     | dct:bibliographicCitation |  $.citation      | https://schema.org/citation  |    <<table_object_dataset>>
 
 a| conformsTo +
-~$.properties.isPrimaryTopicOf.conformsTo~   | dct:conformsTo |                |   https://schema.org/encodingFormat   | 
+~$.properties.isPrimaryTopicOf.conformsTo~   | dct:conformsTo |  $.subjectOf.encodingFormat   |   https://schema.org/encodingFormat   |    <<table_object_listitem>>.  See also <<ESIPFed>>.
 
 a| created +
 ~$.properties.created~                   | dct:created               |  $.dateCreated    |  https://schema.org/dateCreated |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
 
 a| created +
-~$.properties.isPrimaryTopicOf.created~    | dct:created |                |    | 
+~$.properties.isPrimaryTopicOf.created~    | dct:created |   $.subjectOf.dateCreated             |  https://schema.org/dateCreated   |   <<table_object_listitem>>
 
 a| date +
 ~$.properties.date~       | dct:date |   $.temporal            |  https://schema.org/temporal | 
@@ -348,16 +355,22 @@ a| lang +
 ~$.properties.lang~        | dct:language |  $.inLanguage              | https://schema.org/inLanguage |    <<table_object_dataset>>
 
 a| lang +
-~$.properties.isPrimaryTopicOf.lang~        | dct:language |                |  |    
+~$.properties.isPrimaryTopicOf.lang~        | dct:language | $.subjectOf.inLanguage     |    https://schema.org/inLanguage   |    <<table_object_listitem>>
 
 a| published +
-~$.properties.published~     | dct:issued |   $.datePublished	             |  https://schema.org/datePublished	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.   
+~$.properties.published~     | dct:issued |   $.datePublished	             |  https://schema.org/datePublished	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
+
+a| published +
+~$.properties.isPrimaryTopicOf.published~     | dct:issued |   $.subjectOf.datePublished	             |  https://schema.org/datePublished	 |    <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
 
 a| title +
 ~$.properties.title~        | dct:title   |  $.name              | https://schema.org/name |    <<table_object_dataset>>
 
 a| updated +
 ~$.properties.updated~     | dct:modified  |  $.dateModified       |   https://schema.org/dateModified     |    <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
+
+a| updated +
+~$.properties.isPrimaryTopicOf.updated~     | dct:modified  |  $.subjectOf.dateModified       |   https://schema.org/dateModified     |     <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
 
 a| versionInfo +
 ~$.properties.versionInfo~        | owl:versionInfo |  $.version              | https://schema.org/version |    <<table_object_dataset>>
