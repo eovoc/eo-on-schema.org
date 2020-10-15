@@ -4,6 +4,8 @@
 
 * <<2-eo-collections,2. EO Collections>>
 ** <<21-metadata-information,2.1 Metadata Information>>
+*** <<221-datadates,2.2.1 DataDates>>
+*** <<222-propertyvalue,2.2.2 PropertyValue>>
 ** <<22-data-identification,2.2 Data Identification>>
 ** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
 *** <<231-definedterm,2.3.1 DefinedTerm>>
@@ -231,7 +233,7 @@ Range: Number or Text
 }
 ----
 
-==== DataDates
+==== 2.2.1 DataDates
 
 [#img_object_dates,reftext='{figure-caption} {counter:figure-num}']
 .DataDates Schema
@@ -292,7 +294,7 @@ Range: Date or Datetime
 ----
 
 
-==== PropertyValue (identifier)
+==== 2.2.2 PropertyValue
 
 [#img_object_propertyvalue,reftext='{figure-caption} {counter:figure-num}']
 .PropertyValue Schema
