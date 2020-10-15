@@ -203,9 +203,9 @@ Fixed value: "Dataset"
 ----
 
 
-== Property Mapping
+== B. Property Mapping
 
-=== OGC17-084r1 Metadata
+=== B.1 OGC17-084r1 Metadata
 
 |===
 | GeoJSON Property | JSON-LD Property |   schema.org | schema.org Reference | Reference
@@ -236,7 +236,7 @@ a| title +
 
 |===
 
-=== STAC Collection Metadata
+=== B.2 STAC Collection Metadata
 
 TBD.
 
@@ -245,25 +245,24 @@ TBD.
 
 === C.1 Normative references
 
-* [[JSON]]http://www.ietf.org/rfc/rfc7159.txt[RFC 7159, The JavaScript Object Notation (JSON) Data Interchange Format, March 2014]
-* [[GeoJSON]]https://tools.ietf.org/html/rfc7946[RFC 7946, The GeoJSON Format]
-
-* [[DCAT]]https://www.w3.org/TR/vocab-dcat/[Data Catalog Vocabulary (DCAT), W3C Recommendation 16 January 2014]
-* [[LDP]]https://www.w3.org/TR/ldp/[Linked Data Platform 1.0, W3C Recommendation 26 February 2015]
-* [[JSON-LD]]https://www.w3.org/TR/json-ld/[JSON-LD 1.0, A JSON-based Serialization for Linked Data, W3C Recommendation 16 January 2014]
-
+[[JSON]][JSON]::
+	RFC 7159, The JavaScript Object Notation (JSON) Data Interchange Format, March 2014, http://www.ietf.org/rfc/rfc7159.txt
+[[GeoJSON]][GeoJSON]::
+	RFC 7946, The GeoJSON Format, https://www.w3.org/TR/json-ld11/
+[[LDP]][LDP]::
+	https://www.w3.org/TR/ldp/Linked Data Platform 1.0, W3C Recommendation 26 February 2015
+[[JSON-LD]][JSON-LD]::
+	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Recommendation 16 July 2020, https://www.w3.org/TR/json-ld11/
+[[SHACL]][SHACL]:: 
+	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
 
 === C.2 Other references
 
 [[JSON-LD-1.1]][JSON-LD-1.1]::
 	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Working Draft 14 December 2018, https://www.w3.org/TR/json-ld11/
-[[DCAT-2019]][DCAT-2019]::
-	Data Catalog Vocabulary (DCAT) - Revised edition, W3C Editor's Draft 24 April 2019. 
 [[JSONPath]][JSONPath]::
 	JSONPath, http://goessner.net/articles/JsonPath/index.html
-[[RD34]][RD34]:: 
-	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
-[[RD35]][RD35]::  
+[[SHACL-UC]][SHACL-UC]::  
 	SHACL Use Cases and Requirements, W3C Working Group Note, 20 July 2017, https://www.w3.org/TR/shacl-ucr/
 [[ESIPFed]][ESIPFed]::
 	"Schema.org Publishing Guidelines for the Geosciences", V1.1.0, https://doi.org/10.5281/zenodo.3736235, https://github.com/ESIPFed/science-onschema.org
