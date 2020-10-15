@@ -350,7 +350,6 @@ Fixed value: "Dataset"
 image::diagrams/DescriptiveKeywords.png[align="center"]
 
 The complete list of descriptive keyword properties is given in <<table_object_descriptivekeywords>>.
-The properties are grouped in a `Listitem` as proposed by <<DCAT-AP-SDO>>.  <<ESIPFed>> proposes an alternative presentation using a `DataDownload`.
 
 [#table_object_descriptivekeywords,reftext='{table-caption} {counter:table-num}']
 .Descriptive keyword object properties
@@ -360,12 +359,11 @@ The properties are grouped in a `Listitem` as proposed by <<DCAT-AP-SDO>>.  <<ES
 
 a| keywords +
 ~$.keywords~
-| Free keywords not belonging to a controlled vocabulary related to the resource.  Multiple entries in a keywords list are typically delimited by commas.
+| Free keywords not belonging to a controlled vocabulary, or keywords from a controlled vocabulary related to the resource.  
 | Domain: CreativeWork
 | Range: Text, URL, DefinedTerm +
 See <<table_object_definedterm>>
 | Zero or more (optional)
-
 
 |===
 
@@ -374,7 +372,47 @@ See <<table_object_definedterm>>
 [source,json]
 ----
 {
-
+	"@context": "http://schema.org",
+	"@type": "Dataset",
+	"keywords": [
+		{
+			"@type": "DefinedTerm",
+			"@id": "http://www.eionet.europa.eu/gemet/concept/3650",
+			"inDefinedTermSet": "http://www.eionet.europa.eu/gemet/",
+			"name": "Geology"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://gcmdservices.gsfc.nasa.gov/kms/concept/03f0c0a3-04a7-4ef8-8ec0-3c2266510815",
+			"inDefinedTermSet": " https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeyword",
+			"name": "VISIBLE IMAGERY"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://gcmdservices.gsfc.nasa.gov/kms/concept/98dc8278-fe0a-4e36-a638-9d7a5b0ed826",
+			"inDefinedTermSet": "https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/projects",
+			"name": "FedEO"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://gcmdservices.gsfc.nasa.gov/kms/concept/ad598334-f541-4be4-888c-c2dc7eb54194",
+			"inDefinedTermSet": "https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/CollectionDataType",
+			"name": "NEAR_REAL_TIME"
+		},
+		"FedEO",
+		"ESA LDS",
+		{
+			"@type": "DefinedTerm",
+			"@id": "http://inspire.ec.europa.eu/metadata-codelist/TopicCategory/geoscientificInformation",
+			"name": "Geoscientific Information"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://gcmdservices.gsfc.nasa.gov/kms/concept/d9cd5b7e-e9e7-4746-bbc8-bc69f7b606c7",
+			"name": "GEOSCIENTIFIC INFORMATION",
+			"inDefinedTermSet": "https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/isotopiccategory"
+		}
+	]
 }
 ----
 
@@ -451,6 +489,9 @@ a| abstract +
 a| bibliographicCitation +
 ~$.properties.bibliographicCitation~   | dct:bibliographicCitation | https://schema.org/citation[$.citation]  |    <<table_object_dataset>>
 
+a| categories +
+~$.properties.categories~   | dcat:theme  | https://schema.org/keywords[$.keywords]  |    <<table_object_descriptivekeywords>>
+
 a| Category +
                        | skos:Concept |                https://schema.org/DefinedTerm[DefinedTerm] |    <<table_object_definedterm>>
 
@@ -474,6 +515,9 @@ a| id +
 
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[$.identifier] |  <<table_object_dataset>>
+
+a| keyword +
+~$.properties.keyword~   | dcat:keyword  | https://schema.org/keywords[$.keywords]  |    <<table_object_descriptivekeywords>>
 
 a| kind +
 ~$.properties.kind~        | dct:type |                https://schema.org/additionalType[$.additionalType] |    <<table_object_dataset>>. See also <<DCAT-AP-SDO>>.
