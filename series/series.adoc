@@ -79,8 +79,19 @@ Range: Language or Text
 [source,json]
 ----
 {
-
-	
+	"@context": "http://schema.org",
+	"@type": "Dataset",
+	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
+	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks.",
+	"subjectOf": {
+		"@type": "ListItem",
+		"temporal": "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z",
+		"dateCreated": "1999-07-01T00:00:00Z",
+		"datePublished": "1999-07-01T00:00:00Z",
+		"dateModified": "2019-07-17T00:00:00Z",
+		"inLanguage": "en",
+		"encodingFormat": "application/vnd.iso.19139-2+xml"
+	}
 }
 ----
 
@@ -159,7 +170,7 @@ a| subjectOf +
 ~$.subjectOf~
 | Version number or other version designation of the resource.
 | Domain: Thing +
-Range: ListItem/DataDownload (<<table_object_listitem>>)
+Range: ListItem (<<table_object_listitem>>)
 | Zero or one (optional)
 
 a| version +
