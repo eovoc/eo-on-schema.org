@@ -124,6 +124,15 @@ a| @type +
 Fixed value: "Dataset"
 | One (mandatory)
 
+a| additionalType +
+~$.additionaltype~
+| Unique identifiers (URI) for the type of the resource.  +
+E.g. http://purl.org/dc/dcmitype/Collection, +
+https://inspire.ec.europa.eu/metadata-codelist/ResourceType/series
+| Domain: Thing +
+Range: URL
+| Zero or more (optional)
+
 a| @id +
 ~$.@id~
 | Unique identifier for the collection (IRI).
@@ -367,6 +376,9 @@ a| id +
 
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[$.identifier] |  <<table_object_dataset>>
+
+a| kind +
+~$.properties.kind~        | dct:type |                https://schema.org/additionalType[$.additionalType] |    <<table_object_dataset>>. See also <<DCAT-AP-SDO>>.
 
 a| lang +
 ~$.properties.lang~        | dct:language |                https://schema.org/inLanguage[$.inLanguage] |    <<table_object_dataset>>
