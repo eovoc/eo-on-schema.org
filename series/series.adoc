@@ -3,7 +3,8 @@
 == Table of contents
 
 * <<eo-collections,2. EO Collections>>
-** <<data-identification,2.1 Data identification>>
+** <<metadata-information,2.1 Metadata Information>>
+** <<data-identification,2.2 Data Identification>>
 * <<property-mapping,B. Property Mapping>>
 * <<references,C. References>>
 ** <<normative-references,Normative References>>
@@ -13,13 +14,68 @@
 
 This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and <<OGC17-084r1>>.  The graphical notation is borrowed from <<ESIPFed>>. The diagrams are prepared with PlantUML.
 
-=== 2.1 Data Identification
+=== 2.1 Metadata information
+
+[#img_object_listitem,reftext='{figure-caption} {counter:figure-num}']
+.Metadata Information Schema
+image::diagrams/ListItem.png[align="center"]
+
+The complete list of metadata information properties is given in <<table_object_listitem>>.
+The properties are grouped in a `Listitem` as proposed by <<DCAT-AP-SDO>>.  <<ESIPFed> proposes an alternative presentation using a `DataDownload`.
+
+[#table_object_listitem,reftext='{table-caption} {counter:table-num}']
+.ListItem object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @type +
+~$.@type~
+| Type of the object. This property has the fixed value "ListItem".
+| Range: String +
+Fixed value: "ListItem"
+| One (mandatory)
+
+a| dateCreated +
+~$.dateCreated~
+| Date of creation of the resource.
+| Domain: CreativeWork +
+Range: Date or Datetime
+| Zero or one (optional)
+
+a| dateModified +
+~$.dateModified~
+| Date of last update of the resource.
+| Domain: CreativeWork +
+Range: Date or Datetime
+| One (Mandatory)
+
+a| datePublished +
+~$.datePublished~
+| Date of publication of the resource.
+| Domain: CreativeWork +
+Range: Date or Datetime
+| Zero or one (optional)
+|===
+
+
+.ListItem encoding example
+[source,json]
+----
+{
+
+	
+}
+----
+
+
+=== 2.2 Data Identification
 
 [#img_object_dataset,reftext='{figure-caption} {counter:figure-num}']
-.Dataset Schema
+.Data Identification Schema
 image::diagrams/Dataset.png[align="center"]
 
-The complete decription of Dataset is given in <<table_object_dataset>>.  
+The complete list of Data identification properties is given in <<table_object_dataset>>.  
 
 [#table_object_dataset,reftext='{table-caption} {counter:table-num}']
 .Data Identification properties
@@ -130,13 +186,13 @@ Range: Number or Text
 }
 ----
 
-==== Dates
+==== DataDates
 
 [#img_object_dates,reftext='{figure-caption} {counter:figure-num}']
-.Dates Schema
-image::diagrams/Dates.png[align="center"]
+.DataDates Schema
+image::diagrams/DataDates.png[align="center"]
 
-The complete overview of date related properties is given in <<table_object_dates>>.  
+The complete overview of date related properties for data is given in <<table_object_dates>>.  
 
 [#table_object_dates,reftext='{table-caption} {counter:table-num}']
 .Dates object properties
