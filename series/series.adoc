@@ -322,7 +322,7 @@ Fixed value: "Dataset"
 === B.1 OGC17-084r1 Metadata
 
 |===
-| GeoJSON Property | JSON-LD Property |   schema.org  Reference
+| GeoJSON Property | JSON-LD Property |   schema.org  | Reference
 
 a| abstract +
 ~$.properties.abstract~     | dct:description |         https://schema.org/description[$.description]        |    <<table_object_dataset>>
