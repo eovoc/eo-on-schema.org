@@ -245,14 +245,16 @@ TBD.
 
 === C.1 Normative references
 
+[[DCAT]][DCAT]::
+	Data Catalog Vocabulary (DCAT) - Version 2, W3C Recommendation 04 February 2020, https://www.w3.org/TR/vocab-dcat-2/
 [[JSON]][JSON]::
 	RFC 7159, The JavaScript Object Notation (JSON) Data Interchange Format, March 2014, http://www.ietf.org/rfc/rfc7159.txt
 [[GeoJSON]][GeoJSON]::
 	RFC 7946, The GeoJSON Format, https://www.w3.org/TR/json-ld11/
-[[LDP]][LDP]::
-	https://www.w3.org/TR/ldp/Linked Data Platform 1.0, W3C Recommendation 26 February 2015
 [[JSON-LD]][JSON-LD]::
 	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Recommendation 16 July 2020, https://www.w3.org/TR/json-ld11/
+[[LDP]][LDP]::
+	Linked Data Platform 1.0, W3C Recommendation 26 February 2015, https://www.w3.org/TR/ldp/
 [[SHACL]][SHACL]:: 
 	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
 
