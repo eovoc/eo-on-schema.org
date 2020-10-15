@@ -11,7 +11,7 @@
 
 == 2. EO Collections
 
-This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and <<OGC17-084r1>>.  The graphical notation is borrowed from https://github.com/ESIPFed/science-on-schema.org/tree/master/assets/diagrams[science-on-schema.org]. The diagrams are prepared with PlantUML.
+This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and <<OGC17-084r1>>.  The graphical notation is borrowed from <<ESIPFed>>. The diagrams are prepared with PlantUML.
 
 === 2.1 Dataset
 
@@ -241,11 +241,9 @@ a| title +
 TBD.
 
 
-== References
+== C. References
 
-.to be moved to a separate file
-
-=== Normative references
+=== C.1 Normative references
 
 * [[JSON]]http://www.ietf.org/rfc/rfc7159.txt[RFC 7159, The JavaScript Object Notation (JSON) Data Interchange Format, March 2014]
 * [[GeoJSON]]https://tools.ietf.org/html/rfc7946[RFC 7946, The GeoJSON Format]
@@ -255,7 +253,7 @@ TBD.
 * [[JSON-LD]]https://www.w3.org/TR/json-ld/[JSON-LD 1.0, A JSON-based Serialization for Linked Data, W3C Recommendation 16 January 2014]
 
 
-=== Other references
+=== C.2 Other references
 
 [[JSON-LD-1.1]][JSON-LD-1.1]::
 	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Working Draft 14 December 2018, https://www.w3.org/TR/json-ld11/
