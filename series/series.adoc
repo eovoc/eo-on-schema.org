@@ -467,6 +467,9 @@ Range: Organization or Person
 image::diagrams/Organization.png[align="center"]
 
 
+TBD: add missing properties: address, etc. used below on diagram above.
+
+
 .Organization encoding example
 [source,json]
 ----
