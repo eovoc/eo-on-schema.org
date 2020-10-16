@@ -1,0 +1,36 @@
+@startuml
+
+' example 6 June 2020 Y. Coene schema.org representation
+' https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+Class Dataset
+Class DefinedTerm
+
+Dataset -right-> (Text) : "keywords"
+
+Dataset -right-> DefinedTerm : "keywords"
+
+DefinedTerm --> (Text) : "name"
+DefinedTerm --> (URL) : "@id"
+DefinedTerm -right-> (URL) : "isDefinedTermSet"
+
+
+
+@enduml
