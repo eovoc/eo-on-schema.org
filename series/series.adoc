@@ -4,9 +4,9 @@
 
 * <<2-eo-collections,2. EO Collections>>
 ** <<21-metadata-information,2.1 Metadata Information>>
+** <<22-data-identification,2.2 Data Identification>>
 *** <<221-datadates,2.2.1 DataDates>>
 *** <<222-propertyvalue,2.2.2 PropertyValue>>
-** <<22-data-identification,2.2 Data Identification>>
 ** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
 *** <<231-definedterm,2.3.1 DefinedTerm>>
 * <<b-property-mapping,B. Property Mapping>>
@@ -309,20 +309,32 @@ The encoding of `identifier` with a `PropertyValue` corresponds to the encoding 
 |===
 |JSON Property | Definition | Data type and values | Multiplicity and use
 
-a| @context +
-~$.@context~
-| Optional context property.
+a| @type +
+~$.identifier[*].@type~
+| Type of the object. This property has the fixed value "PropertyValue".
 | Range: String +
-Fixed value: "https://schema.org"
+Fixed value: "PropertyValue"
 | Zero or one (optional)
 
-a| @type +
-~$.@type~
-| Type of the object. This property has the fixed value "Dataset".
-| Range: String +
-Fixed value: "Dataset"
+a| value +
+~$.identifier[*].value~
+| Value of the identifier, including the prefix (e.g. `doi:`) identifying the type of identifier. E.g. `doi:10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA`. +
+The prefix is included as recommended by <<ESIPFed>>.
+| Range: Text 
 | One (mandatory)
 
+a| propertyID +
+~$.identifier[*].propertyID~
+| A commonly used identifier for the characteristic represented by the property. +
+<<ESIPFed>> recommends using the registry.identifiers.org URI for the identifier scheme, e.g. `https://registry.identifiers.org/registry/doi`.
+| Range: URL 
+| One (mandatory)
+
+a| url +
+~$.identifier[*].url~
+| Resolvable URL of the item  where the resource being identified can be found.  E.g. `https://doi.org/10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA`.
+| Range: URL 
+| Zero or one (optional)
 
 |===
 
