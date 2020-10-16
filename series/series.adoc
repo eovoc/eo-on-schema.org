@@ -7,6 +7,9 @@
 ** <<22-data-identification,2.2 Data Identification>>
 *** <<221-datadates,2.2.1 DataDates>>
 *** <<222-propertyvalue,2.2.2 PropertyValue>>
+*** <<223-propertyvalue,2.2.3 Contact>>
+*** <<224-organization,2.2.4 Organization>>
+*** <<225-role,2.2.5 Role>>
 ** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
 *** <<231-definedterm,2.3.1 DefinedTerm>>
 * <<b-property-mapping,B. Property Mapping>>
@@ -364,6 +367,83 @@ a| url +
 	}
 }
 ----
+
+==== 2.2.3 Contact
+
+[#img_object_contact,reftext='{figure-caption} {counter:figure-num}']
+.Contact Schema
+image::diagrams/Contact.png[align="center"]
+
+The complete overview of date contact related properties for data is given in <<table_object_contact>>.  
+
+[#table_object_dates,reftext='{table-caption} {counter:table-num}']
+.Contact object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+
+a| author +
+~$.author~
+| An entity or agent primarily responsible for authoring the document (role is "Author").
+| Domain: CreativeWork +
+Range: Organization or Person
+| Zero or more (optional)
+
+a| contactPoint +
+~$.contactPoint~
+| Contact point for the collection (role is "Point of Contact"). TO BE CHECKED (TBD)  Maybe vai "related" -> Organization -> contactPoint
+| Domain: ?? +
+Range: ContactPoint
+| Zero or more (optional)
+
+a| contributor +
+~$.contributor~
+| A secondary contributor to the collection (role is "????").
+| Domain: CreativeWork +
+Range: Organization or Person
+| Zero or more (optional)
+
+a| provider +
+~$.provider~
+| An entity or agent responsible for providing the collection (role is "Resource Provider").
+| Domain: CreativeWork  +
+Range: Organization or Person
+| Zero or more (optional)
+
+a| publisher +
+~$.publisher~
+| An entity or agent responsible for publishing the collection (role is "Publisher").
+| Domain: CreativeWork +
+Range: Organization or Person
+| Zero or more (optional)
+
+|===
+
+
+.Contact encoding example
+[source,json]
+----
+{
+- provider
+- publisher
+
+}
+----
+
+==== 2.2.4 Organization
+
+[#img_object_organization,reftext='{figure-caption} {counter:figure-num}']
+.Organization Schema
+image::diagrams/Organization.png[align="center"]
+
+==== 2.2.5 Role
+
+[#img_object_role,reftext='{figure-caption} {counter:figure-num}']
+.Role Schema
+image::diagrams/Role.png[align="center"]
+
+
 
 === 2.3 Descriptive Keywords
 
