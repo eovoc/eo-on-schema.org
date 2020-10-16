@@ -348,8 +348,9 @@ a| url +
 
 |===
 
+In the example below, PropertyValue is used to associate a DOI identifier to a Dataset.
 
-.PropertyValue encoding example
+.PropertyValue encoding example (DOI)
 [source,json]
 ----
 {
@@ -364,6 +365,27 @@ a| url +
 		"propertyID": "https://registry.identifiers.org/registry/doi",
 		"value": "doi:10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA",
 		"url": "https://doi.org/10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA"
+	}
+}
+----
+
+In the example below, PropertyValue is used to associate an https://orcid.org/[ORCID] identifier to a Person.
+
+.PropertyValue encoding example (ORCID)
+[source,json]
+----
+{
+	"@context": "https://schema.org/",
+	
+	"@type": "Person",
+	"name": "Christopher J. Merchant",
+	"url": "https://publons.com/researcher/2543185/christopher-j-merchant/",
+	"identifier": {
+		"@id": "https://orcid.org/0000-0003-4687-9850",
+		"@type": "PropertyValue",
+		"propertyID": "https://registry.identifiers.org/registry/orcid",
+		"url": "https://orcid.org/0000-0003-4687-9850",
+		"value": "orcid:0000-0003-4687-9850"
 	}
 }
 ----
