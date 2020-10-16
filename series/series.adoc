@@ -409,7 +409,14 @@ a| author +
 ~$.author~
 | An entity or agent primarily responsible for authoring the document (role is "Author").
 | Domain: CreativeWork +
-Range: Organization or Person
+Range: Organization, Person, Role
+| Zero or more (optional)
+
+a| creator +
+~$.creator~
+| TBD.
+| Domain: CreativeWork +
+Range: Organization, Person, Role
 | Zero or more (optional)
 
 a| contactPoint +
@@ -423,7 +430,7 @@ a| contributor +
 ~$.contributor~
 | A secondary contributor to the collection (role is "????").
 | Domain: CreativeWork +
-Range: Organization or Person
+Range: Organization, Person, Role
 | Zero or more (optional)
 
 a| provider +
@@ -459,12 +466,42 @@ Range: Organization or Person
 .Organization Schema
 image::diagrams/Organization.png[align="center"]
 
+
+.Organization encoding example
+[source,json]
+----
+{
+	"@type": "Organization",
+	"name": "ESA/ESRIN",
+	"address": {
+		"@type": "PostalAddress",
+		"addressCountry": "Italy",
+		"addressLocality": "Frascati (Roma)",
+		"postalCode": "00044",
+		"streetAddress": "Largo Galileo Galilei 1"
+	},
+	"telephone": "+3906941801",
+	"faxNumber": "+390694180280",
+	"email": "eohelp@esa.int",
+	"url": "https://esa.int"
+}
+----
+
+
 ==== 2.2.5 Role
 
 [#img_object_role,reftext='{figure-caption} {counter:figure-num}']
 .Role Schema
 image::diagrams/Role.png[align="center"]
 
+.Role encoding example
+[source,json]
+----
+{
+
+
+}
+----
 
 
 === 2.3 Descriptive Keywords
