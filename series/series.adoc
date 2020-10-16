@@ -316,6 +316,13 @@ a| @type +
 Fixed value: "PropertyValue"
 | Zero or one (optional)
 
+a| @id +
+~$.identifier[*].@id~
+| ID of the identifier.  E.g. `https://doi.org/10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA`.
+| Range: URL 
+| Zero or one (optional)
+
+
 a| value +
 ~$.identifier[*].value~
 | Value of the identifier, including the prefix (e.g. `doi:`) identifying the type of identifier. E.g. `doi:10.5285/7BAF7407-2F15-406C-8F09-CB9DC10392AA`. +
