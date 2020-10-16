@@ -545,7 +545,7 @@ a| kind +
 ~$.properties.kind~        | dct:type |                https://schema.org/additionalType[$.additionalType] |    <<table_object_dataset>>. See also <<DCAT-AP-SDO>>.
 
 a| label +
-~$.properties.categories[*].label~       | skos:prefLabel |        https://schema.org/name[$.keywords[].name]  |    <<table_object_definedterm>>
+~$.properties.categories[*].label~       | skos:prefLabel |        https://schema.org/name[$.keywords.name]  |    <<table_object_definedterm>>
 
 a| lang +
 ~$.properties.lang~        | dct:language |                https://schema.org/inLanguage[$.inLanguage] |    <<table_object_dataset>>
@@ -560,10 +560,10 @@ a| published +
 ~$.properties.isPrimaryTopicOf.published~     | dct:issued |   	   https://schema.org/datePublished[$.subjectOf.datePublished]	 |    <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
 
 a| scheme +
-~$.properties.categories[*].scheme~       | skos:inScheme |               https://schema.org/isDefinedTermSet[$.keywords[].isDefinedTermSet]   |    <<table_object_definedterm>>
+~$.properties.categories[*].scheme~       | skos:inScheme |               https://schema.org/isDefinedTermSet[$.keywords.isDefinedTermSet]   |    <<table_object_definedterm>>
 
 a| term +
-~$.properties.categories[*].term~       |   @id    |     $.keywords[].@id   |    <<table_object_definedterm>>
+~$.properties.categories[*].term~       |   @id    |     $.keywords.@id   |    <<table_object_definedterm>>
 
 a| title +
 ~$.properties.title~        | dct:title   |             https://schema.org/name[$.name] |    <<table_object_dataset>>
