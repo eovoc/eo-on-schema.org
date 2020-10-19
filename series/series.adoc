@@ -145,6 +145,14 @@ a| name +
 Range: Text
 | One (mandatory)
 
+a| identifier +
+~$.identifier~
+| Identifier given to the collection. `Text` is used or simple identifiers such as ´TropForest´.  `PropertyValue` can be used to include `DOI` information.
+| Domain: Thing +
+Range: Text or Url or PropertyValue +
+See also <<table_object_propertyvalue>>.
+| One or more (mandatory)
+
 
 a| additionalType +
 ~$.additionaltype~
@@ -175,13 +183,6 @@ a| citation +
 Range: Text
 | Zero or one (optional)
 
-a| identifier +
-~$.identifier~
-| Identifier given to the collection.
-| Domain: Thing +
-Range: Text or Url or PropertyValue +
-See also <<table_object_propertyvalue>>.
-| Zero or one (optional)
 
 a| inLanguage +
 ~$.inLanguage~
