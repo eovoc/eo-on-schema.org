@@ -14,7 +14,7 @@
 *** <<231-definedterm,2.3.1 DefinedTerm>>
 ** <<24-spatial-information,2.4 Spatial Information>>
 *** <<241-geoshape,2.4.1 GeoShape>>
-*** <<242-geoshape,2.4.2 GeoCoordinates>>
+*** <<242-geocoordinates,2.4.2 GeoCoordinates>>
 * <<b-property-mapping,B. Property Mapping>>
 * <<c-references,C. References>>
 ** <<c1-normative-references,C.1 Normative References>>
