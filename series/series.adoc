@@ -799,6 +799,26 @@ a| longitude +
 
 ----
 
+.AcquisitionInformation encoding example
+[source,json]
+----
+{
+  "@context": "http://schema.org",
+  "@type": "WatchAction",
+  "actionStatus": "CompletedActionStatus",
+  "agent" : {
+    "@type": "Person",
+    "name": "Kevin Bacon"
+  },
+  "object" : {
+    "@type": "Movie",
+    "name": "Footloose"
+  },
+  "startTime" : "2014-03-01"
+}
+----
+
+
 == B. Property Mapping
 
 === B.1 OGC17-084r1 Metadata
