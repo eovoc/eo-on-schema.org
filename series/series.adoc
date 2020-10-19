@@ -13,6 +13,8 @@
 ** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
 *** <<231-definedterm,2.3.1 DefinedTerm>>
 ** <<24-spatial-information,2.4 Spatial Information>>
+*** <<241-geoshape,2.4.1 GeoShape>>
+*** <<242-geoshape,2.4.2 GeoCoordinates>>
 * <<b-property-mapping,B. Property Mapping>>
 * <<c-references,C. References>>
 ** <<c1-normative-references,C.1 Normative References>>
@@ -654,7 +656,9 @@ Range: URL
 .Spatial information schema
 image::diagrams/GeoShape.png[align="center"]
 
-The complete list of spatial infomation properties is given in <<table_object_spatialinformation>>.
+The encoding proposed by <<https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#spatial-coverage,ESIPFed>> is applicable.
+
+A list of spatial information properties is given in <<table_object_spatialinformation>>.
 
 [#table_object_spatialinformation,reftext='{table-caption} {counter:table-num}']
 .Spatial information object properties
@@ -662,6 +666,26 @@ The complete list of spatial infomation properties is given in <<table_object_sp
 |===
 |JSON Property | Definition | Data type and values | Multiplicity and use
 
+a| spatialCoverage +
+~$.spatialCoverage~
+| TBD.
+| Domain: Dataset +
+Range: Place
+| Zero or one (optional)
+
+a| geo +
+~$.spatialCoverage.geo~
+| TBD.
+| Domain: Place +
+Range: GeoShape (<<table_object_geoshape>>), GeoCoordinates (<<table_object_geocoordinates>>)
+| Zero or one (optional)
+
+a| additionalProperty +
+~$.spatialCoverage.additionalProperty~
+| This property can be used to encode the coordinate reference system as proposed by <<ESIPFed>>, if it differs from `WGS 84`. 
+| Domain: Place +
+Range: PropertyValue  (<<table_object_propertyvalue>>)
+| Zero or one (optional)
 
 |===
 
@@ -674,6 +698,96 @@ The complete list of spatial infomation properties is given in <<table_object_sp
 }
 ----
 
+
+==== 2.4.1 GeoShape
+
+The main https://schema.org/GeoShape[GeoShape] properties are given in <<table_object_geoshape>>.
+
+[#table_object_geoshape,reftext='{table-caption} {counter:table-num}']
+.GeoShape object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @type +
+~$.spatialCoverage.geo.@type~
+| Type of the object. This property has the fixed value "GeoShape".
+| Range: String +
+Fixed value: "GeoShape"
+| One (mandatory)
+
+a| box +
+~$.spatialCoverage.geo.box~
+| A box is the area enclosed by the rectangle formed by two points. The first point is the lower corner, the second point is the upper corner. A box is expressed as two points separated by a space character.  `box` can be used to encode the minimum bounding rectangle defined in `CEOS-BP-014E` <<CEOS-OS-BP>>.
+| Range: Text
+| Zero or one (optional)
+
+a| polygon +
+~$.spatialCoverage.geo.polygon~
+| A polygon is the area enclosed by a point-to-point path for which the starting and ending points are the same. A polygon is expressed as a series of four or more space delimited points where the first and final points are identical.
+| Range: Text
+| Zero or one (optional)
+
+a| line +
+~$.spatialCoverage.geo.box~
+| A line is a point-to-point path consisting of two or more points. A line is expressed as a series of two or more point objects separated by space.
+| Range: Text
+| Zero or one (optional)
+
+|===
+
+.GeoShape encoding example
+[source,json]
+----
+{
+	"@context": "http://schema.org",			
+	"@type": "GeoShape",
+	"polygon": "63.261372 -2.682513 61.997604 -2.695740 61.965195 0.005087 63.227173 0.135472 63.261372 -2.682513"
+}
+----
+
+==== 2.4.2 GeoCoordinates
+
+The main https://schema.org/GeoCoordinates[GeoCoordinates] properties are given in <<table_object_geocoordinates>>.
+
+[#table_object_geocoordinates,reftext='{table-caption} {counter:table-num}']
+.GeoCoordinates object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @type +
+~$.spatialCoverage.geo.@type~
+| Type of the object. This property has the fixed value "GeoCoordinates".
+| Range: String +
+Fixed value: "GeoShape"
+| One (mandatory)
+
+a| latitude +
+~$.spatialCoverage.geo.latitude~
+| The latitude of a location. For example 37.42242 (WGS 84).
+| Range: Text
+| Zero or one (optional)
+
+a| longitude +
+~$.spatialCoverage.geo.longitude~
+| The longitude of a location. For example -122.08585 (WGS 84).
+| Range: Text
+| Zero or one (optional)
+
+|===
+
+.GeoCoordinates encoding example
+[source,json]
+----
+{
+	"@context": "http://schema.org",		
+	"@type": "GeoCoordinates",
+	"latitude": "50.83159",
+   	"longitude": "4.72988"
+}
+
+----
 
 == B. Property Mapping
 
@@ -782,7 +896,8 @@ TBD.
 
 === C.2 Other references
 
-
+[[CEOS-OS-BP]][CEOS-OS-BP]::
+	CEOS OpenSearch Best Practice Document, Version 1.2, http://ceos.org/document_management/Working_Groups/WGISS/Interest_Groups/OpenSearch/CEOS-OPENSEARCH-BP-V1.2.pdf
 [[JSONPath]][JSONPath]::
 	JSONPath, http://goessner.net/articles/JsonPath/index.html
 [[SHACL-UC]][SHACL-UC]::  
