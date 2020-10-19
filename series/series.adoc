@@ -12,6 +12,7 @@
 *** <<225-role,2.2.5 Role>>
 ** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
 *** <<231-definedterm,2.3.1 DefinedTerm>>
+** <<24-spatial-information,2.4 Spatial Information>>
 * <<b-property-mapping,B. Property Mapping>>
 * <<c-references,C. References>>
 ** <<c1-normative-references,C.1 Normative References>>
@@ -647,6 +648,31 @@ Range: URL
 ----
 
 
+=== 2.4 Spatial Information
+
+[#img_object_spatialinformation,reftext='{figure-caption} {counter:figure-num}']
+.Spatial information schema
+image::diagrams/GeoShape.png[align="center"]
+
+The complete list of spatial infomation properties is given in <<table_object_spatialinformation>>.
+
+[#table_object_spatialinformation,reftext='{table-caption} {counter:table-num}']
+.Spatial information object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+
+|===
+
+
+.Spatial information encoding example
+[source,json]
+----
+{
+
+}
+----
 
 
 == B. Property Mapping
