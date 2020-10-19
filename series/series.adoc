@@ -131,6 +131,21 @@ a| @type +
 Fixed value: "Dataset"
 | One (mandatory)
 
+a| description +
+~$.description~
+| A description of the collection.
+| Domain: Thing +
+Range: Text
+| One (mandatory)
+
+a| name +
+~$.name~
+| The name of the collection.
+| Domain: Thing +
+Range: Text
+| One (mandatory)
+
+
 a| additionalType +
 ~$.additionaltype~
 | Unique identifiers (URI) for the type of the resource.  +
@@ -146,19 +161,19 @@ a| @id +
 | Range: URL
 | Zero or one (optional)
 
+a| alternateName +
+~$.alternateName~
+| Alternate name of the collection. Maybe used to refer to the https://idn.ceos.org/[CEOS IDN] shortname of the collection: e.g. `C1532648157-ESA` is the IDN shortname used for the collection with `identifier TropForest`.
+| Domain: Thing +
+Range: Text
+| Zero or more (optional)
+
 a| citation +
 ~$.citation~
 | A bibliographic reference for the resource.
 | Domain: CreativeWork +
 Range: Text
 | Zero or one (optional)
-
-a| description +
-~$.description~
-| A description of the collection.
-| Domain: Thing +
-Range: Text
-| One (mandatory)
 
 a| identifier +
 ~$.identifier~
@@ -175,16 +190,9 @@ a| inLanguage +
 Range: Language or Text
 | Zero or one (optional)
 
-a| name +
-~$.name~
-| The name of the collection.
-| Domain: Thing +
-Range: Text
-| One (mandatory)
-
 a| subjectOf +
 ~$.subjectOf~
-| Version number or other version designation of the resource.
+| Refers to metadata information about the collection.
 | Domain: Thing +
 Range: ListItem (<<table_object_listitem>>)
 | Zero or one (optional)
