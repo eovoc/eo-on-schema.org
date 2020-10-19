@@ -694,14 +694,24 @@ Range: PropertyValue  (<<table_object_propertyvalue>>)
 [source,json]
 ----
 {
-
+	"@context": "http://schema.org",
+	"@type": "Dataset",
+	"name": "OceanSat-2 NRT data",
+	"description": "ESA, in collaboration with GAF AG, acquires and process every day OceanSat-2 passes over Neutrelitz reception station from 1 January 2016.All passes are systematically processed to levels 1B, 2B and 2C, and available for users in NRT (< 3 hours).",
+	"spatialCoverage": {
+		"@type": "Place",
+		"geo": {
+			"@type": "GeoShape",
+			"polygon": "-30 -20 -30 41 70 41 70 -20 -30 -20"
+		}
+	}
 }
 ----
 
 
 ==== 2.4.1 GeoShape
 
-The main https://schema.org/GeoShape[GeoShape] properties are given in <<table_object_geoshape>>.
+A GeoShape is described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.  The main https://schema.org/GeoShape[GeoShape] properties are given in <<table_object_geoshape>>.
 
 [#table_object_geoshape,reftext='{table-caption} {counter:table-num}']
 .GeoShape object properties
