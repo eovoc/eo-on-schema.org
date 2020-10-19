@@ -656,7 +656,7 @@ Range: URL
 .Spatial information schema
 image::diagrams/GeoShape.png[align="center"]
 
-The encoding proposed by <<https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#spatial-coverage,ESIPFed>> is applicable.
+The encoding proposed by https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#spatial-coverage[ESIPFed] is applicable.
 
 A list of spatial information properties is given in <<table_object_spatialinformation>>.
 
@@ -668,14 +668,14 @@ A list of spatial information properties is given in <<table_object_spatialinfor
 
 a| spatialCoverage +
 ~$.spatialCoverage~
-| TBD.
+| Indicates the geographical areas that the dataset describes.
 | Domain: Dataset +
 Range: Place
-| Zero or one (optional)
+| Zero or more (optional)
 
 a| geo +
 ~$.spatialCoverage.geo~
-| TBD.
+| The geo coordinates of the place.
 | Domain: Place +
 Range: GeoShape (<<table_object_geoshape>>), GeoCoordinates (<<table_object_geocoordinates>>)
 | Zero or one (optional)
