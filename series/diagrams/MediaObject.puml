@@ -1,0 +1,40 @@
+@startuml
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+
+Class DataDownload
+Class MediaObject
+Class Language
+
+' using blanks inside () creates separate objects
+
+MediaObject -down-> (URL) : "contentUrl,\nencodingFormat"
+MediaObject -down-> (Text) : "description\nname"
+MediaObject -down-> ( Text ) : "encodingFormat"
+MediaObject -down-> (Text ) : "contentSize"
+
+MediaObject -down-> (  Text ) : "inLanguage"
+MediaObject -right-> Language : "inLanguage"
+
+
+DataDownload .down.|> MediaObject
+
+
+
+@enduml
