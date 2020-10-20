@@ -553,8 +553,17 @@ Range: Text
 [source,json]
 ----
 {
-
-	
+	"@context": "http://schema.org",
+	"@type": "Dataset",
+	"name": "Alos African Coverage ESA archive",
+	"identifier": "ALOS",
+	"description": "ALOS Africa is a collection of the best available (cloud minimal) African coverage acquired by AVNIR-2 and PRISM.",
+	"license": {
+		"@type": "CreativeWork",
+		"description": "Utilisation of this data is subject to ESA's Earth Observation Terms and Conditions",
+		"url": "https://earth.esa.int/eogateway/documents/20142/1614553/Terms-and-Conditions-for-the-utilization-of-Data-provided-by-ESA.pdf"
+	},
+	"conditionsOfAccess": "Fast Registration with immediate access Immediate Access to data upon fast registration. TPM online access list ALOS Africa Online catalogue"
 }
 ----
 
