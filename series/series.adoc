@@ -929,20 +929,6 @@ a| potentialAction +
 }
 ----
 
-.Spatial information encoding example
-[source,json]
-----
-{
- "distribution": [
-      {
-        "@type": "DataDownload",
-        "contentURL": "https://coronavirus.jhu.edu/map.html",
-        "encodingFormat": "text/html",
-        "description": "Coronavirus COVID-19 Global Cases by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU)",
-        "inLanguage": "en-US"
-      }
-}
-----
 
 ==== 2.6.1 MediaObject
 
@@ -1191,9 +1177,9 @@ TBD.
 	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Recommendation 16 July 2020, https://www.w3.org/TR/json-ld11/
 [[LDP]][LDP]::
 	Linked Data Platform 1.0, W3C Recommendation 26 February 2015, https://www.w3.org/TR/ldp/
-[[OGC14-055r2]]::
+[[OGC14-055r2]][OGC14-055r2]::
 	OGC14-055r2, OGC OWS Context GeoJSON Encoding Standard, Version 1.0, https://docs.opengeospatial.org/is/14-055r2/14-055r2.html.
-[[OGC17-084r1]]::
+[[OGC17-084r1]][OGC17-084r1]::
 	OGC17-084r1, EO Collection GeoJSON(-LD) Encoding, TBD.
 [[SHACL]][SHACL]:: 
 	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
