@@ -866,6 +866,13 @@ A list of Related URL properties is given in <<table_object_relatedurl>>.
 |===
 |JSON Property | Definition | Data type and values | Multiplicity and use
 
+a| distribution +
+~$.distribution~
+| tbd.
+| Domain: tbd +
+Range: tbd
+| Zero or more (optional)
+
 a| potentialAction +
 ~$.potentialAction~
 | tbd.
@@ -902,6 +909,21 @@ Range: Action
                         }
                 }
         ]
+}
+----
+
+.Spatial information encoding example
+[source,json]
+----
+{
+ "distribution": [
+      {
+        "@type": "DataDownload",
+        "contentURL": "https://coronavirus.jhu.edu/map.html",
+        "encodingFormat": "text/html",
+        "description": "Coronavirus COVID-19 Global Cases by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU)",
+        "inLanguage": "en-US"
+      }
 }
 ----
 
