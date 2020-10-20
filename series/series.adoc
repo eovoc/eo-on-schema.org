@@ -894,7 +894,7 @@ a| mentions +
 
 a| potentialAction +
 ~$.potentialAction~
-| Offering (See <<OGC14-055r2>>) available for this collection.
+| Offering (See <<OGC14-055r2>>) available for this collection.  Also used with `SearchAction` to provide the url template to be used for product search in this collection.
 | Range: Action (<<table_object_action>>)
 | Zero or more (optional)
 
