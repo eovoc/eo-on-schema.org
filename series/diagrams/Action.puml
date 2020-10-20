@@ -1,0 +1,43 @@
+@startuml
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+
+Class Action
+Class SearchAction
+Class EntryPoint
+Class PropertyValueSpecification
+
+' using blanks inside () creates separate objects
+
+SearchAction .down.|> Action
+
+Action -down-> EntryPoint : "target"
+
+Action -right-> (URL) : "identifier"
+
+EntryPoint -right-> (Text) : "identifier,\ncontentType,\nencodingType,\nhttpMethod,\nurlTemplate"
+
+SearchAction -right-> PropertyValueSpecification : "query-input"
+
+
+
+
+
+
+@enduml
