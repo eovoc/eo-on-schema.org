@@ -1,0 +1,37 @@
+@startuml
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+Class Dataset
+Class DataDownload
+Class MediaObject
+Class Action
+
+
+Dataset -down-> (URL) : "url"
+
+Dataset -right-> MediaObject : "subjectOf,\nmentions"
+
+Dataset -left-> DataDownload : "distribution"
+
+Dataset -up-> Action : "potentialAction"
+
+
+
+
+@enduml
