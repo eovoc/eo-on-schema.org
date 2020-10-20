@@ -10,12 +10,12 @@
 *** <<223-propertyvalue,2.2.3 Contact>>
 *** <<224-organization,2.2.4 Organization>>
 *** <<225-role,2.2.5 Role>>
-** <<23-resource-constraints,2.3. Resource Constraints>>
-** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
-*** <<231-definedterm,2.3.1 DefinedTerm>>
-** <<24-spatial-information,2.4 Spatial Information>>
-*** <<241-geoshape,2.4.1 GeoShape>>
-*** <<242-geocoordinates,2.4.2 GeoCoordinates>>
+** <<23-resource-constraints,2.3 Resource Constraints>>
+** <<24-descriptive-keywords,2.4 Descriptive Keywords>>
+*** <<241-definedterm,2.4.1 DefinedTerm>>
+** <<25-spatial-information,2.5 Spatial Information>>
+*** <<251-geoshape,2.5.1 GeoShape>>
+*** <<252-geocoordinates,2.5.2 GeoCoordinates>>
 * <<b-property-mapping,B. Property Mapping>>
 * <<c-references,C. References>>
 ** <<c1-normative-references,C.1 Normative References>>
@@ -519,8 +519,47 @@ image::diagrams/Role.png[align="center"]
 }
 ----
 
+=== 2.3 Resource Constraints
 
-=== 2.3 Descriptive Keywords
+[#img_object_resourceconstraints,reftext='{figure-caption} {counter:figure-num}']
+.Resource Constraints Schema
+image::diagrams/ResourceConstraints.png[align="center"]
+
+The complete list of Data identification properties is given in <<table_object_resourceconstraints>>.  
+
+[#table_object_resourceconstraints,reftext='{table-caption} {counter:table-num}']
+.Resource Constraints properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| license +
+~$.license~
+| A license document that applies to the content, typically indicated by URL.  Links the collection to its license to document legal constraints.   https://spdx.org[SPDX license list] provides a list of URi for most commonly used licenses. See https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#license[ESIPFed] for additional guidance.
+| Domain: CreativeWork +
+Range: CreativeWork \| URL
+| Zero or more (optional)
+
+a| conditionsOfAccess +
+~$.conditionsofAccess~
+| Conditions that affect the availability of, or method(s) of access to, the collection. 
+| Domain: CreativeWork +
+Range: Text
+| Zero or more (optional)
+
+|===
+
+.Resource Constraints encoding example
+[source,json]
+----
+{
+
+	
+}
+----
+
+
+=== 2.4 Descriptive Keywords
 
 [#img_object_descriptivekeywords,reftext='{figure-caption} {counter:figure-num}']
 .Metadata Descriptive Keywords
@@ -593,7 +632,7 @@ See <<table_object_definedterm>>
 }
 ----
 
-==== 2.3.1 DefinedTerm
+==== 2.4.1 DefinedTerm
 
 [#img_object_definedterm,reftext='{figure-caption} {counter:figure-num}']
 .DefinedTerm schema
@@ -651,7 +690,7 @@ Range: URL
 ----
 
 
-=== 2.4 Spatial Information
+=== 2.5 Spatial Information
 
 [#img_object_spatialinformation,reftext='{figure-caption} {counter:figure-num}']
 .Spatial information schema
@@ -710,7 +749,7 @@ Range: PropertyValue  (<<table_object_propertyvalue>>)
 ----
 
 
-==== 2.4.1 GeoShape
+==== 2.5.1 GeoShape
 
 A GeoShape is described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.  The main https://schema.org/GeoShape[GeoShape] properties are given in <<table_object_geoshape>>.
 
@@ -757,7 +796,7 @@ a| line +
 }
 ----
 
-==== 2.4.2 GeoCoordinates
+==== 2.5.2 GeoCoordinates
 
 The main https://schema.org/GeoCoordinates[GeoCoordinates] properties are given in <<table_object_geocoordinates>>.
 
