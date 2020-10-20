@@ -16,6 +16,7 @@
 ** <<25-spatial-information,2.5 Spatial Information>>
 *** <<251-geoshape,2.5.1 GeoShape>>
 *** <<252-geocoordinates,2.5.2 GeoCoordinates>>
+** <<26-related-url,2.6 Related URL>>
 * <<b-property-mapping,B. Property Mapping>>
 * <<c-references,C. References>>
 ** <<c1-normative-references,C.1 Normative References>>
@@ -848,6 +849,62 @@ a| longitude +
 
 ----
 
+
+=== 2.6 Related URL
+
+[#img_object_relatedurl,reftext='{figure-caption} {counter:figure-num}']
+.Related URL schema
+image::diagrams/RelatedUrl.png[align="center"]
+
+Related URL include both HATEOAS hypermedia links and OGC14-055r2 style `offerings`.
+
+A list of Related URL properties is given in <<table_object_relatedurl>>.
+
+[#table_object_relatedurl,reftext='{table-caption} {counter:table-num}']
+.RelatedUrl object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| potentialAction +
+~$.potentialAction~
+| tbd.
+| Domain: tbd +
+Range: Action
+| Zero or more (optional)
+
+
+
+|===
+
+
+.Spatial information encoding example
+[source,json]
+----
+{
+"potentialAction": [
+                {
+                        "@type": "Action",
+                        "identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/docker/image",
+                        "subjectOf": {
+                                "encodingFormat": "text/plain",
+                                "text": "xxx/yyy/ZZZ:latest"
+                        }
+                },
+                {
+                        "@type": "Action",
+                        "identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/wps",
+                        "target": {
+                                "contentType": "application/xml",
+                                "httpMethod": "GET",
+                                "identifier": "GetCapabilities",
+                                "urlTemplate": "http://tep.esa.int/wps/processing?REQUEST=GetCapabilities&SERVICE=WPS"
+                        }
+                }
+        ]
+}
+----
+
 .AcquisitionInformation encoding example
 [source,json]
 ----
@@ -977,6 +1034,8 @@ TBD.
 	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Recommendation 16 July 2020, https://www.w3.org/TR/json-ld11/
 [[LDP]][LDP]::
 	Linked Data Platform 1.0, W3C Recommendation 26 February 2015, https://www.w3.org/TR/ldp/
+[[OGC14-055r2]]::
+	OGC14-055r2, OGC OWS Context GeoJSON Encoding Standard, Version 1.0, https://docs.opengeospatial.org/is/14-055r2/14-055r2.html.
 [[OGC17-084r1]]::
 	OGC17-084r1, EO Collection GeoJSON(-LD) Encoding, TBD.
 [[SHACL]][SHACL]:: 
