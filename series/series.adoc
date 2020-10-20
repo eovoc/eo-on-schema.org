@@ -902,30 +902,48 @@ a| potentialAction +
 |===
 
 
-.Spatial information encoding example
+.Related URL encoding example
 [source,json]
 ----
 {
-"potentialAction": [
-                {
-                        "@type": "Action",
-                        "identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/docker/image",
-                        "subjectOf": {
-                                "encodingFormat": "text/plain",
-                                "text": "xxx/yyy/ZZZ:latest"
-                        }
-                },
-                {
-                        "@type": "Action",
-                        "identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/wps",
-                        "target": {
-                                "contentType": "application/xml",
-                                "httpMethod": "GET",
-                                "identifier": "GetCapabilities",
-                                "urlTemplate": "http://tep.esa.int/wps/processing?REQUEST=GetCapabilities&SERVICE=WPS"
-                        }
-                }
-        ]
+	"@context": "https://schema.org",
+	"@type": "Dataset",
+	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
+	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
+	"url": "https://earth.esa.int/web/guest/missions/3rd-party-missions/historical-missions/landsat-tmetm",
+	"subjectOf": [
+		{
+			"@type": "DataDownload",
+			"contentUrl": "http://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC?httpAccept=application/vnd.iso.19139-2%2Bxml",
+			"encodingFormat": "application/vnd.iso.19139-2+xml",
+			"name": "ISO 19139-2 metadata",
+			"additionalType": "http://www.iana.org/assignments/relation/alternate"
+		}
+	],
+	"potentialAction": {
+		"@type": "Action",
+		"identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs",
+		"target": [
+			{
+				"@type": "EntryPoint",
+				"identifier": "GetCapabilities",
+				"contentType": [
+					"application/xml"
+				],
+				"urlTemplate": "http://131.176.196.55/wcs?service=WCS&Request=GetCapabilities",
+				"httpMethod": "GET"
+			},
+			{
+				"@type": "EntryPoint",
+				"identifier": "DescribeCoverage",
+				"contentType": [
+					"application/xml"
+				],
+				"urlTemplate": "http://131.176.196.55/wcs?service=WCS&Request=DescribeCoverage&version=2.0.0&CoverageId=LE7_RGB",
+				"httpMethod": "GET"
+			}
+		]
+	}
 }
 ----
 
