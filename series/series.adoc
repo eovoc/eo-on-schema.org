@@ -10,6 +10,7 @@
 *** <<223-propertyvalue,2.2.3 Contact>>
 *** <<224-organization,2.2.4 Organization>>
 *** <<225-role,2.2.5 Role>>
+** <<23-resource-constraints,2.3. Resource Constraints>>
 ** <<23-descriptive-keywords,2.3 Descriptive Keywords>>
 *** <<231-definedterm,2.3.1 DefinedTerm>>
 ** <<24-spatial-information,2.4 Spatial Information>>
