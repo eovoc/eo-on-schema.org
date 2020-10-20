@@ -525,7 +525,7 @@ image::diagrams/Role.png[align="center"]
 .Resource Constraints Schema
 image::diagrams/ResourceConstraints.png[align="center"]
 
-The complete list of Data identification properties is given in <<table_object_resourceconstraints>>.  
+The list of Resource Constraints properties is given in <<table_object_resourceconstraints>>.  
 
 [#table_object_resourceconstraints,reftext='{table-caption} {counter:table-num}']
 .Resource Constraints properties
@@ -535,7 +535,7 @@ The complete list of Data identification properties is given in <<table_object_r
 
 a| license +
 ~$.license~
-| A license document that applies to the content, typically indicated by URL.  Links the collection to its license to document legal constraints.   https://spdx.org[SPDX license list] provides a list of URi for most commonly used licenses. See https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#license[ESIPFed] for additional guidance.
+| A license document that applies to the content, typically indicated by URL.  Links the collection to its license to document legal constraints.   https://spdx.org/licenses[SPDX license list] provides a list of URi for most commonly used licenses. See https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#license[ESIPFed] for additional guidance.
 | Domain: CreativeWork +
 Range: CreativeWork \| URL
 | Zero or more (optional)
