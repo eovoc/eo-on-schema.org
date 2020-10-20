@@ -17,6 +17,8 @@
 *** <<251-geoshape,2.5.1 GeoShape>>
 *** <<252-geocoordinates,2.5.2 GeoCoordinates>>
 ** <<26-related-url,2.6 Related URL>>
+*** <<261-mediaobject,2.6.1 MediaObject>>
+*** <<262-action,2.6.2 Action>>
 * <<b-property-mapping,B. Property Mapping>>
 * <<c-references,C. References>>
 ** <<c1-normative-references,C.1 Normative References>>
@@ -866,20 +868,35 @@ A list of Related URL properties is given in <<table_object_relatedurl>>.
 |===
 |JSON Property | Definition | Data type and values | Multiplicity and use
 
+a| url +
+~$.url~
+| Landing page for the collection.
+| Range: URL
+| Zero or more (optional)
+
+a| subjectOf +
+~$.subjectOf~
+| Reference to metadata representations of the collection.
+| Range: MediaObject (<<table_object_mediaobject>>)
+| Zero or more (optional)
+
 a| distribution +
 ~$.distribution~
-| tbd.
-| Domain: tbd +
-Range: tbd
+| A downloadable form of this dataset, at a specific location, in a specific format.
+| Range: DataDownload (<<table_object_mediaobject>>)
+| Zero or more (optional)
+
+a| mentions +
+~$.mentions~
+| Reference to other media objects related to the collection.  For metadata representations and data downloads, the properties `subjectOf` and `distribution` are preferred instead.
+| Range: MediaObject (<<table_object_mediaobject>>)
 | Zero or more (optional)
 
 a| potentialAction +
 ~$.potentialAction~
-| tbd.
-| Domain: tbd +
-Range: Action
+| Offering (See <<OGC14-055r2>>) available for this collection.
+| Range: Action (<<table_object_action>>)
 | Zero or more (optional)
-
 
 
 |===
@@ -926,6 +943,124 @@ Range: Action
       }
 }
 ----
+
+==== 2.6.1 MediaObject
+
+[#img_object_mediaobject,reftext='{figure-caption} {counter:figure-num}']
+.MediaObject schema
+image::diagrams/MediaObject.png[align="center"]
+
+A `MediaObject` is used to represent hypermedia links.  If the link represents a data download link (`rel="enclosure"`) then also `DataDownload` objects can be used as recommended by <<ESIPFed>>.
+
+
+|===
+| IANA Relation |  schema.org property | schema.org class | Purpose
+
+|  alternate     |  subjectOf  |  MediaObject  |  metadata
+|  via           |  subjectOf  |  MediaObject  |  original metadata
+|  canonical     |  subjectOf  |  MediaObject  |  original metadata
+|  describedby   |  mentions  |  MediaObject  |  documentation
+|  enclosure     |  distribution  |  DataDownload  |  data download
+|  search        |  tbd           |  tbd     |  search
+
+
+|===
+
+A list of MediaObject properties is given in <<table_object_mediaobject>>.
+
+[#table_object_mediaobject,reftext='{table-caption} {counter:table-num}']
+.MediaObject object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @type +
+~$.mentions.@type~
+| Type of the object. This property has the fixed value "MediaObject".
+| Range: String +
+Fixed value: "MediaObject"
+| One (mandatory)
+
+a| contentUrl +
+~$.mentions.contentUrl~
+| URI describing the related resource.
+| Range: URL
+| One (mandatory)
+
+a| encodingFormat +
+~$.mentions.encodingFormat~
+| Hint about the type of the representation that is expected to be returned when the value of contentUrl is dereferenced.  Should be the value of a media type.
+| Range: URL \| Text
+| Zero or one (optional)
+
+a| name +
+~$.mentions.name~
+| Human readable information about the link.
+| Range: Text
+| Zero or one (optional)
+
+a| description +
+~$.mentions.description~
+| description of the link.
+| Range: Text
+| Zero or one (optional)
+
+a| contentSize +
+~$.mentions.contentSize~
+| File size in bytes.
+| Range: Text
+| Zero or one (optional)
+
+a| inLanguage +
+~$.mentions.inLanguage~
+| The language of the content.
+| Range: Text \| Language
+| Zero or one (optional)
+
+|===
+
+
+.MediaObject encoding example
+[source,json]
+----
+{
+	"@context": "http://schema.org",
+	"@type": "MediaObject",
+	"contentUrl": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2",
+	"encodingFormat": "text/html",
+	"name": "ESA Sentinel Online",
+	"inLanguage": "en",
+	"additionalType": "http://www.iana.org/assignments/relation/describedby"
+}
+----
+
+==== 2.6.2 Action
+
+[#img_object_action,reftext='{figure-caption} {counter:figure-num}']
+.Action schema
+image::diagrams/Action.png[align="center"]
+
+A list of MediaObject properties is given in <<table_object_action>>.
+
+[#table_object_action,reftext='{table-caption} {counter:table-num}']
+.Action object properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+
+|===
+
+
+.Action encoding example
+[source,json]
+----
+{
+
+}
+----
+
+
 
 .AcquisitionInformation encoding example
 [source,json]
