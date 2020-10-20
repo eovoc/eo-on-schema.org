@@ -1056,11 +1056,45 @@ A list of MediaObject properties is given in <<table_object_action>>.
 |===
 
 
-.Action encoding example
+.SearchAction encoding example
 [source,json]
 ----
 {
-
+	"@context": "https://schema.org",
+	"@type": "SearchAction",
+	"target": {
+		"@type": "EntryPoint",
+		"contentType": [
+			"application/atom+xml",
+			"application/geo+json"
+		],
+		"urlTemplate": "https://fedeo.esa.int//collections/datasets/items?parentIdentifier=LANDSAT.ETM.GTC&bbox={bbox}&startRecord={startIndex}&limit={limit}",
+		"description": "OpenSearch request template",
+		"httpMethod": "GET"
+	},
+	"query-input": [
+		{
+			"@type": "PropertyValueSpecification",
+			"valueName": "startIndex",
+			"description": "Index of first result",
+			"valueRequired": false,
+			"valuePattern": "[0-9]+"
+		},
+		{
+			"@type": "PropertyValueSpecification",
+			"valueName": "limit",
+			"description": "Number of results",
+			"valueRequired": false,
+			"valuePattern": "[0-9]+"
+		},
+		{
+			"@type": "PropertyValueSpecification",
+			"valueName": "bbox",
+			"description": "Bounding box",
+			"valueRequired": false,
+			"valuePattern": "(-?[0-9]+(.[0-9]+)?),[ ]*(-?[0-9]+(.[0-9]+)?)[ ]*(-?[0-9]+(.[0-9]+)?),[ ]*(-?[0-9]+(.[0-9]+)?)"
+		}
+	]
 }
 ----
 
