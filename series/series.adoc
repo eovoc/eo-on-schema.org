@@ -486,7 +486,7 @@ Range: Organization (Preferred) \| Person
 |===
 
 
-NOTE:
+[WARNING]
 https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#roles-of-people[ESIPFed] uses `Role` as object type for `creator` or `contributor` to be able to associate additional https://schema.org/roleName[roleName]s.  This approach is documented http://blog.schema.org/2014/06/introducing-role.html[here].  However, this does not validate with the Google Rich Results Test tool.
 
 
