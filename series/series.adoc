@@ -1158,24 +1158,69 @@ Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification]
 ----
 
 
-.AcquisitionInformation encoding example
+=== 2.7 Acquisition Information
+
+[#img_object_acquisitioninformation,reftext='{figure-caption} {counter:figure-num}']
+.Related URL schema
+image::diagrams/AcquisitionInformation.png[align="center"]
+
+The `potentialAction` property describes an idealized action in which the `Thing` (i.e. `schema:Dataset`) plays an 'object' role.  To express that the `Dataset` is created/produced by an Earth Observation instrument mounted on a platform, we can use the `CreateAction` which is defined as "The act of deliberately creating/producing/generating/building a result".  The `instrument` property, which refers to one or more objects that helped perform the action, can then be used to associate the Earth Observation instrument and platforms to the Dataset.  We represent both with a `schema:DefinedTerm` which is equivalent to a `skos:Concept`.  Therefore, both instrument and platform can be unambiguously identified using the corresponding `concept schemes` from NASA GCMD or the ESA Thesauri.
+
+A list of Acquisition Information properties is given in <<table_object_acquisitioninformation>>.
+
+[#table_object_acquisitioninformation,reftext='{table-caption} {counter:table-num}']
+.Acquisition information properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @type +
+~$.potentialAction.@type~
+| Type of the object. This property has the fixed value of "CreateAction".
+| Range: String +
+Fixed value: "CreateAction" 
+| One (mandatory)
+
+a| instrument +
+~$.potentialAction.instrument~
+| An object that helped the agent perform the CreateAction.  Is used to link the EO collection to the corresponding EO platform(s) and instrument(s) the data of which was used to produce the collection. 
+| Range: DefinedTerm 
+| Zero or more (optional)
+
+|===
+
+
+.Acquisition encoding example
 [source,json]
 ----
 {
-  "@context": "http://schema.org",
-  "@type": "WatchAction",
-  "actionStatus": "CompletedActionStatus",
-  "agent" : {
-    "@type": "Person",
-    "name": "Kevin Bacon"
-  },
-  "object" : {
-    "@type": "Movie",
-    "name": "Footloose"
-  },
-  "startTime" : "2014-03-01"
+	"@context": "https://schema.org",
+	"@type": "Dataset",
+	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
+	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks.",
+	"potentialAction": {
+		"@type": "CreateAction",
+		"instrument": [
+			{
+				"@type": "DefinedTerm",
+				"@id": "https://earth.esa.int/concept/etm",
+				"sameAs": "http://gcmdservices.gsfc.nasa.gov/kms/concept/4dbe7764-a2ea-4a19-b754-696c35ac3205",
+				"name": "ETM+",
+				"additionalType": "https://earth.esa.int/concept/p-imaging-spectrometers-radiometers",
+				"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/instruments"
+			},
+			{
+				"@type": "DefinedTerm",
+				"@id": "https://earth.esa.int/concept/landsat-7",
+				"sameAs": "http://gcmdservices.gsfc.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4",
+				"name": "Landsat-7",
+				"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms"
+			}
+		]
+	}
 }
 ----
+
 
 
 == B. Property Mapping
