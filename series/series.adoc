@@ -486,13 +486,42 @@ Range: Organization (Preferred) \| Person
 |===
 
 
+NOTE:
+https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#roles-of-people[ESIPFed] uses `Role` as object type for `creator` or `contributor` to be able to associate additional https://schema.org/roleName[roleName]s.  This approach is documented http://blog.schema.org/2014/06/introducing-role.html[here].  However, this does not validate with the Google Rich Results Test tool.
+
+
 .Contact encoding example
 [source,json]
 ----
 {
-- provider
-- publisher
-
+	"@context": "https://schema.org",
+	"@type": "Dataset",
+	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
+	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km.",
+	"author": [
+		{
+			"@type": "Organization",
+			"@id": "https://www.linkedin.com/company/european-space-agency",
+			"email": "eohelp@eo.esa.int",
+			"name": "ESA/ESRIN",
+			"telephone": "+39 06 94180777",
+			"url": "https://earth.esa.int",
+			"address": {
+				"addressCountry": "Italy",
+				"postalCode": "00044",
+				"addressLocality": "Frascati",
+				"streetAddress": "Via Galileo Galilei CP. 64"
+			}
+		}
+	],
+	"creator": {
+		"@type": "Role",
+		"creator": {
+			"@type": "Organization",
+			"@id": "https://www.linkedin.com/company/european-space-agency/"
+		},
+		"roleName": "originator"
+	}
 }
 ----
 
