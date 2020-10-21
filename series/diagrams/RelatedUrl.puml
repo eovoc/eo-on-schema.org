@@ -23,7 +23,7 @@ Class MediaObject
 Class Action
 
 
-Dataset -down-> (URL) : "url"
+Dataset -down-> (URL) : "url,\nthumbnailUrl"
 
 Dataset -right-> MediaObject : "subjectOf,\nmentions"
 
