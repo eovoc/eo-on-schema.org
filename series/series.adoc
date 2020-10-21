@@ -15,7 +15,7 @@ endif::[]
 ** <<22-data-identification,2.2 Data Identification>>
 *** <<221-datadates,2.2.1 DataDates>>
 *** <<222-propertyvalue,2.2.2 PropertyValue>>
-*** <<223-propertyvalue,2.2.3 Contact>>
+*** <<223-contact,2.2.3 Contact>>
 *** <<224-organization,2.2.4 Organization>>
 *** <<225-role,2.2.5 Role>>
 ** <<23-resource-constraints,2.3 Resource Constraints>>
