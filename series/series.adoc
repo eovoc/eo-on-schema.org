@@ -421,9 +421,27 @@ In the example below, PropertyValue is used to associate an https://orcid.org/[O
 .Contact Schema
 image::diagrams/Contact.png[align="center"]
 
-The complete overview of date contact related properties for data is given in <<table_object_contact>>.  
+The complete overview of contact related properties for data is given in <<table_object_contact>>.  
 
-[#table_object_dates,reftext='{table-caption} {counter:table-num}']
+|===
+| ISO19115:2003 Responsible party |  schema.org property | schema.org class | Notes
+
+|  author              |  creator     |  -   |  - 
+|  publisher           |  publisher  |  -  |  -
+|  resourceProvider     |  provider  |  -  |  -
+|  custodian            |          |    |  -
+|  owner                |    |    |  -
+|  user                 |    |    |  -
+|  distributor          |    |    |  -
+|  originator           |      |       |  -
+|  pointOfContact        |      |       |  -
+|  principleInvestigator  |      |       |  -
+|  processor              |      |       |  -
+
+
+|===
+
+[#table_object_contact,reftext='{table-caption} {counter:table-num}']
 .Contact object properties
 [cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
 |===
@@ -432,44 +450,37 @@ The complete overview of date contact related properties for data is given in <<
 
 a| author +
 ~$.author~
-| An entity or agent primarily responsible for authoring the document (role is "Author").
+| Responsible party primarily responsible for authoring the collection (role is "Author").  <<ESIPFed>> recommends using `creator` instead.
 | Domain: CreativeWork +
-Range: Organization, Person, Role
+Range: Organization \| Person \| Role
 | Zero or more (optional)
 
 a| creator +
 ~$.creator~
-| TBD.
+| Responsible party responsible for creating the collection.  Is synonym of `author`.
 | Domain: CreativeWork +
-Range: Organization, Person, Role
-| Zero or more (optional)
-
-a| contactPoint +
-~$.contactPoint~
-| Contact point for the collection (role is "Point of Contact"). TO BE CHECKED (TBD)  Maybe vai "related" -> Organization -> contactPoint
-| Domain: ?? +
-Range: ContactPoint
+Range: Organization \| Person \| Role
 | Zero or more (optional)
 
 a| contributor +
 ~$.contributor~
-| A secondary contributor to the collection (role is "????").
+| A secondary contributor to the collection.
 | Domain: CreativeWork +
-Range: Organization, Person, Role
+Range: Organization \| Person \| Role
 | Zero or more (optional)
 
 a| provider +
 ~$.provider~
-| An entity or agent responsible for providing the collection (role is "Resource Provider").
+| Responsible party responsible for providing the collection.
 | Domain: CreativeWork  +
-Range: Organization or Person
+Range: Organization (Preferred) \| Person
 | Zero or more (optional)
 
 a| publisher +
 ~$.publisher~
-| An entity or agent responsible for publishing the collection (role is "Publisher").
+| Responsible party responsible for publishing the collection.
 | Domain: CreativeWork +
-Range: Organization or Person
+Range: Organization (Preferred) \| Person
 | Zero or more (optional)
 
 |===
