@@ -1051,7 +1051,7 @@ a| inLanguage +
 .Action schema
 image::diagrams/Action.png[align="center"]
 
-A list of MediaObject properties is given in <<table_object_action>>.
+A list of Action properties is given in <<table_object_action>>.
 
 [#table_object_action,reftext='{table-caption} {counter:table-num}']
 .Action object properties
@@ -1059,6 +1059,31 @@ A list of MediaObject properties is given in <<table_object_action>>.
 |===
 |JSON Property | Definition | Data type and values | Multiplicity and use
 
+a| @type +
+~$.potentialAction.@type~
+| Type of the object. This property has the fixed value of "Action" or one of its subclasses e.g. "SearchAction".
+| Range: String +
+Fixed value: "Action" or one of its subclasses
+| One (mandatory)
+
+a| identifier +
+~$.potentialAction.identifier~
+| Provides an identifier for the Action.  In case of actions available through OGC Web services, the `offerings[*].code` identifier defined in <<OGC14-055r2>> can be used here.
+| Range: URL 
+| Zero or one (optional)
+
+a| target +
+~$.potentialAction.target~
+| Indicates a target EntryPoint for an Action.
+| Range: EntryPoint 
+| Zero or one (optional)
+
+a| query-input +
+~$.potentialAction.query-input~
+| https://schema.org/docs/actions.html[Property Annotation] allowing to specify the template parameters in the `target.urlTemplate` property.
+| Domain: SearchAction +
+Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification] 
+| Zero or more (optional)
 
 |===
 
