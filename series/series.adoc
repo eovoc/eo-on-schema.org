@@ -651,8 +651,9 @@ See <<table_object_definedterm>>
 .DefinedTerm schema
 image::diagrams/DefinedTerm.png[align="center"]
 
-The complete list of DefinedTerm properties is given in <<table_object_definedterm>>.
+A https://schema.org/DefinedTerm[DefinedTerm] represents a word, name, acronym, phrase, etc. with a formal definition.  It is similar to a <<SKOS>> concept.
 
+The complete list of DefinedTerm properties is given in <<table_object_definedterm>>.
 
 [#table_object_definedterm,reftext='{table-caption} {counter:table-num}']
 .DefinedTerm object properties
@@ -669,20 +670,33 @@ Fixed value: "DefinedTerm"
 
 a| @id +
 ~$.keywords[*].@id~
-| Identification of the keyword (URI).
+| Identification of the keyword (URI).  E.g. the URI of a `skos:Concept`.
 | Range: URL
 | Zero or one (optional)
 
+a| sameAs +
+~$.keywords[*].sameAs~
+| URL unambiguously indicating the item's identity.  Similar to `skos:exactMatch`.
+| Range: URL
+| Zero or more (optional)
+
 a| name +
 ~$.keywords[*].name~
-| Human readable representation of the keyword.
+| Human readable representation of the keyword.  For a `skos:Concept`, this may correspond to the `skos:prefLabel` or `skos:altLabel` properties.
 | Domain: DefinedTerm +
 Range: Text 
 | Zero or one (optional)
 
 a| inDefinedTermSet +
 ~$.keywords[*].inDefinedTermSet~
-| Identification of the code list or scheme defining the keyword.
+| Identification of the code list or scheme defining the keyword.  For a `skos:Concept`, this corresponds to the `skos:inScheme` property.
+| Domain: DefinedTerm +
+Range: URL 
+| Zero or one (optional)
+
+a| additionalType +
+~$.keywords[*].additionalType~
+| Identification of the code list or scheme defining the keyword.  For a `skos:Concept`, the URI of a `skos:broader` concept can be used as well.  In the instrument example below, this property is used to represent the instrument type.
 | Domain: DefinedTerm +
 Range: URL 
 | Zero or one (optional)
@@ -690,7 +704,7 @@ Range: URL
 |===
 
 
-.DefinedTerm encoding example
+.DefinedTerm encoding example (Science keyword)
 [source,json]
 ----
 {
@@ -702,6 +716,19 @@ Range: URL
 }
 ----
 
+.DefinedTerm encoding example (Instrument)
+[source,json]
+----
+{
+	"@type": "DefinedTerm",
+	"@id": "https://earth.esa.int/concept/etm",
+	"sameAs": "http://gcmdservices.gsfc.nasa.gov/kms/concept/4dbe7764-a2ea-4a19-b754-696c35ac3205",
+	"termCode": "4dbe7764-a2ea-4a19-b754-696c35ac3205",
+	"name": "ETM+",
+	"additionalType": "https://earth.esa.int/concept/p-imaging-spectrometers-radiometers",
+	"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/instruments"
+}
+----
 
 === 2.5 Spatial Information
 
@@ -1184,7 +1211,7 @@ Fixed value: "CreateAction"
 a| instrument +
 ~$.potentialAction.instrument~
 | An object that helped the agent perform the CreateAction.  Is used to link the EO collection to the corresponding EO platform(s) and instrument(s) the data of which was used to produce the collection. 
-| Range: DefinedTerm 
+| Range: DefinedTerm (<<table_object_definedterm>>)
 | Zero or more (optional)
 
 |===
@@ -1338,6 +1365,8 @@ TBD.
 	OGC17-084r1, EO Collection GeoJSON(-LD) Encoding, TBD.
 [[SHACL]][SHACL]:: 
 	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
+[[SKOS]][SKOS]:: 
+	SKOS Simple Knowledge Organization System, Reference, W3C Recommendation 18 August 2009, https://www.w3.org/TR/skos-reference/
 
 === C.2 Other references
 
