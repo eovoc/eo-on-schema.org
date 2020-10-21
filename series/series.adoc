@@ -1074,8 +1074,8 @@ a| identifier +
 
 a| target +
 ~$.potentialAction.target~
-| Indicates a target EntryPoint for an Action.
-| Range: EntryPoint 
+| Indicates a target EntryPoint for an Action.  Instead of an EntryPoint, the `target.urlTemplate` property can be used directly as well (Text), as explained https://schema.org/docs/actions.html[here]. 
+| Range: https://schema.org/EntryPoint[EntryPoint] | Text
 | Zero or one (optional)
 
 a| query-input +
@@ -1088,7 +1088,7 @@ Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification]
 |===
 
 
-.SearchAction encoding example
+.SearchAction encoding example (Long)
 [source,json]
 ----
 {
@@ -1100,7 +1100,7 @@ Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification]
 			"application/atom+xml",
 			"application/geo+json"
 		],
-		"urlTemplate": "https://fedeo.esa.int//collections/datasets/items?parentIdentifier=LANDSAT.ETM.GTC&bbox={bbox}&startRecord={startIndex}&limit={limit}",
+		"urlTemplate": "https://fedeo.esa.int/collections/datasets/items?parentIdentifier=LANDSAT.ETM.GTC&bbox={bbox}&startRecord={startIndex}&limit={limit}",
 		"description": "OpenSearch request template",
 		"httpMethod": "GET"
 	},
@@ -1130,6 +1130,31 @@ Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification]
 }
 ----
 
+.SearchAction encoding example (Short)
+[source,json]
+----
+{
+	"@context": "https://schema.org",
+	"@type": "SearchAction",
+	"target": "https://fedeo.esa.int/collections/series/items?startRecord={startIndex}&limit={limit}",
+	"query-input": [
+		{
+			"@type": "PropertyValueSpecification",
+			"valueName": "startIndex",
+			"description": "Index of first result",
+			"valueRequired": false,
+			"valuePattern": "[0-9]+"
+		},
+		{
+			"@type": "PropertyValueSpecification",
+			"valueName": "limit",
+			"description": "Number of results",
+			"valueRequired": false,
+			"valuePattern": "[0-9]+"
+		}
+	]
+}
+----
 
 
 .AcquisitionInformation encoding example
