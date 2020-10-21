@@ -858,7 +858,24 @@ a| longitude +
 .Related URL schema
 image::diagrams/RelatedUrl.png[align="center"]
 
-Related URL include both HATEOAS hypermedia links and OGC14-055r2 style `offerings`.
+Related URL cover both HATEOAS hypermedia links and OGC14-055r2 style `offerings`.
+
+A `MediaObject` is used to represent most hypermedia links.  If the link represents a data download link (`rel="enclosure"`) then also `DataDownload` objects can be used as recommended by <<ESIPFed>>.
+
+|===
+| IANA Relation |  schema.org property | schema.org class | Purpose
+
+|  alternate     |  subjectOf  |  MediaObject  |  metadata
+|  via           |  subjectOf  |  MediaObject  |  original metadata
+|  canonical     |  subjectOf  |  MediaObject  |  original metadata
+|  describedby   |  url        |  URL  |  documentation (landing page)
+|  describedby   |  mentions  |  MediaObject  |  documentation
+|  enclosure     |  distribution  |  DataDownload  |  data download
+|  icon          |  thumbnailUrl  |  URL  |  data preview (quicklook)
+|  search        |  potentialAction    |  Action     |  search
+
+
+|===
 
 A list of Related URL properties is given in <<table_object_relatedurl>>.
 
@@ -896,6 +913,12 @@ a| potentialAction +
 ~$.potentialAction~
 | Offering (See <<OGC14-055r2>>) available for this collection.  Also used with `SearchAction` to provide the url template to be used for product search in this collection.
 | Range: Action (<<table_object_action>>)
+| Zero or more (optional)
+
+a| thumbnailUrl +
+~$.thumbnailUrl~
+| Thumbnail or quicklook image representing the collection.
+| Range: URL
 | Zero or more (optional)
 
 
@@ -953,22 +976,6 @@ a| potentialAction +
 [#img_object_mediaobject,reftext='{figure-caption} {counter:figure-num}']
 .MediaObject schema
 image::diagrams/MediaObject.png[align="center"]
-
-A `MediaObject` is used to represent hypermedia links.  If the link represents a data download link (`rel="enclosure"`) then also `DataDownload` objects can be used as recommended by <<ESIPFed>>.
-
-
-|===
-| IANA Relation |  schema.org property | schema.org class | Purpose
-
-|  alternate     |  subjectOf  |  MediaObject  |  metadata
-|  via           |  subjectOf  |  MediaObject  |  original metadata
-|  canonical     |  subjectOf  |  MediaObject  |  original metadata
-|  describedby   |  mentions  |  MediaObject  |  documentation
-|  enclosure     |  distribution  |  DataDownload  |  data download
-|  search        |  tbd           |  tbd     |  search
-
-
-|===
 
 A list of MediaObject properties is given in <<table_object_mediaobject>>.
 
