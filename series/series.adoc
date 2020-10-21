@@ -1191,7 +1191,7 @@ Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification]
 .Acquisition Information schema
 image::diagrams/AcquisitionInformation.png[align="center"]
 
-The `potentialAction` property describes an idealized action in which the `Thing` (i.e. `schema:Dataset`) plays an 'object' role.  To express that the `Dataset` is created/produced by an Earth Observation instrument mounted on a platform, we can use the `CreateAction` which is defined as "The act of deliberately creating/producing/generating/building a result".  The `instrument` property, which refers to one or more objects that helped perform the action, can then be used to associate the Earth Observation instrument and platforms to the Dataset.  We represent both with a `schema:DefinedTerm` which is equivalent to a `skos:Concept`.  Therefore, both instrument and platform can be unambiguously identified using the corresponding `concept schemes` from NASA GCMD or the ESA Thesauri.
+The `potentialAction` property describes an idealized action in which the `Thing` (i.e. `schema:Dataset`) plays an 'object' role.  To express that the `Dataset` is created/produced by an Earth Observation instrument mounted on a platform, we can use the https://schema.org/CreateAction[CreateAction] which is defined as "The act of deliberately creating/producing/generating/building a result".  The `instrument` property, which refers to one or more objects that helped perform the action, can then be used to associate the Earth Observation instrument and platforms to the Dataset.  We represent both with a `schema:DefinedTerm` which is equivalent to a `skos:Concept`.  Therefore, both instrument and platform can be unambiguously identified using the corresponding `concept schemes` from NASA GCMD or the ESA Thesauri.
 
 A list of Acquisition Information properties is given in <<table_object_acquisitioninformation>>.
 
@@ -1203,7 +1203,7 @@ A list of Acquisition Information properties is given in <<table_object_acquisit
 
 a| @type +
 ~$.potentialAction.@type~
-| Type of the object. This property has the fixed value of "CreateAction".
+| Type of the object. This property has the fixed value of "https://schema.org/CreateAction[CreateAction]".
 | Range: String +
 Fixed value: "CreateAction" 
 | One (mandatory)
@@ -1217,7 +1217,7 @@ a| instrument +
 |===
 
 
-.Acquisition encoding example
+.Acquisition Information encoding example
 [source,json]
 ----
 {
