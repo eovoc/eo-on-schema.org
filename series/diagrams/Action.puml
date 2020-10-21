@@ -29,6 +29,8 @@ SearchAction .down.|> Action
 
 Action -down-> EntryPoint : "target"
 
+Action -left-> (Text ) : "target"
+
 Action -right-> (URL) : "identifier"
 
 EntryPoint -right-> (Text) : "identifier,\ncontentType,\nencodingType,\nhttpMethod,\nurlTemplate"
