@@ -822,7 +822,7 @@ a| @type +
 ~$.spatialCoverage.geo.@type~
 | Type of the object. This property has the fixed value "GeoCoordinates".
 | Range: String +
-Fixed value: "GeoShape"
+Fixed value: "GeoCoordinates"
 | One (mandatory)
 
 a| latitude +
