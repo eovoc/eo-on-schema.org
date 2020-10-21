@@ -19,6 +19,7 @@
 ** <<26-related-url,2.6 Related URL>>
 *** <<261-mediaobject,2.6.1 MediaObject>>
 *** <<262-action,2.6.2 Action>>
+** <<27-acquisition-information,2.7 Acquisition Information>>
 * <<b-property-mapping,B. Property Mapping>>
 * <<c-references,C. References>>
 ** <<c1-normative-references,C.1 Normative References>>
