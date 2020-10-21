@@ -1188,7 +1188,7 @@ Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification]
 === 2.7 Acquisition Information
 
 [#img_object_acquisitioninformation,reftext='{figure-caption} {counter:figure-num}']
-.Related URL schema
+.Acquisition Information schema
 image::diagrams/AcquisitionInformation.png[align="center"]
 
 The `potentialAction` property describes an idealized action in which the `Thing` (i.e. `schema:Dataset`) plays an 'object' role.  To express that the `Dataset` is created/produced by an Earth Observation instrument mounted on a platform, we can use the `CreateAction` which is defined as "The act of deliberately creating/producing/generating/building a result".  The `instrument` property, which refers to one or more objects that helped perform the action, can then be used to associate the Earth Observation instrument and platforms to the Dataset.  We represent both with a `schema:DefinedTerm` which is equivalent to a `skos:Concept`.  Therefore, both instrument and platform can be unambiguously identified using the corresponding `concept schemes` from NASA GCMD or the ESA Thesauri.
