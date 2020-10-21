@@ -1075,7 +1075,7 @@ a| identifier +
 a| target +
 ~$.potentialAction.target~
 | Indicates a target EntryPoint for an Action.  Instead of an EntryPoint, the `target.urlTemplate` property can be used directly as well (Text), as explained https://schema.org/docs/actions.html[here]. 
-| Range: https://schema.org/EntryPoint[EntryPoint] | Text
+| Range: https://schema.org/EntryPoint[EntryPoint] \| Text
 | Zero or one (optional)
 
 a| query-input +
