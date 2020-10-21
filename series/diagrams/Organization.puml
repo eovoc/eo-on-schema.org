@@ -19,14 +19,16 @@ linetype Ortho
 
 Class Dataset
 Class Organization
+Class PostalAddress
 
 
 
-Dataset -down-> Organization : "publisher,\nprovider"
-Organization -right-> (Text) : "name,\nlegalName,\ndescription"
+Dataset -right-> Organization : "publisher,\nprovider"
 
-Organization -down-> (URL) : "@id,\nurl,\nsameAs"
+Organization -right-> PostalAddress : "address"
 
+Organization -down-> (URL) : "url"
+Organization -down-> (Text) : "name,\ntelephone,\nfaxNumber,\nemail"
 
 
 @enduml
