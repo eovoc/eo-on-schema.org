@@ -1,5 +1,13 @@
 [[Chapter-3]]
 
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 == Table of contents
 
 * <<2-eo-collections,2. EO Collections>>
@@ -887,6 +895,9 @@ image::diagrams/RelatedUrl.png[align="center"]
 Related URL cover both HATEOAS hypermedia links and OGC14-055r2 style `offerings`.
 
 A `MediaObject` is used to represent most hypermedia links.  If the link represents a data download link (`rel="enclosure"`) then also `DataDownload` objects can be used as recommended by <<ESIPFed>>.
+
+[NOTE] 
+The (pending) https://schema.org/LinkRole[LinkRole] class can represent URL with an IANA link registry relation via https://schema.org/linkRelationship[linkRelationship].  This class does not have a `contentType` property however, therefore `MediaObject` and `DataDownload` are used instead.
 
 |===
 | IANA Relation |  schema.org property | schema.org class | Purpose
