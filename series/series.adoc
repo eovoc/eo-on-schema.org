@@ -421,25 +421,8 @@ In the example below, PropertyValue is used to associate an https://orcid.org/[O
 .Contact Schema
 image::diagrams/Contact.png[align="center"]
 
-The complete overview of contact related properties for data is given in <<table_object_contact>>.  
+The list of contact related properties is given in <<table_object_contact>>.  
 
-|===
-| ISO19115:2003 Responsible party |  schema.org property | schema.org class | Notes
-
-|  author              |  creator     |  -   |  - 
-|  publisher           |  publisher  |  -  |  -
-|  resourceProvider     |  provider  |  -  |  -
-|  custodian            |          |    |  -
-|  owner                |    |    |  -
-|  user                 |    |    |  -
-|  distributor          |    |    |  -
-|  originator           |      |       |  -
-|  pointOfContact        |      |       |  -
-|  principleInvestigator  |      |       |  -
-|  processor              |      |       |  -
-
-
-|===
 
 [#table_object_contact,reftext='{table-caption} {counter:table-num}']
 .Contact object properties
@@ -451,36 +434,31 @@ The complete overview of contact related properties for data is given in <<table
 a| author +
 ~$.author~
 | Responsible party primarily responsible for authoring the collection (role is "Author").  <<ESIPFed>> recommends using `creator` instead.
-| Domain: CreativeWork +
-Range: Organization \| Person \| Role
+| Range: Organization \| Person \| Role
 | Zero or more (optional)
 
 a| creator +
 ~$.creator~
 | Responsible party responsible for creating the collection.  Is synonym of `author`.
-| Domain: CreativeWork +
-Range: Organization \| Person \| Role
+| Range: Organization \| Person \| Role
 | Zero or more (optional)
 
 a| contributor +
 ~$.contributor~
 | A secondary contributor to the collection.
-| Domain: CreativeWork +
-Range: Organization \| Person \| Role
+| Range: Organization \| Person \| Role
 | Zero or more (optional)
 
 a| provider +
 ~$.provider~
 | Responsible party responsible for providing the collection.
-| Domain: CreativeWork  +
-Range: Organization (Preferred) \| Person
+| Range: Organization (Preferred) \| Person
 | Zero or more (optional)
 
 a| publisher +
 ~$.publisher~
 | Responsible party responsible for publishing the collection.
-| Domain: CreativeWork +
-Range: Organization (Preferred) \| Person
+| Range: Organization (Preferred) \| Person
 | Zero or more (optional)
 
 |===
