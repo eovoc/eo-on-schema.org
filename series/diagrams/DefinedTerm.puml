@@ -26,9 +26,9 @@ Class DefinedTerm
 Dataset -right-> DefinedTerm : "keywords"
 
 
-DefinedTerm --> (Text) : "name"
-DefinedTerm --> (URL) : "@id"
-DefinedTerm -right-> (URL) : "isDefinedTermSet"
+DefinedTerm --> (URL) : "@id,\nsameAs"
+DefinedTerm --> (Text) : "name,\ntermCode"
+DefinedTerm -right-> (URL ) : "inDefinedTermSet"
 
 
 
