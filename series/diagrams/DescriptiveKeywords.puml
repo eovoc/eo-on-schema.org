@@ -22,15 +22,19 @@ linetype Ortho
 
 Class Dataset
 Class DefinedTerm
+Class Thing
+Class PropertyValue
 
-Dataset -right-> (Text) : "keywords"
+
+Dataset --> (Text ) : "variableMeasured"
+
+Dataset -down-> (Text) : "keywords"
 
 Dataset -right-> DefinedTerm : "keywords"
 
-DefinedTerm --> (Text) : "name"
-DefinedTerm --> (URL) : "@id"
-DefinedTerm -right-> (URL) : "isDefinedTermSet"
+Dataset -up-> Thing : "about"
 
+Dataset -left-> PropertyValue : "variableMeasured"
 
 
 @enduml
