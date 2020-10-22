@@ -767,7 +767,7 @@ a| variableMeasured +
 		{
 			"@type": "DefinedTerm",
 			"@id": "https://earth.esa.int/concept/ocean-temperature",
-			"inDefinedTermSet": "http://www.eionet.europa.eu/gemet/",
+			"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/earth-topics",
 			"name": "Ocean Temperature"
 		}
 	],
