@@ -686,7 +686,6 @@ The complete list of descriptive keyword properties is given in <<table_object_d
 a| keywords +
 ~$.keywords~
 | Free keywords not belonging to a controlled vocabulary, or keywords from a controlled vocabulary related to the resource.  
-| Domain: CreativeWork
 | Range: Text \| URL \| DefinedTerm +
 See <<table_object_definedterm>>
 | Zero or more (optional)
@@ -694,14 +693,12 @@ See <<table_object_definedterm>>
 a| about +
 ~$.about~
 | The subject matter of the content;  Can be free keywords not belonging to a controlled vocabulary.  
-| Domain: CreativeWork
 | Range: Thing
 | Zero or more (optional)
 
 a| variableMeasured +
 ~$.variableMeasured~
 | The variableMeasured property (pending) can indicate a variables that is measured in the dataset, either described as text or as pairs of identifier and description using PropertyValue.  See https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#variables[ESIPFed] for a detailed explanation. 
-| Domain: CreativeWork
 | Range: Text \| PropertyValue
 | Zero or more (optional)
 
