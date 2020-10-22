@@ -19,22 +19,24 @@ ArrowColor Black
 linetype Ortho
 }
 
-Class Dataset
+' Class Dataset
 Class Role
 Class Person
-Class PropertyValue
+'Class PropertyValue
+Class Organization
 
 
 
-Dataset -down-> Role : "creator,\ncontributor,\nauthor"
-Role -down-> Person : "creator,\ncontributor,\nauthor"
-Person -right-> PropertyValue : "identifier"
+' Dataset -down-> Role : "creator,\ncontributor,\nauthor"
+Role -left-> Person : "creator,\ncontributor,\nauthor,\npublisher,\nprovider"
+Role -right-> Organization : "creator,\ncontributor,\nauthor,\npublisher,\nprovider"
+' Person -right-> PropertyValue : "identifier"
 
-Role -right-> (Text.) : "roleName,\ndescription" 
-Role -left-> (URL.) : "url,\nsameAs" 
+Role -down-> (Text.) : "roleName,\ndescription" 
+' Role -left-> (URL.) : "url,\nsameAs" 
 
-Person --> (Text) : "name,\nfamilyName,\ngivenName" 
-Person -left-> (URL) : "url,\nsameAs" 
+' Person --> (Text) : "name,\nfamilyName,\ngivenName" 
+' Person -left-> (URL) : "url,\nsameAs" 
 
 
 

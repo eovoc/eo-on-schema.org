@@ -17,18 +17,19 @@ ArrowColor Black
 linetype Ortho
 }
 
-
 Class Organization
 Class PostalAddress
+Class Person
+Class PropertyValue
 
+Person -right-> PostalAddress : "address"
 
+Person -down-> (URL) : "@id,\nurl,\nsameAs"
+Person -down-> (Text) : "name,\nfamilyName,\ngivenName,\ntelephone,\nfaxNumber,\nemail"
 
-' Dataset -right-> Organization : "publisher,\nprovider"
+Person -up-> Organization: "affiliation,\nmemberOf"
 
-Organization -right-> PostalAddress : "address"
-
-Organization -down-> (URL) : "@id,\nurl"
-Organization -down-> (Text) : "name,\ntelephone,\nfaxNumber,\nemail"
+Person -left-> PropertyValue : "identifier"
 
 
 @enduml
