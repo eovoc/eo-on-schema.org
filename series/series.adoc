@@ -563,6 +563,8 @@ The list of Person properties is fully defined in https://schema.org/Person[sche
 .Role Schema
 image::diagrams/Role.png[align="center"]
 
+The list of Role properties is defined in https://schema.org/Role[schema:Role] and not repeated here. 
+
 `Role` can be used in combination with a `Person` or `Organization`.
 The https://schema.org/roleName[schema:roleName] property can be used to encode [`CI_RoleCode`] values from https://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml[ISO19115:2003] or https://wiki.esipfed.org/ISO_19115-3_Codelists#CI_RoleCode[ISO19115-3] (*) for which https://schema.org/roleName[schema:Dataset] does not have a corresponding property.  
 
