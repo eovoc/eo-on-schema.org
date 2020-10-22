@@ -29,6 +29,7 @@ endif::[]
 *** <<261-mediaobject,2.6.1 MediaObject>>
 *** <<262-action,2.6.2 Action>>
 ** <<27-acquisition-information,2.7 Acquisition Information>>
+* <<a-media-types-for-data-encoding,A. Media Types for Data Encoding>>
 * <<b-property-mapping,B. Property Mapping>>
 * <<c-references,C. References>>
 ** <<c1-normative-references,C.1 Normative References>>
@@ -1348,6 +1349,20 @@ a| instrument +
 ----
 
 
+== A. Media Types for Data Encoding
+
+When representations are delivered using HTTP, the following MIME media types shall be used:
+
+|===
+| Media type | Description
+
+| application/ld+json;profile="http://schema.org"     |  JSON-LD representation with all context information within the body of the document.
+
+| text/turtle;profile="http://schema.org"           |  Turtle representation with all context information within the body of the document.
+
+| application/rdf+xml;profile="http://schema.org"   |  RDF/XML representation with all context information within the body of the document.
+
+|===
 
 == B. Property Mapping
 
