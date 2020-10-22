@@ -17,7 +17,8 @@ endif::[]
 *** <<222-propertyvalue,2.2.2 PropertyValue>>
 *** <<223-contact,2.2.3 Contact>>
 *** <<224-organization,2.2.4 Organization>>
-*** <<225-role,2.2.5 Role>>
+*** <<225-person,2.2.5 Person>>
+*** <<226-role,2.2.6 Role>>
 ** <<23-resource-constraints,2.3 Resource Constraints>>
 ** <<24-descriptive-keywords,2.4 Descriptive Keywords>>
 *** <<241-definedterm,2.4.1 DefinedTerm>>
@@ -553,8 +554,23 @@ The list of Organization properties is fully defined in https://schema.org/Organ
 }
 ----
 
+==== 2.2.5 Person
 
-==== 2.2.5 Role
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.Person Schema
+image::diagrams/Person.png[align="center"]
+
+The list of Person properties is fully defined in https://schema.org/Person[schema:Person] and not repeated here.  
+
+.Person encoding example
+[source,json]
+----
+{
+
+}
+----
+
+==== 2.2.6 Role
 
 [#img_object_role,reftext='{figure-caption} {counter:figure-num}']
 .Role Schema
