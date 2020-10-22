@@ -23,15 +23,10 @@ Class Person
 Class Role
 
 
-Dataset ..> Organization : "author"
-Dataset --> Organization : "publisher,\nprovider,\ncreator,\ncontributor"
+Dataset -right-> Organization : "(creator),\n(contributor),\n(author),\npublisher,\nprovider"
 
-Dataset --> Person : "creator,\ncontributor"
-Dataset --> Role : "creator,\ncontributor"
-Role --> Person : "creator,\ncontributor"
-Dataset ..> Person : "publisher,\nauthor,\nprovider"
-
-Person --> Organization: "affiliation"
+Dataset -left-> Person : "creator,\ncontributor,\n(author),\n(publisher),\n(provider)"
+Dataset --> Role : "creator,\ncontributor,\n(author),\npublisher,\nprovider"
 
 
 
