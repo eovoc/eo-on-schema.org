@@ -374,7 +374,7 @@ a| url +
 
 |===
 
-In the example below, PropertyValue is used to associate a DOI identifier to a Dataset.
+In the example below, PropertyValue is used to associate a https://doi.org[DOI] identifier to a Dataset.
 
 .PropertyValue encoding example (DOI)
 [source,json]
@@ -401,8 +401,7 @@ In the example below, PropertyValue is used to associate an https://orcid.org/[O
 [source,json]
 ----
 {
-	"@context": "https://schema.org/",
-	
+	"@context": "https://schema.org/",	
 	"@type": "Person",
 	"name": "Christopher J. Merchant",
 	"url": "https://publons.com/researcher/2543185/christopher-j-merchant/",
@@ -566,7 +565,17 @@ The list of Person properties is fully defined in https://schema.org/Person[sche
 [source,json]
 ----
 {
-
+	"@context": "https://schema.org/",
+	"@type": "Person",
+	"name": "Christopher J. Merchant",
+	"url": "https://publons.com/researcher/2543185/christopher-j-merchant/",
+	"identifier": {
+		"@id": "https://orcid.org/0000-0003-4687-9850",
+		"@type": "PropertyValue",
+		"propertyID": "https://registry.identifiers.org/registry/orcid",
+		"url": "https://orcid.org/0000-0003-4687-9850",
+		"value": "orcid:0000-0003-4687-9850"
+	}
 }
 ----
 
@@ -580,8 +589,24 @@ image::diagrams/Role.png[align="center"]
 [source,json]
 ----
 {
-
-
+	"@context": "https://schema.org/",
+	"@type": "Dataset",
+	"contributor": {
+		"@type": "Role",
+		"roleName": "principalInvestigator",
+		"contributor": {
+			"@type": "Person",
+			"name": "Christopher J. Merchant",
+			"url": "https://publons.com/researcher/2543185/christopher-j-merchant/",
+			"identifier": {
+				"@id": "https://orcid.org/0000-0003-4687-9850",
+				"@type": "PropertyValue",
+				"propertyID": "https://registry.identifiers.org/registry/orcid",
+				"url": "https://orcid.org/0000-0003-4687-9850",
+				"value": "orcid:0000-0003-4687-9850"
+			}
+		}
+	}
 }
 ----
 
