@@ -754,6 +754,33 @@ a| variableMeasured +
 }
 ----
 
+.Descriptive keywords encoding example
+[source,json]
+{
+	"@context": "https://schema.org/",
+	"@type": "Dataset",
+	"@id": "https://fedeo.esa.int/collections/series/items/e0659b01259145c8bfb0de6eb12c2690",
+	"name": "ESA Sea Surface Temperature Climate Change Initiative (ESA SST CCI): GHRSST Multi-Product ensemble (GMPE)",
+	"url": "https://catalogue.ceda.ac.uk/uuid/e0659b01259145c8bfb0de6eb12c2690",
+	"about": "Sea Surface Temperature",
+	"keywords": [
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://earth.esa.int/concept/ocean-temperature",
+			"inDefinedTermSet": "http://www.eionet.europa.eu/gemet/",
+			"name": "Ocean Temperature"
+		}
+	],
+	"variableMeasured": {
+		"@type": "PropertyValue",
+		"propertyID": "gradient_fields",
+		"name": "Horizontal SST gradients of input analyses",
+		"unitText": "kelvin m-1",
+		"description": "Horizontal SST gradients of input analyses"
+	}
+}
+----
+
 ==== 2.4.1 DefinedTerm
 
 [#img_object_definedterm,reftext='{figure-caption} {counter:figure-num}']
