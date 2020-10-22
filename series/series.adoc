@@ -585,9 +585,10 @@ The list of Person properties is fully defined in https://schema.org/Person[sche
 .Role Schema
 image::diagrams/Role.png[align="center"]
 
+`Role` can be used in combination with a `Person` or `Organization`.
 The https://schema.org/roleName[schema:roleName] property can be used to encode [`CI_RoleCode`] values from https://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml[ISO19115:2003] or https://wiki.esipfed.org/ISO_19115-3_Codelists#CI_RoleCode[ISO19115-3] (*) for which https://schema.org/roleName[schema:Dataset] does not have a corresponding property.  
 
-The following roles are directly supported by https://schema.org/Dataset[schema:Dataset]:
+The following roles are directly supported as property of https://schema.org/Dataset[schema:Dataset] and do not require an intermediate https://schema.org/Role[schema:Role] object:
 
 *  author   
 *  contributor
@@ -596,7 +597,7 @@ The following roles are directly supported by https://schema.org/Dataset[schema:
 *  publisher           
 *  resourceProvider (encode as provider)  
 
-Other roles can be used as values for https://schema.org/roleName[schema:roleName].  It is recommended to reuse `Ci_RoleCode` values from https://wiki.esipfed.org/ISO_19115-3_Codelists#CI_RoleCode[ISO19115-3] where possible, e.g.
+Other roles can be used as values for https://schema.org/roleName[schema:roleName].  It is recommended to reuse `CI_RoleCode` values from https://wiki.esipfed.org/ISO_19115-3_Codelists#CI_RoleCode[ISO19115-3] where possible, e.g.
 
 *  coAuthor (*)
 *  collaborator (*)
