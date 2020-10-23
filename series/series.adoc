@@ -403,7 +403,7 @@ https://idn.ceos.org/[CEOS IDN] collection identifiers are currently not registe
 [source,json]
 ----
 {
-	"@context": "@vocab": "https://schema.org/",
+	"@context": "https://schema.org/",
 	"@type": "Dataset",
 	"name": "Landsat 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing",
 	"url": "https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing",
