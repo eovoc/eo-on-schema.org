@@ -742,7 +742,7 @@ a| variableMeasured +
 		{
 			"@type": "DefinedTerm",
 			"@id": "https://gcmdservices.gsfc.nasa.gov/kms/concept/03f0c0a3-04a7-4ef8-8ec0-3c2266510815",
-			"inDefinedTermSet": " https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeyword",
+			"inDefinedTermSet": "https://gcmdservices.gsfc.nasa.gov/kms/concepts/concept_scheme/sciencekeywords",
 			"name": "VISIBLE IMAGERY"
 		},
 		{
