@@ -1,6 +1,7 @@
 @startuml
 
 !define Class agent
+!define ExternalClass agent
 !define Property usecase
 
 skinparam Property {
@@ -22,6 +23,12 @@ Class Dataset
 Class Action
 Class CreateAction
 Class DefinedTerm
+Class dbpedia_Satellite as "dbpedia:Satellite" #orange 
+Class dbpedia_Scientific_instrument as "dbpedia:Scientific_instrument" #orange
+
+
+
+
 
 
 ' using blanks inside () creates separate objects
@@ -31,6 +38,10 @@ CreateAction .up.|> Action
 CreateAction -right-> DefinedTerm : "instrument"
 
 Dataset -right-> CreateAction : "potentialAction"
+
+DefinedTerm <.[dotted].>  dbpedia_Satellite
+
+DefinedTerm <.[dotted].>  dbpedia_Scientific_instrument
 
 
 

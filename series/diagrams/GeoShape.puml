@@ -21,14 +21,19 @@ Class Dataset
 Class Place
 Class GeoShape
 Class GeoCoordinates
+Class PropertyValue
+Class dbpedia_Spatial_reference_system as "dbpedia:Spatial_reference_system" #orange 
 
 
 Dataset -down-> Place : "spatialCoverage"
 Place -right-> GeoCoordinates : "geo"
 Place -left-> GeoShape : "geo"
+Place --> PropertyValue : "additionalProperty"
 
 GeoShape --> (Text) : "box,\npolygon,\nline,\ncircle,\nelevation"
 GeoCoordinates --> (Text ) : "latitude,\nlongitude,\nelevation"
+
+PropertyValue <.[dotted].>  dbpedia_Spatial_reference_system
 
 
 @enduml
