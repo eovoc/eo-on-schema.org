@@ -19,6 +19,8 @@ Issue 1.0, September 2019.]
   * [Diagram editor PlantUML](https://plantuml-editor.kkeisuke.com/)
   * [Google structured Data Testing Tool](https://search.google.com/structured-data/testing-tool) - deprecated
   * [Google Rich Results Test](https://search.google.com/test/rich-results)
+  * [Structured Data Linter](http://linter.structured-data.org/)
+  * [RDF Translator](https://rdf-translator.appspot.com/)
 * Implementations
   * https://geo.spacebel.be/opensearch/readme.html
 * Related work
