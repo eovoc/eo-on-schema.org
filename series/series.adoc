@@ -1768,6 +1768,11 @@ TBD.
 
 === D.1 Collection
 
+// Links for GitHub
+ifdef::env-github,backend-html5[]
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/landsat-etm-gtc.json[Example 1: Landsat ETM GTC]
+endif::[]
+
 === D.2 Service and Application
 
 // Links for GitHub
@@ -1775,7 +1780,7 @@ ifdef::env-github,backend-html5[]
 
 :exampledir: https://raw.githubusercontent.com/eovoc/eo-on-schema.org/main/series/examples
 
-* [https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/goce-user-toolbox.json, Example 1: GOCE User Toolbox]
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/goce-user-toolbox.json[Example 1: GOCE User Toolbox]
  
 endif::[]
 
