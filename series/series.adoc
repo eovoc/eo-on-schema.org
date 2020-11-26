@@ -171,7 +171,7 @@ Range: Text
 
 a| identifier +
 ~$.identifier~
-| Identifier given to the collection. `Text` is used or simple identifiers such as ´TropForest´.  `PropertyValue` can be used to include `DOI` information.
+| Identifier given to the collection. `Text` is used for simple identifiers such as ´TropForest´.  `PropertyValue` can be used to include `DOI` information.
 | Domain: Thing +
 Range: Text or Url or PropertyValue +
 See also <<table_object_propertyvalue>>.
@@ -1430,10 +1430,10 @@ This section defines the proposed encoding of Earth Observation service and appl
 === 3.1 Service Identification
 
 [#img_object_service,reftext='{figure-caption} {counter:figure-num}']
-.Data Identification Schema
+.Service Identification Schema
 image::diagrams/Service.png[align="center"]
 
-The complete list of Service identification properties is given in <<table_object_service>>.  
+The list of Service Identification properties is given in <<table_object_service>>.  The same properties as for Data Identification (<<table_object_dataset>>) can be used, but `@type` shall be `CreativeWork` and `additionalType` shall be set to `http://purl.org/dc/dcmitype/Service` or `http://purl.org/dc/dcmitype/Software`.
 
 [#table_object_service,reftext='{table-caption} {counter:table-num}']
 .Service Identification properties
@@ -1457,21 +1457,21 @@ Fixed value: "CreativeWork"
 
 a| description +
 ~$.description~
-| A description of the collection.
+| A description of the service or application.
 | Domain: Thing +
 Range: Text
 | One (mandatory)
 
 a| name +
 ~$.name~
-| The name of the collection.
+| The human readable name or title of the service or application.
 | Domain: Thing +
 Range: Text
 | One (mandatory)
 
 a| identifier +
 ~$.identifier~
-| Identifier given to the collection. `Text` is used or simple identifiers such as ´TropForest´.  `PropertyValue` can be used to include `DOI` information.
+| Identifier given to the service or application. `Text` is used or simple identifiers such as ´goce-user-toolbox´, ´sentinel-2-toolbox´, ´icor´ or ´hdfclean´.  `PropertyValue` can be used to include `DOI` information.
 | Domain: Thing +
 Range: Text or Url or PropertyValue +
 See also <<table_object_propertyvalue>>.
@@ -1481,21 +1481,22 @@ See also <<table_object_propertyvalue>>.
 a| additionalType +
 ~$.additionaltype~
 | Unique identifiers (URI) for the type of the resource.  +
-E.g. http://purl.org/dc/dcmitype/Collection, +
-https://inspire.ec.europa.eu/metadata-codelist/ResourceType/series
+E.g. http://purl.org/dc/dcmitype/Service, +
+http://purl.org/dc/dcmitype/Software, +
+https://inspire.ec.europa.eu/metadata-codelist/ResourceType/service.
 | Domain: Thing +
 Range: URL
 | Zero or more (optional)
 
 a| @id +
 ~$.@id~
-| Unique identifier for the collection (IRI).
+| Unique identifier for the service or application (IRI).
 | Range: URL
 | Zero or one (optional)
 
 a| alternateName +
 ~$.alternateName~
-| Alternate name of the collection. Maybe used to refer to the https://idn.ceos.org/[CEOS IDN] shortname of the collection: e.g. `C1532648157-ESA` is the IDN shortname used for the collection with `identifier TropForest`.
+| Alternate name of the service or application.
 | Domain: Thing +
 Range: Text
 | Zero or more (optional)
@@ -1510,14 +1511,14 @@ Range: Text
 
 a| inLanguage +
 ~$.inLanguage~
-| Resource language code, not empty, e.g. "en" (English)..
+| Resource language code, not empty, e.g. "en" (English).
 | Domain: CreativeWork +
 Range: Language or Text
 | Zero or one (optional)
 
 a| subjectOf +
 ~$.subjectOf~
-| Refers to metadata information about the collection.
+| Refers to metadata information or other information about the service or application.
 | Domain: Thing +
 Range: ListItem (<<table_object_listitem>>)
 | Zero or one (optional)
@@ -1530,7 +1531,7 @@ Range: Number or Text
 | Zero or one (optional)
 |===
 
-.Data Identification encoding example
+.Service Identification encoding example
 [source,json]
 ----
 {
