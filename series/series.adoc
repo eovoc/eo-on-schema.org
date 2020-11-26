@@ -1764,3 +1764,30 @@ TBD.
 	DCAT-AP to Schema.org Mapping, Unofficial Draft 13 September 2019, https://ec-jrc.github.io/dcat-ap-to-schema-org/
 
 
+== D. Complete Examples
+
+=== D.1 Collection
+
+=== D.2 Service and Application
+
+// Links for GitHub
+ifdef::env-github,backend-html5[]
+  ../examples/goce-user-toolbox.json[GOCE User Toolbox]
+endif::[]
+
+// includes for AsciiDoc processing
+ifndef::env-github[]
+
+.goce-user-toolbox.json
+[source,json]
+----
+include::../examples/goce-user-toolbox.json[]
+----
+
+endif::[]
+
+
+
+
+
+
