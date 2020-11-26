@@ -131,7 +131,7 @@ Range: Language or Text
 
 [#img_object_dataset,reftext='{figure-caption} {counter:figure-num}']
 .Data Identification Schema
-image::diagrams/Dataset.png[align="center"]
+image::diagrams/DataIdentification.png[align="center"]
 
 The complete list of Data identification properties is given in <<table_object_dataset>>.  
 
@@ -1451,7 +1451,7 @@ This section defines the proposed encoding of Earth Observation service and appl
 
 [#img_object_service,reftext='{figure-caption} {counter:figure-num}']
 .Service Identification Schema
-image::diagrams/Service.png[align="center"]
+image::diagrams/ServiceIdentification.png[align="center"]
 
 The list of Service Identification properties is given in <<table_object_service>>.  The same properties as for Data Identification (<<table_object_dataset>>) can be used, but `@type` shall be `CreativeWork` and `additionalType` shall be set to `http://purl.org/dc/dcmitype/Service` or `http://purl.org/dc/dcmitype/Software`.
 
