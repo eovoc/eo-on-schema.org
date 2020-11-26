@@ -14,7 +14,7 @@ ifdef::env-github[]
 * <<2-eo-collections,2. EO Collections>>
 ** <<21-metadata-information,2.1 Metadata Information>>
 ** <<22-data-identification,2.2 Data Identification>>
-*** <<221-datadates,2.2.1 DataDates>>
+*** <<221-resource-dates,2.2.1 Resource Dates>>
 *** <<222-propertyvalue,2.2.2 PropertyValue>>
 *** <<223-contact,2.2.3 Contact>>
 *** <<224-organization,2.2.4 Organization>>
@@ -245,7 +245,10 @@ Range: Number or Text
 	"@id": "https://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC",
 	"name": "Landsat 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing",
 	"alternateName": "LANDSAT.ETM.GTC",
-	"url": "https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing",
+	"url": [
+		"https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing",
+		"https://search.earthdata.nasa.gov/portal/idn/search?q=C1532648148-ESA"
+	],
 	"identifier": [
 		"LANDSAT.ETM.GTC",
 		{
@@ -261,13 +264,6 @@ Range: Number or Text
 		"@type": "Language",
 		"@id": "http://id.loc.gov/vocabulary/iso639-1/en",
 		"name": "en"
-	},
-	"spatialCoverage": {
-		"@type": "Place",
-		"geo": {
-			"@type": "GeoShape",
-			"polygon": "-90.0 -180.0 -90.0 180.0 90.0 180.0 90.0 -180.0 -90.0 -180.0"
-		}
 	},
 	"subjectOf": [
 		{
@@ -293,7 +289,7 @@ Range: Number or Text
 }
 ----
 
-==== 2.2.1 DataDates
+==== 2.2.1 Resource Dates
 
 [#img_object_dates,reftext='{figure-caption} {counter:figure-num}']
 .DataDates Schema
