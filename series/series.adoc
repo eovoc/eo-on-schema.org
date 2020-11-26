@@ -31,6 +31,7 @@ ifdef::env-github[]
 *** <<262-action,2.6.2 Action>>
 ** <<27-acquisition-information,2.7 Acquisition Information>>
 * <<3-eo-services-and-applications,3. EO Services and Applications>>
+** <<31-service-identification,3.1 Service Identification>>
 * <<4-eo-granules,4. EO Granules>>
 
 * <<a-media-types-for-data-encoding,A. Media Types for Data Encoding>>
@@ -1555,38 +1556,58 @@ Range: Number or Text
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
+	"@context": {
+		"@vocab": "https://schema.org/"
+	},
 	"@type": "Dataset",
-	"name": "PROBA-V S1 TOA 1KM: product resolution data, best-quality daily synthesis. Maximum Value Compositing (MVC)is applied.",
-	"alternateName": "urn:ogc:def:EOP:VITO:PROBAV_S1-TOA_1KM_V001",
-	"description": "Level 3 data products are variables mapped on uniform space-time grid scales and are the result of combiningmultiple scenes (e.g. S1/S10) to cover the user’s region of interest.",
-	"provider": {
-		"@type": "Organization",
-		"name": "VITO (Flemish Institute for Technological Research)",
-		"address": {
-			"@type": "PostalAddress",
-			"addressCountry": "Belgium",
-			"addressLocality": "Mol",
-			"postalCode": "B-2400",
-			"streetAddress": "Boeretang 200"
+	"additionalType": [
+		"http://purl.org/dc/dcmitype/Service",
+		"https://inspire.ec.europa.eu/metadata-codelist/ResourceType/service"
+	],
+	"@id": "https://fedeo.esa.int/collections/services/items/goce-user-toolbox",
+	"name": "GOCE User Toolbox",
+	"alternateName": [
+		"goce-user-toolbox",
+		"GUT"
+	],
+	"url": [
+		"https://earth.esa.int/eogateway/tools/goce-user-toolbox",
+		"https://search.earthdata.nasa.gov/portal/idn/search?q=C1532648148-ESA"
+	],
+	"identifier": "goce-user-toolbox",
+	"description": "The GOCE User Toolbox (GUT) is a compilation of tools for the utilisation and analysis of GOCE products. GUT supports applications in Geodesy, Oceanography and Solid Earth Physics.",
+	"inLanguage": {
+		"@type": "Language",
+		"@id": "http://id.loc.gov/vocabulary/iso639-1/en",
+		"name": "en"
+	},
+	"version": "3.2",
+	"subjectOf": [
+		{
+			"@type": "ListItem",
+			"dateCreated": "2009-04-15T00:00:00Z",
+			"datePublished": "2014-04-28T00:00:00Z",
+			"dateModified": "2014-04-28T00:00:00Z",
+			"inLanguage": {
+				"@type": "Language",
+				"@id": "http://id.loc.gov/vocabulary/iso639-1/en",
+				"name": "en"
+			},
+			"encodingFormat": "application/vnd.iso.19139-2+xml"
 		},
-		"telephone": "+32 14 33 68 14",
-		"faxNumber": "+32 14 32 27 95",
-		"email": "helpdeskticket@vgt.vito.be",
-		"url": "http://proba-v.vgt.vito.be/"
-	},
-	"dateModified": "2018-10-23T15:52:07Z",
-	"keywords": "EARTH SCIENCE>LAND SURFACE>LAND USE/LAND COVER, EARTH SCIENCE>CLIMATEINDICATORS>CRYOSPHERIC INDICATORS>SNOW COVER, Land cover, Cloud, Radiometric quality, Shadow, Snow, landuse, proba, environmental monitoring facilities, land cover, Proba-V",
-	"temporal": "2013-10-16T00:00:00Z/2018-12-31T00:00:00Z",
-	"spatial": {
-		"@type": "Place",
-		"geo": {
-			"@type": "GeoShape",
-			"polygon": "-56.0 -180.0 -56.0 180.0 75.0 180.0 75.0 -180.0 -56.0 -180.0"
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://earth.esa.int/eogateway/gut-registration",
+			"name": "GUT download",
+			"additionalType": "http://www.iana.org/assignments/relation/enclosure"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://earth.esa.int/c/document_library/get_file?folderId=15547&name=DLFE-205.pdf",
+			"name": "GOCE User Toolbox and Tutorial",
+			"additionalType": "http://www.iana.org/assignments/relation/describedby"
 		}
-	},
-	"image": "http://geo.spacebel.be/opensearch/images/vito.png",
-	"thumbnailUrl": "http://geo.spacebel.be/opensearch/images/vito.png"
+	]
 }
 ----
 
