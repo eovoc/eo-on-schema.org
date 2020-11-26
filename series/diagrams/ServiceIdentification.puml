@@ -1,0 +1,47 @@
+@startuml
+
+' example 6 June 2020 Y. Coene schema.org representation
+' https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+
+' symbol for named literal as trapezium shape is not available.
+Property "http://purl.org/dc/dcmitype/Service" as URL #Khaki 
+
+
+Class "CreativeWork\n[Service]" as Service
+Class Language
+Class ListItem
+Class PropertyValue
+
+
+
+Service -up-> (URL ) : "id,\nidentifier"
+Service -up-> URL : "additionalType" 
+Service -up-> (Text) : "description,\nname,\ncitation,\nidentifier\nversion,\ninLanguage"
+
+Service -left-> Language : "inLanguage"
+
+Service -down-> ListItem : "subjectOf"
+
+Service -right-> PropertyValue : "identifier"
+
+
+
+@enduml
