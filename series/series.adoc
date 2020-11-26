@@ -8,6 +8,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+ifdef::env-github[]
 == Table of contents
 
 * <<2-eo-collections,2. EO Collections>>
@@ -35,11 +36,13 @@ endif::[]
 ** <<c1-normative-references,C.1 Normative References>>
 ** <<c2-other-references,C.2 Other References>>
 
+endif::[]
+
 == 2. EO Collections
 
 This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and OGC17-084r1.  The graphical notation is borrowed from <<ESIPFed>>. The diagrams are prepared with PlantUML.
 
-=== 2.1 Metadata information
+=== 2.1 Metadata Information
 
 [#img_object_listitem,reftext='{figure-caption} {counter:figure-num}']
 .Metadata Information Schema
