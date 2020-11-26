@@ -1772,7 +1772,8 @@ TBD.
 
 // Links for GitHub
 ifdef::env-github,backend-html5[]
-  ../examples/goce-user-toolbox.json[GOCE User Toolbox]
+  ./../examples/goce-user-toolbox.json[GOCE User Toolbox]
+ 
 endif::[]
 
 // includes for AsciiDoc processing
