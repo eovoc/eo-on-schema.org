@@ -1775,7 +1775,7 @@ ifdef::env-github,backend-html5[]
 
 :exampledir: https://raw.githubusercontent.com/eovoc/eo-on-schema.org/main/series/examples
 
-* <<https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/goce-user-toolbox.json, Example 1: GOCE User Toolbox>>
+* [https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/goce-user-toolbox.json, Example 1: GOCE User Toolbox]
  
 endif::[]
 
