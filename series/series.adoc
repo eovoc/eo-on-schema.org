@@ -234,38 +234,62 @@ Range: Number or Text
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
-	"@type": "Dataset",
-	"name": "PROBA-V S1 TOA 1KM: product resolution data, best-quality daily synthesis. Maximum Value Compositing (MVC)is applied.",
-	"alternateName": "urn:ogc:def:EOP:VITO:PROBAV_S1-TOA_1KM_V001",
-	"description": "Level 3 data products are variables mapped on uniform space-time grid scales and are the result of combiningmultiple scenes (e.g. S1/S10) to cover the user’s region of interest.",
-	"provider": {
-		"@type": "Organization",
-		"name": "VITO (Flemish Institute for Technological Research)",
-		"address": {
-			"@type": "PostalAddress",
-			"addressCountry": "Belgium",
-			"addressLocality": "Mol",
-			"postalCode": "B-2400",
-			"streetAddress": "Boeretang 200"
-		},
-		"telephone": "+32 14 33 68 14",
-		"faxNumber": "+32 14 32 27 95",
-		"email": "helpdeskticket@vgt.vito.be",
-		"url": "http://proba-v.vgt.vito.be/"
+	"@context": {
+		"@vocab": "https://schema.org/"
 	},
-	"dateModified": "2018-10-23T15:52:07Z",
-	"keywords": "EARTH SCIENCE>LAND SURFACE>LAND USE/LAND COVER, EARTH SCIENCE>CLIMATEINDICATORS>CRYOSPHERIC INDICATORS>SNOW COVER, Land cover, Cloud, Radiometric quality, Shadow, Snow, landuse, proba, environmental monitoring facilities, land cover, Proba-V",
-	"temporal": "2013-10-16T00:00:00Z/2018-12-31T00:00:00Z",
-	"spatial": {
+	"@type": "Dataset",
+	"additionalType": [
+		"http://purl.org/dc/dcmitype/Collection",
+		"https://inspire.ec.europa.eu/metadata-codelist/ResourceType/series"
+	],
+	"@id": "https://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC",
+	"name": "Landsat 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing",
+	"alternateName": "LANDSAT.ETM.GTC",
+	"url": "https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing",
+	"identifier": [
+		"LANDSAT.ETM.GTC",
+		{
+			"@type": "PropertyValue",
+			"propertyID": "https://idn.ceos.org/",
+			"value": "C1532648148-ESA",
+			"url": "https://search.earthdata.nasa.gov/portal/idn/search?q=C1532648148-ESA"
+		}
+	],
+	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks.",
+	"temporalCoverage": "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z",
+	"inLanguage": {
+		"@type": "Language",
+		"@id": "http://id.loc.gov/vocabulary/iso639-1/en",
+		"name": "en"
+	},
+	"spatialCoverage": {
 		"@type": "Place",
 		"geo": {
 			"@type": "GeoShape",
-			"polygon": "-56.0 -180.0 -56.0 180.0 75.0 180.0 75.0 -180.0 -56.0 -180.0"
+			"polygon": "-90.0 -180.0 -90.0 180.0 90.0 180.0 90.0 -180.0 -90.0 -180.0"
 		}
 	},
-	"image": "http://geo.spacebel.be/opensearch/images/vito.png",
-	"thumbnailUrl": "http://geo.spacebel.be/opensearch/images/vito.png"
+	"subjectOf": [
+		{
+			"@type": "ListItem",
+			"dateCreated": "1999-07-01T00:00:00Z",
+			"datePublished": "1999-07-01T00:00:00Z",
+			"dateModified": "2019-07-17T00:00:00Z",
+			"inLanguage": {
+				"@type": "Language",
+				"@id": "http://id.loc.gov/vocabulary/iso639-1/en",
+				"name": "en"
+			},
+			"encodingFormat": "application/vnd.iso.19139-2+xml"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC?httpAccept=application/dif10%2Bxml",
+			"encodingFormat": "application/dif10+xml",
+			"name": "DIF-10 metadata",
+			"additionalType": "http://www.iana.org/assignments/relation/alternate"
+		}
+	]
 }
 ----
 
@@ -284,8 +308,8 @@ The complete overview of date related properties for data is given in <<table_ob
 |JSON Property | Definition | Data type and values | Multiplicity and use
 
 
-a| temporal +
-~$.temporal~
+a| temporalCoverage +
+~$.temporalCoverage~
 | Date or range of dates relevant for the resource.  For example: "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z"
 | Domain: Dataset +
 Range: DateTime or Text
@@ -322,7 +346,7 @@ Range: Date or Datetime
 	"@type": "Dataset",
 	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
 	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
-	"temporal": "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z",
+	"temporalCoverage": "1999-07-01T00:00:00Z/2003-12-31T00:00:00Z",
 	"dateCreated": "1999-07-01T23:59:00Z",
 	"datePublished": "1999-07-02T08:00:00Z",
 	"dateModified": "2004-01-01T08:00:00Z"
@@ -1080,7 +1104,7 @@ A list of Related URL properties is given in <<table_object_relatedurl>>.
 
 a| url +
 ~$.url~
-| Landing page for the collection.
+| URL or the resource, e.g. landing page for the collection.
 | Range: URL
 | Zero or more (optional)
 
@@ -1126,7 +1150,7 @@ a| thumbnailUrl +
 	"@type": "Dataset",
 	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
 	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
-	"url": "https://earth.esa.int/web/guest/missions/3rd-party-missions/historical-missions/landsat-tmetm",
+	"url": "https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing?text=landsat+tm+etm",
 	"subjectOf": [
 		{
 			"@type": "DataDownload",
