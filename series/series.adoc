@@ -37,9 +37,9 @@ ifdef::env-github[]
 *** <<461-mediaobject,4.6.1 MediaObject>>
 *** <<462-action,4.6.2 Action>>
 ** <<47-acquisition-information,4.7 Acquisition Information>>
-* <<5-eo-services-and-applications,5. EO Services and Applications>>
+* <<5-eo-services-and-applications-encoding,5. EO Services and Applications Encoding>>
 ** <<51-service-identification,5.1 Service Identification>>
-* <<6-eo-granules,6. EO Granules Encoding>>
+* <<6-eo-granules-encoding,6. EO Granules Encoding>>
 
 * <<a-media-types-for-data-encoding,A. Media Types for Data Encoding>>
 * <<b-property-mapping,B. Property Mapping>>
