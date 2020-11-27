@@ -129,6 +129,58 @@ ifndef::env-github[]
 == Terms and definitions
 endif::[]
 
+=== Glossary
+
+&#9679; collection ::
+
+A collection is an aggregation of granules sharing the same product specification. A collection typically corresponds to the series of products derived from data acquired by a sensor on board a satellite and having the same mode of operation.
+Different agencies use different terms for "collection": collection (CNES, NASA), dataset (JAXA), dataset series (ESA), product (JAXA).
+
+&#9679; context ::
+
+  A set of rules for interpreting a JSON-LD document as specified in the section "The Context" of the JSON-LD specification.
+  
+&#9679; granule ::
+
+A granule  is the finest granularity of data that can be independently managed. A granule usually matches the individual file of EO satellite data.
+Different agencies use different terms for "collection": dataset (ESA), granule (NASA), product (ESA, CNES), scene (JAXA).
+  
+&#9679; JSON ::
+
+  A lightweight, text-based, language-independent data interchange format, based on the Javascript programming language.  
+  
+&#9679; product ::
+	
+Same meaning as "granule".
+
+
+=== Abbreviated terms
+
+.NOTE: The abbreviated terms clause gives a list of the abbreviated terms and the symbols necessary for understanding this document. All symbols should be listed in alphabetical order. Some more frequently used abbreviated terms are provided below as examples.
+
+* API			Application Programming Interface
+* CEOS		Committee on Earth Observation Satellites
+* EO			Earth Observation
+* HATEOAS	Hypermedia As The Engine Of Application State
+* HTTP 		HyperText Transfer Protocol
+* IRI			Internationalised Resource Identifier
+* ISO			International Organisation for Standardisation
+* JSON		JavaScript Object Notation
+* JSON-LD	JavaScript Object Notation for Linked Data
+* OGC		Open Geospatial Consortium
+* RDF		Resource Description Framework
+* REST		Representational State Transfer
+* URI		Uniform Resource Identifier
+* URL		Uniform Resource Locator
+* URN		Uniform Resource Name
+* W3C		World Wide Web Consortium
+* WGISS		Working Group on Information Systems and Services
+* WKT		Well-Known Text
+* WPS  Web Processing Service
+* WPS-T   Transactional Web Processing Service
+* XML		eXtensible Markup Language
+* XSD		XML Schema Definition Language
+
 
 // 4 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
