@@ -51,6 +51,7 @@ ifdef::env-github[]
 ** <<d1-collection,D.1: Collection>>
 ** <<d2-service-and-application,D.2: Service and Application>>
 ** <<d3-granule,D.3: Granule>>
+** <<d4-article,D.4: Article>>
 
 endif::[]
 
@@ -613,7 +614,7 @@ a| url +
 
 In the example below, PropertyValue is used to associate a https://doi.org[DOI] identifier to a Dataset.
 
-.PropertyValue encoding example (DOI)
+.PropertyValue encoding example (Collection DOI)
 [source,json]
 ----
 {
@@ -672,6 +673,33 @@ In the example below, PropertyValue is used to associate an https://orcid.org/[O
 }
 ----
 
+In the example below, PropertyValue is used to identify an Article about an EO Collection via its https://doi.org[DOI] identifier.
+
+.PropertyValue encoding example (Article DOI)
+[source,json]
+----
+{
+	"@context": "https://schema.org/",
+	"@type": "Article",
+	"name": "A new vegetation index derived from the pattern decomposition method applied to Landsat-7/ETM+ images in Mongolia",
+	"url": [
+		"https://www.tandfonline.com/action/fedSearchRedirect?doi=10.1080%2F01431160601024200",
+		"https://doi.org/10.1080/01431160601024200"
+	],
+	"identifier": {
+		"@id": "https://doi.org/10.1080/01431160601024200",
+		"@type": "PropertyValue",
+		"propertyID": "https://registry.identifiers.org/registry/doi",
+		"value": "doi:10.1080/01431160601024200",
+		"url": "https://doi.org/10.1080/01431160601024200"
+	},
+	"about": {
+		"@type": "Dataset",
+		"@id": "https://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC"
+	},
+	"isPartOf": "International Journal of Remote Sensing"
+}
+----
 
 
 // 4.2.3 --------------------------------------------------------------------------------------------
@@ -2283,7 +2311,24 @@ include::../series/examples/landsat-tm-gtc-product-granule.json[]
 
 endif::[]
 
+== D.4 Article
 
+// Links for GitHub
+ifdef::env-github,backend-html5[]
+
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/Article-landsat-etm-gtc.json[Example 1: Article about LANDSAT-TM-GTC Collection]
+endif::[]
+
+// Includes for AsciiDoc processing
+ifndef::env-github[]
+
+.Article-landsat-etm-gtc.json
+[source,json]
+----
+include::./examples/Article-landsat-etm-gtc.json[]
+----
+
+endif::[]
 
 
 
