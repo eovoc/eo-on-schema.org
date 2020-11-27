@@ -48,10 +48,10 @@ ifdef::env-github[]
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
 * <<appendix-c-property-mapping,Appendix C: Property Mapping>>
 * <<appendix-d-complete-examples,Appendix D: Complete Examples>>
-** <<d1-collection,D.1: Collection>>
-** <<d2-service-and-application,D.2: Service and Application>>
-** <<d3-granule,D.3: Granule>>
-** <<d4-article,D.4: Article>>
+** <<collection,D.1: Collection>>
+** <<service-and-application,D.2: Service and Application>>
+** <<granule,D.3: Granule>>
+** <<article,D.4: Article>>
 
 endif::[]
 
@@ -2158,7 +2158,7 @@ The Web page https://schema.org/docs/howwework.html provides a https://schema.or
 [appendix]
 = Property Mapping
 
-=== B.1 OGC17-084r1 Metadata
+=== OGC17-084r1 Metadata
 
 |===
 | GeoJSON Property | JSON-LD Property |   schema.org  | Reference
@@ -2246,7 +2246,8 @@ a| versionInfo +
 
 |===
 
-=== B.2 STAC Collection Metadata
+// C.2
+=== STAC Collection Metadata
 
 TBD.
 
@@ -2254,7 +2255,8 @@ TBD.
 [appendix]
 = Complete Examples
 
-== D.1 Collection
+// D.1
+=== Collection
 
 // Links for GitHub
 // relative links do not seem to work ?
@@ -2268,12 +2270,13 @@ ifndef::env-github[]
 .landsat-etm-gtc.json
 [source,json]
 ----
-include::../series/examples/landsat-etm-gtc.json[]
+include::./examples/landsat-etm-gtc.json[]
 ----
 
 endif::[]
 
-== D.2 Service and Application
+// D.2
+=== Service and Application
 
 // Links for GitHub
 ifdef::env-github,backend-html5[]
@@ -2287,12 +2290,13 @@ ifndef::env-github[]
 .goce-user-toolbox.json
 [source,json]
 ----
-include::../series/examples/goce-user-toolbox.json[]
+include::./examples/goce-user-toolbox.json[]
 ----
 
 endif::[]
 
-== D.3 Granule
+// D.3
+=== Granule
 
 // Links for GitHub
 ifdef::env-github,backend-html5[]
@@ -2306,12 +2310,13 @@ ifndef::env-github[]
 .landsat-tm-gtc-product-granule.json
 [source,json]
 ----
-include::../series/examples/landsat-tm-gtc-product-granule.json[]
+include::./examples/landsat-tm-gtc-product-granule.json[]
 ----
 
 endif::[]
 
-== D.4 Article
+// D.4
+=== Article
 
 // Links for GitHub
 ifdef::env-github,backend-html5[]
