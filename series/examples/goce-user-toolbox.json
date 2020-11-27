@@ -1,7 +1,10 @@
 {
-	"@context": {
-		"@vocab": "https://schema.org/"
-	},
+	"@context": [
+		"http://eovoc.spacebel.be/schema-org/docs/jsonldcontext.json",
+		{
+			"dbr": "http://dbpedia.org/resource/"
+		}
+	],
 	"@type": "Dataset",
 	"additionalType": [
 		"http://purl.org/dc/dcmitype/Service",

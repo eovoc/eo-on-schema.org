@@ -1,15 +1,10 @@
 {
-	"@context": {
-		"@vocab": "https://schema.org/",
-		"dbpedia": "http://dbpedia.org/resource/",
-		
-		"additionalType": { "@id": "additionalType", "@type": "@id"},
-		"sameAs": { "@id": "sameAs", "@type": "@id"},
-		"url": { "@id": "url", "@type": "@id"},
-		"contentUrl": { "@id": "contentUrl", "@type": "@id"},
-		 "inDefinedTermSet": { "@id": "inDefinedTermSet", "@type": "@id"}
-		 
-	},
+	"@context": [
+		"http://eovoc.spacebel.be/schema-org/docs/jsonldcontext.json",
+		{
+			"dbr": "http://dbpedia.org/resource/"
+		}
+	],
 	"@type": "Dataset",
 	"additionalType": [
 		"http://purl.org/dc/dcmitype/Collection",

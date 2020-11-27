@@ -1,0 +1,265 @@
+{
+	"@context": [
+		"http://eovoc.spacebel.be/schema-org/docs/jsonldcontext.json",
+		{
+			"dbr": "http://dbpedia.org/resource/"
+		}
+	],
+	"@type": "Dataset",
+	"additionalType": [
+		"http://purl.org/dc/dcmitype/Dataset",
+		"https://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset"
+	],
+	"@id": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"name": "LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"isPartOf": {
+		"@type": "Dataset",
+		"url": "https://earth.esa.int/eogateway/catalog/landsat-5-thematic-mapper-geolocated-terrain-corrected-systematic-processing",
+		"@id": "https://ergo.spacebel.be/collections/series/items/LANDSAT.TM.GTC"
+	},
+	"description": "LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"identifier": "LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"dateModified": "2020-09-29T11:07:54Z",
+	"dateCreated": "1997-10-03T09:26:32Z",
+	"temporalCoverage": "1997-10-03T09:26:03Z/1997-10-03T09:26:32Z",
+	"spatialCoverage": {
+		"@type": "Place",
+		"geo": {
+			"@type": "GeoShape",
+			"polygon": "42.7006  10.7552  40.7378 10.8827   40.8026   13.5779     42.7699  13.5338    42.7006  10.7552",
+			"box": "40.7378  10.7552  42.7699  13.5779"
+		},
+		"geoContains": [
+			{
+				"@type": "LakeBodyOfWater",
+				"@id": "http://dbpedia.org/resource/Lake_Bracciano"
+			},
+			{
+				"@type": "City",
+				"@id": "http://dbpedia.org/resource/Rome"
+			},
+			{
+				"@type": "City",
+				"@id": "http://dbpedia.org/resource/Frascati"
+			},
+			{
+				"@type": "Airport",
+				"@id": "http://dbpedia.org/resource/Leonardo_da_Vinci-Fiumicino_Airport"
+			},
+			{
+				"@type": "Airport",
+				"@id": "http://dbpedia.org/resource/Ciampino-G._B._Pastine_International_Airport"
+			}
+		],
+		"additionalProperty": {
+			"@type": [
+				"PropertyValue",
+				"dbr:Spatial_reference_system"
+			],
+			"@id": "https://epsg.io/4326"
+		}
+	},
+	"image": "http://landsat-ds.eo.esa.int/metadata/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.BP.PNG",
+	"thumbnailUrl": "http://landsat-ds.eo.esa.int/metadata/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.BP.PNG",
+	"additionalProperty": [
+		{
+			"@type": "PropertyValue",
+			"propertyID": "http://www.opengis.net/ont/eo-geojson/1.0/productType",
+			"value": "TM__GTC_1P"
+		},
+		{
+			"@type": "PropertyValue",
+			"propertyID": "http://www.opengis.net/ont/eo-geojson/1.0/cloudCover",
+			"value": "7"
+		},
+		{
+			"@type": "PropertyValue",
+			"propertyID": "http://www.opengis.net/ont/eo-geojson/1.0/processingMode",
+			"value": "NOMINAL"
+		}
+	],
+	"encoding": {
+		"@type": "MediaObject",
+		"contentUrl": "http://landsat-ds.eo.esa.int/products/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.ZIP",
+		"encodingFormat": "application/x-binary",
+		"contentSize": "123249764"
+	},
+	"potentialAction": [
+		{
+			"@type": "Action",
+			"identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs",
+			"target": [
+				{
+					"@type": "EntryPoint",
+					"identifier": "GetCapabilities",
+					"contentType": [
+						"application/xml"
+					],
+					"urlTemplate": "https://datacube.pdgs.eo.esa.int/wcs?service=WCS&Request=GetCapabilities",
+					"httpMethod": "GET"
+				},
+				{
+					"@type": "EntryPoint",
+					"identifier": "DescribeCoverage",
+					"contentType": [
+						"application/xml"
+					],
+					"urlTemplate": "https://datacube.pdgs.eo.esa.int/wcs?service=WCS&Request=DescribeCoverage&version=2.0.0&CoverageId=LE5_RGB",
+					"httpMethod": "GET"
+				},
+				{
+					"@type": "EntryPoint",
+					"identifier": "GetCoverage",
+					"contentType": [
+						"image/tiff"
+					],
+					"urlTemplate": "https://datacube.pdgs.eo.esa.int/wcs?service=WCS&Request=GetCoverage&version=2.0.0&coverageID=LE5_RGB&subset=N(4073780,4276990)&subset=E(1075520,1357790)&subset=unix(%221997-10-03T09:26:03Z%22,%221997-10-03T09:26:32Z%22)&format=image/tiff",
+					"httpMethod": "GET"
+				}
+			]
+		},
+		{
+			"@type": "CreateAction",
+			"instrument": [
+				{
+					"@type": [
+						"DefinedTerm",
+						"dbr:Scientific_instrument"
+					],
+					"@id": "https://earth.esa.int/concept/tm",
+					"sameAs": [
+						"http://gcmd.earthdata.nasa.gov/kms/concept/bfc07fb2-ca22-48e6-8171-84527b0faae7",
+						"dbr:Thematic_Mapper"
+					],
+					"name": "TM",
+					"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/instruments"
+				},
+				{
+					"@type": [
+						"DefinedTerm",
+						"dbr:Satellite"
+					],
+					"@id": "https://earth.esa.int/concept/landsat-5",
+					"sameAs": [
+						"http://gcmd.earthdata.nasa.gov/kms/concept/fe920fff-7852-42cf-b1dc-b2223b24cf2e",
+						"http://dbpedia.org/resource/Landsat_5"
+					],
+					"name": "Landsat-5",
+					"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms"
+				}
+			]
+		}
+	],
+	"keywords": [
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://earth.esa.int/concept/landsat-5",
+			"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms",
+			"name": "Landsat-5"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://earth.esa.int/concept/tm",
+			"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/instruments",
+			"name": "TM"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "http://yago-knowledge.org/resource/Europe",
+			"inDefinedTermSet": "http://yago-knowledge.org/resource/Region",
+			"name": "Europe"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "http://yago-knowledge.org/resource/Italy",
+			"inDefinedTermSet": "https://schema.org/Country",
+			"name": "Italy"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "http://data.europa.eu/nuts/code/IT",
+			"inDefinedTermSet": "http://data.europa.eu/nuts",
+			"name": "ITALIA"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "http://yago-knowledge.org/resource/Frascati",
+			"inDefinedTermSet": "https://schema.org/AdministrativeArea",
+			"name": "Frascati"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "http://yago-knowledge.org/resource/Lake_Bracciano",
+			"inDefinedTermSet": "https://schema.org/LakeBodyOfWater",
+			"name": "Lake Bracciano"
+		}
+	],
+	"subjectOf": [
+		{
+			"@type": "ListItem",
+			"dateModified": "2020-09-29T11:07:54Z",
+			"inLanguage": {
+				"@type": "Language",
+				"@id": "http://id.loc.gov/vocabulary/iso639-1/en",
+				"name": "en"
+			},
+			"encodingFormat": "application/gml+xml;profile=\"http://www.opengis.net/spec/EOMPOM/1.1\""
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "http://landsat-ds.eo.esa.int/products/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.ZIP",
+			"encodingFormat": "application/x-binary",
+			"name": "Download",
+			"additionalType": "http://www.iana.org/assignments/relation/enclosure"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "http://landsat-ds.eo.esa.int/metadata/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.BP.PNG",
+			"encodingFormat": "image/png",
+			"name": "Quicklook",
+			"additionalType": "http://www.iana.org/assignments/relation/icon"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570?httpAccept=application/atom%2Bxml",
+			"encodingFormat": "application/atom+xml",
+			"name": "application/atom+xml",
+			"additionalType": "http://www.iana.org/assignments/relation/alternate"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+			"encodingFormat": "application/geo+json",
+			"name": "OGC 17-069r3 metadata",
+			"additionalType": "http://www.iana.org/assignments/relation/alternate"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570?httpAccept=application/geo%2Bjson;profile=\"https://stacspec.org\"",
+			"encodingFormat": "application/geo+json;profile=\"https://stacspec.org\"",
+			"name": "STAC metadata",
+			"additionalType": "http://www.iana.org/assignments/relation/alternate"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570?httpAccept=application/gml%2Bxml",
+			"encodingFormat": "application/gml+xml;profile=\"http://www.opengis.net/spec/EOMPOM/1.1\"",
+			"name": "OGC 10-157r4 metadata",
+			"additionalType": "http://www.iana.org/assignments/relation/alternate"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570?httpAccept=application/gml%2Bxml&recordSchema=om10",
+			"encodingFormat": "application/gml+xml;profile=\"http://www.opengis.net/spec/EOMPOM/1.0\"",
+			"name": "OGC 10-157r3 metadata",
+			"additionalType": "http://www.iana.org/assignments/relation/alternate"
+		},
+		{
+			"@type": "MediaObject",
+			"contentUrl": "https://ergo.spacebel.be/collections/series/items/LANDSAT.TM.GTC?mode=owc",
+			"name": "OGC 17-084r1 metadata",
+			"encodingFormat": "application/geo+json",
+			"additionalType": "http://www.iana.org/assignments/relation/up"
+		}
+	]
+}
