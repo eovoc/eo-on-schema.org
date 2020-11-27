@@ -20,17 +20,19 @@ linetype Ortho
 Class Dataset
 Class ListItem
 Class Language
+Class CreativeWork
 
+Dataset -up-|> CreativeWork
 
-Dataset -down-> ListItem : "subjectOf"
+CreativeWork -up-> ListItem : "subjectOf"
 
-ListItem -down-> (DateTime) : "dateCreated,\ndateModified,\ndatePublished"
+ListItem -up-> (DateTime) : "dateCreated,\ndateModified,\ndatePublished"
 
-ListItem -down-> (Date) : "dateCreated,\ndateModified,\ndatePublished"
+ListItem -up-> (Date) : "dateCreated,\ndateModified,\ndatePublished"
 
-ListItem -right-> (Text) : "encodingFormat,\ninLanguage"
+ListItem -right-> (Text) : "inLanguage,\nencodingFormat"
 
-ListItem --> (URL) : "encodingFormat"
+ListItem -up-> (URL) : "encodingFormat"
 
 ListItem -left-> Language : "inLanguage"
 

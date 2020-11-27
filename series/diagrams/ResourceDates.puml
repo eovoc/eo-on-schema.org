@@ -1,0 +1,32 @@
+@startuml
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+Class Dataset
+Class CreativeWork
+
+
+Dataset -up-|> CreativeWork
+CreativeWork -right-> (Text) : "temporalCoverage"
+CreativeWork -up-> (DateTime) : "temporalCoverage,\ndateCreated,\ndateModified,\ndatePublished"
+
+CreativeWork -left-> (Date) : "dateCreated,\ndateModified,\ndatePublished"
+
+
+
+@enduml
