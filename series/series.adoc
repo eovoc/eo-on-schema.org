@@ -11,6 +11,10 @@ endif::[]
 ifdef::env-github[]
 == Table of contents
 
+* <<references,3. References>>
+** <<normative-references,3.1 Normative References>>
+** <<other-references,3.2 Other References>>
+
 * <<2-eo-collections,2. EO Collections>>
 ** <<21-metadata-information,2.1 Metadata Information>>
 ** <<22-data-identification,2.2 Data Identification>>
@@ -36,11 +40,58 @@ ifdef::env-github[]
 
 * <<a-media-types-for-data-encoding,A. Media Types for Data Encoding>>
 * <<b-property-mapping,B. Property Mapping>>
-* <<c-references,C. References>>
-** <<c1-normative-references,C.1 Normative References>>
-** <<c2-other-references,C.2 Other References>>
+
+
 
 endif::[]
+
+== Scope
+
+== References
+
+== Terms and definitions
+
+
+
+=== C.1 Normative references
+
+[[DCAT]][DCAT]::
+	Data Catalog Vocabulary (DCAT) - Version 2, W3C Recommendation 04 February 2020, https://www.w3.org/TR/vocab-dcat-2/
+[[JSON]][JSON]::
+	RFC 7159, The JavaScript Object Notation (JSON) Data Interchange Format, March 2014, http://www.ietf.org/rfc/rfc7159.txt
+[[GeoJSON]][GeoJSON]::
+	RFC 7946, The GeoJSON Format, https://www.w3.org/TR/json-ld11/
+[[JSON-LD]][JSON-LD]::
+	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Recommendation 16 July 2020, https://www.w3.org/TR/json-ld11/
+[[LDP]][LDP]::
+	Linked Data Platform 1.0, W3C Recommendation 26 February 2015, https://www.w3.org/TR/ldp/
+[[OGC14-055r2]][OGC14-055r2]::
+	OGC14-055r2, OGC OWS Context GeoJSON Encoding Standard, Version 1.0, https://docs.opengeospatial.org/is/14-055r2/14-055r2.html.
+[[OGC17-003r2]][OGC17-003r2]::
+	OGC17-003r2, OGC EO Dataset Metadata GeoJSON(-LD) Encoding Standard, Version 1.0, https://docs.opengeospatial.org/is/17-003r2/17-003r2.html.
+[[OGC17-084r1]][OGC17-084r1]::
+	OGC17-084r1, EO Collection GeoJSON(-LD) Encoding, TBD.
+[[SHACL]][SHACL]:: 
+	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
+[[SKOS]][SKOS]:: 
+	SKOS Simple Knowledge Organization System, Reference, W3C Recommendation 18 August 2009, https://www.w3.org/TR/skos-reference/
+
+=== C.2 Other references
+
+[[CEOS-OS-BP]][CEOS-OS-BP]::
+	CEOS OpenSearch Best Practice Document, Version 1.2, http://ceos.org/document_management/Working_Groups/WGISS/Interest_Groups/OpenSearch/CEOS-OPENSEARCH-BP-V1.2.pdf
+[[JSONPath]][JSONPath]::
+	JSONPath, http://goessner.net/articles/JsonPath/index.html
+[[SHACL-UC]][SHACL-UC]::  
+	SHACL Use Cases and Requirements, W3C Working Group Note, 20 July 2017, https://www.w3.org/TR/shacl-ucr/
+[[ESIPFed]][ESIPFed]::
+	"Schema.org Publishing Guidelines for the Geosciences", V1.1.0, https://doi.org/10.5281/zenodo.3736235, https://github.com/ESIPFed/science-onschema.org
+[[DCAT-AP-SDO]][DCAT-AP-SDO]::
+	DCAT-AP to Schema.org Mapping, Unofficial Draft 13 September 2019, https://ec-jrc.github.io/dcat-ap-to-schema-org/
+[[OGC19-020r1]][OGC19-020r1]::
+	OGC19-020r1, OGC Testbed-15: Catalogue and Discovery Engineering Report, https://docs.ogc.org/per/19-020r1.html.
+
+
 
 == 2. EO Collections
 
@@ -1727,51 +1778,25 @@ a| versionInfo +
 TBD.
 
 
-== C. References
-
-=== C.1 Normative references
-
-[[DCAT]][DCAT]::
-	Data Catalog Vocabulary (DCAT) - Version 2, W3C Recommendation 04 February 2020, https://www.w3.org/TR/vocab-dcat-2/
-[[JSON]][JSON]::
-	RFC 7159, The JavaScript Object Notation (JSON) Data Interchange Format, March 2014, http://www.ietf.org/rfc/rfc7159.txt
-[[GeoJSON]][GeoJSON]::
-	RFC 7946, The GeoJSON Format, https://www.w3.org/TR/json-ld11/
-[[JSON-LD]][JSON-LD]::
-	JSON-LD 1.1, A JSON-based Serialization for Linked Data, W3C Recommendation 16 July 2020, https://www.w3.org/TR/json-ld11/
-[[LDP]][LDP]::
-	Linked Data Platform 1.0, W3C Recommendation 26 February 2015, https://www.w3.org/TR/ldp/
-[[OGC14-055r2]][OGC14-055r2]::
-	OGC14-055r2, OGC OWS Context GeoJSON Encoding Standard, Version 1.0, https://docs.opengeospatial.org/is/14-055r2/14-055r2.html.
-[[OGC17-084r1]][OGC17-084r1]::
-	OGC17-084r1, EO Collection GeoJSON(-LD) Encoding, TBD.
-[[SHACL]][SHACL]:: 
-	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
-[[SKOS]][SKOS]:: 
-	SKOS Simple Knowledge Organization System, Reference, W3C Recommendation 18 August 2009, https://www.w3.org/TR/skos-reference/
-
-=== C.2 Other references
-
-[[CEOS-OS-BP]][CEOS-OS-BP]::
-	CEOS OpenSearch Best Practice Document, Version 1.2, http://ceos.org/document_management/Working_Groups/WGISS/Interest_Groups/OpenSearch/CEOS-OPENSEARCH-BP-V1.2.pdf
-[[JSONPath]][JSONPath]::
-	JSONPath, http://goessner.net/articles/JsonPath/index.html
-[[SHACL-UC]][SHACL-UC]::  
-	SHACL Use Cases and Requirements, W3C Working Group Note, 20 July 2017, https://www.w3.org/TR/shacl-ucr/
-[[ESIPFed]][ESIPFed]::
-	"Schema.org Publishing Guidelines for the Geosciences", V1.1.0, https://doi.org/10.5281/zenodo.3736235, https://github.com/ESIPFed/science-onschema.org
-[[DCAT-AP-SDO]][DCAT-AP-SDO]::
-	DCAT-AP to Schema.org Mapping, Unofficial Draft 13 September 2019, https://ec-jrc.github.io/dcat-ap-to-schema-org/
-
 
 == D. Complete Examples
 
 === D.1 Collection
 
 // Links for GitHub
+// relative links do not seem to work ?
 ifdef::env-github,backend-html5[]
 * https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/landsat-etm-gtc.json[Example 1: Landsat ETM GTC]
 endif::[]
+
+// Includes for AsciiDoc processing
+ifndef::env-github[]
+
+.landsat-etm-gtc.json
+[source,json]
+----
+include::../series/examples/landsat-etm-gtc.json.json[]
+----
 
 === D.2 Service and Application
 
@@ -1784,13 +1809,13 @@ ifdef::env-github,backend-html5[]
  
 endif::[]
 
-// includes for AsciiDoc processing
+// Includes for AsciiDoc processing
 ifndef::env-github[]
 
 .goce-user-toolbox.json
 [source,json]
 ----
-include::../examples/goce-user-toolbox.json[]
+include::../series/examples/goce-user-toolbox.json[]
 ----
 
 endif::[]
