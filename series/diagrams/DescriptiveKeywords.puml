@@ -25,16 +25,20 @@ Class DefinedTerm
 Class Thing
 Class PropertyValue
 
+Class CreativeWork
 
-Dataset --> (Text ) : "variableMeasured"
+CreativeWork <|-- Dataset
 
-Dataset -down-> (Text) : "keywords"
 
-Dataset -right-> DefinedTerm : "keywords"
+Dataset -left-> (Text ) : "variableMeasured"
 
-Dataset -up-> Thing : "about"
+CreativeWork -left-> (Text) : "keywords"
 
-Dataset -left-> PropertyValue : "variableMeasured"
+CreativeWork -right-> DefinedTerm : "keywords"
+
+CreativeWork -up-> Thing : "about"
+
+Dataset -right-> PropertyValue : "variableMeasured"
 
 
 @enduml
