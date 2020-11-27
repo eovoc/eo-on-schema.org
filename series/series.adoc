@@ -11,6 +11,8 @@ endif::[]
 ifdef::env-github[]
 == Table of contents
 
+:sectids!:
+
 * <<1-scope,1. Scope>>
 * <<2-references,2. References>>
 ** <<21-normative-references,2.1 Normative references>>
@@ -1847,7 +1849,7 @@ This section defines the proposed encoding of Earth Observation granule metadata
 
 
 [appendix]
-= A. Media Types for Data Encoding
+= Media Types for Data Encoding
 
 When representations are delivered using HTTP, the following MIME media types shall be used:
 
@@ -1862,7 +1864,8 @@ When representations are delivered using HTTP, the following MIME media types sh
 
 |===
 
-== B. Property Mapping
+[appendix]
+= Property Mapping
 
 === B.1 OGC17-084r1 Metadata
 
@@ -1958,7 +1961,7 @@ TBD.
 
 
 [appendix]
-= D. Complete Examples
+= Complete Examples
 
 === D.1 Collection
 
