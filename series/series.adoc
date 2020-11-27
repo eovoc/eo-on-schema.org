@@ -1192,7 +1192,10 @@ Range: URL
 		"http://dbpedia.org/resource/Landsat_7",
 		"http://yago-knowledge.org/resource/Landsat_7"
 	],
-	"subjectOf": "https://directory.eoportal.org/web/eoportal/satellite-missions/l/landsat-7",
+	"subjectOf": [
+		"https://directory.eoportal.org/web/eoportal/satellite-missions/l/landsat-7",
+		"https://doi.org/10.1080/01431160601024200"
+	],
 	"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms"
 }
 ----
