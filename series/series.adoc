@@ -11,32 +11,35 @@ endif::[]
 ifdef::env-github[]
 == Table of contents
 
-* <<references,3. References>>
-** <<normative-references,3.1 Normative References>>
-** <<other-references,3.2 Other References>>
+* <<scope,1. Scope>>
+* <<references,2. References>>
+** <<normative-references,2.1 Normative references>>
+** <<other-references,2.2 Other references>>
 
-* <<2-eo-collections,2. EO Collections>>
-** <<21-metadata-information,2.1 Metadata Information>>
-** <<22-data-identification,2.2 Data Identification>>
-*** <<221-resource-dates,2.2.1 Resource Dates>>
-*** <<222-propertyvalue,2.2.2 PropertyValue>>
-*** <<223-contact,2.2.3 Contact>>
-*** <<224-organization,2.2.4 Organization>>
-*** <<225-person,2.2.5 Person>>
-*** <<226-role,2.2.6 Role>>
-** <<23-resource-constraints,2.3 Resource Constraints>>
-** <<24-descriptive-keywords,2.4 Descriptive Keywords>>
-*** <<241-definedterm,2.4.1 DefinedTerm>>
-** <<25-spatial-information,2.5 Spatial Information>>
-*** <<251-geoshape,2.5.1 GeoShape>>
-*** <<252-geocoordinates,2.5.2 GeoCoordinates>>
-** <<26-related-url,2.6 Related URL>>
-*** <<261-mediaobject,2.6.1 MediaObject>>
-*** <<262-action,2.6.2 Action>>
-** <<27-acquisition-information,2.7 Acquisition Information>>
-* <<3-eo-services-and-applications,3. EO Services and Applications>>
-** <<31-service-identification,3.1 Service Identification>>
-* <<4-eo-granules,4. EO Granules>>
+* <<terms-and-definitions,3. Terms and definitions>>
+
+* <<4-eo-collections-encoding,4. EO Collections encoding>>
+** <<metadata-information,4.1 Metadata Information>>
+** <<data-identification,4.2 Data Identification>>
+*** <<resource-dates,4.2.1 Resource Dates>>
+*** <<propertyvalue,4.2.2 PropertyValue>>
+*** <<contact,4.2.3 Contact>>
+*** <<organization,4.2.4 Organization>>
+*** <<person,4.2.5 Person>>
+*** <<role,4.2.6 Role>>
+** <<resource-constraints,4.3 Resource Constraints>>
+** <<descriptive-keywords,4.4 Descriptive Keywords>>
+*** <<definedterm,4.4.1 DefinedTerm>>
+** <<spatial-information,4.5 Spatial Information>>
+*** <<geoshape,4.5.1 GeoShape>>
+*** <<geocoordinates,2.5.2 GeoCoordinates>>
+** <<related-url,4.6 Related URL>>
+*** <<mediaobject,4.6.1 MediaObject>>
+*** <<action,4.6.2 Action>>
+** <<acquisition-information,4.7 Acquisition Information>>
+* <<eo-services-and-applications,5. EO Services and Applications>>
+** <<service-identification,5.1 Service Identification>>
+* <<eo-granules,6. EO Granules Encoding>>
 
 * <<a-media-types-for-data-encoding,A. Media Types for Data Encoding>>
 * <<b-property-mapping,B. Property Mapping>>
@@ -48,10 +51,6 @@ endif::[]
 == Scope
 
 == References
-
-== Terms and definitions
-
-
 
 === C.1 Normative references
 
@@ -91,12 +90,21 @@ endif::[]
 [[OGC19-020r1]][OGC19-020r1]::
 	OGC19-020r1, OGC Testbed-15: Catalogue and Discovery Engineering Report, https://docs.ogc.org/per/19-020r1.html.
 
+== Terms and definitions
 
 
-== 2. EO Collections
+// 4 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+== 4 EO Collections Encoding
+endif::[]
+ifndef::env-github
+== EO Collections Encoding
+endif::[]
+
 
 This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and OGC17-084r1.  The graphical notation is borrowed from <<ESIPFed>>. The diagrams are prepared with PlantUML.
 
+// 
 === 2.1 Metadata Information
 
 [#img_object_listitem,reftext='{figure-caption} {counter:figure-num}']
@@ -1495,11 +1503,13 @@ a| instrument +
 ----
 
 
-== 3. EO Services and Applications
+// 5
+== EO Services and Applications Encoding
 
 This section defines the proposed encoding of Earth Observation service and application metadata.  
 
-=== 3.1 Service Identification
+// 5.1
+=== Service Identification
 
 [#img_object_service,reftext='{figure-caption} {counter:figure-num}']
 .Service Identification Schema
@@ -1662,7 +1672,8 @@ Range: Number or Text
 }
 ----
 
-== 4. EO Granules
+// 6
+== EO Granules Encoding
 
 This section defines the proposed encoding of Earth Observation granule metadata. 
 
