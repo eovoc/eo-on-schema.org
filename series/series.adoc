@@ -233,6 +233,8 @@ ifndef::env-github[]
 === Metadata Information
 endif::[]
 
+Metadata Information applies to EO Collections (`Dataset`), EO Granules (`Dataset`) and EO Services and Applications (`CreativeWork`).
+
 [#img_object_listitem,reftext='{figure-caption} {counter:figure-num}']
 .Metadata Information Schema
 image::diagrams/ListItem.png[align="center"]
@@ -489,12 +491,13 @@ ifndef::env-github[]
 ==== Resource Dates
 endif::[]
 
+Resource dates apply to EO Collections (`Dataset`), EO Granules (`Dataset`) and EO Services and Applications (`CreativeWork`).
 
 [#img_object_dates,reftext='{figure-caption} {counter:figure-num}']
-.DataDates Schema
-image::diagrams/DataDates.png[align="center"]
+.ResourceDates Schema
+image::diagrams/ResourceDates.png[align="center"]
 
-The complete overview of date related properties for data is given in <<table_object_dates>>.  
+The complete overview of date related properties for resources is given in <<table_object_dates>>.  
 
 [#table_object_dates,reftext='{table-caption} {counter:table-num}']
 .Dates object properties
@@ -533,7 +536,7 @@ Range: Date or Datetime
 |===
 
 
-.DataDates encoding example
+.ResourceDates encoding example
 [source,json]
 ----
 {
