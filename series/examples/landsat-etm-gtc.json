@@ -2,7 +2,8 @@
 	"@context": [
 		"http://eovoc.spacebel.be/schema-org/docs/jsonldcontext.json",
 		{
-			"dbr": "http://dbpedia.org/resource/"
+			"dbr": "http://dbpedia.org/resource/",
+			"dbo": "http://dbpedia.org/ontology/"
 		}
 	],
 	"@type": "Dataset",
@@ -303,7 +304,7 @@
 				{
 					"@type": [
 						"DefinedTerm",
-						"dbpedia:Scientific_instrument"
+						"dbo:Scientific_instrument"
 					],
 					"@id": "https://earth.esa.int/concept/etm",
 					"sameAs": "http://gcmd.earthdata.nasa.gov/kms/concept/4dbe7764-a2ea-4a19-b754-696c35ac3205",
@@ -314,15 +315,17 @@
 				{
 					"@type": [
 						"DefinedTerm",
-						"dbpedia:Satellite"
+						"dbo:Satellite"
 					],
 					"@id": "https://earth.esa.int/concept/landsat-7",
 					"sameAs": [
 						"http://gcmd.earthdata.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4",
-						"http://dbpedia.org/resource/Landsat_7"
+						"http://dbpedia.org/resource/Landsat_7",
+						"http://yago-knowledge.org/resource/Landsat_7"
 					],
 					"name": "Landsat-7",
-					"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms"
+					"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms",
+						"subjectOf": "https://directory.eoportal.org/web/eoportal/satellite-missions/l/landsat-7"
 				}
 			]
 		}

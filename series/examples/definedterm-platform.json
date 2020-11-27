@@ -1,0 +1,19 @@
+{
+	"@type": [
+		"DefinedTerm",
+		"Vehicle",
+		"http://dbpedia.org/ontology/Satellite"
+	],
+	"@id": "https://earth.esa.int/concept/landsat-7",
+	"name": "Landsat-7",
+	"sameAs": [
+		"http://gcmd.earthdata.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4",
+		"http://dbpedia.org/resource/Landsat_7",
+		"http://yago-knowledge.org/resource/Landsat_7"
+	],
+	"subjectOf": [
+		"https://directory.eoportal.org/web/eoportal/satellite-missions/l/landsat-7",
+		"https://doi.org/10.1080/01431160601024200"
+	],
+	"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms"
+}

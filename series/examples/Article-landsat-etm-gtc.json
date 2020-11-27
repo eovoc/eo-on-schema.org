@@ -1,0 +1,36 @@
+{
+	"@context": "https://schema.org/",
+	"@type": "Article",
+	"@id": "https://doi.org/10.1080/01431160601024200",
+	"identifier": {
+		"@id": "https://doi.org/10.1080/01431160601024200",
+		"@type": "PropertyValue",
+		"propertyID": "https://registry.identifiers.org/registry/doi",
+		"value": "doi:10.1080/01431160601024200",
+		"url": "https://doi.org/10.1080/01431160601024200"
+	},
+	"name": "A new vegetation index derived from the pattern decomposition method applied to Landsat-7/ETM+ images in Mongolia",
+	"description": "The goal of this study was to estimate vegetation coverage and map the land cover in an experimental field (60×60 km) near Mandalgobi, Mongolia using Landsat 7/ETM+ data for ground truthing in the Advanced Earth Observing Satellite II (ADEOS-II) Mongolian ...",
+	"about": {
+		"@type": "Dataset",
+		"@id": "https://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC"
+	},
+	"isPartOf": "International Journal of Remote Sensing",
+	"datePublished": "2007-08-20",
+	"url": [
+		"https://www.tandfonline.com/action/fedSearchRedirect?doi=10.1080%2F01431160601024200",
+		"https://doi.org/10.1080/01431160601024200"
+	],
+	"contributor": [
+		"Muramatsu, K",
+		"Xiong, Y",
+		"Nakayama, S",
+		"Ochiai, F",
+		"Daigo, M",
+		"Hirata, M",
+		"Oishi, K",
+		"Bolortsetseg, B",
+		"Oyunbaatar, D",
+		"Kaihotsu, I"
+	]
+}
