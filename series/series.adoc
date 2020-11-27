@@ -11,8 +11,6 @@ endif::[]
 ifdef::env-github[]
 == Table of contents
 
-:sectids!:
-
 * <<1-scope,1. Scope>>
 * <<2-references,2. References>>
 ** <<21-normative-references,2.1 Normative references>>
@@ -43,8 +41,9 @@ ifdef::env-github[]
 ** <<51-service-identification,5.1 Service Identification>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 
-* <<a-media-types-for-data-encoding,A. Media Types for Data Encoding>>
-* <<b-property-mapping,B. Property Mapping>>
+* <<appendix-a-media-types-for-data-encoding,Appendix A: Media Types for Data Encoding>>
+* <<appendix-b-property-mapping,Appendix B: Property Mapping>>
+* <<appendix-c-complete-examples,Appendix C: Property Mapping>>
 
 endif::[]
 
@@ -1963,7 +1962,7 @@ TBD.
 [appendix]
 = Complete Examples
 
-=== D.1 Collection
+=== C.1 Collection
 
 // Links for GitHub
 // relative links do not seem to work ?
@@ -1982,7 +1981,7 @@ include::../series/examples/landsat-etm-gtc.json[]
 
 endif::[]
 
-=== D.2 Service and Application
+=== C.2 Service and Application
 
 // Links for GitHub
 ifdef::env-github,backend-html5[]
