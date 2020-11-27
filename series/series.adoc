@@ -1961,9 +1961,8 @@ See also <<table_object_propertyvalue>>.
 a| additionalType +
 ~$.additionaltype~
 | Unique identifiers (URI) for the type of the resource.  Is equivalent to the `dct:type` property used by https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types[DCAT for classifying dataset types].  +
-E.g. http://purl.org/dc/dcmitype/Service, +
-http://purl.org/dc/dcmitype/Software, +
-https://inspire.ec.europa.eu/metadata-codelist/ResourceType/service.
+E.g. http://purl.org/dc/dcmitype/Dataset, +
+https://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset.
 | Domain: Thing +
 Range: URL
 | Zero or more (optional)
