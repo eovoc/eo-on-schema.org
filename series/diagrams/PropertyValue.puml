@@ -20,18 +20,24 @@ ArrowColor Black
 linetype Ortho
 }
 
+Class Thing
+Class Person
 Class Dataset
+Class CreativeWork
 Class PropertyValue
 
 
 
-Dataset -right-> (Text) : "identifier"
+Thing -right-> PropertyValue : "identifier"
 
-Dataset -right-> PropertyValue : "identifier"
-
-PropertyValue --> (Text) : "value"
+PropertyValue -up-> (Text) : "value"
 ' PropertyValue --> (URL) : "url"
 PropertyValue -right-> (URL) : "propertyID,\nurl"
+
+Thing <|-- CreativeWork
+Thing <|-- Person
+CreativeWork <|-- Dataset
+
 
 
 

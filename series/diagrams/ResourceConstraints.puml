@@ -20,12 +20,15 @@ linetype Ortho
 Class Dataset
 Class CreativeWork
 
+Class License as "CreativeWork"
 
-Dataset -down-> (URL) : "license"
+CreativeWork <|-up- Dataset
 
-Dataset -right-> CreativeWork : "license"
+CreativeWork -down-> (URL) : "license"
 
-Dataset -down-> (Text) : "conditionsOfAccess"
+CreativeWork -right-> License : "license"
+
+CreativeWork -down-> (Text) : "conditionsOfAccess"
 
 
 

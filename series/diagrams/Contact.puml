@@ -21,12 +21,14 @@ Class Dataset
 Class Organization
 Class Person
 Class Role
+Class CreativeWork
 
+CreativeWork <|-up- Dataset
 
-Dataset -right-> Organization : "(creator),\n(contributor),\n(author),\npublisher,\nprovider"
+CreativeWork -right-> Organization : "(creator),\n(contributor),\n(author),\npublisher,\nprovider"
 
-Dataset -left-> Person : "creator,\ncontributor,\n(author),\n(publisher),\n(provider)"
-Dataset --> Role : "creator,\ncontributor,\n(author),\npublisher,\nprovider"
+CreativeWork -left-> Person : "creator,\ncontributor,\n(author),\n(publisher),\n(provider)"
+CreativeWork --> Role : "creator,\ncontributor,\n(author),\npublisher,\nprovider"
 
 
 
