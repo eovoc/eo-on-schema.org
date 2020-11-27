@@ -1867,7 +1867,7 @@ When representations are delivered using HTTP, the following MIME media types sh
 [appendix]
 = Interpretation as W3C JSON-LD
 
-The Web page https://schema.org/docs/howwework.html provides a [JSON-LD context file](https://schema.org/docs/jsonldcontext.json) which is needed to use schema.org with W3C JSON-LD format.  Unfortunately, this file assumes that `http` is used instead of `https` for the schema.org namespace.  An updated version to be used in combination with the `https` namespace is provided below:
+The Web page https://schema.org/docs/howwework.html provides a https://schema.org/docs/jsonldcontext.json[JSON-LD context file] which is needed to use schema.org with W3C JSON-LD and subsequently convert into RDF/XML or Turtle formats.  Unfortunately, the original context file assumes that `http` is used instead of `https` for the schema.org namespace.  An updated version to be used in combination with the `https` namespace is provided below:
 
 * https://github.com/eovoc/eo-on-schema.org/blob/main/series/docs/jsonldcontext.json[jsonldcontext.json]
 
