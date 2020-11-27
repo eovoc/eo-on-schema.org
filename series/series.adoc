@@ -16,8 +16,10 @@ ifdef::env-github[]
 ** <<21-normative-references,2.1 Normative references>>
 ** <<22-other-references,2.2 Other references>>
 
-* <<3-terms-and-definitions,3. Terms and definitions>>
-
+* <<3-conventions,3. Conventions>>
+** <<31-glossary,3.1 Glossary>>
+** <<32-abbreviated-terms,3.2 Abbreviated terms>>
+** <<33-symbols,3.3 Symbols>>
 * <<4-eo-collections-encoding,4. EO Collections encoding>>
 ** <<41-metadata-information,4.1 Metadata Information>>
 ** <<42-data-identification,4.2 Data Identification>>
@@ -129,13 +131,21 @@ endif::[]
 
 // 3 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
-== 3 Terms and definitions
+== 3 Conventions
 endif::[]
 ifndef::env-github[]
-== Terms and definitions
+== Conventions
 endif::[]
 
+This section provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, or special notes regarding how to read the document.
+
+// 3.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 3.1 Glossary
+endif::[]
+ifndef::env-github[]
 === Glossary
+endif::[]
 
 &#9679; collection ::
 
@@ -159,10 +169,13 @@ Different agencies use different terms for "collection": dataset (ESA), granule 
 	
 Same meaning as "granule".
 
-
+// 3.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 3.2 Abbreviated terms
+endif::[]
+ifndef::env-github[]
 === Abbreviated terms
-
-.NOTE: The abbreviated terms clause gives a list of the abbreviated terms and the symbols necessary for understanding this document. All symbols should be listed in alphabetical order. Some more frequently used abbreviated terms are provided below as examples.
+endif::[]
 
 * API			Application Programming Interface
 * CEOS		Committee on Earth Observation Satellites
@@ -187,6 +200,19 @@ Same meaning as "granule".
 * XML		eXtensible Markup Language
 * XSD		XML Schema Definition Language
 
+// 3.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 3.3 Symbols
+endif::[]
+ifndef::env-github[]
+=== Symbols
+endif::[]
+
+Conventions 4 (graphical notation) and 6 (namespace) of https://github.com/ESIPFed/science-on-schema.org/blob/master/CONVENTIONS.md are applied.
+
+The graphical notation is borrowed from <<ESIPFed>>, with the exception of named literals for which a different shape is used. The diagrams are prepared with PlantUML.
+
+The `https://schema.org/` namespace for schema.org is used. 
 
 // 4 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
@@ -197,7 +223,7 @@ ifndef::env-github[]
 endif::[]
 
 
-This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and OGC17-084r1.  The graphical notation is borrowed from <<ESIPFed>>. The diagrams are prepared with PlantUML.
+This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in <<OGC17-003r2>>, <<OGC19-020r1>> and <<OGC17-084r1>>.  
 
 // 4.1 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
