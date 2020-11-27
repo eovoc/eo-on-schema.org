@@ -2336,5 +2336,15 @@ include::./examples/Article-landsat-etm-gtc.json[]
 endif::[]
 
 
+[appendix]
+[[RevisionHistory]]
+// E
+= Revision History
 
+.Revision History
+[width="90%",options="header"]
+|====================
+|Date |Editor |Release | Primary clauses modified |Descriptions
+|December 24, 2020 |Y. Coene | 0.1 |all |Initial version for EOVOC RR-1 Review.
+|====================
 
