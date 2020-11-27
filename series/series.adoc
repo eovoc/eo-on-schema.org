@@ -11,12 +11,12 @@ endif::[]
 ifdef::env-github[]
 == Table of contents
 
-* <<scope,1. Scope>>
-* <<references,2. References>>
-** <<normative-references,2.1 Normative references>>
-** <<other-references,2.2 Other references>>
+* <<1-scope,1. Scope>>
+* <<2-references,2. References>>
+** <<21-normative-references,2.1 Normative references>>
+** <<22-other-references,2.2 Other references>>
 
-* <<terms-and-definitions,3. Terms and definitions>>
+* <<3-terms-and-definitions,3. Terms and definitions>>
 
 * <<4-eo-collections-encoding,4. EO Collections encoding>>
 ** <<metadata-information,4.1 Metadata Information>>
@@ -46,11 +46,32 @@ ifdef::env-github[]
 
 endif::[]
 
+
+// 1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+== 1 Scope
+endif::[]
+ifndef::env-github[]
 == Scope
+endif::[]
 
+
+// 2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+== 2 References
+endif::[]
+ifndef::env-github[]
 == References
+endif::[]
 
-=== C.1 Normative references
+
+// 2.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 2.1 Normative references
+endif::[]
+ifndef::env-github[]
+=== Normative references
+endif::[]
 
 [[DCAT]][DCAT]::
 	Data Catalog Vocabulary (DCAT) - Version 2, W3C Recommendation 04 February 2020, https://www.w3.org/TR/vocab-dcat-2/
@@ -73,7 +94,15 @@ endif::[]
 [[SKOS]][SKOS]:: 
 	SKOS Simple Knowledge Organization System, Reference, W3C Recommendation 18 August 2009, https://www.w3.org/TR/skos-reference/
 
-=== C.2 Other references
+
+
+// 2.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 2.2 Other references
+endif::[]
+ifndef::env-github[]
+=== Other references
+endif::[]
 
 [[CEOS-OS-BP]][CEOS-OS-BP]::
 	CEOS OpenSearch Best Practice Document, Version 1.2, http://ceos.org/document_management/Working_Groups/WGISS/Interest_Groups/OpenSearch/CEOS-OPENSEARCH-BP-V1.2.pdf
@@ -88,11 +117,18 @@ endif::[]
 [[OGC19-020r1]][OGC19-020r1]::
 	OGC19-020r1, OGC Testbed-15: Catalogue and Discovery Engineering Report, https://docs.ogc.org/per/19-020r1.html.
 
-== Terms and definitions
+
+
+// 3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+== 3 Terms and definition
+endif::[]
+ifndef::env-github[]
+== Terms and definition
+endif::[]
 
 
 // 4 --------------------------------------------------------------------------------------------
-
 ifdef::env-github[]
 == 4 EO Collections Encoding
 endif::[]
