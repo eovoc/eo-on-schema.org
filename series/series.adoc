@@ -299,7 +299,7 @@ Range: Language or Text
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
+	"@context": "https://schema.org",
 	"@type": "Dataset",
 	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
 	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks.",
@@ -541,7 +541,7 @@ Range: Date or Datetime
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
+	"@context": "https://schema.org",
 	"@type": "Dataset",
 	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
 	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
@@ -977,7 +977,7 @@ Range: Text
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
+	"@context": "https://schema.org",
 	"@type": "Dataset",
 	"name": "Alos African Coverage ESA archive",
 	"identifier": "ALOS",
@@ -1041,7 +1041,7 @@ a| variableMeasured +
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
+	"@context": "https://schema.org",
 	"@type": "Dataset",
 	"keywords": [
 		{
@@ -1182,7 +1182,7 @@ Range: URL
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
+	"@context": "https://schema.org",
 	"@type": "DefinedTerm",
 	"@id": "http://www.eionet.europa.eu/gemet/concept/4612",
 	"name": "Land cover",
@@ -1278,7 +1278,7 @@ Range: PropertyValue  (<<table_object_propertyvalue>>)
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
+	"@context": "https://schema.org",
 	"@type": "Dataset",
 	"name": "OceanSat-2 NRT data",
 	"description": "ESA, in collaboration with GAF AG, acquires and process every day OceanSat-2 passes over Neutrelitz reception station from 1 January 2016.All passes are systematically processed to levels 1B, 2B and 2C, and available for users in NRT (< 3 hours).",
@@ -1340,7 +1340,7 @@ a| line +
 [source,json]
 ----
 {
-	"@context": "http://schema.org",			
+	"@context": "https://schema.org",			
 	"@type": "GeoShape",
 	"polygon": "63.261372 -2.682513 61.997604 -2.695740 61.965195 0.005087 63.227173 0.135472 63.261372 -2.682513"
 }
@@ -1388,7 +1388,7 @@ a| longitude +
 [source,json]
 ----
 {
-	"@context": "http://schema.org",		
+	"@context": "https://schema.org",		
 	"@type": "GeoCoordinates",
 	"latitude": "50.83159",
    	"longitude": "4.72988"
@@ -1508,7 +1508,7 @@ a| thumbnailUrl +
 				"contentType": [
 					"application/xml"
 				],
-				"urlTemplate": "http://131.176.196.55/wcs?service=WCS&Request=GetCapabilities",
+				"urlTemplate": "https://datacube.pdgs.eo.esa.int/wcs?service=WCS&Request=GetCapabilities",
 				"httpMethod": "GET"
 			},
 			{
@@ -1517,7 +1517,7 @@ a| thumbnailUrl +
 				"contentType": [
 					"application/xml"
 				],
-				"urlTemplate": "http://131.176.196.55/wcs?service=WCS&Request=DescribeCoverage&version=2.0.0&CoverageId=LE7_RGB",
+				"urlTemplate": "https://datacube.pdgs.eo.esa.int/wcs?service=WCS&Request=DescribeCoverage&version=2.0.0&CoverageId=LE7_RGB",
 				"httpMethod": "GET"
 			}
 		]
@@ -1596,7 +1596,7 @@ a| inLanguage +
 [source,json]
 ----
 {
-	"@context": "http://schema.org",
+	"@context": "https://schema.org",
 	"@type": "MediaObject",
 	"contentUrl": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2",
 	"encodingFormat": "text/html",
