@@ -1974,7 +1974,7 @@ ifndef::env-github[]
 .landsat-etm-gtc.json
 [source,json]
 ----
-include::../series/examples/landsat-etm-gtc.json.json[]
+include::../series/examples/landsat-etm-gtc.json[]
 ----
 
 endif::[]
