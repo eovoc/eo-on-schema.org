@@ -1846,8 +1846,8 @@ endif::[]
 This section defines the proposed encoding of Earth Observation granule metadata. 
 
 
-
-== A. Media Types for Data Encoding
+[appendix]
+= A. Media Types for Data Encoding
 
 When representations are delivered using HTTP, the following MIME media types shall be used:
 
@@ -1957,8 +1957,8 @@ a| versionInfo +
 TBD.
 
 
-
-== D. Complete Examples
+[appendix]
+= D. Complete Examples
 
 === D.1 Collection
 
