@@ -92,11 +92,11 @@ endif::[]
 
 
 // 4 --------------------------------------------------------------------------------------------
+
 ifdef::env-github[]
 == 4 EO Collections Encoding
 endif::[]
-
-ifndef::env-github
+ifndef::env-github[]
 == EO Collections Encoding
 endif::[]
 
