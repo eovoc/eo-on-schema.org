@@ -2137,6 +2137,7 @@ TBD.
 [appendix]
 = Complete Examples
 
+[appendix]
 === C.1 Collection
 
 // Links for GitHub
@@ -2156,6 +2157,7 @@ include::../series/examples/landsat-etm-gtc.json[]
 
 endif::[]
 
+[appendix]
 === C.2 Service and Application
 
 // Links for GitHub
@@ -2175,6 +2177,7 @@ include::../series/examples/goce-user-toolbox.json[]
 
 endif::[]
 
+[appendix]
 === C.3 Granule
 
 // Links for GitHub
