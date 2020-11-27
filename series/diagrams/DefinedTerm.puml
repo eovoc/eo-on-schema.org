@@ -20,10 +20,10 @@ ArrowColor Black
 linetype Ortho
 }
 
-Class Dataset
+' Class Dataset
 Class DefinedTerm
 
-Dataset -right-> DefinedTerm : "keywords"
+' Dataset -right-> DefinedTerm : "keywords"
 
 
 DefinedTerm --> (URL) : "@id,\nsameAs"
