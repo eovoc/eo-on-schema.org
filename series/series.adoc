@@ -46,6 +46,9 @@ ifdef::env-github[]
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
 * <<appendix-c-property-mapping,Appendix C: Property Mapping>>
 * <<appendix-d-complete-examples,Appendix D: Complete Examples>>
+** <<appendix-d1-collection,D.1: Collection>>
+** <<appendix-d2-service-and-application,D.2: Service and Application>>
+** <<appendix-d3-granule,D.3: Granule>>
 
 endif::[]
 
@@ -119,6 +122,8 @@ endif::[]
 	DCAT-AP to Schema.org Mapping, Unofficial Draft 13 September 2019, https://ec-jrc.github.io/dcat-ap-to-schema-org/
 [[OGC19-020r1]][OGC19-020r1]::
 	OGC19-020r1, OGC Testbed-15: Catalogue and Discovery Engineering Report, https://docs.ogc.org/per/19-020r1.html.
+[[STAC-ITEM]][STAC-ITEM]::
+	STAC Item Specification, v1.0.0-beta-2, https://github.com/radiantearth/stac-spec/blob/v1.0.0-beta.2/item-spec/item-spec.md.
 
 
 
@@ -1973,6 +1978,12 @@ a| @id +
 | Range: URL
 | Zero or one (optional)
 
+a| isPartOf +
+~$.isPartOf~
+| Indicates a Collection to which this granule belongs.  Similar to `parentIdentifier` in <<OGC17-003r2>> and `collection` in <<STAC-ITEM>>.
+| Range: URL | Dataset
+| Zero or more (optional)
+
 a| alternateName +
 ~$.alternateName~
 | Alternate name of the granule.
@@ -2150,10 +2161,7 @@ endif::[]
 // Links for GitHub
 ifdef::env-github,backend-html5[]
 
-:exampledir: https://raw.githubusercontent.com/eovoc/eo-on-schema.org/main/series/examples
-
 * https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/goce-user-toolbox.json[Example 1: GOCE User Toolbox]
- 
 endif::[]
 
 // Includes for AsciiDoc processing
@@ -2163,6 +2171,25 @@ ifndef::env-github[]
 [source,json]
 ----
 include::../series/examples/goce-user-toolbox.json[]
+----
+
+endif::[]
+
+=== C.3 Granule
+
+// Links for GitHub
+ifdef::env-github,backend-html5[]
+
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/landsat-tm-gtc-product-granule.json[Example 1: LANDSAT-TM-GTC Granule]
+endif::[]
+
+// Includes for AsciiDoc processing
+ifndef::env-github[]
+
+.landsat-tm-gtc-product-granule.json
+[source,json]
+----
+include::../series/examples/landsat-tm-gtc-product-granule.json[]
 ----
 
 endif::[]
