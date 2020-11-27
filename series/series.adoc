@@ -42,8 +42,9 @@ ifdef::env-github[]
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 
 * <<appendix-a-media-types-for-data-encoding,Appendix A: Media Types for Data Encoding>>
-* <<appendix-b-property-mapping,Appendix B: Property Mapping>>
-* <<appendix-c-complete-examples,Appendix C: Property Mapping>>
+* <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
+* <<appendix-c-property-mapping,Appendix C: Property Mapping>>
+* <<appendix-d-complete-examples,Appendix D: Complete Examples>>
 
 endif::[]
 
@@ -1862,6 +1863,13 @@ When representations are delivered using HTTP, the following MIME media types sh
 | application/rdf+xml;profile="http://schema.org"   |  RDF/XML representation with all context information within the body of the document.
 
 |===
+
+[appendix]
+= Interpretation as W3C JSON-LD
+
+The Web page https://schema.org/docs/howwework.html provides a [JSON-LD context file](https://schema.org/docs/jsonldcontext.json) which is needed to use schema.org with W3C JSON-LD format.  Unfortunately, this file assumes that `http` is used instead of `https` for the schema.org namespace.  An updated version to be used in combination with the `https` namespace is provided below:
+
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/docs/jsonldcontext.json[jsonldcontext.json]
 
 [appendix]
 = Property Mapping
