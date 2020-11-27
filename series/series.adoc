@@ -44,8 +44,6 @@ ifdef::env-github[]
 * <<a-media-types-for-data-encoding,A. Media Types for Data Encoding>>
 * <<b-property-mapping,B. Property Mapping>>
 
-
-
 endif::[]
 
 == Scope
@@ -97,6 +95,7 @@ endif::[]
 ifdef::env-github[]
 == 4 EO Collections Encoding
 endif::[]
+
 ifndef::env-github
 == EO Collections Encoding
 endif::[]
@@ -1808,6 +1807,8 @@ ifndef::env-github[]
 ----
 include::../series/examples/landsat-etm-gtc.json.json[]
 ----
+
+endif::[]
 
 === D.2 Service and Application
 
