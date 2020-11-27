@@ -19,27 +19,27 @@ ifdef::env-github[]
 * <<3-terms-and-definitions,3. Terms and definitions>>
 
 * <<4-eo-collections-encoding,4. EO Collections encoding>>
-** <<metadata-information,4.1 Metadata Information>>
-** <<data-identification,4.2 Data Identification>>
-*** <<resource-dates,4.2.1 Resource Dates>>
-*** <<propertyvalue,4.2.2 PropertyValue>>
-*** <<contact,4.2.3 Contact>>
-*** <<organization,4.2.4 Organization>>
-*** <<person,4.2.5 Person>>
-*** <<role,4.2.6 Role>>
-** <<resource-constraints,4.3 Resource Constraints>>
-** <<descriptive-keywords,4.4 Descriptive Keywords>>
-*** <<definedterm,4.4.1 DefinedTerm>>
-** <<spatial-information,4.5 Spatial Information>>
-*** <<geoshape,4.5.1 GeoShape>>
-*** <<geocoordinates,2.5.2 GeoCoordinates>>
-** <<related-url,4.6 Related URL>>
-*** <<mediaobject,4.6.1 MediaObject>>
-*** <<action,4.6.2 Action>>
-** <<acquisition-information,4.7 Acquisition Information>>
-* <<eo-services-and-applications,5. EO Services and Applications>>
-** <<service-identification,5.1 Service Identification>>
-* <<eo-granules,6. EO Granules Encoding>>
+** <<41-metadata-information,4.1 Metadata Information>>
+** <<42-data-identification,4.2 Data Identification>>
+*** <<421-resource-dates,4.2.1 Resource Dates>>
+*** <<422-propertyvalue,4.2.2 PropertyValue>>
+*** <<423-contact,4.2.3 Contact>>
+*** <<424-organization,4.2.4 Organization>>
+*** <<425-person,4.2.5 Person>>
+*** <<426-role,4.2.6 Role>>
+** <<43-resource-constraints,4.3 Resource Constraints>>
+** <<44-descriptive-keywords,4.4 Descriptive Keywords>>
+*** <<441-definedterm,4.4.1 DefinedTerm>>
+** <<45-spatial-information,4.5 Spatial Information>>
+*** <<451-geoshape,4.5.1 GeoShape>>
+*** <<452-geocoordinates,4.5.2 GeoCoordinates>>
+** <<46-related-url,4.6 Related URL>>
+*** <<461-mediaobject,4.6.1 MediaObject>>
+*** <<462-action,4.6.2 Action>>
+** <<47-acquisition-information,4.7 Acquisition Information>>
+* <<5-eo-services-and-applications,5. EO Services and Applications>>
+** <<51-service-identification,5.1 Service Identification>>
+* <<6-eo-granules,6. EO Granules Encoding>>
 
 * <<a-media-types-for-data-encoding,A. Media Types for Data Encoding>>
 * <<b-property-mapping,B. Property Mapping>>
@@ -121,10 +121,10 @@ endif::[]
 
 // 3 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
-== 3 Terms and definition
+== 3 Terms and definitions
 endif::[]
 ifndef::env-github[]
-== Terms and definition
+== Terms and definitions
 endif::[]
 
 
@@ -139,8 +139,13 @@ endif::[]
 
 This section defines the encoding of Earth Observation collection metadata.  We use a presentation similar to the GeoJSON Encoding Specifications in https://docs.ogc.org/is/17-003r2/17-003r2.html[OGC17-003r2], https://docs.ogc.org/per/19-020r1.html[OGC19-020r1] and OGC17-084r1.  The graphical notation is borrowed from <<ESIPFed>>. The diagrams are prepared with PlantUML.
 
-// 
-=== 2.1 Metadata Information
+// 4.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 4.1 Metadata Information
+endif::[]
+ifndef::env-github[]
+=== Metadata Information
+endif::[]
 
 [#img_object_listitem,reftext='{figure-caption} {counter:figure-num}']
 .Metadata Information Schema
@@ -222,7 +227,13 @@ Range: Language or Text
 ----
 
 
-=== 2.2 Data Identification
+// 4.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 4.2 Data Identification
+endif::[]
+ifndef::env-github[]
+=== Data Identification
+endif::[]
 
 [#img_object_dataset,reftext='{figure-caption} {counter:figure-num}']
 .Data Identification Schema
@@ -384,7 +395,14 @@ Range: Number or Text
 }
 ----
 
-==== 2.2.1 Resource Dates
+// 4.2.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.2.1 Resource Dates
+endif::[]
+ifndef::env-github[]
+==== Resource Dates
+endif::[]
+
 
 [#img_object_dates,reftext='{figure-caption} {counter:figure-num}']
 .DataDates Schema
@@ -445,7 +463,13 @@ Range: Date or Datetime
 ----
 
 
-==== 2.2.2 PropertyValue
+// 4.2.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.2.2 PropertyValue
+endif::[]
+ifndef::env-github[]
+==== PropertyValue
+endif::[]
 
 [#img_object_propertyvalue,reftext='{figure-caption} {counter:figure-num}']
 .PropertyValue Schema
@@ -557,7 +581,15 @@ In the example below, PropertyValue is used to associate an https://orcid.org/[O
 }
 ----
 
-==== 2.2.3 Contact
+
+
+// 4.2.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.2.3 Contact
+endif::[]
+ifndef::env-github[]
+==== Contact
+endif::[]
 
 [#img_object_contact,reftext='{figure-caption} {counter:figure-num}']
 .Contact Schema
@@ -645,7 +677,13 @@ https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#r
 }
 ----
 
-==== 2.2.4 Organization
+// 4.2.4 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.2.4 Organization
+endif::[]
+ifndef::env-github[]
+==== Organization
+endif::[]
 
 [#img_object_organization,reftext='{figure-caption} {counter:figure-num}']
 .Organization Schema
@@ -673,7 +711,14 @@ The list of Organization properties is fully defined in https://schema.org/Organ
 }
 ----
 
-==== 2.2.5 Person
+
+// 4.2.5 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.2.5 Person
+endif::[]
+ifndef::env-github[]
+==== Person
+endif::[]
 
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .Person Schema
@@ -699,7 +744,14 @@ The list of Person properties is fully defined in https://schema.org/Person[sche
 }
 ----
 
-==== 2.2.6 Role
+// 4.2.6 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.2.6 Role
+endif::[]
+ifndef::env-github[]
+==== Role
+endif::[]
+
 
 [#img_object_role,reftext='{figure-caption} {counter:figure-num}']
 .Role Schema
@@ -761,7 +813,14 @@ Other roles can be used as values for https://schema.org/roleName[schema:roleNam
 }
 ----
 
-=== 2.3 Resource Constraints
+
+// 4.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 4.3 Resource Constraints
+endif::[]
+ifndef::env-github[]
+=== Resource Constraints
+endif::[]
 
 [#img_object_resourceconstraints,reftext='{figure-caption} {counter:figure-num}']
 .Resource Constraints Schema
@@ -810,7 +869,13 @@ Range: Text
 ----
 
 
-=== 2.4 Descriptive Keywords
+// 4.4 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 4.4 Descriptive Keywords
+endif::[]
+ifndef::env-github[]
+=== Descriptive Keywords
+endif::[]
 
 [#img_object_descriptivekeywords,reftext='{figure-caption} {counter:figure-num}']
 .Metadata Descriptive Keywords
@@ -922,7 +987,14 @@ a| variableMeasured +
 }
 ----
 
-==== 2.4.1 DefinedTerm
+// 4.4.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.4.1 DefinedTerm
+endif::[]
+ifndef::env-github[]
+==== DefinedTerm
+endif::[]
+
 
 [#img_object_definedterm,reftext='{figure-caption} {counter:figure-num}']
 .DefinedTerm schema
@@ -1007,7 +1079,13 @@ Range: URL
 }
 ----
 
-=== 2.5 Spatial Information
+// 4.5 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 4.5 Spatial Information
+endif::[]
+ifndef::env-github[]
+=== Spatial Information
+endif::[]
 
 [#img_object_spatialinformation,reftext='{figure-caption} {counter:figure-num}']
 .Spatial information schema
@@ -1066,7 +1144,13 @@ Range: PropertyValue  (<<table_object_propertyvalue>>)
 ----
 
 
-==== 2.5.1 GeoShape
+// 4.5.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.5.1 GeoShape
+endif::[]
+ifndef::env-github[]
+==== GeoShape
+endif::[]
 
 A GeoShape is described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.  The main https://schema.org/GeoShape[GeoShape] properties are given in <<table_object_geoshape>>.
 
@@ -1113,7 +1197,14 @@ a| line +
 }
 ----
 
-==== 2.5.2 GeoCoordinates
+// 4.5.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.5.2 GeoCoordinates
+endif::[]
+ifndef::env-github[]
+==== GeoCoordinates
+endif::[]
+
 
 The main https://schema.org/GeoCoordinates[GeoCoordinates] properties are given in <<table_object_geocoordinates>>.
 
@@ -1157,7 +1248,14 @@ a| longitude +
 ----
 
 
-=== 2.6 Related URL
+// 4.6 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 4.6 Related URL
+endif::[]
+ifndef::env-github[]
+=== Related URL
+endif::[]
+
 
 [#img_object_relatedurl,reftext='{figure-caption} {counter:figure-num}']
 .Related URL schema
@@ -1279,7 +1377,13 @@ a| thumbnailUrl +
 ----
 
 
-==== 2.6.1 MediaObject
+// 4.6.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.6.1 MediaObject
+endif::[]
+ifndef::env-github[]
+==== MediaObject
+endif::[]
 
 [#img_object_mediaobject,reftext='{figure-caption} {counter:figure-num}']
 .MediaObject schema
@@ -1353,7 +1457,13 @@ a| inLanguage +
 }
 ----
 
-==== 2.6.2 Action
+// 4.6.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.6.2 Action
+endif::[]
+ifndef::env-github[]
+==== Action
+endif::[]
 
 [#img_object_action,reftext='{figure-caption} {counter:figure-num}']
 .Action schema
@@ -1465,7 +1575,13 @@ Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification]
 ----
 
 
-=== 2.7 Acquisition Information
+// 4.7 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 4.7 Acquisition Information
+endif::[]
+ifndef::env-github[]
+=== Acquisition Information
+endif::[]
 
 [#img_object_acquisitioninformation,reftext='{figure-caption} {counter:figure-num}']
 .Acquisition Information schema
@@ -1538,13 +1654,25 @@ a| instrument +
 ----
 
 
-// 5
+
+// 5 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+== 5 EO Services and Applications Encoding
+endif::[]
+ifndef::env-github[]
 == EO Services and Applications Encoding
+endif::[]
 
 This section defines the proposed encoding of Earth Observation service and application metadata.  
 
-// 5.1
+
+// 5.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 5.1 Service Identification
+endif::[]
+ifndef::env-github[]
 === Service Identification
+endif::[]
 
 [#img_object_service,reftext='{figure-caption} {counter:figure-num}']
 .Service Identification Schema
@@ -1707,8 +1835,13 @@ Range: Number or Text
 }
 ----
 
-// 6
+// 6 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+== 6 EO Granules Encoding
+endif::[]
+ifndef::env-github[]
 == EO Granules Encoding
+endif::[]
 
 This section defines the proposed encoding of Earth Observation granule metadata. 
 
