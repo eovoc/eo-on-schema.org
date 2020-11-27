@@ -367,7 +367,7 @@ a| identifier +
 ~$.identifier~
 | Identifier given to the collection. `Text` is used for simple identifiers such as ´TropForest´.  `PropertyValue` can be used to include `DOI` information.
 | Domain: Thing +
-Range: Text or Url or PropertyValue +
+Range: Text \| Url \| PropertyValue +
 See also <<table_object_propertyvalue>>.
 | One or more (mandatory)
 
@@ -406,7 +406,7 @@ a| inLanguage +
 ~$.inLanguage~
 | Resource language code, not empty, e.g. "en" (English)..
 | Domain: CreativeWork +
-Range: Language or Text
+Range: Language \| Text
 | Zero or one (optional)
 
 a| subjectOf +
@@ -420,7 +420,7 @@ a| version +
 ~$.version~
 | Version number or other version designation of the resource.
 | Domain: CreativeWork +
-Range: Number or Text
+Range: Number \| Text
 | Zero or one (optional)
 |===
 
@@ -560,6 +560,8 @@ ifndef::env-github[]
 ==== PropertyValue
 endif::[]
 
+Propertyvalue can be used to identify all kinds of resources including EO Collections (`Dataset`), EO Granules (`Dataset`), EO Services and Applications (`CreativeWork`) and Persons (`Person`).
+
 [#img_object_propertyvalue,reftext='{figure-caption} {counter:figure-num}']
 .PropertyValue Schema
 image::diagrams/PropertyValue.png[align="center"]
@@ -679,6 +681,8 @@ endif::[]
 ifndef::env-github[]
 ==== Contact
 endif::[]
+
+Contact information applies to EO Collections (`Dataset`), EO Granules (`Dataset`) and EO Services and Applications (`CreativeWork`).
 
 [#img_object_contact,reftext='{figure-caption} {counter:figure-num}']
 .Contact Schema
@@ -911,6 +915,8 @@ ifndef::env-github[]
 === Resource Constraints
 endif::[]
 
+Resource Constraints apply to EO Collections (`Dataset`), EO Granules (`Dataset`) and EO Services and Applications (`CreativeWork`).
+
 [#img_object_resourceconstraints,reftext='{figure-caption} {counter:figure-num}']
 .Resource Constraints Schema
 image::diagrams/ResourceConstraints.png[align="center"]
@@ -965,6 +971,8 @@ endif::[]
 ifndef::env-github[]
 === Descriptive Keywords
 endif::[]
+
+Descriptive keywords apply to EO Collections (`Dataset`), EO Granules (`Dataset`) and EO Services and Applications (`CreativeWork`).
 
 [#img_object_descriptivekeywords,reftext='{figure-caption} {counter:figure-num}']
 .Metadata Descriptive Keywords
