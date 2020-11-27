@@ -46,9 +46,9 @@ ifdef::env-github[]
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
 * <<appendix-c-property-mapping,Appendix C: Property Mapping>>
 * <<appendix-d-complete-examples,Appendix D: Complete Examples>>
-** <<appendix-d1-collection,D.1: Collection>>
-** <<appendix-d2-service-and-application,D.2: Service and Application>>
-** <<appendix-d3-granule,D.3: Granule>>
+** <<d1-collection,D.1: Collection>>
+** <<d2-service-and-application,D.2: Service and Application>>
+** <<d3-granule,D.3: Granule>>
 
 endif::[]
 
