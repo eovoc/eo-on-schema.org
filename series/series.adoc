@@ -40,6 +40,7 @@ ifdef::env-github[]
 * <<5-eo-services-and-applications-encoding,5. EO Services and Applications Encoding>>
 ** <<51-service-identification,5.1 Service Identification>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
+** <<61-granule-identification,6.1 Granule Identification>>
 
 * <<appendix-a-media-types-for-data-encoding,Appendix A: Media Types for Data Encoding>>
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
@@ -340,7 +341,7 @@ See also <<table_object_propertyvalue>>.
 
 a| additionalType +
 ~$.additionaltype~
-| Unique identifiers (URI) for the type of the resource.  +
+| Unique identifiers (URI) for the type of the resource. Is equivalent to the `dct:type` property used by https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types[DCAT for classifying dataset types].  +
 E.g. http://purl.org/dc/dcmitype/Collection, +
 https://inspire.ec.europa.eu/metadata-codelist/ResourceType/series
 | Domain: Thing +
@@ -1770,16 +1771,16 @@ Range: Text
 
 a| identifier +
 ~$.identifier~
-| Identifier given to the service or application. `Text` is used or simple identifiers such as ´goce-user-toolbox´, ´sentinel-2-toolbox´, ´icor´ or ´hdfclean´.  `PropertyValue` can be used to include `DOI` information.
+| Identifier given to the service or application. `Text` is used for simple identifiers such as ´goce-user-toolbox´, ´sentinel-2-toolbox´, ´icor´ or ´hdfclean´.  `PropertyValue` can be used to include `DOI` information.
 | Domain: Thing +
-Range: Text or Url or PropertyValue +
+Range: Text \| Url \| PropertyValue +
 See also <<table_object_propertyvalue>>.
 | One or more (mandatory)
 
 
 a| additionalType +
 ~$.additionaltype~
-| Unique identifiers (URI) for the type of the resource.  +
+| Unique identifiers (URI) for the type of the resource.  Is equivalent to the `dct:type` property used by https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types[DCAT for classifying dataset types].  +
 E.g. http://purl.org/dc/dcmitype/Service, +
 http://purl.org/dc/dcmitype/Software, +
 https://inspire.ec.europa.eu/metadata-codelist/ResourceType/service.
@@ -1812,7 +1813,7 @@ a| inLanguage +
 ~$.inLanguage~
 | Resource language code, not empty, e.g. "en" (English).
 | Domain: CreativeWork +
-Range: Language or Text
+Range: Language \| Text
 | Zero or one (optional)
 
 a| subjectOf +
@@ -1826,7 +1827,7 @@ a| version +
 ~$.version~
 | Version number or other version designation of the resource.
 | Domain: CreativeWork +
-Range: Number or Text
+Range: Number \| Text
 | Zero or one (optional)
 |===
 
@@ -1898,6 +1899,110 @@ ifndef::env-github[]
 endif::[]
 
 This section defines the proposed encoding of Earth Observation granule metadata. 
+
+
+// 6.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 6.1 Granule Identification
+endif::[]
+ifndef::env-github[]
+=== Granule Identification
+endif::[]
+
+[#img_object_granule,reftext='{figure-caption} {counter:figure-num}']
+.Granule Identification Schema
+image::diagrams/GranuleIdentification.png[align="center"]
+
+A list of Granule Identification properties is given in <<table_object_service>>.  All properties available for Data Identification (<<table_object_dataset>>) can be reused, but `additionalType` shall be set to `http://purl.org/dc/dcmitype/Dataset`.
+
+[#table_object_granule,reftext='{table-caption} {counter:table-num}']
+.Granule Identification properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @context +
+~$.@context~
+| Optional context property.
+| Range: Text +
+Fixed value: "https://schema.org"
+| Zero or one (optional)
+
+a| @type +
+~$.@type~
+| Type of the object. This property has the fixed value "Dataset".
+| Range: Text +
+Fixed value: "Dataset"
+| One (mandatory)
+
+a| description +
+~$.description~
+| A description of the granule.
+| Domain: Thing +
+Range: Text
+| One (mandatory)
+
+a| name +
+~$.name~
+| The human readable name or title of the granule.
+| Domain: Thing +
+Range: Text
+| One (mandatory)
+
+a| identifier +
+~$.identifier~
+| Identifier given to the granule. `Text` is used for simple identifiers.  `PropertyValue` can be used to include `DOI` information.
+| Domain: Thing +
+Range: Text \| Url \| PropertyValue +
+See also <<table_object_propertyvalue>>.
+| One or more (mandatory)
+
+
+a| additionalType +
+~$.additionaltype~
+| Unique identifiers (URI) for the type of the resource.  Is equivalent to the `dct:type` property used by https://www.w3.org/TR/vocab-dcat-2/#classifying-dataset-types[DCAT for classifying dataset types].  +
+E.g. http://purl.org/dc/dcmitype/Service, +
+http://purl.org/dc/dcmitype/Software, +
+https://inspire.ec.europa.eu/metadata-codelist/ResourceType/service.
+| Domain: Thing +
+Range: URL
+| Zero or more (optional)
+
+a| @id +
+~$.@id~
+| Unique identifier for the granule (IRI).
+| Range: URL
+| Zero or one (optional)
+
+a| alternateName +
+~$.alternateName~
+| Alternate name of the granule.
+| Domain: Thing +
+Range: Text
+| Zero or more (optional)
+
+a| inLanguage +
+~$.inLanguage~
+| Resource language code, not empty, e.g. "en" (English).
+| Domain: CreativeWork +
+Range: Language \| Text
+| Zero or one (optional)
+
+a| subjectOf +
+~$.subjectOf~
+| Refers to metadata information or other information about the granule.
+| Domain: Thing +
+Range: ListItem (<<table_object_listitem>>)
+| Zero or one (optional)
+
+|===
+
+.Granule Identification encoding example
+[source,json]
+----
+
+
+----
 
 
 [appendix]
