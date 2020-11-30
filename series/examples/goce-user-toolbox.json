@@ -82,6 +82,18 @@
 			"@id": "https://earth.esa.int/concept/ssti",
 			"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/instruments",
 			"name": "SSTI"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://earth.esa.int/concept/analysis",
+			"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/tools",
+			"name": "Analysis"
+		},
+		{
+			"@type": "DefinedTerm",
+			"@id": "https://earth.esa.int/concept/processing",
+			"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/tools",
+			"name": "Processing"
 		}
 	],
 	"subjectOf": [
