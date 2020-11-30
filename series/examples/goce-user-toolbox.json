@@ -5,7 +5,7 @@
 			"dbr": "http://dbpedia.org/resource/"
 		}
 	],
-	"@type": "Dataset",
+	"@type": "CreativeWork",
 	"additionalType": [
 		"http://purl.org/dc/dcmitype/Service",
 		"https://inspire.ec.europa.eu/metadata-codelist/ResourceType/service"

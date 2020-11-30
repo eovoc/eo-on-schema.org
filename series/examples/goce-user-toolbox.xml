@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:schema1="https://schema.org/"
+>
+  <schema:CreativeWork rdf:about="https://fedeo.esa.int/collections/services/items/goce-user-toolbox">
+    <schema:keywords>
+      <schema:DefinedTerm rdf:about="https://earth.esa.int/concept/analysis">
+        <schema:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/tools"/>
+        <schema:name>Analysis</schema:name>
+      </schema:DefinedTerm>
+    </schema:keywords>
+    <schema:version>3.2</schema:version>
+    <schema:keywords>
+      <schema:DefinedTerm rdf:about="https://earth.esa.int/concept/gravity-gravitational-field">
+        <schema:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/earth-topics"/>
+        <schema:name>Gravity and Gravitational Field</schema:name>
+      </schema:DefinedTerm>
+    </schema:keywords>
+    <schema:keywords>
+      <schema:DefinedTerm rdf:about="https://earth.esa.int/concept/goce">
+        <schema:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/platforms"/>
+        <schema:name>GOCE</schema:name>
+      </schema:DefinedTerm>
+    </schema:keywords>
+    <schema:keywords>
+      <schema:DefinedTerm rdf:about="https://earth.esa.int/concept/solid-earth">
+        <schema:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/earth-topics"/>
+        <schema:name>Solid Earth</schema:name>
+      </schema:DefinedTerm>
+    </schema:keywords>
+    <schema:provider>
+      <schema:Organization rdf:nodeID="N172fd1dff2b443eaa3b3b0a89324bdfc">
+        <schema:telephone>+3906941801</schema:telephone>
+        <schema:url rdf:resource="https://www.esa.int/"/>
+        <schema:sameAs rdf:resource="https://yago-knowledge.org/resource/European_Space_Agency"/>
+        <schema:name>ESA/ESRIN</schema:name>
+        <schema:sameAs rdf:resource="https://gcmd.earthdata.nasa.gov/kms/concept/c56b4a86-82f8-4f15-98ba-c5f7abe8ee5a"/>
+        <schema:sameAs rdf:resource="https://id.loc.gov/entities/providers/cb142baec50802a04f9e4edeb7bcce73"/>
+        <schema:email>eohelp@esa.int</schema:email>
+        <schema:sameAs rdf:resource="https://dbpedia.org/resource/European_Space_Agency"/>
+        <schema:address>
+          <schema:PostalAddress rdf:nodeID="N861bf1d193e5421b984643d7daf5b5d6">
+            <schema:addressLocality>Frascati (Roma)</schema:addressLocality>
+            <schema:postalCode>00044</schema:postalCode>
+            <schema:streetAddress>Largo Galileo Galilei 1</schema:streetAddress>
+            <schema:addressCountry>Italy</schema:addressCountry>
+          </schema:PostalAddress>
+        </schema:address>
+        <schema:sameAs rdf:resource="http://bnb.data.bl.uk/id/agent/EuropeanSpaceAgency"/>
+      </schema:Organization>
+    </schema:provider>
+    <schema:keywords>
+      <schema:DefinedTerm rdf:about="https://earth.esa.int/concept/egg">
+        <schema:name>EGG</schema:name>
+        <schema:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/instruments"/>
+      </schema:DefinedTerm>
+    </schema:keywords>
+    <schema:subjectOf>
+      <schema:MediaObject rdf:nodeID="N1b848febf3f2443e8cbe12da201bce8b">
+        <schema:contentUrl rdf:resource="https://earth.esa.int/eogateway/gut-registration"/>
+        <schema:name>GUT download</schema:name>
+        <schema:additionalType rdf:resource="http://www.iana.org/assignments/relation/enclosure"/>
+      </schema:MediaObject>
+    </schema:subjectOf>
+    <schema:inLanguage>
+      <schema:Language rdf:about="http://id.loc.gov/vocabulary/iso639-1/en">
+        <schema:name>en</schema:name>
+      </schema:Language>
+    </schema:inLanguage>
+    <schema:keywords>
+      <schema:DefinedTerm rdf:about="https://earth.esa.int/concept/oceans">
+        <schema:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/earth-topics"/>
+        <schema:name>Oceans</schema:name>
+      </schema:DefinedTerm>
+    </schema:keywords>
+    <schema:name>GOCE User Toolbox</schema:name>
+    <schema:url rdf:resource="https://earth.esa.int/eogateway/tools/goce-user-toolbox"/>
+    <schema:additionalType rdf:resource="http://purl.org/dc/dcmitype/Service"/>
+    <schema:description>The GOCE User Toolbox (GUT) is a compilation of tools for the utilisation and analysis of GOCE products. GUT supports applications in Geodesy, Oceanography and Solid Earth Physics.</schema:description>
+    <schema:alternateName>GUT</schema:alternateName>
+    <schema:subjectOf>
+      <schema:ListItem rdf:nodeID="N8358f5a9310d4de78fdf1175465041e1">
+        <schema:dateCreated rdf:datatype="https://schema.org/Date">2009-04-15T00:00:00Z</schema:dateCreated>
+        <schema:datePublished rdf:datatype="https://schema.org/Date">2014-04-28T00:00:00Z</schema:datePublished>
+        <schema:encodingFormat>application/vnd.iso.19139-2+xml</schema:encodingFormat>
+        <schema:dateModified rdf:datatype="https://schema.org/Date">2014-04-28T00:00:00Z</schema:dateModified>
+        <schema:inLanguage rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+      </schema:ListItem>
+    </schema:subjectOf>
+    <schema:keywords>
+      <schema:DefinedTerm rdf:about="https://earth.esa.int/concept/processing">
+        <schema:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/tools"/>
+        <schema:name>Processing</schema:name>
+      </schema:DefinedTerm>
+    </schema:keywords>
+    <schema:subjectOf>
+      <schema:MediaObject rdf:nodeID="N9b965316b1af4fde9d94bbab10b22b3f">
+        <schema:additionalType rdf:resource="http://www.iana.org/assignments/relation/describedby"/>
+        <schema:name>GOCE User Toolbox and Tutorial</schema:name>
+        <schema:contentUrl rdf:resource="https://earth.esa.int/c/document_library/get_file?folderId=15547&amp;name=DLFE-205.pdf"/>
+      </schema:MediaObject>
+    </schema:subjectOf>
+    <schema:keywords>
+      <schema:DefinedTerm rdf:about="https://earth.esa.int/concept/ssti">
+        <schema:name>SSTI</schema:name>
+        <schema:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/instruments"/>
+      </schema:DefinedTerm>
+    </schema:keywords>
+    <schema:alternateName>goce-user-toolbox</schema:alternateName>
+    <schema:identifier>goce-user-toolbox</schema:identifier>
+    <schema:additionalType rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/ResourceType/service"/>
+  </schema:CreativeWork>
+</rdf:RDF>
