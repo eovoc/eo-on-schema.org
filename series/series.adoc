@@ -2281,7 +2281,9 @@ endif::[]
 // Links for GitHub
 ifdef::env-github,backend-html5[]
 
-* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/goce-user-toolbox.json[Example 1: GOCE User Toolbox]
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/goce-user-toolbox.json[Example 1: GOCE User Toolbox (JSON-LD)]
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/goce-user-toolbox.rdf[Example 2: GOCE User Toolbox (RDF)]
+
 endif::[]
 
 // Includes for AsciiDoc processing
@@ -2291,6 +2293,12 @@ ifndef::env-github[]
 [source,json]
 ----
 include::./examples/goce-user-toolbox.json[]
+----
+
+.goce-user-toolbox.rdf
+[source,xml]
+----
+include::./examples/goce-user-toolbox.rdf[]
 ----
 
 endif::[]
