@@ -1,1 +1,1 @@
-Folder containing examples of series (a.k.a. EO Collection) metadata.
+Folder containing examples of EO Collection, EO Application/service and EO Granule metadata encoding.
