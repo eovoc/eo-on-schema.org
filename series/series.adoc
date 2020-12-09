@@ -2257,6 +2257,10 @@ a| versionInfo +
 |===
 
 // C.2
+=== OGC17-003r2 Metadata
+
+
+// C.3
 === STAC Collection Metadata
 
 TBD.
