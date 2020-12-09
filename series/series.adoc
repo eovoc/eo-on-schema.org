@@ -2459,7 +2459,9 @@ endif::[]
 // Links for GitHub
 ifdef::env-github,backend-html5[]
 
-* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/landsat-tm-gtc-product-granule.json[Example 1: LANDSAT-TM-GTC Granule]
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/landsat-tm-gtc-product-granule.json[Example 1: LANDSAT-TM-GTC Granule (JSON-LD)]
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/examples/landsat-tm-gtc-product-granule.rdf[Example 2: LANDSAT-TM-GTC Granule (RDF)]
+
 endif::[]
 
 // Includes for AsciiDoc processing
@@ -2469,6 +2471,12 @@ ifndef::env-github[]
 [source,json]
 ----
 include::./examples/landsat-tm-gtc-product-granule.json[]
+----
+
+.landsat-tm-gtc-product-granule.rdf
+[source,json]
+----
+include::./examples/landsat-tm-gtc-product-granule.rdf[]
 ----
 
 endif::[]
