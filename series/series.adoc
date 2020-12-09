@@ -2311,6 +2311,10 @@ Schema.org allows defining multiple @types for a single object as explained at h
 
 Note that the same approach can be used to extend an EO Collection representation with additional properties defined in <<OGC17-084r1>>.
 
+[#img_object_method_2,reftext='{figure-caption} {counter:figure-num}']
+.Method 2 Schema
+image::diagrams/Method2-Granule.png[align="center"]
+
 Advantages:
 
 * EO properties are represented as edges in the RDF knowledge graph and can be easily used in SPARQL queries.
