@@ -2259,7 +2259,42 @@ TBD.
 
 While schema.org allows to encode a large part of the EO Collection properties proposed in <<OGC17-084r1>>, most of the EO Granule properties proposed in <<OGC17-003r2>> do not have an equivalent property in schema.org.  There are a number of possibilities to preserve the properties without corresponding mapping in the structured data encoding (JSON-LD / schema.org).
 
-=== Method 1 - 
+=== Method 1 - additionalProperty
+
+https://schema.org/additionalProperty[additionalProperty] allows representing characteristics for which there is no matching property in schema.org using property-value pairs.
+For granule properties not available in schema.org, the JSON-LD property from the RDF Schema Vocabulary in Annex B.3 and Annex C of <<OGC17-003r2>> is to be used.  The OWL vocabulary `http://www.opengis.net/ont/eo-geojson/1.0/` is available from OGC at http://schemas.opengis.net/eo-geojson/1.0/eo-geojson-vocabulary.owl.
+
+The https://schema.org/propertyID[`propertyID`] shall be of type URL and indicate the type of the property, by pointing to the external <<OGC17-003r2>> vocabulary as shown in the example below.
+
+.Granule encoding example with additional EO properties
+[source,json]
+----
+{
+	"@context": "https://schema.org",
+	"@type": "Dataset",
+	"additionalType": "http://purl.org/dc/dcmitype/Dataset",
+	"@id": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"name": "LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"additionalProperty": [
+		{
+			"@type": "PropertyValue",
+			"propertyID": "http://www.opengis.net/ont/eo-geojson/1.0/productType",
+			"value": "TM__GTC_1P"
+		},
+		{
+			"@type": "PropertyValue",
+			"propertyID": "http://www.opengis.net/ont/eo-geojson/1.0/cloudCover",
+			"value": "7"
+		},
+		{
+			"@type": "PropertyValue",
+			"propertyID": "http://www.opengis.net/ont/eo-geojson/1.0/processingMode",
+			"value": "NOMINAL"
+		}
+	]
+}
+----
+
 
 === Method 2 -
 
