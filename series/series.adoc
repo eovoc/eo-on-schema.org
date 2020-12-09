@@ -176,6 +176,10 @@ Different agencies use different terms for "collection": dataset (ESA), granule 
 	
 Same meaning as "granule".
 
+&#9679; structured data ::
+
+Structured data is a standardized format for providing information about a [Web] page and classifying the page content.  Source: Google.
+
 // 3.2 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
 === 3.2 Abbreviated terms
