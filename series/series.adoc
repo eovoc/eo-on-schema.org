@@ -2268,6 +2268,12 @@ For granule properties not available in schema.org, the JSON-LD property from th
 
 The https://schema.org/propertyID[`propertyID`] shall be of type URL and indicate the type of the property, by pointing to the external <<OGC17-003r2>> vocabulary as shown in the example below.
 
+Disadvantages:
+
+* EO properties are not represented as edges in the RDF knowledge graph and more complicated to include in SPARQL queries.
+* Cannot use namespace abbreviations in propertyID.  E.g. "propertyID": "eop:cloudCover" and declaring http://www.opengis.net/ont/eo-geojson/1.0/ in the @context.
+
+
 .Granule encoding example with additional EO properties
 [source,json]
 ----
