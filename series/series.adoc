@@ -47,11 +47,12 @@ ifdef::env-github[]
 * <<appendix-a-media-types-for-data-encoding,Appendix A: Media Types for Data Encoding>>
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
 * <<appendix-c-property-mapping,Appendix C: Property Mapping>>
-* <<appendix-d-complete-examples,Appendix D: Complete Examples>>
-** <<collection,D.1: Collection>>
-** <<service-and-application,D.2: Service and Application>>
-** <<granule,D.3: Granule>>
-** <<article,D.4: Article>>
+* <<appendix-d-design-justification,Appendix D: Design Justification>>
+* <<appendix-e-complete-examples,Appendix E: Complete Examples>>
+** <<collection,E.1: Collection>>
+** <<service-and-application,E.2: Service and Application>>
+** <<granule,E.3: Granule>>
+** <<article,E.4: Article>>
 
 endif::[]
 
@@ -2251,11 +2252,23 @@ a| versionInfo +
 
 TBD.
 
+[appendix]
+= Design Justification
+
+== EO Granule Encoding
+
+While schema.org allows to encode a large part of the EO Collection properties proposed in <<OGC17-084r1>>, most of the EO Granule properties proposed in <<OGC17-003r2>> do not have an equivalent property in schema.org.  There are a number of possibilities to preserve the properties without corresponding mapping in the structured data encoding (JSON-LD / schema.org).
+
+=== Method 1 - 
+
+=== Method 2 -
+
+=== Method 3 - Extending schema.org
 
 [appendix]
 = Complete Examples
 
-// D.1
+// E.1
 === Collection
 
 // Links for GitHub
@@ -2275,7 +2288,7 @@ include::./examples/landsat-etm-gtc.json[]
 
 endif::[]
 
-// D.2
+// E.2
 === Service and Application
 
 // Links for GitHub
@@ -2303,7 +2316,7 @@ include::./examples/goce-user-toolbox.rdf[]
 
 endif::[]
 
-// D.3
+// E.3
 === Granule
 
 // Links for GitHub
@@ -2323,7 +2336,7 @@ include::./examples/landsat-tm-gtc-product-granule.json[]
 
 endif::[]
 
-// D.4
+// E.4
 === Article
 
 // Links for GitHub
@@ -2346,7 +2359,7 @@ endif::[]
 
 [appendix]
 [[RevisionHistory]]
-// E
+// F
 = Revision History
 
 .Revision History
