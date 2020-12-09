@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:dbr="http://dbpedia.org/resource/"
+  xmlns:schema1="https://schema.org/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <schema1:PropertyValue rdf:about="https://epsg.io/4326">
+    <rdf:type rdf:resource="http://dbpedia.org/resource/Spatial_reference_system"/>
+  </schema1:PropertyValue>
+  <schema1:Dataset rdf:about="https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570">
+    <schema1:thumbnailUrl rdf:resource="http://landsat-ds.eo.esa.int/metadata/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.BP.PNG"/>
+    <schema1:subjectOf>
+      <schema1:MediaObject rdf:nodeID="N7b5f9b41b17d4896b4331b555bfe2d12">
+        <schema1:contentUrl rdf:resource="https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570"/>
+        <schema1:additionalType rdf:resource="http://www.iana.org/assignments/relation/alternate"/>
+        <schema1:encodingFormat>application/geo+json</schema1:encodingFormat>
+        <schema1:name>OGC 17-069r3 metadata</schema1:name>
+      </schema1:MediaObject>
+    </schema1:subjectOf>
+    <schema1:subjectOf>
+      <schema1:MediaObject rdf:nodeID="N9b5cbb2a51064c94b56aeaa495dbd215">
+        <schema1:additionalType rdf:resource="http://www.iana.org/assignments/relation/alternate"/>
+        <schema1:encodingFormat>application/gml+xml;profile="http://www.opengis.net/spec/EOMPOM/1.1"</schema1:encodingFormat>
+        <schema1:name>OGC 10-157r4 metadata</schema1:name>
+        <schema1:contentUrl rdf:resource="https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570?httpAccept=application/gml%2Bxml"/>
+      </schema1:MediaObject>
+    </schema1:subjectOf>
+    <schema1:subjectOf>
+      <schema1:MediaObject rdf:nodeID="Nbb8c52f346484a78a310e13a6f8b0c72">
+        <schema1:contentUrl rdf:resource='https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570?httpAccept=application/geo%2Bjson;profile="https://stacspec.org"'/>
+        <schema1:name>STAC metadata</schema1:name>
+        <schema1:encodingFormat>application/geo+json;profile="https://stacspec.org"</schema1:encodingFormat>
+        <schema1:additionalType rdf:resource="http://www.iana.org/assignments/relation/alternate"/>
+      </schema1:MediaObject>
+    </schema1:subjectOf>
+    <schema1:subjectOf>
+      <schema1:MediaObject rdf:nodeID="N776b49f58d164882a34571a10c6b7f45">
+        <schema1:contentUrl rdf:resource="http://landsat-ds.eo.esa.int/metadata/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.BP.PNG"/>
+        <schema1:name>Quicklook</schema1:name>
+        <schema1:encodingFormat>image/png</schema1:encodingFormat>
+        <schema1:additionalType rdf:resource="http://www.iana.org/assignments/relation/icon"/>
+      </schema1:MediaObject>
+    </schema1:subjectOf>
+    <schema1:keywords>
+      <schema1:DefinedTerm rdf:about="http://yago-knowledge.org/resource/Frascati">
+        <schema1:name>Frascati</schema1:name>
+        <schema1:inDefinedTermSet rdf:resource="https://schema.org/AdministrativeArea"/>
+      </schema1:DefinedTerm>
+    </schema1:keywords>
+    <schema1:image rdf:resource="http://landsat-ds.eo.esa.int/metadata/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.BP.PNG"/>
+    <schema1:subjectOf>
+      <schema1:MediaObject rdf:nodeID="N311bdee4af0e428397c5957fc2ea56cc">
+        <schema1:additionalType rdf:resource="http://www.iana.org/assignments/relation/enclosure"/>
+        <schema1:encodingFormat>application/x-binary</schema1:encodingFormat>
+        <schema1:contentUrl rdf:resource="http://landsat-ds.eo.esa.int/products/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.ZIP"/>
+        <schema1:name>Download</schema1:name>
+      </schema1:MediaObject>
+    </schema1:subjectOf>
+    <schema1:encoding>
+      <schema1:MediaObject rdf:nodeID="N0a3ac6df23564596b4a182652f3403d9">
+        <schema1:contentUrl rdf:resource="http://landsat-ds.eo.esa.int/products/LANDSAT/1997/10/03/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570.ZIP"/>
+        <schema1:encodingFormat>application/x-binary</schema1:encodingFormat>
+        <schema1:contentSize>123249764</schema1:contentSize>
+      </schema1:MediaObject>
+    </schema1:encoding>
+    <schema1:name>LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570</schema1:name>
+    <schema1:subjectOf>
+      <schema1:ListItem rdf:nodeID="Nd8309bbc407a443880982a2e32189fa8">
+        <schema1:inLanguage rdf:resource="http://id.loc.gov/vocabulary/iso639-1/en"/>
+        <schema1:encodingFormat>application/gml+xml;profile="http://www.opengis.net/spec/EOMPOM/1.1"</schema1:encodingFormat>
+        <schema1:dateModified rdf:datatype="https://schema.org/Date">2020-09-29T11:07:54Z</schema1:dateModified>
+      </schema1:ListItem>
+    </schema1:subjectOf>
+    <schema1:additionalType rdf:resource="http://purl.org/dc/dcmitype/Dataset"/>
+    <schema1:additionalProperty>
+      <schema1:PropertyValue rdf:nodeID="N1ad4d7d1e2684fc5865ff11c8c4f6d7e">
+        <schema1:value>TM__GTC_1P</schema1:value>
+        <schema1:propertyID>http://www.opengis.net/ont/eo-geojson/1.0/productType</schema1:propertyID>
+      </schema1:PropertyValue>
+    </schema1:additionalProperty>
+    <schema1:additionalProperty>
+      <schema1:PropertyValue rdf:nodeID="N501a54fd7e054d47b7bb450a1748a89a">
+        <schema1:value>7</schema1:value>
+        <schema1:propertyID>http://www.opengis.net/ont/eo-geojson/1.0/cloudCover</schema1:propertyID>
+      </schema1:PropertyValue>
+    </schema1:additionalProperty>
+    <schema1:keywords>
+      <dbr:Scientific_instrument rdf:about="https://earth.esa.int/concept/tm">
+        <schema1:name>TM</schema1:name>
+        <schema1:sameAs rdf:resource="http://gcmd.earthdata.nasa.gov/kms/concept/bfc07fb2-ca22-48e6-8171-84527b0faae7"/>
+        <schema1:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/instruments"/>
+        <schema1:sameAs rdf:resource="http://dbpedia.org/resource/Thematic_Mapper"/>
+        <rdf:type rdf:resource="https://schema.org/DefinedTerm"/>
+      </dbr:Scientific_instrument>
+    </schema1:keywords>
+    <schema1:keywords>
+      <schema1:DefinedTerm rdf:about="http://yago-knowledge.org/resource/Lake_Bracciano">
+        <schema1:name>Lake Bracciano</schema1:name>
+        <schema1:inDefinedTermSet rdf:resource="https://schema.org/LakeBodyOfWater"/>
+      </schema1:DefinedTerm>
+    </schema1:keywords>
+    <schema1:description>LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570</schema1:description>
+    <schema1:spatialCoverage>
+      <schema1:Place rdf:nodeID="N6cfc6c5add11460787e1f6ed1dbdfc01">
+        <schema1:geoContains rdf:resource="http://dbpedia.org/resource/Ciampino-G._B._Pastine_International_Airport"/>
+        <schema1:geoContains rdf:resource="http://dbpedia.org/resource/Frascati"/>
+        <schema1:geoContains rdf:resource="http://dbpedia.org/resource/Leonardo_da_Vinci-Fiumicino_Airport"/>
+        <schema1:geo>
+          <schema1:GeoShape rdf:nodeID="Nafbecc4f62b14f1e8b3a414293795a8f">
+            <schema1:box>40.7378  10.7552  42.7699  13.5779</schema1:box>
+            <schema1:polygon>42.7006  10.7552  40.7378 10.8827   40.8026   13.5779     42.7699  13.5338    42.7006  10.7552</schema1:polygon>
+          </schema1:GeoShape>
+        </schema1:geo>
+        <schema1:geoContains rdf:resource="http://dbpedia.org/resource/Rome"/>
+        <schema1:additionalProperty rdf:resource="https://epsg.io/4326"/>
+        <schema1:geoContains rdf:resource="http://dbpedia.org/resource/Lake_Bracciano"/>
+      </schema1:Place>
+    </schema1:spatialCoverage>
+    <schema1:keywords>
+      <schema1:DefinedTerm rdf:about="http://yago-knowledge.org/resource/Italy">
+        <schema1:inDefinedTermSet rdf:resource="https://schema.org/Country"/>
+        <schema1:name>Italy</schema1:name>
+      </schema1:DefinedTerm>
+    </schema1:keywords>
+    <schema1:subjectOf>
+      <schema1:MediaObject rdf:nodeID="N06ba1be360414974905d8f6113a7ea61">
+        <schema1:name>OGC 17-084r1 metadata</schema1:name>
+        <schema1:encodingFormat>application/geo+json</schema1:encodingFormat>
+        <schema1:contentUrl rdf:resource="https://ergo.spacebel.be/collections/series/items/LANDSAT.TM.GTC?mode=owc"/>
+        <schema1:additionalType rdf:resource="http://www.iana.org/assignments/relation/up"/>
+      </schema1:MediaObject>
+    </schema1:subjectOf>
+    <schema1:identifier>LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570</schema1:identifier>
+    <schema1:temporal>1997-10-03T09:26:03Z/1997-10-03T09:26:32Z</schema1:temporal>
+    <schema1:dateModified rdf:datatype="https://schema.org/Date">2020-09-29T11:07:54Z</schema1:dateModified>
+    <schema1:keywords>
+      <schema1:DefinedTerm rdf:about="http://yago-knowledge.org/resource/Europe">
+        <schema1:name>Europe</schema1:name>
+        <schema1:inDefinedTermSet rdf:resource="http://yago-knowledge.org/resource/Region"/>
+      </schema1:DefinedTerm>
+    </schema1:keywords>
+    <schema1:additionalProperty>
+      <schema1:PropertyValue rdf:nodeID="N274831d747d64645b9cb53dc8ee14c72">
+        <schema1:value>NOMINAL</schema1:value>
+        <schema1:propertyID>http://www.opengis.net/ont/eo-geojson/1.0/processingMode</schema1:propertyID>
+      </schema1:PropertyValue>
+    </schema1:additionalProperty>
+    <schema1:isPartOf>
+      <schema1:Dataset rdf:about="https://ergo.spacebel.be/collections/series/items/LANDSAT.TM.GTC">
+        <schema1:url rdf:resource="https://earth.esa.int/eogateway/catalog/landsat-5-thematic-mapper-geolocated-terrain-corrected-systematic-processing"/>
+      </schema1:Dataset>
+    </schema1:isPartOf>
+    <schema1:subjectOf>
+      <schema1:MediaObject rdf:nodeID="Ncb817c7784e1470dbdd4fd33977fa9b0">
+        <schema1:encodingFormat>application/gml+xml;profile="http://www.opengis.net/spec/EOMPOM/1.0"</schema1:encodingFormat>
+        <schema1:additionalType rdf:resource="http://www.iana.org/assignments/relation/alternate"/>
+        <schema1:name>OGC 10-157r3 metadata</schema1:name>
+        <schema1:contentUrl rdf:resource="https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570?httpAccept=application/gml%2Bxml&amp;recordSchema=om10"/>
+      </schema1:MediaObject>
+    </schema1:subjectOf>
+    <schema1:additionalType rdf:resource="https://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset"/>
+    <schema1:keywords>
+      <schema1:DefinedTerm rdf:about="http://data.europa.eu/nuts/code/IT">
+        <schema1:name>ITALIA</schema1:name>
+        <schema1:inDefinedTermSet rdf:resource="http://data.europa.eu/nuts"/>
+      </schema1:DefinedTerm>
+    </schema1:keywords>
+    <schema1:subjectOf>
+      <schema1:MediaObject rdf:nodeID="N323171f49a3d4eeeada6aba71bb56b50">
+        <schema1:additionalType rdf:resource="http://www.iana.org/assignments/relation/alternate"/>
+        <schema1:contentUrl rdf:resource="https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570?httpAccept=application/atom%2Bxml"/>
+        <schema1:name>application/atom+xml</schema1:name>
+        <schema1:encodingFormat>application/atom+xml</schema1:encodingFormat>
+      </schema1:MediaObject>
+    </schema1:subjectOf>
+    <schema1:potentialAction>
+      <schema1:Action rdf:nodeID="Nc147aee31636419486bf01b50e878190">
+        <schema1:target>
+          <schema1:EntryPoint rdf:nodeID="N440ae263e2f643d6be1f021fea03706e">
+            <schema1:contentType>application/xml</schema1:contentType>
+            <schema1:identifier>GetCapabilities</schema1:identifier>
+            <schema1:httpMethod>GET</schema1:httpMethod>
+            <schema1:urlTemplate>https://datacube.pdgs.eo.esa.int/wcs?service=WCS&amp;Request=GetCapabilities</schema1:urlTemplate>
+          </schema1:EntryPoint>
+        </schema1:target>
+        <schema1:identifier>http://www.opengis.net/spec/owc-geojson/1.0/req/wcs</schema1:identifier>
+        <schema1:target>
+          <schema1:EntryPoint rdf:nodeID="N0d87d3cf34da4cad9a74a22a05a41c52">
+            <schema1:httpMethod>GET</schema1:httpMethod>
+            <schema1:identifier>GetCoverage</schema1:identifier>
+            <schema1:contentType>image/tiff</schema1:contentType>
+            <schema1:urlTemplate>https://datacube.pdgs.eo.esa.int/wcs?service=WCS&amp;Request=GetCoverage&amp;version=2.0.0&amp;coverageID=LE5_RGB&amp;subset=N(4073780,4276990)&amp;subset=E(1075520,1357790)&amp;subset=unix(%221997-10-03T09:26:03Z%22,%221997-10-03T09:26:32Z%22)&amp;format=image/tiff</schema1:urlTemplate>
+          </schema1:EntryPoint>
+        </schema1:target>
+        <schema1:target>
+          <schema1:EntryPoint rdf:nodeID="Nfeb2af5a10b94368ac72db2e2c80f8a0">
+            <schema1:identifier>DescribeCoverage</schema1:identifier>
+            <schema1:httpMethod>GET</schema1:httpMethod>
+            <schema1:urlTemplate>https://datacube.pdgs.eo.esa.int/wcs?service=WCS&amp;Request=DescribeCoverage&amp;version=2.0.0&amp;CoverageId=LE5_RGB</schema1:urlTemplate>
+            <schema1:contentType>application/xml</schema1:contentType>
+          </schema1:EntryPoint>
+        </schema1:target>
+      </schema1:Action>
+    </schema1:potentialAction>
+    <schema1:potentialAction>
+      <schema1:CreateAction rdf:nodeID="N96da050a9412481381d3a0b716c958b8">
+        <schema1:instrument rdf:resource="https://earth.esa.int/concept/landsat-5"/>
+        <schema1:instrument rdf:resource="https://earth.esa.int/concept/tm"/>
+      </schema1:CreateAction>
+    </schema1:potentialAction>
+    <schema1:dateCreated rdf:datatype="https://schema.org/Date">1997-10-03T09:26:32Z</schema1:dateCreated>
+    <schema1:keywords>
+      <schema1:DefinedTerm rdf:about="https://earth.esa.int/concept/landsat-5">
+        <schema1:sameAs rdf:resource="http://gcmd.earthdata.nasa.gov/kms/concept/fe920fff-7852-42cf-b1dc-b2223b24cf2e"/>
+        <schema1:name>Landsat-5</schema1:name>
+        <schema1:inDefinedTermSet rdf:resource="https://earth.esa.int/concepts/concept_scheme/platforms"/>
+        <schema1:sameAs rdf:resource="http://dbpedia.org/resource/Landsat_5"/>
+        <rdf:type rdf:resource="http://dbpedia.org/resource/Satellite"/>
+      </schema1:DefinedTerm>
+    </schema1:keywords>
+  </schema1:Dataset>
+  <schema1:Language rdf:about="http://id.loc.gov/vocabulary/iso639-1/en">
+    <schema1:name>en</schema1:name>
+  </schema1:Language>
+  <schema1:Airport rdf:about="http://dbpedia.org/resource/Ciampino-G._B._Pastine_International_Airport"/>
+  <schema1:City rdf:about="http://dbpedia.org/resource/Frascati"/>
+  <schema1:Airport rdf:about="http://dbpedia.org/resource/Leonardo_da_Vinci-Fiumicino_Airport"/>
+  <schema1:LakeBodyOfWater rdf:about="http://dbpedia.org/resource/Lake_Bracciano"/>
+  <schema1:City rdf:about="http://dbpedia.org/resource/Rome"/>
+</rdf:RDF>
