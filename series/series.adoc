@@ -48,6 +48,8 @@ ifdef::env-github[]
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
 * <<appendix-c-property-mapping,Appendix C: Property Mapping>>
 * <<appendix-d-design-justification,Appendix D: Design Justification>>
+** <<eo-granule-encoding,D.1: EO Granule Encoding>>
+** <<method-1---additionalproperty,D.1.1: Method 1 - additionalProperty>>
 * <<appendix-e-complete-examples,Appendix E: Complete Examples>>
 ** <<collection,E.1: Collection>>
 ** <<service-and-application,E.2: Service and Application>>
