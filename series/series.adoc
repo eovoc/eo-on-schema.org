@@ -50,6 +50,7 @@ ifdef::env-github[]
 * <<appendix-d-design-justification,Appendix D: Design Justification>>
 ** <<eo-granule-encoding,D.1: EO Granule Encoding>>
 ** <<method-1---additionalproperty,D.1.1: Method 1 - additionalProperty>>
+** <<method-2---using-multiple-types,D.1.2: Method 2 - using multiple types>>
 * <<appendix-e-complete-examples,Appendix E: Complete Examples>>
 ** <<collection,E.1: Collection>>
 ** <<service-and-application,E.2: Service and Application>>
@@ -2304,7 +2305,100 @@ Disadvantages:
 ----
 
 
-=== Method 2 -
+=== Method 2 - Using Multiple Types
+
+Schema.org allows defining multiple @types for a single object as explained at https://www.w3.org/community/schemabibex/wiki/Using_Multiple_Types.  This allows an EO granule to be described using properties of https://schema.org/Dataset and the vocabulary used by <<OGC17-003r2>> (http://www.opengis.net/ont/eo-geojson/1.0/) where an EO granule is represented as an instance of a GeoJSON Feature.  The EO JSON-LD properties are defined by the normative JSON-LD context for <<OGC17-003r2>> available at http://schemas.opengis.net/eo-geojson/1.0/eo-geojson.jsonld.
+
+Note that the same approach can be used to extend an EO Collection representation with additional properties defined in <<OGC17-084r1>>.
+
+Advantages:
+
+* EO properties are represented as edges in the RDF knowledge graph and can be easily used in SPARQL queries.
+* Can use namespace abbreviations for EO properties. 
+
+Disadvantages:
+
+* EO properties need an explicit namespace different from schema.org.
+
+
+.Granule encoding example using multiple types
+[source,json]
+----
+{
+	"@context": [
+		"http://eovoc.spacebel.be/schema-org/docs/jsonldcontext.json",
+		{
+			"geojson": "https://purl.org/geojson/vocab#",
+			"eop": "http://www.opengis.net/ont/eo-geojson/1.0/"
+		}
+	],
+	"@type": [
+		"Dataset",
+		"geojson:Feature"
+	],
+	"additionalType": [
+		"http://purl.org/dc/dcmitype/Dataset",
+		"https://inspire.ec.europa.eu/metadata-codelist/ResourceType/dataset"
+	],
+	"@id": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"name": "LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"identifier": "LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"eop:acquisitionInformation": {
+		"@type": "eop:AcquisitionInformation",
+		"eop:acquisitionParameters": {
+			"@type": "eop:AcquisitionParameters",
+			"eop:acquisitionAngles": {
+				"@type": "eop:AcquisitionAngles",
+				"eop:illuminationAzimuthAngle": 148.993,
+				"eop:illuminationElevationAngle": 39.4445,
+				"eop:illuminationZenithAngle": 50.5555
+			},
+			"eop:acquisitionSubType": "DEFAULT",
+			"eop:acquisitionType": {
+				"@id": "eop:AcquisitionType/NOMINAL"
+			},
+			"eop:operationalMode": "IM",
+			"eop:orbitDirection": {
+				"@id": "eop:DESCENDING"
+			},
+			"eop:orbitNumber": 72287,
+			"eop:wrsLatitudeGrid": "31",
+			"eop:wrsLongitudeGrid": "191"
+		},
+		"eop:instrument": {
+			"@id": "https://earth.esa.int/concept/tm",
+			"eop:instrumentShortName": "TM",
+			"eop:sensorType": {
+				"@id": "eop:OPTICAL"
+			}
+		},
+		"eop:platform": {
+			"@id": "https://earth.esa.int/concept/landsat-5",
+			"eop:platformSerialIdentifier": "5",
+			"eop:platformShortName": "Landsat"
+		}
+	},
+	"eop:parentIdentifier": "LANDSAT.TM.GTC",
+	"eop:productInformation": {
+		"@type": "eop:ProductInformation",
+		"eop:availabilityTime": "1997-10-03T09:26:32Z",
+		"eop:cloudCover": 7,
+		"eop:processingMode": "NOMINAL",
+		"eop:productType": "TM__GTC_1P",
+		"eop:qualityInformation": {
+			"@type": "eop:QualityInformation",
+			"eop:qualityDegradation": 0
+		},
+		"eop:referenceSystemIdentifier": {
+			"@id": "http://www.opengis.net/def/crs/EPSG/0/4326"
+		}
+	},
+	"eop:status": {
+		"@id": "eop:ARCHIVED"
+	}
+}
+----
+
 
 === Method 3 - Extending schema.org
 
