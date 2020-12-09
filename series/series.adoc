@@ -106,6 +106,8 @@ endif::[]
 	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
 [[SKOS]][SKOS]:: 
 	SKOS Simple Knowledge Organization System, Reference, W3C Recommendation 18 August 2009, https://www.w3.org/TR/skos-reference/
+[[SPARQL]][SPARQL]:: 
+	TBD.
 
 
 
