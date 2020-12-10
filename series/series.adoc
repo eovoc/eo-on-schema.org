@@ -2279,6 +2279,10 @@ For granule properties not available in schema.org, the JSON-LD property from th
 
 The https://schema.org/propertyID[`propertyID`] shall be of type URL and indicate the type of the property, by pointing to the external <<OGC17-003r2>> vocabulary as shown in the example below.
 
+[#img_object_method_1,reftext='{figure-caption} {counter:figure-num}']
+.Dataset schema (Method 1)
+image::diagrams/Method1-Granule.png[align="center"]
+
 Disadvantages:
 
 * EO properties are not represented as edges in the RDF knowledge graph and more complicated to include in SPARQL queries.
@@ -2303,7 +2307,7 @@ Disadvantages:
 		{
 			"@type": "PropertyValue",
 			"propertyID": "http://www.opengis.net/ont/eo-geojson/1.0/cloudCover",
-			"value": "7"
+			"value": 7
 		},
 		{
 			"@type": "PropertyValue",
@@ -2322,7 +2326,7 @@ Schema.org allows defining multiple @types for a single object as explained at h
 Note that the same approach can be used to extend an EO Collection representation with additional properties defined in <<OGC17-084r1>>.
 
 [#img_object_method_2,reftext='{figure-caption} {counter:figure-num}']
-.Method 2 Schema
+.Dataset schema (Method 2)
 image::diagrams/Method2-Granule.png[align="center"]
 
 Advantages:
