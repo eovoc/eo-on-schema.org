@@ -2420,6 +2420,8 @@ Disadvantages:
 
 === Method 3 - Extending schema.org
 
+Extending schema.org with additional types and properties requires extending the https://schema.org/docs/datamodel.html[data model] and its machine readable representation which is available at https://schema.org/version/latest/schemaorg-current-https.rdf. 
+
 [appendix]
 = Complete Examples
 
