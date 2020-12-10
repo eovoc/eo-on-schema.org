@@ -1,0 +1,60 @@
+@startuml
+
+left to right direction
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+Property "http://www.opengis.net/ont/eo-geojson/1.0/productType" as id1 #Khaki 
+
+Property "http://www.opengis.net/ont/eo-geojson/1.0/cloudCover" as id2 #Khaki 
+Property "http://www.opengis.net/ont/eo-geojson/1.0/parentIdentifier" as id3 #Khaki 
+Property "http://www.opengis.net/ont/eo-geojson/1.0/status" as id4 #Khaki 
+
+
+Class Dataset
+Class PropertyValue1 as "PropertyValue"
+Class PropertyValue2 as "PropertyValue"
+Class PropertyValue3 as "PropertyValue"
+Class PropertyValue4 as "PropertyValue"
+
+' Class geojson_feature as "geojson:Feature" #orange 
+
+
+' Dataset -up-> id : "@id"
+
+PropertyValue2 --> id2 : "propertyID"
+PropertyValue1 --> id1 : "propertyID"
+PropertyValue3 --> id3 : "propertyID"
+PropertyValue4 --> id4 : "propertyID"
+
+Dataset --> PropertyValue1 : "additionalProperty"
+PropertyValue1 --> (Text)
+Dataset --> PropertyValue2 : "additionalProperty"
+PropertyValue2 --> (Number)
+Dataset --> PropertyValue3 : "additionalProperty"
+PropertyValue3 --> (Text )
+Dataset --> PropertyValue4 : "additionalProperty"
+PropertyValue4 --> (URL)
+
+'Dataset -left-> (URL) : "eop:status"
+'Dataset -right-> (Text ) : "eop:parentIdentifier"
+
+'Dataset <.[dotted]up.>  geojson_feature
+
+
+@enduml

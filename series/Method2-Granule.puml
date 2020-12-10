@@ -1,0 +1,39 @@
+@startuml
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+' Property "https://ergo.spacebel.be/collections/datasets/items/\nLS05_RFUI_TM__GTC_1P_19971003T092603_\n19971003T092632_072287_0191_0031_2570" as id #Khaki 
+
+Class Dataset
+Class ProductInformation as "eop:ProductInformation" #orange
+Class AcquisitionInformation as "eop:AcquisitionInformation" #orange
+
+Class geojson_feature as "geojson:Feature" #orange 
+
+
+' Dataset -up-> id : "@id"
+
+Dataset -down-> ProductInformation : "eop:productInformation"
+Dataset -down-> AcquisitionInformation : "eop:acquisitionInformation"
+Dataset -left-> (URL) : "eop:status"
+Dataset -right-> (Text ) : "eop:parentIdentifier"
+
+Dataset <.[dotted]up.>  geojson_feature
+
+
+@enduml
