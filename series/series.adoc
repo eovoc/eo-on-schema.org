@@ -2267,14 +2267,15 @@ a| versionInfo +
 
 TBD.
 
+// D
 [appendix]
 = Design Justification
 
-== EO Granule Encoding
+=== EO Granule Encoding
 
 While schema.org allows to encode a large part of the EO Collection properties proposed in <<OGC17-084r1>>, most of the EO Granule properties proposed in <<OGC17-003r2>> do not have an equivalent property in schema.org.  There are a number of possibilities to preserve the properties without corresponding mapping in the structured data encoding (JSON-LD / schema.org).
 
-=== Method 1 - additionalProperty
+==== Method 1 - additionalProperty
 
 https://schema.org/additionalProperty[additionalProperty] allows representing characteristics for which there is no matching property in schema.org using property-value pairs.
 For granule properties not available in schema.org, the JSON-LD property from the RDF Schema Vocabulary in Annex B.3 and Annex C of <<OGC17-003r2>> is to be used.  The OWL vocabulary `http://www.opengis.net/ont/eo-geojson/1.0/` is available from OGC at http://schemas.opengis.net/eo-geojson/1.0/eo-geojson-vocabulary.owl.
@@ -2321,7 +2322,7 @@ Disadvantages:
 ----
 
 
-=== Method 2 - Using Multiple Types
+==== Method 2 - Using Multiple Types
 
 Schema.org allows defining multiple @types for a single object as explained at https://www.w3.org/community/schemabibex/wiki/Using_Multiple_Types.  This allows an EO granule to be described using properties of https://schema.org/Dataset and the vocabulary used by <<OGC17-003r2>> (http://www.opengis.net/ont/eo-geojson/1.0/) where an EO granule is represented as an instance of a GeoJSON Feature.  The EO JSON-LD properties are defined by the normative JSON-LD context for <<OGC17-003r2>> available at http://schemas.opengis.net/eo-geojson/1.0/eo-geojson.jsonld.
 
@@ -2420,9 +2421,11 @@ Disadvantages:
 ----
 
 
-=== Method 3 - Extending schema.org
+==== Method 3 - Extending schema.org
 
 Extending schema.org with additional types and properties requires extending the https://schema.org/docs/datamodel.html[data model] and its machine readable representation which is available at https://schema.org/version/latest/schemaorg-current-https.rdf. 
+
+The proposed extension to schema.org is included at <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.
 
 [appendix]
 = Complete Examples
@@ -2526,6 +2529,9 @@ endif::[]
 [appendix]
 // F
 = Schema.org Extension for EO
+
+[WARNING]
+The extension included below is work in progress, incomplete and subject to change.  
 
 // Links for GitHub
 ifdef::env-github,backend-html5[]
