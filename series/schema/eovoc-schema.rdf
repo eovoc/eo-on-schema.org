@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dct="http://purl.org/dc/terms/" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:schema="http://schema.org/">
+	<!-- 
+       Table numbers refer to the tables in the OGC specification  
+	   https://docs.ogc.org/is/17-003r2/17-003r2.html
+-->
+	<!-- 
+       Table 4: EarthObservation Class and properties 
+-->
+	<rdfs:Class rdf:about="http://schema.org/Dataset">
+		<owl:equivalentClass rdf:resource="http://purl.org/dc/dcmitype/Dataset"/>
+		<owl:equivalentClass rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+		<rdfs:label>Dataset</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://schema.org/CreativeWork"/>
+		<owl:equivalentClass rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+		<rdfs:comment>A body of structured information describing some topic(s) of interest.</rdfs:comment>
+		<dct:source rdf:resource="http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass"/>
+	</rdfs:Class>
+	<!-- 
+       Table 5: Properties Class and properties 
+   -->
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/ARCHIVED">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>ARCHIVED</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/ACQUIRED">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>ACQUIRED</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/CANCELLED">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>CANCELLED</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/FAILED">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>FAILED</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/ACQUIRED">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>ACQUIRED</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/PLANNED">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>PLANNED</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/POTENTIAL">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>POTENTIAL</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/REJECTED">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>REJECTED</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<schema:AcquisitionStatusType rdf:about="https://schema.org/QUALITYDEGRADED">
+		<rdfs:comment>Acquisition status constant.</rdfs:comment>
+		<rdfs:label>QUALITYDEGRADED</rdfs:label>
+	</schema:AcquisitionStatusType>
+	<rdfs:Class rdf:about="https://schema.org/AcquisitionStatusType">
+		<rdfs:comment>Enumeration of acquisition status constants.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://schema.org/StatusEnumeration"/>
+		<rdfs:label>AcquisitionStatusType</rdfs:label>
+		<owl:equivalentClass rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/statusType"/>
+	</rdfs:Class>
+	<rdf:Property rdf:about="https://schema.org/status">
+		<schema:rangeIncludes rdf:resource="https://schema.org/AcquisitionStatusType"/>
+		<rdfs:comment>Refers to product status.
+
+Fixed Values :
+ - ARCHIVED
+ - ACQUIRED
+ - CANCELLED
+ - FAILED
+ - PLANNED
+ - POTENTIAL
+ - REJECTED
+ - QUALITYDEGRADED.</rdfs:comment>
+		<rdfs:label>status</rdfs:label>
+		<schema:domainIncludes rdf:resource="https://schema.org/Dataset"/>
+		<owl:equivalentProperty rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/status"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+	</rdf:Property>
+	<rdf:Property rdf:about="http://schema.org/acquisitionInformation">
+		<rdfs:label>acquisitionInformation</rdfs:label>
+		<schema:rangeIncludes rdf:resource="http://schema.org/AcquisitionInformation"/>
+		<schema:domainIncludes rdf:resource="http://schema.org/Dataset"/>
+		<rdfs:comment>Acquisition information related to the dataset.</rdfs:comment>
+		<owl:equivalentProperty rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/acquisitionInformation"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html#44"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Property>
+	<rdf:Property rdf:about="http://schema.org/productInformation">
+		<rdfs:label>productInformation</rdfs:label>
+		<schema:rangeIncludes rdf:resource="http://schema.org/ProductInformation"/>
+		<schema:domainIncludes rdf:resource="http://schema.org/Dataset"/>
+		<rdfs:comment>Product information related to the dataset.</rdfs:comment>
+		<owl:equivalentProperty rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/productInformation"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	</rdf:Property>
+	<!-- 
+       Table 9: DataIdentification Class and properties 
+    -->
+	<rdf:Property rdf:about="http://schema.org/parentIdentifier">
+		<rdfs:label>parentIdentifier</rdfs:label>
+		<rdfs:comment>Collection identifier.</rdfs:comment>
+		<schema:domainIncludes rdf:resource="http://schema.org/Dataset"/>
+		<schema:rangeIncludes rdf:resource="https://schema.org/Text"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	</rdf:Property>
+	<!-- 
+       Table 11: VerticalSpatialDomain Class and properties 
+-->
+	<rdfs:Class rdf:about="http://schema.org/VerticalSpatialDomain">
+		<rdfs:label>VerticalSpatialDomain</rdfs:label>
+		<rdfs:comment>Contains the properties related to the spatial extent in the vertical dimension.  Its properties are inherited by the AcquisitionParameters object. 
+  UnitText used to express minValue (lowestLocation) and maxValue (highestLocation) should be meter (m) or bar (bar). Default is meter (m).</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://schema.org/QuantitativeValue"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+		<owl:equivalentClass rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/VerticalSpatialDomain"/>
+	</rdfs:Class>
+	<!-- 
+       Table 12: OrbitParameters Class and properties 
+-->
+	<rdfs:Class rdf:about="http://schema.org/OrbitParameters">
+		<rdfs:label>OrbitParameters</rdfs:label>
+		<rdfs:comment>Contains the properties related to the orbit.  Its properties are inherited by the AcquisitionParameters object.</rdfs:comment>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+		<rdfs:subClassOf rdf:resource="https://schema.org/Intangible"/>
+		<owl:equivalentClass rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/OrbitParameters"/>
+	</rdfs:Class>
+	<schema:OrbitDirectionType rdf:about="https://schema.org/DESCENDING">
+		<rdfs:comment>Orbit direction constant.</rdfs:comment>
+		<rdfs:label>DESCENDING</rdfs:label>
+	</schema:OrbitDirectionType>
+	<schema:OrbitDirectionType rdf:about="https://schema.org/ASCENDING">
+		<rdfs:comment>Orbit direction constant.</rdfs:comment>
+		<rdfs:label>ASCENDING</rdfs:label>
+	</schema:OrbitDirectionType>
+	<rdfs:Class rdf:about="https://schema.org/OrbitDirectionType">
+		<rdfs:comment>Enumeration of orbit direction constants.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://schema.org/StatusEnumeration"/>  ???
+    <rdfs:label>OrbitDirectionType</rdfs:label>
+		<owl:equivalentClass rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/OrbitDirectionType"/>
+	</rdfs:Class>
+	<!-- 
+       Table 14: AcquisitionInformation Class and properties 
+-->
+	<rdfs:Class rdf:about="http://schema.org/AcquisitionInformation">
+		<rdfs:label>AcquisitionInformation</rdfs:label>
+		<rdfs:comment>Acquisition information of the Earth Observation as defined in OGC 17-003r2.</rdfs:comment>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html#44"/>
+		<rdfs:subClassOf rdf:resource="https://schema.org/Intangible"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+		<owl:equivalentClass rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/AcquisitionInformation"/>
+	</rdfs:Class>
+	<!-- 
+       Table 20: ProductInformation Class and properties 
+-->
+	<rdfs:Class rdf:about="http://schema.org/ProductInformation">
+		<rdfs:label>ProductInformation</rdfs:label>
+		<rdfs:comment>Product information of the Earth Observation product as defined in OGC 17-003</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://schema.org/ProcessingInformation"/>
+		<rdfs:subClassOf rdf:resource="https://schema.org/CoverageDescription"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+		<owl:equivalentClass rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/ProductInformation"/>
+	</rdfs:Class>
+	<!-- 
+       Table 22: ProcessingInformation Class and properties 
+-->
+	<rdfs:Class rdf:about="http://schema.org/ProcessingInformation">
+		<rdfs:label>ProcessingInformation</rdfs:label>
+		<rdfs:comment>Contains the properties related to the processing of the data.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://schema.org/Intangible"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+		<owl:equivalentClass rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/ProcessingInformation"/>
+	</rdfs:Class>
+	<!-- 
+       Table 23: CoverageDescription Class and properties 
+-->
+	<rdfs:Class rdf:about="http://schema.org/CoverageDescription">
+		<rdfs:label>CoverageDescription</rdfs:label>
+		<rdfs:comment>Contains the properties related to the coverage. Its properties are inherited by the ProductInformation object.</rdfs:comment>
+		<rdfs:subClassOf rdf:resource="https://schema.org/Intangible"/>
+		<dct:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>
+		<owl:equivalentClass rdf:resource="http://www.opengis.net/ont/eo-geojson/1.0/CoverageDescription"/>
+	</rdfs:Class>
+</rdf:RDF>
