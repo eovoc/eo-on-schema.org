@@ -70,6 +70,7 @@ ifndef::env-github[]
 == Scope
 endif::[]
 
+This Engineering Report proposes a Schema.org based JSON-LD <<JSON-LD>> encoding for Earth Observation (EO) resource metadata.  Resources that can be described include collections, services and applications and datasets (i.e., products or granules).  The report provides JSON-LD document models for the exchange of information describing EO resources, both within and between different organisations.  The encoding aims to facilitate the creation of Knowledge Graphs or Linked Data representations for EO resources and their discovery through mass-market search engines.
 
 // 2 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
