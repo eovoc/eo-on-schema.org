@@ -203,6 +203,7 @@ endif::[]
 * OGC		Open Geospatial Consortium
 * RDF		Resource Description Framework
 * REST		Representational State Transfer
+* SPARQL	SPARQL Protocol and RDF Query Language
 * URI		Uniform Resource Identifier
 * URL		Uniform Resource Locator
 * URN		Uniform Resource Name
