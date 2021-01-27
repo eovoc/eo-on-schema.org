@@ -1,0 +1,96 @@
+@startuml
+left to right direction
+!define Class agent
+!define Property usecase
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+Class AcquisitionAngles #orange
+Class StructuredValue
+AcquisitionAngles --|> StructuredValue
+Class AcquisitionInformation #orange
+Class StructuredValue
+AcquisitionInformation --|> StructuredValue
+Class AcquisitionParameters #orange
+Class OrbitParameters #orange
+AcquisitionParameters --|> OrbitParameters
+Class TemporalInformation #orange
+AcquisitionParameters --|> TemporalInformation
+Class VerticalSpatialDomain #orange
+AcquisitionParameters --|> VerticalSpatialDomain
+Class AcquisitionStatusType #orange
+Class StatusEnumeration
+AcquisitionStatusType --|> StatusEnumeration
+Class AcquisitionType #orange
+Class Enumeration
+AcquisitionType --|> Enumeration
+Class AntennaLookDirectionType #orange
+Class Enumeration
+AntennaLookDirectionType --|> Enumeration
+Class CoverageDescription #orange
+Class StructuredValue
+CoverageDescription --|> StructuredValue
+Class EarthObservation #orange
+Class Dataset
+EarthObservation --|> Dataset
+Class Instrument #orange
+Class StructuredValue
+Instrument --|> StructuredValue
+Class MeasurementType #orange
+Class Enumeration
+MeasurementType --|> Enumeration
+Class OrbitDirectionType #orange
+Class Enumeration
+OrbitDirectionType --|> Enumeration
+Class OrbitParameters #orange
+Class StructuredValue
+OrbitParameters --|> StructuredValue
+Class OrbitType #orange
+Class Enumeration
+OrbitType --|> Enumeration
+Class Platform #orange
+Class StructuredValue
+Platform --|> StructuredValue
+Class PolarisationChannelsType #orange
+Class Enumeration
+PolarisationChannelsType --|> Enumeration
+Class PolarisationModeType #orange
+Class Enumeration
+PolarisationModeType --|> Enumeration
+Class ProcessingInformation #orange
+Class StructuredValue
+ProcessingInformation --|> StructuredValue
+Class ProductInformation #orange
+Class CoverageDescription #orange
+ProductInformation --|> CoverageDescription
+Class ProcessingInformation #orange
+ProductInformation --|> ProcessingInformation
+Class QualityInformation #orange
+Class StructuredValue
+QualityInformation --|> StructuredValue
+Class SensorType #orange
+Class Enumeration
+SensorType --|> Enumeration
+Class SpectralRangeType #orange
+Class Enumeration
+SpectralRangeType --|> Enumeration
+Class TemporalInformation #orange
+Class StructuredValue
+TemporalInformation --|> StructuredValue
+Class VerticalSpatialDomain #orange
+Class QuantitativeValue
+VerticalSpatialDomain --|> QuantitativeValue
+Class WavelengthInformation #orange
+Class StructuredValue
+WavelengthInformation --|> StructuredValue
+StatusEnumeration --|> Enumeration
+@enduml
