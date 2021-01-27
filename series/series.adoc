@@ -2427,6 +2427,15 @@ Disadvantages:
 
 Extending schema.org with additional types and properties requires extending the https://schema.org/docs/datamodel.html[data model] and its machine readable representation which is available at https://schema.org/version/latest/schemaorg-current-https.rdf. 
 
+===== Class Hierarchy
+
+<<https://docs.opengeospatial.org/is/17-003r2/17-003r2.html#80,Annex B.3 of OGC 17-003r2>> provides an RDFS model of the EO granule and identifies the classes.   A first step is to integrate classes for which no alternative exists in schema.org into the schema.org class hierarchy.  The (prelimnary) figures below illustrate how some of the classes from OGC 17-003r2 (orange) can be integrated in the inheritance structure of schema.org as subclasses of existing classs (green).
+
+
+[#img_method3_inheritance,reftext='{figure-caption} {counter:figure-num}']
+.Subclasses hierarchy (Method 3)
+image::diagrams/Method3-Inheritance.png[align="center"]
+
 The proposed extension to schema.org is included at <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.
 
 [appendix]
@@ -2547,7 +2556,7 @@ ifndef::env-github[]
 .eovoc-schema.rdf
 [source,xml]
 ----
-include::./schema/eovoc-schema.rdf[]
+// include::./schema/eovoc-schema.rdf[]
 ----
 
 endif::[]
