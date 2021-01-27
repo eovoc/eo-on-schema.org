@@ -2429,7 +2429,7 @@ Extending schema.org with additional types and properties requires extending the
 
 ===== Class Hierarchy
 
-https://docs.opengeospatial.org/is/17-003r2/17-003r2.html#80[Annex B.3 of OGC 17-003r2] provides an RDF Schema model of the EO granule and identifies the classes.   A first step is to integrate classes for which no alternative exists in schema.org into the schema.org class hierarchy.  The (prelimnary) figures below illustrate how some of the classes from OGC 17-003r2 (orange) can be integrated in the inheritance structure of schema.org as subclasses of existing classs (green).
+https://docs.opengeospatial.org/is/17-003r2/17-003r2.html#80[Annex B.3 of OGC 17-003r2] provides an RDF Schema model of the EO granule metadata and identifies the classes.   A first step is to integrate classes for which no alternative exists in schema.org into the schema.org class hierarchy.  The (prelimnary) figures below illustrate how some of the classes from OGC 17-003r2 (orange) can be integrated in the inheritance structure of schema.org as subclasses of existing classs (green).
 
 
 [#img_method3_inheritance,reftext='{figure-caption} {counter:figure-num}']
