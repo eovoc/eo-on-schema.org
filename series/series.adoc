@@ -852,6 +852,7 @@ The list of Organization properties is fully defined in https://schema.org/Organ
 {
 	"@type": "Organization",
 	"name": "ESA/ESRIN",
+	"sameAs": "https://ror.org/05vt9rv16",
 	"address": {
 		"@type": "PostalAddress",
 		"addressCountry": "Italy",
