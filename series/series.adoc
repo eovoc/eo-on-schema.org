@@ -191,18 +191,20 @@ ifndef::env-github[]
 === Abbreviated terms
 endif::[]
 
-* API			Application Programming Interface
+* API		Application Programming Interface
 * CEOS		Committee on Earth Observation Satellites
-* EO			Earth Observation
+* EO		Earth Observation
 * HATEOAS	Hypermedia As The Engine Of Application State
 * HTTP 		HyperText Transfer Protocol
-* IRI			Internationalised Resource Identifier
-* ISO			International Organisation for Standardisation
+* IRI		Internationalised Resource Identifier
+* ISO		International Organisation for Standardisation
 * JSON		JavaScript Object Notation
 * JSON-LD	JavaScript Object Notation for Linked Data
 * OGC		Open Geospatial Consortium
+* ORCID		Open Researcher and Contributor IDentifier
 * RDF		Resource Description Framework
 * REST		Representational State Transfer
+* ROR		Research Organization Registry
 * SPARQL	SPARQL Protocol and RDF Query Language
 * URI		Uniform Resource Identifier
 * URL		Uniform Resource Locator
@@ -210,8 +212,8 @@ endif::[]
 * W3C		World Wide Web Consortium
 * WGISS		Working Group on Information Systems and Services
 * WKT		Well-Known Text
-* WPS  Web Processing Service
-* WPS-T   Transactional Web Processing Service
+* WPS  		Web Processing Service
+* WPS-T   	Transactional Web Processing Service
 * XML		eXtensible Markup Language
 * XSD		XML Schema Definition Language
 
