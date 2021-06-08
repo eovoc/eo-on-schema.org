@@ -667,7 +667,7 @@ https://idn.ceos.org/[CEOS IDN] collection identifiers are currently not registe
 }
 ----
 
-In the example below, PropertyValue is used to associate an https://orcid.org/[ORCID] identifier to a Person.
+In the example below, PropertyValue is used to associate an https://orcid.org/[ORCID ID] to a Person.
 
 .PropertyValue encoding example (ORCID)
 [source,json]
@@ -683,6 +683,26 @@ In the example below, PropertyValue is used to associate an https://orcid.org/[O
 		"propertyID": "https://registry.identifiers.org/registry/orcid",
 		"url": "https://orcid.org/0000-0003-4687-9850",
 		"value": "orcid:0000-0003-4687-9850"
+	}
+}
+----
+
+In the example below, PropertyValue is used to associate an https://ror.org/[ROR ID] to an Organization.
+
+.PropertyValue encoding example (ROR)
+[source,json]
+----
+{
+	"@context": "https://schema.org/",	
+	"@type": "Organization",
+	"name": "European Space Agency",
+	"url": "https://esa.int",
+	"identifier": {
+		"@id": "https://ror.org/03wd9za21",
+		"@type": "PropertyValue",
+		"propertyID": "https://registry.identifiers.org/registry/ror",
+		"url": "https://ror.org/03wd9za21",
+		"value": "ror:03wd9za21"
 	}
 }
 ----
