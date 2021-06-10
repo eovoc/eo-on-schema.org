@@ -456,6 +456,10 @@ Range: Number \| Text
 	"@id": "https://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC",
 	"name": "Landsat 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing",
 	"alternateName": "LANDSAT.ETM.GTC",
+	"includedInDataCatalog": {         
+		"@type":"DataCatalog",
+         	"name":"FedEO Clearinghouse"
+     	},
 	"url": [
 		"https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing",
 		"https://search.earthdata.nasa.gov/portal/idn/search?q=C1532648148-ESA"
