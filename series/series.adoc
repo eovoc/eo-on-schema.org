@@ -2109,7 +2109,7 @@ a| @id +
 a| isPartOf +
 ~$.isPartOf~
 | Indicates a Collection to which this granule belongs.  Similar to `parentIdentifier` in <<OGC17-003r2>> and `collection` in <<STAC-ITEM>>.
-| Range: URL | Dataset
+| Range: URL \| Dataset
 | Zero or more (optional)
 
 a| includedInDataCatalog +
