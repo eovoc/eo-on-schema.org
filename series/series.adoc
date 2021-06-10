@@ -2046,7 +2046,7 @@ A granule or product is the finest granularity of data that can be independently
 .Granule Identification Schema
 image::diagrams/GranuleIdentification.png[align="center"]
 
-A list of Granule Identification properties is given in <<table_object_service>>.  All properties available for Data Identification (<<table_object_dataset>>) can be reused, but `additionalType` shall be set to `http://purl.org/dc/dcmitype/Dataset`.
+A list of Granule Identification properties is given in <<table_object_granule>>.  All properties available for Data Identification (<<table_object_dataset>>) can be reused, but `additionalType` shall be set to `http://purl.org/dc/dcmitype/Dataset`.
 
 [#table_object_granule,reftext='{table-caption} {counter:table-num}']
 .Granule Identification properties
@@ -2112,6 +2112,12 @@ a| isPartOf +
 | Range: URL | Dataset
 | Zero or more (optional)
 
+a| includedInDataCatalog +
+~$.includedInDataCatalog~
+| A data catalog which contains this dataset.
+| Range: DataCatalog
+| Zero or more (optional)
+
 a| alternateName +
 ~$.alternateName~
 | Alternate name of the granule.
@@ -2146,6 +2152,10 @@ Range: ListItem (<<table_object_listitem>>)
 	"additionalType": "http://purl.org/dc/dcmitype/Dataset",
 	"@id": "https://ergo.spacebel.be/collections/datasets/items/LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
 	"name": "LS05_RFUI_TM__GTC_1P_19971003T092603_19971003T092632_072287_0191_0031_2570",
+	"includedInDataCatalog": {         
+		"@type":"DataCatalog",
+         	"name":"FedEO Clearinghouse"
+     	 },
 	"isPartOf": {
 		"@type": "Dataset",
 		"url": "https://earth.esa.int/eogateway/catalog/landsat-5-thematic-mapper-geolocated-terrain-corrected-systematic-processing",
