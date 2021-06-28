@@ -104,7 +104,7 @@ endif::[]
 [[OGC17-003r2]][OGC17-003r2]::
 	OGC17-003r2, OGC EO Dataset Metadata GeoJSON(-LD) Encoding Standard, Version 1.0, https://docs.opengeospatial.org/is/17-003r2/17-003r2.html.
 [[OGC17-084r1]][OGC17-084r1]::
-	OGC17-084r1, EO Collection GeoJSON(-LD) Encoding, TBD.
+	OGC17-084r1, EO Collection GeoJSON(-LD) Encoding, Version 1.0, https://docs.ogc.org/bp/17-084r1/17-084r1.html.
 [[SHACL]][SHACL]:: 
 	Shapes Constraint Language (SHACL), W3C Recommendation, 20 July 2017, https://www.w3.org/TR/shacl/
 [[SKOS]][SKOS]:: 
