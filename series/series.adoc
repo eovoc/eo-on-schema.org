@@ -2636,6 +2636,7 @@ endif::[]
 |December 24, 2020 |Y. Coene | 0.1 |all |Initial version for EOVOC RR-1 Review.
 |July 1, 2021 |Y. Coene | 0.2 |  measurementTechnique added to Acquisition Information. +
 Table added with mapping for Responsible Party roles. +
-Recommendation added to use ROR identifiers for organisations.    |Updated version for EOVOC PM-1 Meeting.
+Recommendation added to use ROR identifiers for organisations. +
+AcquisitionInformation encoding for EO Applications and Services added. | Updated version for EOVOC PM-1 Meeting.
 |====================
 
