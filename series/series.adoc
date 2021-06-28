@@ -41,6 +41,7 @@ ifdef::env-github[]
 ** <<47-acquisition-information,4.7 Acquisition Information>>
 * <<5-eo-services-and-applications-encoding,5. EO Services and Applications Encoding>>
 ** <<51-service-identification,5.1 Service Identification>>
+** <<52-acquisition-information,5.2 Acquisition Information>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 ** <<61-granule-identification,6.1 Granule Identification>>
 
@@ -2037,6 +2038,18 @@ Range: Number \| Text
 	]
 }
 ----
+
+
+// 5.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 5.2 Acquisition Information
+endif::[]
+ifndef::env-github[]
+=== Acquisition Information
+endif::[]
+
+The encoding proposed using schema:Action in <<47-acquisition-information,4.7 Acquisition Information>> is only applicable to Collections and Granules.  For services and applications, Acquisition Information can be encoded as DefinedTerm from the platform and instrument thesaurus as in <<441-definedterm,4.4.1 DefinedTerm>>
+
 
 // 6 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
