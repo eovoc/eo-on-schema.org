@@ -2619,7 +2619,7 @@ ifndef::env-github[]
 .eovoc-schema.rdf
 [source,xml]
 ----
-// include::./schema/eovoc-schema.rdf[]
+include::./schema/eovoc-schema.rdf[]
 ----
 
 endif::[]
@@ -2637,6 +2637,7 @@ endif::[]
 |July 1, 2021 |Y. Coene | 0.2 |  measurementTechnique added to Acquisition Information. +
 Table added with mapping for Responsible Party roles. +
 Recommendation added to use ROR identifiers for organisations. +
-AcquisitionInformation encoding for EO Applications and Services added. | Updated version for EOVOC PM-1 Meeting.
+AcquisitionInformation encoding for EO Applications and Services added. +
+Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM-1 Meeting.
 |====================
 
