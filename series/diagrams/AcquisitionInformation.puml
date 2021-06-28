@@ -33,6 +33,9 @@ Class dbpedia_Scientific_instrument as "dbpedia:Scientific_instrument" #orange
 
 ' using blanks inside () creates separate objects
 
+Dataset -up-> (URL) : "measurementTechnique"
+Dataset -down-> (Text) : "measurementTechnique"
+
 CreateAction .up.|> Action
 
 CreateAction -right-> DefinedTerm : "instrument"
