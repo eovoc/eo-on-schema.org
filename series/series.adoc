@@ -924,31 +924,37 @@ The list of Role properties is defined in https://schema.org/Role[schema:Role] a
 `Role` can be used in combination with a `Person` or `Organization`.
 The https://schema.org/roleName[schema:roleName] property can be used to encode [`CI_RoleCode`] values from https://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml[ISO19115:2003] or https://wiki.esipfed.org/ISO_19115-3_Codelists#CI_RoleCode[ISO19115-3] (*) for which https://schema.org/roleName[schema:Dataset] does not have a corresponding property.  
 
-The following roles are directly supported as property of https://schema.org/Dataset[schema:Dataset] and do not require an intermediate https://schema.org/Role[schema:Role] object:
+[#table_role_responsible_party,reftext='{table-caption} {counter:table-num}']
+.Responsible party role properties
+|===
+| https://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml[ISO19115:2003]  |  https://wiki.esipfed.org/ISO_19115-3_Codelists#CI_RoleCode[ISO19115-3]  | schema.org property 
 
-*  author   
-*  contributor
-*  editor (*)
-*  funder (*)
-*  publisher           
-*  resourceProvider (encode as provider)  
+|  author     |  author  |  schema:author  
+|             |  coAuthor  |  
+|             |  collaborator  |  
+|             |  contributor  |  schema:contributor
+|  custodian  |  custodian    |  schema:maintainer
+|  distributor  |  distributor   |  
+|             |  editor          | schema:editor (Person) 
+|             |  funder          | schema:funder  
+|             |  mediator        |  
+|  originator  |  originator  |  schema:creator  
+|  owner       |  owner        |  
+|  pointofContact       |  pointOfContact    |  schema:provider
+| principalInvestigator | principalInvestigator  | 
+| processor        | processor |
+| publisher        | publisher | schema:publisher 
+| resourceProvider | resourceProvider | schema:provider
+|                  | rightsHolder | schema:copyrightHolder
+|                  | sponsor | schema:sponsor
+|                  | stakeholder |
+| user             | user |
 
-Other roles can be used as values for https://schema.org/roleName[schema:roleName].  It is recommended to reuse `CI_RoleCode` values from https://wiki.esipfed.org/ISO_19115-3_Codelists#CI_RoleCode[ISO19115-3] where possible, e.g.
+|===
 
-*  coAuthor (*)
-*  collaborator (*)
-*  custodian  
-*  distributor 
-*  mediator (*)
-*  originator
-*  owner                                
-*  pointOfContact       
-*  principleInvestigator  
-*  processor
-* rightsholder (*)
-* sponsor (*)
-* stakeholder (*)
-* user
+Roles directly supported as property of https://schema.org/Dataset[schema:Dataset] (See table above) do not require an intermediate https://schema.org/Role[schema:Role] object:
+
+Other roles can be used as values for https://schema.org/roleName[schema:roleName].  It is recommended to reuse `CI_RoleCode` values from https://wiki.esipfed.org/ISO_19115-3_Codelists#CI_RoleCode[ISO19115-3] where possible.
 
 .Role encoding example
 [source,json]
