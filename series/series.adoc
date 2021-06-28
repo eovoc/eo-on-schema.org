@@ -1806,6 +1806,12 @@ a| instrument +
 | Range: DefinedTerm (<<table_object_definedterm>>)
 | Zero or more (optional)
 
+a| measurementTechnique +
+~$.measurementTechnique~
+| A technique or technology used in a Dataset, corresponding to the method used for measuring the corresponding variable(s). 
+| Range: Text \| URL
+| Zero or more (optional)
+
 |===
 
 
@@ -1820,6 +1826,7 @@ a| instrument +
 	"@type": "Dataset",
 	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
 	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
+	"measurementTechnique": ["Passive Remote Sensing", "Spectrometers/Radiometers", "Imaging Spectrometers/Radiometers"],
 	"potentialAction": {
 		"@type": "CreateAction",
 		"instrument": [
