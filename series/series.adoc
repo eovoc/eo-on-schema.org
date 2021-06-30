@@ -2246,6 +2246,41 @@ a| abstract +
 a| accessRights +
 ~$.properties.accessRights~       | dct:accessRights |        https://schema.org/conditionsOfAccess[$.conditionsOfAccess]   |    <<table_object_resourceconstraints>>
 
+a| acquisitionInformation +
+~$.properties.acquisitionInformation~       | prov:wasGeneratedBy |       https://schema.org/potentialAction[$.potentialAction]       |     <<table_object_acquisitioninformation>>
+
+a| acquisitionInformation +
+~$.properties.acquisitionInformation~       | prov:wasGeneratedBy |       https://schema.org/measurementTechnique[$.measurementTechnique]       |     <<table_object_acquisitioninformation>>
+
+a| agent +
+~$.properties.qualifiedAttribution[*].agent~       | prov:agent |       https://schema.org/contributor[$.contributor.contributor]        |     <<table_role_responsible_party>>
+
+
+a| Agent +
+~$.properties.qualifiedAttribution[*].agent[*]~  +
+~$.properties.contactpoint[*]~               | vcard:Kind |       https://schema.org/Person \| +
+                                                                  https://schema.org/Organization |     <<table_role_responsible_party>>
+								  
+								  
+a| Agent +
+~$.properties.authors[*]~                   | foaf:Agent |       https://schema.org/Person \| +
+                                                                  https://schema.org/Organization |     <<table_role_responsible_party>>
+								  
+								  
+a| alternates +
+~$.properties.links.alternates~              | iana:alternate |       https://schema.org/subjectOf[$.subjectOf]  |     <<table_object_relatedurl>>
+
+
+a| authors +
+~$.properties.authors~              | dct:creator |     https://schema.org/author[$.author]    |     <<table_object_contact>>
+
+a| bbox +
+~$.properties.bbox~              | gj:bbox |     https://schema.org/box[$.spatialCoverage.geo.box]    |    <<table_object_geoshape>>
+
+a| beginningDateTime +
+~$.properties.temporal.beginningDateTime~              | dcat:startDate |     https://schema.org/temporalCoverage[$.temporalCoverage]    |    <<table_object_dates>>
+
+
 a| bibliographicCitation +
 ~$.properties.bibliographicCitation~   | dct:bibliographicCitation | https://schema.org/citation[$.citation]  |    <<table_object_dataset>>
 
