@@ -2526,10 +2526,10 @@ a| orbitType +
 
 a| Organization +
 ~$.properties.qualifiedAttribution[*].agent[*]~   +
-~$.properties.contactPoint[*]~      | vcard:Organization   |     https://schema.org/Organization[$.Organization]     |    
+~$.properties.contactPoint[*]~      | vcard:Organization   |     https://schema.org/Organization[Organization]     |    
 
 a| Organization +
-~$.properties.authors[*]~        | foaf:Organization    |     https://schema.org/Organization[$.Organization]     |   
+~$.properties.authors[*]~        | foaf:Organization    |     https://schema.org/Organization[Organization]     |   
 
 a| published +
 ~$.properties.published~     | dct:issued |   	     https://schema.org/datePublished[$.datePublished]	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
