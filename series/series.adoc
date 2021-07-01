@@ -2378,12 +2378,41 @@ a| hasAddress +
 a| hasAddress +
 ~$.properties.authors[*].hasAddress~    | null    |           https://schema.org/address[$.author[\].address]  |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]							
 								
+a| hasName +
+~$.properties.qualifiedAttribution[*].agent[*].hasName~ +
+~$.properties.contactPoint[*].hasName~    | vcard.hasName    |       https://schema.org/name[$.author[\].name] \| +
+                                                              https://schema.org/name[$.creator[\].name] \| +
+							      https://schema.org/name[$.contributor[\].name] \| +
+							       https://schema.org/name[$.provider[\].name] \| +
+							        https://schema.org/name[$.publisher[\].name] |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]	
+								
+a| hasName +
+~$.properties.authors[*].hasName~    | @nest    |       https://schema.org/name[$.author[\].name]  |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]		
+
+a| hasTelephone +
+~$.properties.qualifiedAttribution[*].agent[*].hasTelephone~ +
+~$.properties.contactPoint[*].hasTelephone~    | vcard.hasTelephone    |       https://schema.org/telephone[$.author[\].telephone] \| +
+                                                              https://schema.org/telephone[$.creator[\].telephone] \| +
+							      https://schema.org/telephone[$.contributor[\].telephone] \| +
+							       https://schema.org/telephone[$.provider[\].telephone] \| +
+							        https://schema.org/telephone[$.publisher[\].telephone] |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]	
+								
+a| hasTelephone +
+~$.properties.authors[*].hasTelephone~    | null    |       https://schema.org/telephone[$.author[\].telephone]  |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]
 
 a| id +
 ~$.id~                     | @id           |   $.@id                                           |  <<table_object_dataset>>
 
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[$.identifier] |  <<table_object_dataset>>
+
+a| Individual +
+~$.properties.qualifiedAttribution[*].agent[*]~  +
+~$.properties.contactPoint[*]~     | vcard:Individual |          https://schema.org/Person[Person]   |  <<table_object_contact>>, https://schema.org/Person[Person]
+
+a| Individual +
+~$.properties.authors[*]~     | foaf:Person |          https://schema.org/Person[Person]   |   <<table_object_contact>>, https://schema.org/Person[Person]
+
 
 a| keyword +
 ~$.properties.keyword~   | dcat:keyword  | https://schema.org/keywords[$.keywords]  |    <<table_object_descriptivekeywords>>
