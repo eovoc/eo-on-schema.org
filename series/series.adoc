@@ -2497,6 +2497,40 @@ a| Location     | dct:Location     |         |
 a| method +
 ~$.properties.offerings[*].operations[*].method~       | owc:method |     https://schema.org/httpMethod[$.potentialAction[\].target[\].httpMethod]	     |    <<table_object_action>>, https://schema.org/EntryPoint[EntryPoint]
 
+a| MultiLineString      | gj:MultiLineString    |         |  
+
+a| MultiPoint      | gj:MultiPoint    |         |  
+
+a| MultiPolygon      | gj:MultiPolygon    |         |  
+
+a| name +
+~$.properties.qualifiedAttribution[*].agent[*].name~ +
+~$.properties.contactPoint[*].name~    | vcard.fn    |       https://schema.org/name[$.author[\].name] \| +
+                                                              https://schema.org/name[$.creator[\].name] \| +
+							      https://schema.org/name[$.contributor[\].name] \| +
+							       https://schema.org/name[$.provider[\].name] \| +
+							        https://schema.org/name[$.publisher[\].name] |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]	
+								
+a| name +
+~$.properties.authors[*].name~    | foaf.name    |       https://schema.org/name[$.author[\].name]  |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]
+
+a| offering +
+~$.properties.offerings~     | dcat:endpointDescription |   	 https://schema.org/potentialAction[$.potentialAction]     |  <<table_object_relatedurl>>
+
+a| operations +
+~$.properties.offerings[*].operations~     | owc:operations |     https://schema.org/target[$.potentialAction[\].target]   |   <<table_object_action>>
+
+a| orbitType +
+~$..acquisitionInformation[*].platform.orbitType~     | eop:orbitType |           |   
+
+
+a| Organization +
+~$.properties.qualifiedAttribution[*].agent[*]~   +
+~$.properties.contactPoint[*]~      | vcard:Organization   |     https://schema.org/Organization[$.Organization]     |    
+
+a| Organization +
+~$.properties.authors[*]~        | foaf:Organization    |     https://schema.org/Organization[$.Organization]     |   
+
 a| published +
 ~$.properties.published~     | dct:issued |   	     https://schema.org/datePublished[$.datePublished]	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
 
