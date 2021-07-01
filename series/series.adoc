@@ -2842,8 +2842,8 @@ Table added with mapping for Responsible Party roles. +
 Recommendation added to use ROR identifiers for organisations. +
 AcquisitionInformation encoding for EO Applications and Services added. +
 Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM-1 Meeting.
-
-|July 2, 2021 |Y. Coene | 0.3 |  MediaObject table <<table_object_mediaobject>> updated.
+|July 2, 2021 |Y. Coene | 0.3 |  MediaObject <<table_object_mediaobject>> updated.  +
+<<appendix-c-property-mapping,Appendix C: Property Mapping>> updated. | Updated version for TBD.
 
 
 |====================
