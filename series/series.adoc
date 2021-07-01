@@ -1597,43 +1597,57 @@ A list of MediaObject properties is given in <<table_object_mediaobject>>.
 |JSON Property | Definition | Data type and values | Multiplicity and use
 
 a| @type +
+~$.distribution.@type~ +
+~$.subjectOf.@type~ +
 ~$.mentions.@type~
-| Type of the object. This property has the fixed value "MediaObject".
+| Type of the object. This property has the fixed value "MediaObject" or "DataDownload".
 | Range: String +
-Fixed value: "MediaObject"
+Fixed value: "MediaObject" \| "DataDownload"
 | One (mandatory)
 
 a| contentUrl +
+~$.distribution.contentUrl~ +
+~$.subjectOf.contentUrl~ +
 ~$.mentions.contentUrl~
 | URI describing the related resource.
 | Range: URL
 | One (mandatory)
 
 a| encodingFormat +
+~$.distribution.encodingFormat~ +
+~$.subjectOf.encodingFormat~ +
 ~$.mentions.encodingFormat~
 | Hint about the type of the representation that is expected to be returned when the value of contentUrl is dereferenced.  Should be the value of a media type.
 | Range: URL \| Text
 | Zero or one (optional)
 
 a| name +
+~$.distribution.name~ +
+~$.subjectOf.name~ +
 ~$.mentions.name~
 | Human readable information about the link.
 | Range: Text
 | Zero or one (optional)
 
 a| description +
+~$.distribution.description~ +
+~$.subjectOf.description~ +
 ~$.mentions.description~
 | description of the link.
 | Range: Text
 | Zero or one (optional)
 
 a| contentSize +
+~$.distribution.contentSize~ +
+~$.subjectOf.contentSize~ +
 ~$.mentions.contentSize~
 | File size in bytes.
 | Range: Text
 | Zero or one (optional)
 
 a| inLanguage +
+~$.distribution.inLanguage~ +
+~$.subjectOf.inLanguage~ +
 ~$.mentions.inLanguage~
 | The language of the content.
 | Range: Text \| Language
@@ -2456,10 +2470,14 @@ a| lang +
 ~$.properties.isPrimaryTopicOf.lang~        | dct:language |      https://schema.org/inLanguage[$.subjectOf.inLanguage]   |    <<table_object_listitem>>
 
 a| lang +
-~$.properties.links.*[*].lang~        | dct:language |                |    
+~$.properties.links.*[*].lang~        | dct:language |       https://schema.org/inLanguage[$.distribution[\].inLanguage] +
+								 https://schema.org/inLanguage[$.subjectOf[\].inLanguage] +
+								 https://schema.org/inLanguage[$.mentions[\].inLanguage]         |   <<table_object_mediaobject>> 
 
 a| length +
-~$.properties.links.*[*].length~        | atom:length |                |   
+~$.properties.links.*[*].length~        | atom:length |       https://schema.org/contentSize[$.distribution[\].contentSize] +
+								 https://schema.org/contentSize[$.subjectOf[\].contentSize] +
+								 https://schema.org/contentSize[$.mentions[\].contentSize]         |   <<table_object_mediaobject>>
 
 a| license +
 ~$.properties.license~       | dct:license |        https://schema.org/license[$.license]   |    <<table_object_resourceconstraints>>
@@ -2824,5 +2842,9 @@ Table added with mapping for Responsible Party roles. +
 Recommendation added to use ROR identifiers for organisations. +
 AcquisitionInformation encoding for EO Applications and Services added. +
 Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM-1 Meeting.
+
+|July 2, 2021 |Y. Coene | 0.3 |  MediaObject table <<table_object_mediaobject>> updated.
+
+
 |====================
 
