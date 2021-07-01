@@ -2477,7 +2477,7 @@ a| links  +
 a| Location     | dct:Location     |         |    
 
 a| method +
-~$.properties.offerings[*].operations[*].method~       | owc:method |     https://schema.org/httpMethod[$.potentialAction[\].target[\].httpMethod]	     |    <<table_object_action>, https://schema.org/EntryPoint[EntryPoint]
+~$.properties.offerings[*].operations[*].method~       | owc:method |     https://schema.org/httpMethod[$.potentialAction[\].target[\].httpMethod]	     |    <<table_object_action>>, https://schema.org/EntryPoint[EntryPoint]
 
 a| published +
 ~$.properties.published~     | dct:issued |   	     https://schema.org/datePublished[$.datePublished]	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
