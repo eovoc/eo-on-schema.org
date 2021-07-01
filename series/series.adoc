@@ -1465,6 +1465,8 @@ A `MediaObject` is used to represent most hypermedia links.  If the link represe
 [NOTE] 
 The (pending) https://schema.org/LinkRole[LinkRole] class can represent URL with an IANA link registry relation via https://schema.org/linkRelationship[linkRelationship].  This class does not have a `contentType` property however, therefore `MediaObject` and `DataDownload` are used instead.
 
+[#table_iana_relation,reftext='{table-caption} {counter:table-num}']
+.IANA Relations
 |===
 | IANA Relation |  schema.org property | schema.org class | Purpose
 
@@ -2337,14 +2339,14 @@ a| description +
 ~$.properties.wasUsedBy[].generated.description~       | dct:description |                |  
 
 a| description +
-~$..acquisitionInformation[].instrument.description~       | dct:description |     https://schema.org/description[$.potentialAction[\].instrument[\].description ]    |  <<table_object_acquisitioninformation>>
+~$..acquisitionInformation[].instrument.description~       | dct:description |     https://schema.org/description[$..instrument[\].description ]    |  <<table_object_acquisitioninformation>>
 
 a| doi +
 ~$.properties.doi~        | adms:identifier  |      https://schema.org/value[$.identifier.value]   |  <<table_object_propertyvalue>>
 
 a| email +
 ~$.properties.qualifiedAttribution[*].agent[*].email~ +
-$.properties.contactPoint[*].email   | vcard:hasEmail  |      https://schema.org/email[$.author[\].email] \| +
+~$.properties.contactPoint[*].email~   | vcard:hasEmail  |      https://schema.org/email[$.author[\].email] \| +
                                                               https://schema.org/email[$.creator[\].email] \| +
 							      https://schema.org/email[$.contributor[\].email] \| +
 							       https://schema.org/email[$.provider[\].email] \| +
@@ -2425,7 +2427,8 @@ a| isPrimaryTopicOf +
 ~$.properties.isPrimaryTopicOf~   | foaf:isPrimaryTopicOf |         https://schema.org/subjectOf[$.subjectOf]   |  <<table_object_dataset>>
 
 a| issued +
-~$.properties.wasUsedBy[*].qualifiedAssociation.hadPlan.wasDerivedFrom.issued~   | dct:issued |      |  
+~$.properties.wasUsedBy[*].qualifiedAssociation~ +
+~.hadPlan.wasDerivedFrom.issued~   | dct:issued |      |  
 
 a| keyword +
 ~$.properties.keyword~   | dcat:keyword  | https://schema.org/keywords[$.keywords]  |    <<table_object_descriptivekeywords>>
@@ -2456,6 +2459,17 @@ a| length +
 
 a| license +
 ~$.properties.license~       | dct:license |        https://schema.org/license[$.license]   |    <<table_object_resourceconstraints>>
+
+a| LicenseDocument      | dct:LicenseDocument  |        https://schema.org/CreativeWork[CreativeWork]  \| +
+                                                        https://schema.org/URL[URL] |    <<table_object_resourceconstraints>>
+							
+a| LineString      | gj:LineString  |         |    
+
+a| Link      | atom:link    |         |  
+
+a| links  +
+~$.properties.links~    | owc:links    |         |    <<table_object_relatedurl>>
+
 
 a| published +
 ~$.properties.published~     | dct:issued |   	     https://schema.org/datePublished[$.datePublished]	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
