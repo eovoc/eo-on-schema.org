@@ -2307,14 +2307,31 @@ a| contactPoint +
 ~$.properties.contactPoint~   | dcat:contactPoint |          https://schema.org/provider[$.provider] \|
                                                              https://schema.org/roleName[$.contributor.roleName] |    <<table_role_responsible_party>> and  <<table_object_contact>>
 
+a| contents +
+~$.properties.offerings[*].contents~   | owc:contents |           |  
+
+a| coordinates +
+~$.geometry.coordinates~   | gj:coordinates |     https://schema.org/geo[$.spatialCoverage.geo]      |   <<table_object_spatialinformation>>
+
 a| created +
 ~$.properties.created~                   | dct:created      |  https://schema.org/dateCreated[$.dateCreated] |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
 
 a| created +
-~$.properties.isPrimaryTopicOf.created~    | dct:created |      https://schema.org/dateCreated[$.subjectOf.dateCreated]   |   <<table_object_listitem>>
+~$.properties.isPrimaryTopicOf.created~    | dct:created |      https://schema.org/dateCreated[$.subjectOf[\].dateCreated]   |   <<table_object_listitem>>
+
+a| data +
+~$.properties.links.data~       | iana.enclosure |    https://schema.org/distribution[$.distribution]     |  <<table_object_relatedurl>>
 
 a| date +
-~$.properties.date~       | dct:date |              https://schema.org/temporal[$.temporal ]   |  <<table_object_dates>>
+~$.properties.date~       | dct:date |              https://schema.org/temporal[$.temporal]   |  <<table_object_dates>>
+
+a| degree +
+~$.properties.wasUsedBy[].generated;degree~       | dct:type |                |  
+
+a| describedby +
+~$.properties.links.describedby~       | iana.describedby |    https://schema.org/url[$.url]  +
+                                                               https://schema.org/mentions[$.mentions] +
+							       https://schema.org/subjectOf[$.subjectOf]        |  <<table_object_relatedurl>>
 
 a| doi +
 ~$.properties.doi~        | adms:identifier  |      https://schema.org/value[$.identifier.value]   |  <<table_object_propertyvalue>>
