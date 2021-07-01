@@ -2291,10 +2291,10 @@ a| categories +
 a| Category                  | skos:Concept |                https://schema.org/DefinedTerm[DefinedTerm]  |    <<table_object_definedterm>>
 		       
 a| code +
-~$.properties.offerings[*].code~   | owc:code |     https://schema.org/identifier[$.potentialAction[].identifier]       |     <<table_object_action>> 
+~$.properties.offerings[*].code~   | owc:code |     https://schema.org/identifier[$.potentialAction[\].identifier]       |     <<table_object_action>> 
 
 a| code +
-~$.properties.offerings[*].operations[*].code~   | owc:code |       https://schema.org/identifier[$.potentialAction[].target[].identifier]     |    <<table_object_action>>		
+~$.properties.offerings[*].operations[*].code~   | owc:code |       https://schema.org/identifier[$.potentialAction[\].target[\].identifier]     |    <<table_object_action>>		
 		       
 
 a| conformsTo +
