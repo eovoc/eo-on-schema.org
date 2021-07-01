@@ -1597,58 +1597,58 @@ A list of MediaObject properties is given in <<table_object_mediaobject>>.
 |JSON Property | Definition | Data type and values | Multiplicity and use
 
 a| @type +
-~$.distribution.@type~ +
-~$.subjectOf.@type~ +
-~$.mentions.@type~
+~$.distribution[].@type~ +
+~$.subjectOf[].@type~ +
+~$.mentions[].@type~
 | Type of the object. This property has the fixed value "MediaObject" or "DataDownload".
 | Range: String +
 Fixed value: "MediaObject" \| "DataDownload"
 | One (mandatory)
 
 a| contentUrl +
-~$.distribution.contentUrl~ +
-~$.subjectOf.contentUrl~ +
-~$.mentions.contentUrl~
+~$.distribution[].contentUrl~ +
+~$.subjectOf[].contentUrl~ +
+~$.mentions[].contentUrl~
 | URI describing the related resource.
 | Range: URL
 | One (mandatory)
 
 a| encodingFormat +
-~$.distribution.encodingFormat~ +
-~$.subjectOf.encodingFormat~ +
-~$.mentions.encodingFormat~
+~$.distribution[].encodingFormat~ +
+~$.subjectOf[].encodingFormat~ +
+~$.mentions[].encodingFormat~
 | Hint about the type of the representation that is expected to be returned when the value of contentUrl is dereferenced.  Should be the value of a media type.
 | Range: URL \| Text
 | Zero or one (optional)
 
 a| name +
-~$.distribution.name~ +
-~$.subjectOf.name~ +
-~$.mentions.name~
+~$.distribution[].name~ +
+~$.subjectOf[].name~ +
+~$.mentions[].name~
 | Human readable information about the link.
 | Range: Text
 | Zero or one (optional)
 
 a| description +
-~$.distribution.description~ +
-~$.subjectOf.description~ +
-~$.mentions.description~
-| description of the link.
+~$.distribution[].description~ +
+~$.subjectOf[].description~ +
+~$.mentions[].description~
+| Description of the link.
 | Range: Text
 | Zero or one (optional)
 
 a| contentSize +
-~$.distribution.contentSize~ +
-~$.subjectOf.contentSize~ +
-~$.mentions.contentSize~
+~$.distribution[].contentSize~ +
+~$.subjectOf[].contentSize~ +
+~$.mentions[].contentSize~
 | File size in bytes.
 | Range: Text
 | Zero or one (optional)
 
 a| inLanguage +
-~$.distribution.inLanguage~ +
-~$.subjectOf.inLanguage~ +
-~$.mentions.inLanguage~
+~$.distribution[].inLanguage~ +
+~$.subjectOf[].inLanguage~ +
+~$.mentions[].inLanguage~
 | The language of the content.
 | Range: Text \| Language
 | Zero or one (optional)
