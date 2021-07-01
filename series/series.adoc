@@ -2440,8 +2440,12 @@ a| label +
 ~$.properties.categories[*].label~       | skos:prefLabel |        https://schema.org/name[$.keywords[\].name]  |    <<table_object_definedterm>>
 
 a| label +
-~$.properties.license[*].label~    +
-~$.properties.accessRights[*].label~    + 
+~$.properties.license[*].label~     | rdfs:label |     https://schema.org/description[$.license[\].description]     |    <<table_object_resourceconstraints>>
+
+a| label +
+~$.properties.accessRights[*].label~    | rdfs:label |    https://schema.org/description[$.conditionsOfAccess[\].description]    |   <<table_object_resourceconstraints>>
+
+a| label +
 ~$.properties.provenance[*].label~     | rdfs:label |          |    
 
 
@@ -2470,6 +2474,10 @@ a| Link      | atom:link    |         |
 a| links  +
 ~$.properties.links~    | owc:links    |         |    <<table_object_relatedurl>>
 
+a| Location     | dct:Location     |         |    
+
+a| method +
+~$.properties.offerings[*].operations[*].method~       | owc:method |     https://schema.org/httpMethod[$.potentialAction[\].target[\].httpMethod]	     |    <<table_object_action>, https://schema.org/EntryPoint[EntryPoint]
 
 a| published +
 ~$.properties.published~     | dct:issued |   	     https://schema.org/datePublished[$.datePublished]	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
