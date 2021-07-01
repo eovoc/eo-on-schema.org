@@ -2285,13 +2285,27 @@ a| bibliographicCitation +
 ~$.properties.bibliographicCitation~   | dct:bibliographicCitation | https://schema.org/citation[$.citation]  |    <<table_object_dataset>>
 
 a| categories +
-~$.properties.categories~   | dcat:theme  | https://schema.org/keywords[$.keywords]  |    <<table_object_descriptivekeywords>>
+~$.properties.categories~   | dcat:theme  | https://schema.org/keywords[$.keywords] \|  +
+                                            https://schema.org/variableMeasured[$.variableMeasured]  |    <<table_object_descriptivekeywords>>				    
 
-a| Category +
-                       | skos:Concept |                https://schema.org/DefinedTerm[DefinedTerm] |    <<table_object_definedterm>>
+a| Category                  | skos:Concept |                https://schema.org/DefinedTerm[DefinedTerm]  |    <<table_object_definedterm>>
+		       
+a| code +
+~$.properties.offerings[*].code~   | owc:code |                 |    		 
+
+a| code +
+~$.properties.offerings[*].operations[*].code~   | owc:code |                 |    		
+		       
 
 a| conformsTo +
 ~$.properties.isPrimaryTopicOf.conformsTo~   | dct:conformsTo |     https://schema.org/encodingFormat[$.subjectOf.encodingFormat]   |    <<table_object_listitem>>.  See also <<ESIPFed>>.
+
+a| conformsTo +
+~$.properties.conformsTo~   | dct:conformsTo |         |     
+
+a| contactPoint +
+~$.properties.contactPoint~   | dcat:contactPoint |          https://schema.org/provider[$.provider] \|
+                                                             https://schema.org/roleName[$.contributor.roleName] |    <<table_role_responsible_party>> and  <<table_object_contact>>
 
 a| created +
 ~$.properties.created~                   | dct:created      |  https://schema.org/dateCreated[$.dateCreated] |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>.
