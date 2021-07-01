@@ -2258,13 +2258,13 @@ a| agent +
 
 a| Agent +
 ~$.properties.qualifiedAttribution[*].agent[*]~  +
-~$.properties.contactpoint[*]~               | vcard:Kind |       https://schema.org/Person \| +
-                                                                  https://schema.org/Organization |     <<table_role_responsible_party>>
+~$.properties.contactpoint[*]~               | vcard:Kind |       https://schema.org/Person[Person] \| +
+                                                                  https://schema.org/Organization[Organization] |     <<table_role_responsible_party>>
 								  
 								  
 a| Agent +
-~$.properties.authors[*]~                   | foaf:Agent |       https://schema.org/Person \| +
-                                                                  https://schema.org/Organization |     <<table_role_responsible_party>>
+~$.properties.authors[*]~                   | foaf:Agent |       https://schema.org/Person[Person] \| +
+                                                                  https://schema.org/Organization[Organization] |     <<table_role_responsible_party>>
 								  
 								  
 a| alternates +
@@ -2411,8 +2411,21 @@ a| Individual +
 ~$.properties.contactPoint[*]~     | vcard:Individual |          https://schema.org/Person[Person]   |  <<table_object_contact>>, https://schema.org/Person[Person]
 
 a| Individual +
-~$.properties.authors[*]~     | foaf:Person |          https://schema.org/Person[Person]   |   <<table_object_contact>>, https://schema.org/Person[Person]
+~$.properties.authors[*]~     | foaf:Person |          https://schema.org/Person[Person]   |   <<table_object_contact>>
 
+a| instrument +
+~$..acquisitionInformation[*].instrument~   | prov:used |          https://schema.org/instrument[$.potentialAction[\].instrument] |  <<table_object_acquisitioninformation>>
+
+a| Instrument  | eop:Instrument  |          https://schema.org/DefinedTerm[DefinedTerm] |  <<table_object_acquisitioninformation>>
+
+a| instrumentShortName +
+~$..acquisitionInformation[*].instrumentShortName~   | eop:instrumentShortName |          https://schema.org/name[$.potentialAction[\].instrument[\].name]   |  <<table_object_acquisitioninformation>>
+
+a| isPrimaryTopicOf +
+~$.properties.isPrimaryTopicOf~   | foaf:isPrimaryTopicOf |         https://schema.org/subjectOf[$.subjectOf]   |  <<table_object_dataset>>
+
+a| issued +
+~$.properties.wasUsedBy[*].qualifiedAssociation.hadPlan.wasDerivedFrom.issued~   | dct:issued |      |  
 
 a| keyword +
 ~$.properties.keyword~   | dcat:keyword  | https://schema.org/keywords[$.keywords]  |    <<table_object_descriptivekeywords>>
@@ -2421,13 +2434,25 @@ a| kind +
 ~$.properties.kind~        | dct:type |                https://schema.org/additionalType[$.additionalType] |    <<table_object_dataset>>. See also <<DCAT-AP-SDO>>.
 
 a| label +
-~$.properties.categories[*].label~       | skos:prefLabel |        https://schema.org/name[$.keywords.name]  |    <<table_object_definedterm>>
+~$.properties.categories[*].label~       | skos:prefLabel |        https://schema.org/name[$.keywords[\].name]  |    <<table_object_definedterm>>
+
+a| label +
+~$.properties.license[*].label~    +
+~$.properties.accessRights[*].label~    + 
+~$.properties.provenance[*].label~     | rdfs:label |          |    
+
 
 a| lang +
 ~$.properties.lang~        | dct:language |                https://schema.org/inLanguage[$.inLanguage] |    <<table_object_dataset>>
 
 a| lang +
 ~$.properties.isPrimaryTopicOf.lang~        | dct:language |      https://schema.org/inLanguage[$.subjectOf.inLanguage]   |    <<table_object_listitem>>
+
+a| lang +
+~$.properties.links.*[*].lang~        | dct:language |                |    
+
+a| length +
+~$.properties.links.*[*].length~        | atom:length |                |   
 
 a| license +
 ~$.properties.license~       | dct:license |        https://schema.org/license[$.license]   |    <<table_object_resourceconstraints>>
