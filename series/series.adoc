@@ -2559,18 +2559,62 @@ a| platform +
 
 a| Platform  | eop:Platform  |          https://schema.org/DefinedTerm[DefinedTerm] |  <<table_object_acquisitioninformation>>
 
-a| plaformSerialIdentifier +
+a| platformSerialIdentifier +
 ~$..acquisitionInformation[*].SerialIdentifier~   | eop:platformSerialIdentifier |          https://schema.org/name[$.potentialAction[\].instrument[\].name]   |  <<table_object_acquisitioninformation>>
 
-a| plaformShortName +
+a| platformShortName +
 ~$..acquisitionInformation[*].platformShortName~   | eop:platformShortName |          https://schema.org/name[$.potentialAction[\].instrument[\].name]   |  <<table_object_acquisitioninformation>>
 
+a| Point           | gj:Point    |    https://schema.org/GeoCoordinates[GeoCoordinates]    |   
+
+a| Polygon         | gj:Polygon    |    https://schema.org/GeoShape[GeoShape]    |   
+
+a| previews +
+~$.properties.links.previews~      | iana:icon   |    https://schema.org/thumbnailUrl[$.thumbnailUrl]    |   <<table_object_relatedurl>>
+
+a| processingLevel  +
+~$.properties.productInformation.processingLevel~        | eop:processingLevel    |      |   
+
+a| productInformation  +
+~$.properties.productInformation~        | eop:productInformation    |      |   
+
+a| ProductInformation           | eop:ProductInformation    |      |   
+
+a| productType  +
+~$.properties.productInformation.productType~        | eop:productType    |      |   
+
+a| profiles +
+~$.properties.links.profiles~      | iana:profile   |         |   <<table_object_relatedurl>>
+
+a| provenance  +
+~$.properties.provenance~        | dct:provenance    |        |   
+
+a| ProvenanceStatement           | dct:ProvenanceStatement    |      |   
 
 a| published +
 ~$.properties.published~     | dct:issued |   	     https://schema.org/datePublished[$.datePublished]	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
 
+
 a| published +
-~$.properties.isPrimaryTopicOf.published~     | dct:issued |   	   https://schema.org/datePublished[$.subjectOf.datePublished]	 |    <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
+~$.properties.isPrimaryTopicOf.published~     | dct:issued |   	   https://schema.org/datePublished[$.subjectOf[\].datePublished]	 |    <<table_object_listitem>>.  See also <<DCAT-AP-SDO>>.
+
+a| publisher  +
+~$.properties.publisher~        | dct:publisher   |       https://schema.org/telephone[$.publisher] |    <<table_object_contact>>
+
+a| qualifiedAssociation  +
+~$.properties.wasUsedBy[*].qualifiedAssociation~        |   prov:qualifiedAssociation    |        |   
+
+a| qualifiedAttribution  +
+~$.properties.wasUsedBy[*].qualifiedAttribution~        |   prov:qualifiedAttribution    |        |   
+
+a| referenceSystemIdentifier  +
+~$.properties.productInformation.referenceSystemIdentifier~        |   eop:referenceSystemIdentifier    |        |   
+
+a| related +
+~$.properties.links.related~      | iana:related   |         |   <<table_object_relatedurl>>
+
+a| request +
+~$.properties.offerings[*].operations[*].request~      | owc:request   |         |   See https://schema.org/docs/actions.html for HTTP Post request encoding.
 
 a| rights +
 ~$.properties.rights~       | dct:rights |               https://schema.org/conditionsOfAccess[$.conditionsOfAccess]   |    <<table_object_resourceconstraints>>
