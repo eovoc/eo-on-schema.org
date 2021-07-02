@@ -1357,7 +1357,7 @@ ifndef::env-github[]
 ==== GeoShape
 endif::[]
 
-A GeoShape is described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.  The main https://schema.org/GeoShape[GeoShape] properties are given in <<table_object_geoshape>>.
+A https://schema.org/GeoShape[GeoShape] is described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.  The main https://schema.org/GeoShape[GeoShape] properties are given in <<table_object_geoshape>>.
 
 [#table_object_geoshape,reftext='{table-caption} {counter:table-num}']
 .GeoShape object properties
