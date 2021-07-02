@@ -1,0 +1,45 @@
+@startuml
+
+' example 6 June 2020 Y. Coene schema.org representation
+' https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+
+' symbol for named literal as trapezium shape is not available.
+' Property "http://purl.org/dc/dcmitype/Collection" as URL #Khaki 
+
+Class Dataset
+
+Class PropertyValue
+Class StructuredValue
+
+
+Dataset -right-> PropertyValue : "additionalProperty"
+
+PropertyValue -down-> (Text) : "value"
+PropertyValue -down-> (Boolean) : "value"
+PropertyValue -down-> (Number) : "value"
+PropertyValue -right-> StructuredValue : "value"
+PropertyValue -down-> (Text ) : "unitText"
+
+PropertyValue -up-> (URL) : "propertyID"
+
+
+
+@enduml
