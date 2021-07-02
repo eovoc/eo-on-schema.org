@@ -2531,6 +2531,41 @@ a| Organization +
 a| Organization +
 ~$.properties.authors[*]~        | foaf:Organization    |     https://schema.org/Organization[Organization]     |   
 
+a| PeriodOfTime         | dct:PeriodOfTime    |        |   
+
+a| Person +
+~$.properties.qualifiedAttribution[*].agent[*]~   +
+~$.properties.contactPoint[*]~      | vcard:Individual   |     https://schema.org/Person[Person]     |    
+
+a| Person +
+~$.properties.authors[*]~        | foaf:Person    |     https://schema.org/Person[Person]     |   
+
+
+a| phone +
+~$.properties.qualifiedAttribution[*].agent[*].phone~ +
+~$.properties.contactPoint[*].phone~    | null    |          https://schema.org/telephone[$.author[\].telephone] \| +
+                                                              https://schema.org/telephone[$.creator[\].telephone] \| +
+							      https://schema.org/telephone[$.contributor[\].telephone] \| +
+							       https://schema.org/telephone[$.provider[\].telephone] \| +
+							        https://schema.org/telephone[$.publisher[\].telephone] |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]	
+								
+a| phone +
+~$.properties.authors[*].hasTelephone~    | foaf.phone    |       https://schema.org/telephone[$.author[\].telephone]  |  <<table_object_contact>>, https://schema.org/Organization[Organization], https://schema.org/Person[Person]
+
+a| Plan         | prov:Plan    |        |   
+
+a| platform +
+~$..acquisitionInformation[*].platform~   | prov:used |          https://schema.org/instrument[$.potentialAction[\].instrument] |  <<table_object_acquisitioninformation>>
+
+a| Platform  | eop:Platform  |          https://schema.org/DefinedTerm[DefinedTerm] |  <<table_object_acquisitioninformation>>
+
+a| plaformSerialIdentifier +
+~$..acquisitionInformation[*].SerialIdentifier~   | eop:platformSerialIdentifier |          https://schema.org/name[$.potentialAction[\].instrument[\].name]   |  <<table_object_acquisitioninformation>>
+
+a| plaformShortName +
+~$..acquisitionInformation[*].platformShortName~   | eop:platformShortName |          https://schema.org/name[$.potentialAction[\].instrument[\].name]   |  <<table_object_acquisitioninformation>>
+
+
 a| published +
 ~$.properties.published~     | dct:issued |   	     https://schema.org/datePublished[$.datePublished]	 |   <<table_object_dates>>.  See also <<DCAT-AP-SDO>>. 
 
