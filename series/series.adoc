@@ -1621,6 +1621,15 @@ a| contentUrl +
 | Range: URL
 | One (mandatory)
 
+a| additionalProperty +
+~$.distribution[].additionalProperty~ +
+~$.subjectOf[].additionalProperty~ +
+~$.mentions[].additionalProperty~
+| Reference coordinate system TBD See https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#spatial-coverage, typically used for granule downloads.
+| Range: TBD
+| One or zero (optional)
+
+
 a| encodingFormat +
 ~$.distribution[].encodingFormat~ +
 ~$.subjectOf[].encodingFormat~ +
