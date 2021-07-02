@@ -39,6 +39,7 @@ ifdef::env-github[]
 *** <<461-mediaobject,4.6.1 MediaObject>>
 *** <<462-action,4.6.2 Action>>
 ** <<47-acquisition-information,4.7 Acquisition Information>>
+** <<48-additional-information,4.8 Additional Information>>
 * <<5-eo-services-and-applications-encoding,5. EO Services and Applications Encoding>>
 ** <<51-service-identification,5.1 Service Identification>>
 ** <<52-acquisition-information,5.2 Acquisition Information>>
@@ -1879,6 +1880,20 @@ a| measurementTechnique +
 	}
 }
 ----
+
+// 4.8 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 4.8 Additional Information
+endif::[]
+ifndef::env-github[]
+=== Additional Information
+endif::[]
+
+[#img_object_additionalinformation,reftext='{figure-caption} {counter:figure-num}']
+.Additional Information schema
+image::diagrams/AdditionalInformation.png[align="center"]
+
+Additional information that can be expressed using the OGC17-003r2 vocabulary can be modelled using the `additionalProperty` property.
 
 
 
