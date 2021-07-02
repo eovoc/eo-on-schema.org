@@ -132,7 +132,7 @@ endif::[]
 [[ESIPFed]][ESIPFed]::
 	"Schema.org Publishing Guidelines for the Geosciences", V1.1.0, https://doi.org/10.5281/zenodo.3736235, https://github.com/ESIPFed/science-onschema.org
 [[DCAT-AP-SDO]][DCAT-AP-SDO]::
-	DCAT-AP to Schema.org Mapping, Unofficial Draft 13 September 2019, https://ec-jrc.github.io/dcat-ap-to-schema-org/
+	DCAT-AP to Schema.org Mapping, Unofficial Draft 30 April 2021, https://ec-jrc.github.io/dcat-ap-to-schema-org/
 [[OGC19-020r1]][OGC19-020r1]::
 	OGC19-020r1, OGC Testbed-15: Catalogue and Discovery Engineering Report, https://docs.ogc.org/per/19-020r1.html.
 [[STAC-ITEM]][STAC-ITEM]::
@@ -2325,7 +2325,7 @@ a| conformsTo +
                                                                                                                                          See also <<ESIPFed>>.
 
 a| conformsTo +
-~$.properties.conformsTo~   | dct:conformsTo |     schema:publishingPrinciples[$schema:publishingPrinciples]     |     TBD +
+~$.properties.conformsTo~   | dct:conformsTo |     schema:publishingPrinciples[$schema:publishingPrinciples]     |     <<table_object_dataset>> +
                                                                                                                        Proposed by <<DCAT-AP-SDO>>.
 
 
@@ -3036,9 +3036,10 @@ Table added with mapping for Responsible Party roles. +
 Recommendation added to use ROR identifiers for organisations. +
 AcquisitionInformation encoding for EO Applications and Services added. +
 Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM-1 Meeting.
-|July 2, 2021 |Y. Coene | 0.3 |  MediaObject <<table_object_mediaobject>> updated.  +
-<<appendix-c-property-mapping,Appendix C: Property Mapping>> updated. +
-$.publishingPrinciples added to encode $.conformsTo. | Updated version for TBD.
+|July 2, 2021 |Y. Coene | 0.3 |  - <<table_object_mediaobject>> (MediaObject) updated.  +
+- <<appendix-c-property-mapping,Appendix C: Property Mapping>> updated. +
+- $.publishingPrinciples added to encode $.conformsTo. +
+- version of <<DCAT-AP-SDO>> updated | Updated version for TBD.
 
 
 |====================
