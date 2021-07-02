@@ -432,7 +432,14 @@ a| subjectOf +
 | Refers to metadata information about the collection.
 | Domain: Thing +
 Range: ListItem (<<table_object_listitem>>)
-| Zero or one (optional)
+| Zero or more (optional)
+
+a| publishingPrinciples +
+~$.publishingPrinciples~
+| An established standard to which the resource conforms.
+| Domain: CreativeWork +
+Range: URL \| CreativeWork
+| Zero or more (optional)
 
 a| version +
 ~$.version~
@@ -2318,7 +2325,9 @@ a| conformsTo +
                                                                                                                                          See also <<ESIPFed>>.
 
 a| conformsTo +
-~$.properties.conformsTo~   | dct:conformsTo |         |     
+~$.properties.conformsTo~   | dct:conformsTo |     schema:publishingPrinciples[$schema:publishingPrinciples]     |     TBD +
+                                                                                                                       Proposed by <<DCAT-AP-SDO>>.
+
 
 a| contactPoint +
 ~$.properties.contactPoint~   | dcat:contactPoint |          https://schema.org/provider[$.provider] \|
@@ -3028,7 +3037,8 @@ Recommendation added to use ROR identifiers for organisations. +
 AcquisitionInformation encoding for EO Applications and Services added. +
 Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM-1 Meeting.
 |July 2, 2021 |Y. Coene | 0.3 |  MediaObject <<table_object_mediaobject>> updated.  +
-<<appendix-c-property-mapping,Appendix C: Property Mapping>> updated. | Updated version for TBD.
+<<appendix-c-property-mapping,Appendix C: Property Mapping>> updated. +
+$.publishingPrinciples added to encode $.conformsTo. | Updated version for TBD.
 
 
 |====================
