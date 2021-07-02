@@ -1894,7 +1894,7 @@ endif::[]
 image::diagrams/AdditionalInformation.png[align="center"]
 
 https://schema.org/additionalProperty[additionalProperty] allows representing characteristics for which there is no matching property in schema.org using property-value pairs.
-For collection or granule properties not available in schema.org, properties pointing to an external vocabulary, for example the JSON-LD property from the RDF Schema Vocabulary in Annex B.3 and Annex C of <<OGC17-003r2>> can be used.  The OWL vocabulary `http://www.opengis.net/ont/eo-geojson/1.0/` is available from OGC at http://schemas.opengis.net/eo-geojson/1.0/eo-geojson-vocabulary.owl.
+For collection or granule properties not available in schema.org, properties pointing to an external vocabulary, for example the JSON-LD property from the RDF Schema Vocabulary in Annex B.3 and Annex C of <<OGC17-003r2>> can be used. 
 
 The https://schema.org/propertyID[`propertyID`] shall be of type URL and indicate the type of the property, by pointing to the external vocabulary, for instance <<OGC17-003r2>>, as shown below.
 
@@ -1915,7 +1915,7 @@ Fixed value: "PropertyValue"
 
 a| propertyID +
 ~$.additionalProperty.propertyID~
-| A URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry). Standards bodies should promote a standard prefix for the identifiers of properties from their standards.  For Earth Observation specific properties, the vocabulary defined in <<OGC17-003r2>> can be used.
+| A URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry). Standards bodies should promote a standard prefix for the identifiers of properties from their standards.  For Earth Observation specific properties, the vocabulary defined in <<OGC17-003r2>> can be used, which defines the standard prefix `eop:` for http://www.opengis.net/ont/eo-geojson/1.0/.  The OWL vocabulary `http://www.opengis.net/ont/eo-geojson/1.0/` is available from OGC at http://schemas.opengis.net/eo-geojson/1.0/eo-geojson-vocabulary.owl.
 | Range: URL
 | One (mandatory)
 
@@ -1934,7 +1934,7 @@ a| unitText +
 |===
 
 [#img_object_collection_method_1,reftext='{figure-caption} {counter:figure-num}']
-.Dataset schema (Method 1)
+.Dataset schema with additionalProperty 
 image::diagrams/Method1-Collection.png[align="center"]
 
 
@@ -2642,7 +2642,7 @@ a| previews +
 ~$.properties.links.previews~      | iana:icon   |    https://schema.org/thumbnailUrl[$.thumbnailUrl]    |   <<table_object_relatedurl>>
 
 a| processingLevel  +
-~$.properties.productInformation.processingLevel~        | eop:processingLevel    |      |   
+~$.properties.productInformation.processingLevel~        | eop:processingLevel    |   https://schema.org/additionalProperty[$.additionalProperty]   |    table_object_propertyvalue_additional_property
 
 a| productInformation  +
 ~$.properties.productInformation~        | eop:productInformation    |      |   
@@ -2650,7 +2650,8 @@ a| productInformation  +
 a| ProductInformation           | eop:ProductInformation    |      |   
 
 a| productType  +
-~$..productInformation.productType~        | eop:productType    |      |   
+~$..productInformation.productType~        | eop:productType    |    https://schema.org/additionalProperty[$.additionalProperty]   |    table_object_propertyvalue_additional_property
+
 
 a| profiles +
 ~$.properties.links.profiles~      | iana:profile   |         |   <<table_object_relatedurl>>
