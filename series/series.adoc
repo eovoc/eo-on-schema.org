@@ -2741,7 +2741,7 @@ a| rights +
 a| RightsStatement         | dct:RightsStatement    |        |   
 
 a| role +
-~$.properties.qualifiedAttribution[*].role~       | dct:type |              |    
+~$.properties.qualifiedAttribution[*].role~       | dct:type |      https://schema.org/roleName[schema:roleName]        |    
 
 a| scheme +
 ~$.properties.categories[*].scheme~       | skos:inScheme |               https://schema.org/inDefinedTermSet[$.keywords.inDefinedTermSet]   |    <<table_object_definedterm>>
