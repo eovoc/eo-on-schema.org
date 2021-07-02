@@ -2581,7 +2581,7 @@ a| productInformation  +
 a| ProductInformation           | eop:ProductInformation    |      |   
 
 a| productType  +
-~$.properties.productInformation.productType~        | eop:productType    |      |   
+~$..productInformation.productType~        | eop:productType    |      |   
 
 a| profiles +
 ~$.properties.links.profiles~      | iana:profile   |         |   <<table_object_relatedurl>>
@@ -2608,7 +2608,7 @@ a| qualifiedAttribution  +
 ~$.properties.wasUsedBy[*].qualifiedAttribution~        |   prov:qualifiedAttribution    |        |   
 
 a| referenceSystemIdentifier  +
-~$.properties.productInformation.referenceSystemIdentifier~        |   eop:referenceSystemIdentifier    |        |   
+~$..productInformation.referenceSystemIdentifier~        |   eop:referenceSystemIdentifier    |        |   
 
 a| related +
 ~$.properties.links.related~      | iana:related   |         |   <<table_object_relatedurl>>
