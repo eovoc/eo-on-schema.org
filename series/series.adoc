@@ -2614,13 +2614,33 @@ a| related +
 ~$.properties.links.related~      | iana:related   |         |   <<table_object_relatedurl>>
 
 a| request +
-~$.properties.offerings[*].operations[*].request~      | owc:request   |         |   See https://schema.org/docs/actions.html for HTTP Post request encoding.
+~$.properties.offerings[*].operations[*].request~      | owc:request   |         |   See https://schema.org/docs/actions.html +
+                                                                                     for HTTP Post request encoding.
+
+a| resolution +
+~$.properties.productInformation.resolution~      | eop:resolution   |         |   
+
+a| result +
+~$.properties.offerings[*].operations[*].result~      | owc:result   |         |   See https://schema.org/docs/actions.html +
+                                                                                   for HTTP response encoding.
+
 
 a| rights +
 ~$.properties.rights~       | dct:rights |               https://schema.org/conditionsOfAccess[$.conditionsOfAccess]   |    <<table_object_resourceconstraints>>
 
+a| RightsStatement         | dct:RightsStatement    |        |   
+
+a| role +
+~$.properties.qualifiedAttribution[*].role~       | dct:type |              |    
+
 a| scheme +
 ~$.properties.categories[*].scheme~       | skos:inScheme |               https://schema.org/inDefinedTermSet[$.keywords.inDefinedTermSet]   |    <<table_object_definedterm>>
+
+a| search +
+~$.properties.links.search~      | iana:icon   |        |   <<table_object_relatedurl>> (TBC)
+
+a| sensorType +
+~$..acquisitionInformation[*].instrument.sensorType~   | eop:sensorType |           |  <<table_object_acquisitioninformation>> (TBC)
 
 a| term +
 ~$.properties.categories[*].term~       |   @id    |     $.keywords.@id   |    <<table_object_definedterm>>
