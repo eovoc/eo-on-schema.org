@@ -1893,7 +1893,49 @@ endif::[]
 .Additional Information schema
 image::diagrams/AdditionalInformation.png[align="center"]
 
-Additional information that can be expressed using the OGC17-003r2 vocabulary can be modelled using the `additionalProperty` property.
+https://schema.org/additionalProperty[additionalProperty] allows representing characteristics for which there is no matching property in schema.org using property-value pairs.
+For collection or granule properties not available in schema.org, properties pointing to an external vocabulary, for example the JSON-LD property from the RDF Schema Vocabulary in Annex B.3 and Annex C of <<OGC17-003r2>> can be used.  The OWL vocabulary `http://www.opengis.net/ont/eo-geojson/1.0/` is available from OGC at http://schemas.opengis.net/eo-geojson/1.0/eo-geojson-vocabulary.owl.
+
+The https://schema.org/propertyID[`propertyID`] shall be of type URL and indicate the type of the property, by pointing to the external vocabulary, for instance <<OGC17-003r2>>, as shown below.
+
+A list of PropertyValue properties of interest to be used in combination with `additionalProperty` is given in <<table_object_propertyvalue_additional_property>>.
+
+[#table_object_propertyvalue_additional_property,reftext='{table-caption} {counter:table-num}']
+.PropertyValue properties
+[cols="<20m,<50,<15,<15",width="100%",options="header",align="center"]
+|===
+|JSON Property | Definition | Data type and values | Multiplicity and use
+
+a| @type +
+~$.additionalProperty.@type~
+| Type of the object. This property has the fixed value of "https://schema.org/PropertyValue[PropertyValue]".
+| Range: String +
+Fixed value: "PropertyValue" 
+| One (mandatory)
+
+a| propertyID +
+~$.additionalProperty.propertyID~
+| A URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry). Standards bodies should promote a standard prefix for the identifiers of properties from their standards.  For Earth Observation specific properties, the vocabulary defined in <<OGC17-003r2>> can be used.
+| Range: URL
+| One (mandatory)
+
+a| value +
+~$.additionalProperty.value~
+| The value of the quantitative value or property value node.
+| Range: Text \| Boolean \| Number
+| One or more (mandatory)
+
+a| unitText +
+~$.additionalProperty.value~
+| A string or text indicating the unit of measurement.
+| Range: Text 
+| Zero or one (optional)
+
+|===
+
+[#img_object_collection_method_1,reftext='{figure-caption} {counter:figure-num}']
+.Dataset schema (Method 1)
+image::diagrams/Method1-Collection.png[align="center"]
 
 
 
