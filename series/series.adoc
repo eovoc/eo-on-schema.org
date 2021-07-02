@@ -2590,7 +2590,7 @@ a| profiles +
 ~$.properties.links.profiles~      | iana:profile   |         |   <<table_object_relatedurl>>
 
 a| provenance  +
-~$.properties.provenance~        | dct:provenance    |        |   
+~$.properties.provenance~        | dct:provenance    |     https://schema.org/description[$.description]   |    See <<DCAT-AP-SDO>>.
 
 a| ProvenanceStatement           | dct:ProvenanceStatement    |      |   
 
