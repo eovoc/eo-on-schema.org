@@ -1085,7 +1085,7 @@ a| about +
 
 a| variableMeasured +
 ~$.variableMeasured~
-| The variableMeasured property (pending) can indicate a variables that is measured in the dataset, either described as text or as pairs of identifier and description using PropertyValue.  See https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#variables[ESIPFed] for a detailed explanation. 
+| The variableMeasured property (pending) can indicate variables that are measured in the dataset, either described as text or as pairs of propertyID and name using PropertyValue.  See https://github.com/ESIPFed/science-on-schema.org/blob/master/guides/Dataset.md#variables[ESIPFed] for a detailed explanation. 
 | Range: Text \| PropertyValue
 | Zero or more (optional)
 
@@ -1143,6 +1143,7 @@ a| variableMeasured +
 
 .Descriptive keywords encoding example
 [source,json]
+----
 {
 	"@context": "https://schema.org/",
 	"@type": "Dataset",
