@@ -52,6 +52,11 @@ ifdef::env-github[]
 ** <<74-spatial-information,7.4 Spatial Information>>
 ** <<75-temporal-information,7.5 Temporal Information>>
 ** <<76-acquisition-information,7.6 Acquisition Information>>
+*** <<761-platform,7.6.1 Platform>>
+*** <<762-instrument,7.6.2 Instrument>>
+*** <<763-wavelength-information,7.6.3 Wavelength Information>>
+*** <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
+*** <<765-acquisition-angles,7.6.5 Acquisition Angles>>
 ** <<77-product-information,7.7 Product Information>>
 *** <<771-quality-information,7.7.1 Quality Information>>
 *** <<772-processing-information,7.7.2 Processing Information>>
@@ -2351,8 +2356,9 @@ ifndef::env-github[]
 == EO Granules Encoding (Extension)
 endif::[]
 
-This section proposes an EO extension of schema.org for encoding of Earth Observation granule metadata.  The extension consists of additional classes and properties which can be used instead of the corresponding classes and properties defined in <<OGC17-003r2>>.  Where no schema.org class or property was available, new classes or properties are proposed for schema.org, fitting in the class structure and reusing the original names unless the name was already reserved for a different meaning.  The formal definition of the extension is available as <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.  The graphical representations below are generated from the formal definition in Turtle format.    
+This section proposes an EO extension of schema.org for encoding of Earth Observation granule metadata.  The extension consists of additional classes and properties which can be used instead of the corresponding classes and properties defined in <<OGC17-003r2>>.  Where no schema.org class or property was available, new classes or properties are proposed for schema.org, fitting in the class hierarchy and reusing the original <<OGC17-003r2>> names unless the name was already reserved for a different meaning (e.g; https://schema.org/instrument).  The formal definition of the extension is available as <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.  The class inheritance hierarchy is presented in <<method-3---extending-schemaorg, Annex D.1.3: Extending schema.org>>.
 
+The graphical representations below iare derived from the formal definition in Turtle format.    
 The current section follows the same structure as chapter 7 of <<OGC17-003r2>> and has the same subsections.  
 
 
@@ -2425,21 +2431,61 @@ endif::[]
 .AcquisitionInformation Schema
 image::diagrams/diagram-AcquisitionInformation.png[align="center"]
 
+// 7.6.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.6.1 Platform
+endif::[]
+ifndef::env-github[]
+==== Platform
+endif::[]
+
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .Platform Schema
 image::diagrams/diagram-Platform.png[align="center"]
+
+// 7.6.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.6.2 Instrument
+endif::[]
+ifndef::env-github[]
+==== Instrument
+endif::[]
 
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .Instrument Schema
 image::diagrams/diagram-Instrument.png[align="center"]
 
+// 7.6.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.6.3 Wavelength Information
+endif::[]
+ifndef::env-github[]
+==== Wavelength Information
+endif::[]
+
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .WavelengthInformation Schema
 image::diagrams/diagram-WavelengthInformation.png[align="center"]
 
+// 7.6.4 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.6.4 Acquisition Parameters
+endif::[]
+ifndef::env-github[]
+==== Acquisition Parameters
+endif::[]
+
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .AcquisitionParameters Schema
 image::diagrams/diagram-AcquisitionParameters.png[align="center"]
+
+// 7.6.5 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.6.5 Acquisition Angles
+endif::[]
+ifndef::env-github[]
+==== Acquisition Angles
+endif::[]
 
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .AcquisitionAngles Schema
