@@ -50,6 +50,8 @@ ifdef::env-github[]
 ** <<72-metadata-information,7.2 Metadata Information>>
 ** <<73-data-identification,7.3 Data Identification>>
 ** <<74-spatial-information,7.4 Spatial Information>>
+*** <<741-vertical-spatial-domain,7.4.1 Vertical Spatial Domain>>
+*** <<742-orbit-parameters,7.4.2 Orbit Parameters>>
 ** <<75-temporal-information,7.5 Temporal Information>>
 ** <<76-acquisition-information,7.6 Acquisition Information>>
 *** <<761-platform,7.6.1 Platform>>
@@ -2425,10 +2427,25 @@ ifndef::env-github[]
 === Spatial Information
 endif::[]
 
+// 7.4.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.4.1 Vertical Spatial Domain
+endif::[]
+ifndef::env-github[]
+==== Vertical Spatial Domain
+endif::[]
+
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .VerticalSpatialDomain Schema
 image::diagrams/diagram-VerticalSpatialDomain.png[align="center"]
 
+// 7.4.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.4.2 Orbit Parameters
+endif::[]
+ifndef::env-github[]
+==== Orbit Parameters
+endif::[]
 
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .OrbitParameters Schema
