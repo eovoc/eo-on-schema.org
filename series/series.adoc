@@ -2361,6 +2361,30 @@ This section proposes an EO extension of schema.org for encoding of Earth Observ
 The graphical representations below iare derived from the formal definition in Turtle format.    
 The current section follows the same structure as chapter 7 of <<OGC17-003r2>> and has the same subsections.  
 
+the examples included in the current chapter are available as .txt files in the format supported by the schema.org software for publishing examples as depicted below.
+
+.Example text file for use with schema.org software
+[source]
+----
+TYPES: WavelengthInformation, spectralRange
+
+PRE-MARKUP:
+
+MICRODATA:
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "WavelengthInformation",             
+	"spectralRange": "INFRARED",
+	"minValue": "700E-09",
+	"maxValue": "1E-03"
+}
+</script>
+----
+
 
 // 7.1 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
@@ -2466,6 +2490,18 @@ endif::[]
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .WavelengthInformation Schema
 image::diagrams/diagram-WavelengthInformation.png[align="center"]
+
+.WavelengthInformation encoding example
+[source,json]
+----
+{
+	"@context": "https://schema.org/",
+	"@type": "WavelengthInformation",             
+	"spectralRange": "INFRARED",
+	"minValue": "700E-09",
+	"maxValue": "1E-03"
+}
+----
 
 // 7.6.4 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
