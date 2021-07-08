@@ -2341,7 +2341,7 @@ ifndef::env-github[]
 == EO Granules Encoding (Extension)
 endif::[]
 
-This section defines the proposed encoding of Earth Observation granule metadata. 
+This section proposes an EO extension of schema.org for encoding of Earth Observation granule metadata.  The extension consists of additional classes and properties which can be used instead of the corresponding classes and properties defined in <<OGC17-003r2>>.  Where no schema.org class or property was available, new classes or properties are proposed for schema.org, fitting in the class structure and reusing the original names unless the name was already reserved for a different meaning.  The formal definition of the extension is available as <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.  The graphical representations below are generated from the formal definition in Turtle format.    
 
 
 // 7.1 --------------------------------------------------------------------------------------------
@@ -2353,6 +2353,15 @@ ifndef::env-github[]
 endif::[]
 
 A granule or product
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.EarthObservation Schema
+image::diagrams/diagram-EarthObservation.png[align="center"]
+
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.VerticalSpatialDomain Schema
+image::diagrams/diagram-VerticalSpatialDomain.png[align="center"]
 
 
 
