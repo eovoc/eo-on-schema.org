@@ -45,7 +45,7 @@ ifdef::env-github[]
 ** <<52-acquisition-information,5.2 Acquisition Information>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 ** <<61-granule-identification,6.1 Granule Identification>>
-* <<7-eo-extension,7. EO Granules Encoding (Extension)>>
+* <<7-eo-granules-encoding-extension,7. EO Granules Encoding (Extension)>>
 ** <<71-earthobservation,7.1 Earth Observation>>
 
 * <<appendix-a-media-types-for-data-encoding,Appendix A: Media Types for Data Encoding>>
