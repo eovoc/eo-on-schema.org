@@ -45,6 +45,8 @@ ifdef::env-github[]
 ** <<52-acquisition-information,5.2 Acquisition Information>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 ** <<61-granule-identification,6.1 Granule Identification>>
+* <<7-eo-extension,7. EO Granules Encoding (Extension)>>
+** <<71-earthobservation,7.1 Earth Observation>>
 
 * <<appendix-a-media-types-for-data-encoding,Appendix A: Media Types for Data Encoding>>
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
@@ -2328,6 +2330,30 @@ Range: ListItem (<<table_object_listitem>>)
 	]
 }
 ----
+
+
+
+// 7 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+== 7 EO Granules Encoding (Extension)
+endif::[]
+ifndef::env-github[]
+== EO Granules Encoding (Extension)
+endif::[]
+
+This section defines the proposed encoding of Earth Observation granule metadata. 
+
+
+// 7.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 7.1 EarthObservation
+endif::[]
+ifndef::env-github[]
+=== EarthObservation
+endif::[]
+
+A granule or product
+
 
 
 [appendix]
