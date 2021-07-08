@@ -3206,7 +3206,8 @@ https://docs.opengeospatial.org/is/17-003r2/17-003r2.html#80[Annex B.3 of OGC 17
 .Subclasses hierarchy (Method 3)
 image::diagrams/Method3-Inheritance.png[align="center"]
 
-The proposed extension to schema.org is included at <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.
+The proposed extension to schema.org is included as <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.
+The additional classes and properties proposed are presented in <<7-eo-granules-encoding-extension, Chapter 7. EO Granules Encoding (Extension)>>.
 
 [appendix]
 = Complete Examples
