@@ -2364,6 +2364,29 @@ image::diagrams/diagram-EarthObservation.png[align="center"]
 image::diagrams/diagram-VerticalSpatialDomain.png[align="center"]
 
 
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.OrbitParameters Schema
+image::diagrams/diagram-OrbitParameters.png[align="center"]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.AcquisitionInformation Schema
+image::diagrams/diagram-AcquisitionInformation.png[align="center"]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.Platform Schema
+image::diagrams/diagram-Platform.png[align="center"]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.Instrument Schema
+image::diagrams/diagram-Instrument.png[align="center"]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.WavelengthInformation Schema
+image::diagrams/diagram-WavelengthInformation.png[align="center"]
+
+
+
+
 
 [appendix]
 = Media Types for Data Encoding
