@@ -46,7 +46,17 @@ ifdef::env-github[]
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 ** <<61-granule-identification,6.1 Granule Identification>>
 * <<7-eo-granules-encoding-extension,7. EO Granules Encoding (Extension)>>
-** <<71-earthobservation,7.1 Earth Observation>>
+** <<71-earth-observation,7.1 Earth Observation>>
+** <<72-metadata-information,7.2 Metadata Information>>
+** <<73-data-identification,7.3 Data Identification>>
+** <<74-spatial-information,7.4 Spatial Information>>
+** <<75-temporal-information,7.5 Temporal Information>>
+** <<76-acquisition-information,7.6 Acquisition Information>>
+** <<77-product-information,7.7 Product Information>>
+*** <<771-quality-information,7.7.1 Quality Information>>
+*** <<772-processing-information,7.7.2 Processing Information>>
+*** <<773-coverage-description,7.7.3 Coverage Description>>
+
 
 * <<appendix-a-media-types-for-data-encoding,Appendix A: Media Types for Data Encoding>>
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
@@ -2343,13 +2353,15 @@ endif::[]
 
 This section proposes an EO extension of schema.org for encoding of Earth Observation granule metadata.  The extension consists of additional classes and properties which can be used instead of the corresponding classes and properties defined in <<OGC17-003r2>>.  Where no schema.org class or property was available, new classes or properties are proposed for schema.org, fitting in the class structure and reusing the original names unless the name was already reserved for a different meaning.  The formal definition of the extension is available as <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.  The graphical representations below are generated from the formal definition in Turtle format.    
 
+The current section follows the same structure as chapter 7 of <<OGC17-003r2>> and has the same subsections.  
+
 
 // 7.1 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
-=== 7.1 EarthObservation
+=== 7.1 Earth Observation
 endif::[]
 ifndef::env-github[]
-=== EarthObservation
+=== Earth Observation
 endif::[]
 
 A granule or product
@@ -2358,6 +2370,30 @@ A granule or product
 .EarthObservation Schema
 image::diagrams/diagram-EarthObservation.png[align="center"]
 
+// 7.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 7.2 Metadata Information
+endif::[]
+ifndef::env-github[]
+=== Metadata Information
+endif::[]
+
+
+// 7.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 7.3 Data Identification
+endif::[]
+ifndef::env-github[]
+=== Data Identification
+endif::[]
+
+// 7.4 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 7.4 Spatial Information
+endif::[]
+ifndef::env-github[]
+=== Spatial Information
+endif::[]
 
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .VerticalSpatialDomain Schema
@@ -2367,6 +2403,23 @@ image::diagrams/diagram-VerticalSpatialDomain.png[align="center"]
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .OrbitParameters Schema
 image::diagrams/diagram-OrbitParameters.png[align="center"]
+
+
+// 7.5 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 7.5 Temporal Information
+endif::[]
+ifndef::env-github[]
+=== Temporal Information
+endif::[]
+
+// 7.6 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 7.6 Acquisition Information
+endif::[]
+ifndef::env-github[]
+=== Acquisition Information
+endif::[]
 
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .AcquisitionInformation Schema
@@ -2384,8 +2437,62 @@ image::diagrams/diagram-Instrument.png[align="center"]
 .WavelengthInformation Schema
 image::diagrams/diagram-WavelengthInformation.png[align="center"]
 
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.AcquisitionParameters Schema
+image::diagrams/diagram-AcquisitionParameters.png[align="center"]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.AcquisitionAngles Schema
+image::diagrams/diagram-AcquisitionAngles.png[align="center"]
 
 
+// 7.7 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 7.7 Product Information
+endif::[]
+ifndef::env-github[]
+=== Product Information
+endif::[]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.ProductInformation Schema
+image::diagrams/diagram-ProductInformation.png[align="center"]
+
+// 7.7.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.7.1 Quality Information
+endif::[]
+ifndef::env-github[]
+==== Quality Information
+endif::[]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.QualityInformation Schema
+image::diagrams/diagram-QualityInformation.png[align="center"]
+
+// 7.7.2 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.7.2 Processing Information
+endif::[]
+ifndef::env-github[]
+==== Processing Information
+endif::[]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.ProcessingInformation Schema
+image::diagrams/diagram-ProcessingInformation.png[align="center"]
+
+// 7.7.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 7.7.3 Coverage Description
+endif::[]
+ifndef::env-github[]
+==== CoverageDescription
+endif::[]
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.CoverageDescription Schema
+image::diagrams/diagram-CoverageDescription.png[align="center"]
 
 
 [appendix]
