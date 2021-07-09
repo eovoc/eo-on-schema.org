@@ -3401,7 +3401,7 @@ a| parentIdentifier +
 
 a| platform +
 ~$.acquisitionInformation[*].platform~     | eop:platform      |         schema:platform  +
-                                                                    (schema:AcquisitionInformation)   |   <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+                                                                    [Domain: schema:AcquisitionInformation]   |   <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
 
 a| platformSerialIdentifier +
@@ -3410,14 +3410,18 @@ a| platformSerialIdentifier +
 a| platformShortName +
 ~$..platform.platformShortName~    | eop:platformShortName   |   https://schema.org/name[$.acquisitionInformation.platform.name]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
+a| platformShortName +
+~$..platform.platformShortName~    | eop:platformShortName   |   https://schema.org/name +
+                                                                [Domain: schema:Platform]   |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+
 a| startWavelengths +
-~$..wavelengths[*].startWavelength~     | eop:startWavelength      |     https://schema.org/minValue[$..wavelengths[*].maxValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+~$..wavelengths[*].startWavelength~     | eop:startWavelength      |     https://schema.org/minValue[$..wavelengths[*].minValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
 
 a| WavelengthInformation     |   eop:WavelengthInformation      |      schema:WavelengthInformation      |     (Extension)
 
 a| wavelengths +
-~$..acquisitionParameters.wavelengths~     | eop:wavelengths      |     schema:wavelengths +
-                                                                      (schema:AcquisitionParameters)      |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>  (Extension)
+~$..acquisitionParameters.wavelengths~     | eop:wavelengths      |     schema:wavelengths (Extension) +
+                                                                      [Domain: schema:AcquisitionParameters]      |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>  (Extension)
 
 |===
 
