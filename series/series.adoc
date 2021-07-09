@@ -3385,10 +3385,10 @@ a| wasUsedBy +
 | GeoJSON Property | JSON-LD Property |   schema.org  | Reference
 
 a| discreteWavelengths +
-~$..wavelengths[*].discreteWavelengths~     | eop:discreteWavelength      |     https://schema.org/value[$.TBD.value]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+~$..wavelengths[*].discreteWavelengths~     | eop:discreteWavelength      |     https://schema.org/value[$..wavelengths[*].value]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
 
 a| endWavelength +
-~$..wavelengths[*].endWavelength~     | eop:endWavelength      |     https://schema.org/maxValue[$.TBD.value]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+~$..wavelengths[*].endWavelength~     | eop:endWavelength      |     https://schema.org/maxValue[$..wavelengths[*].maxValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
 
 a| instrument +
 ~$.acquisitionInformation[*].instrument~     | eop:instrument      |         schema:sensor       |    <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
@@ -3410,10 +3410,12 @@ a| platformShortName +
 ~$..platform.platformShortName~    | eop:platformShortName   |   https://schema.org/name[$.acquisitionInformation.platform.name]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
 a| startWavelengths +
-~$..wavelengths[*].startWavelength~     | eop:startWavelength      |     https://schema.org/minValue[$.TBD.value]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+~$..wavelengths[*].startWavelength~     | eop:startWavelength      |     https://schema.org/minValue[$..wavelengths[*].maxValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
 
 a| WavelengthInformation     |   eop:WavelengthInformation      |      schema:WavelengthInformation      |     (Extension)
 
+a| wavelengths +
+~$..acquisitionParameters.wavelengths~     | eop:wavelengths      |     https://wavelengths        |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>  (Extension)
 
 |===
 
