@@ -2488,7 +2488,7 @@ ifndef::env-github[]
 ==== Horizontal Spatial Domain
 endif::[]
 
-No extension is required.  The encoding presented in <<45-spatial-information,section 4.5 Spatial Information>> can be applied.
+No extension is required.  The encoding presented in <<45-spatial-information,section 4.5 Spatial Information>> also applies for EO granules.
 
 // 7.4.2 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
