@@ -2753,7 +2753,7 @@ image::diagrams/diagram-AcquisitionAngles.png[align="center"]
 		"maxValue": "19.6",
 		"minValue": "9.6",
 	},
-	incidenceAngleVariation": "9.6"
+	"incidenceAngleVariation": "9.6"
 }
 ----
 
