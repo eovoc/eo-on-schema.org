@@ -2979,7 +2979,7 @@ a| conformsTo +
                                                                                                                                          See also <<ESIPFed>>.
 
 a| conformsTo +
-~$.properties.conformsTo~   | dct:conformsTo |     schema:publishingPrinciples[$schema:publishingPrinciples]     |     <<table_object_dataset>> +
+~$.properties.conformsTo~   | dct:conformsTo |     https://schema.org/publishingPrinciples[$.publishingPrinciples]     |     <<table_object_dataset>> +
                                                                                                                        Proposed by <<DCAT-AP-SDO>>.
 
 
