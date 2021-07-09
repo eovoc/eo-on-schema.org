@@ -3415,7 +3415,8 @@ a| platformShortName +
 ~$..platform.platformShortName~    | eop:platformShortName   |   https://schema.org/name +
                                                                 [Domain: schema:Platform]   |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
-a| size     |   eop:status      |     https://schema.org/contentSize +
+a| size +
+~$.properties.productInformation.size~ |   eop:size      |     https://schema.org/contentSize +
                                       [Domain: schema:ProductInformation]  |     (Extension)
 
 a| startWavelengths +
