@@ -3384,7 +3384,10 @@ a| wasUsedBy +
 |===
 | GeoJSON Property | JSON-LD Property |   schema.org  | Reference
 
-a| abstract +
+a| instrument +
+~$.properties.instrument~     | eop:instrument      |         schema:sensor       |    <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+
+a| parentIdentifier +
 ~$.properties.parentIdentifier~     | eop:parentIdentifier |         https://schema.org/isPartOf[$.isPartOf]        |    N/A
 
 |===
