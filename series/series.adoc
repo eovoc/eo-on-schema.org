@@ -69,8 +69,8 @@ ifdef::env-github[]
 * <<appendix-a-media-types-for-data-encoding,Appendix A: Media Types for Data Encoding>>
 * <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>
 * <<appendix-c-property-mapping,Appendix C: Property Mapping>>
-** <<ogc17-084r1-metadata-,C.1: OGC17-084r1 Metadata>>
-** <<ogc17-003r2-metadata-,C.2: OGC17-003r2 Metadata>>
+** <<ogc17-084r1-metadata,C.1: OGC17-084r1 Metadata>>
+** <<ogc17-003r2-metadata,C.2: OGC17-003r2 Metadata>>
 * <<appendix-d-design-justification,Appendix D: Design Justification>>
 ** <<eo-granule-encoding,D.1: EO Granule Encoding>>
 ** <<method-1---additionalproperty,D.1.1: Method 1 - additionalProperty>>
