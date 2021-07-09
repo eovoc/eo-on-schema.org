@@ -3391,7 +3391,10 @@ a| endWavelength +
 ~$..wavelengths[*].endWavelength~     | eop:endWavelength      |     https://schema.org/maxValue[$..wavelengths[*].maxValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
 
 a| instrument +
-~$.acquisitionInformation[*].instrument~     | eop:instrument      |         schema:sensor       |    <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$.acquisitionInformation[*].instrument~     | eop:instrument      |         schema:sensor (Extension) +
+                                                                           [Domain: schema:AcquisitionInformation]  |    <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+
+a| Instrument  | eop:Instrument      |         schema:Instrument (Extension)   |   <<762-instrument,7.6.2 Instrument>>
 
 a| instrumentShortName +
 ~$..instrument.instrumentShortName~    | eop:instrumentShortName   |   https://schema.org/name[$.acquisitionInformation.sensor.name]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
@@ -3403,19 +3406,24 @@ a| platform +
 ~$.acquisitionInformation[*].platform~     | eop:platform      |         schema:platform  +
                                                                     [Domain: schema:AcquisitionInformation]   |   <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
+a| Platform  | eop:Platform      |         schema:Platform (Extension)   |   <<761-platform,7.6.1 Platform>>
 
 a| platformSerialIdentifier +
 ~$..platform.platformSerialIdentifier~    | eop:platformSerialIdentifier   |   https://schema.org/serialNumber[$.acquisitionInformation.platform.serialNumber]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
 a| platformShortName +
-~$..platform.platformShortName~    | eop:platformShortName   |   https://schema.org/name[$.acquisitionInformation.platform.name]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
-
-a| platformShortName +
 ~$..platform.platformShortName~    | eop:platformShortName   |   https://schema.org/name +
                                                                 [Domain: schema:Platform]   |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
+a| size     |   eop:status      |     https://schema.org/contentSize +
+                                      [Domain: schema:ProductInformation]  |     (Extension)
+
 a| startWavelengths +
 ~$..wavelengths[*].startWavelength~     | eop:startWavelength      |     https://schema.org/minValue[$..wavelengths[*].minValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+
+a| status +
+~$.properties.status~ |   eop:status      |      schema:acquisitionStatus   +
+                                      [Domain: schema:EarthObservation]  |     (Extension)
 
 a| WavelengthInformation     |   eop:WavelengthInformation      |      schema:WavelengthInformation      |     (Extension)
 
