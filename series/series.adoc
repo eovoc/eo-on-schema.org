@@ -2463,6 +2463,7 @@ ifndef::env-github[]
 === Metadata Information
 endif::[]
 
+No extension is required.  The encoding presented in <<41-metadata-information,section 4.1 Metadata Information>> also applies for EO granules.
 
 // 7.3 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
