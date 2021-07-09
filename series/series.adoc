@@ -3400,7 +3400,8 @@ a| parentIdentifier +
 ~$.properties.parentIdentifier~     | eop:parentIdentifier |         https://schema.org/isPartOf[$.isPartOf]        |    N/A
 
 a| platform +
-~$.acquisitionInformation[*].platform~     | eop:platform      |         schema:platform       |    <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$.acquisitionInformation[*].platform~     | eop:platform      |         schema:platform  +
+                                                                    (schema:AcquisitionInformation)   |   <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
 
 a| platformSerialIdentifier +
@@ -3415,7 +3416,8 @@ a| startWavelengths +
 a| WavelengthInformation     |   eop:WavelengthInformation      |      schema:WavelengthInformation      |     (Extension)
 
 a| wavelengths +
-~$..acquisitionParameters.wavelengths~     | eop:wavelengths      |     https://wavelengths        |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>  (Extension)
+~$..acquisitionParameters.wavelengths~     | eop:wavelengths      |     schema:wavelengths +
+                                                                      (schema:AcquisitionParameters)      |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>  (Extension)
 
 |===
 
