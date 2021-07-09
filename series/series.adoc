@@ -3393,6 +3393,14 @@ a| instrumentShortName +
 a| parentIdentifier +
 ~$.properties.parentIdentifier~     | eop:parentIdentifier |         https://schema.org/isPartOf[$.isPartOf]        |    N/A
 
+a| platformSerialIdentifier +
+~$..platform.platformSerialIdentifier~    | eop:platformSerialIdentifier   |   https://schema.org/serialNumber[$.acquisitionInformation.platform.serialNumber]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+
+a| platformShortName +
+~$..platform.platformShortName~    | eop:platformShortName   |   https://schema.org/name[$.acquisitionInformation.platform.name]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+
+
+
 |===
 
 // C.3
