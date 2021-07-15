@@ -2363,10 +2363,16 @@ endif::[]
 
 This section proposes an EO extension of schema.org for encoding of Earth Observation granule metadata.  The extension consists of additional classes and properties which can be used instead of the corresponding classes and properties defined in <<OGC17-003r2>>.  Where no schema.org class or property was available, new classes or properties are proposed for schema.org, fitting in the class hierarchy and reusing the original <<OGC17-003r2>> names unless the name was already reserved for a different meaning (e.g; https://schema.org/instrument).  The formal definition of the extension is available as <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>.  The class inheritance hierarchy is presented in <<method-3---extending-schemaorg, Annex D.1.3: Extending schema.org>>.
 
-The graphical representations below iare derived from the formal definition in Turtle format.    
+The extension defines a number of subclasses of `Enumeration`.  The subclasses are depicted below with the corresponding enumeration members.
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.Enumeration Schema
+image::diagrams/diagram-Enumerations.png[align="center"]
+
+The graphical representations below are derived from the formal definition in Turtle format.    
 The current section follows the same structure as chapter 7 of <<OGC17-003r2>> and has the same subsections.  
 
-the examples included in the current chapter are available as .txt files in the format supported by the schema.org software for publishing examples as depicted below.
+The examples included in the current chapter are available as .txt files in the format supported by the schema.org software for publishing examples as depicted below.
 
 .Example text file for use with schema.org software
 [source]
