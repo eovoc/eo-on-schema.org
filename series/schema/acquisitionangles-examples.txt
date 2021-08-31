@@ -1,0 +1,26 @@
+TYPES: AcquisitionAngles, acquisitionAngles, incidenceAngle, incidenceAngleVariation
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "AcquisitionAngles",       
+	
+	"incidenceAngle": {
+		"@type": "QuantitativeValue",
+		"maxValue": "19.6",
+		"minValue": "9.6",
+	},
+	"incidenceAngleVariation": "9.6"
+}
+</script>
+
+
+

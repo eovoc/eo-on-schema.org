@@ -1,0 +1,39 @@
+TYPES: ProductInformation
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "ProductInformation",       
+	
+	"productType": "SEA_GEC_1P",
+	
+	"additionalProperty": {
+		"@type": "PropertyValue",
+		"propertyID": "http://dbpedia.org/resource/Spatial_reference_system",
+		"value": "http://www.opengis.net/def/crs/EPSG/0/4326"
+	},
+	
+	"contentSize": "255211520",
+	"version": "1.0",
+	"statusSubType": "ON-LINE",
+	"availabilityTime": "1978-09-27T01:04:45Z",
+	"timeliness": "NOMINAL",
+	"holdingArchive": {
+		"@type": "Organization",
+		"name": "ASF"
+	},
+	"archivingDate": "1978-09-28T02:05:56Z",
+	"qualityInformation": {}
+}
+</script>
+
+
+

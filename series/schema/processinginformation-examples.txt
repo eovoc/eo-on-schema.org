@@ -1,0 +1,25 @@
+TYPES: ProcessingInformation, processingLevel, processorName, processingDate
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "ProcessingInformation",       
+	
+	"processingCenter": "PDS",
+	"processingDate": "2016-02-01T04:58:31Z",
+	"processingLevel": "2",
+	"processorName": "FastROSE",
+	"softwareVersion": "3.1"
+}
+</script>
+
+
+

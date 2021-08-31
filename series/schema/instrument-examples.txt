@@ -1,0 +1,29 @@
+TYPES: Instrument, DefinedTerm, sensorType, SensorType, termCode, inDefinedTermSet
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": [
+		"DefinedTerm",
+		"Instrument"
+	],
+	"@id": "https://earth.esa.int/concept/etm",
+	"name": "ETM+",
+	"alternateName": "Enhanced Thematic Mapper Plus",
+	"description": "Involving three large American governmental organizations: NASA, NOAA and USGS launched on April 15, 1999. Landsat 7 is equipped with ETM+ (Enhanced Thematic Mapper Plus), which provides a ground survey in four modes: VNIR (Visible and Near Infrared), SWIR (Shortwave Infrared), PAN (Panchromatic - Panchromatic range), TIR (Thermal infrared - Thermal infrared range).",
+	"sameAs": "http://gcmd.earthdata.nasa.gov/kms/concept/4dbe7764-a2ea-4a19-b754-696c35ac3205",
+	"termCode": "4dbe7764-a2ea-4a19-b754-696c35ac3205",
+	"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/instruments",
+	"sensorType": "OPTICAL"
+}
+
+</script>
+

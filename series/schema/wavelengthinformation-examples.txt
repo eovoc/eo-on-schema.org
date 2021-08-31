@@ -1,0 +1,20 @@
+TYPES: WavelengthInformation, spectralRange
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "WavelengthInformation",             
+	"spectralRange": "INFRARED",
+	"minValue": "700E-09",
+	"maxValue": "1E-03"
+}
+</script>
+

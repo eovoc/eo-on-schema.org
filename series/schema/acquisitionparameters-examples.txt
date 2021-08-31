@@ -1,0 +1,59 @@
+TYPES: AcquisitionParameters, acquisitionParameters, wavelengths
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "AcquisitionParameters",       
+	
+	"acquisitionType": "NOMINAL",
+	"acquisitionSubType": "DEFAULT",
+	"orbitNumber": "1316",
+	"orbitDirection": "DESCENDING",
+	"antennaLookDirection": "RIGHT",
+	"acquisitionAngles": {
+		"minimumIncidenceAngle": "19.6",
+		"maximumIncidenceAngle": "9.6",
+		"incidenceAngleVariation": "9.6"
+	},
+	"operationalMode": "IM",
+	"polarisationMode": "S",
+	"polarisationChannels": "HH",
+	"wavelengths": {
+		"@type": "WavelengthInformation", 
+		"spectralRange": "OTHER"
+	}
+ 
+}
+</script>
+
+TYPES: AcquisitionParameters, acquisitionParameters
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "AcquisitionParameters",       
+	
+	"acquisitionType": "NOMINAL",
+	"operationalMode": "LRM",
+	"resolution": "0.7",
+	"samplingRates": ["1000", "20000"]
+ 
+}
+</script>
+

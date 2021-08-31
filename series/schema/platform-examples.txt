@@ -1,0 +1,30 @@
+TYPES: Platform, DefinedTerm, orbitType, OrbitType
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": [
+		"DefinedTerm",
+		"Platform"
+	],
+	"@id": "https://earth.esa.int/concept/landsat-7",
+	"name": "Landsat-7",
+	"orbitType": "LEO",
+	"serialNumber": "7",
+	"sameAs": [
+		"http://gcmd.earthdata.nasa.gov/kms/concept/c7a09e9f-3c99-4b31-a521-313c379ba2b4",
+		"http://dbpedia.org/resource/Landsat_7",
+		"http://yago-knowledge.org/resource/Landsat_7"
+	],
+	"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms"
+}
+</script>
+

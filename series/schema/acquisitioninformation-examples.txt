@@ -1,0 +1,55 @@
+TYPES: AcquisitionInformation, acquisitionInformation
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "AcquisitionInformation", 
+	
+	"platform": {
+		"@type": [
+			"DefinedTerm",
+			"Platform"
+		],   
+		"@id": "http://gcmd.earthdata.nasa.gov/kms/concept/1bffe898-f4a2-458e-92c5-cd7c9c1cd5f0",
+		"name": "Seasat",
+		"serialNumber": "1"
+	},
+	"sensor": {
+		"@type": [
+			"DefinedTerm",
+			"Instrument"
+		],
+		"@id":  "http://gcmd.earthdata.nasa.gov/kms/concept/a37282d4-322c-4dd0-8edc-36099b9b586c",
+		"sensorType": "RADAR",
+		"name": "SAR"            
+	},
+	"acquisitionParameters": {
+		"@type": "AcquisitionParameters",       
+		"operationalMode": "IM",
+		"polarisationMode": "S",
+		"polarisationChannels": "HH",
+		
+		"acquisitionType": "NOMINAL",
+		"acquisitionSubType": "DEFAULT",
+		"orbitNumber": "1316",
+		"orbitDirection": "DESCENDING",
+		"antennaLookDirection": "RIGHT",
+		"acquisitionAngles": {
+			"@type": "AcquisitionAngles", 
+			"minimumIncidenceAngle": "19.6",
+			"maximumIncidenceAngle": "9.6",
+			"incidenceAngleVariation": "9.6"
+		}
+	}
+}
+</script>
+
+

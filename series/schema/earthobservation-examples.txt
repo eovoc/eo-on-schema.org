@@ -1,0 +1,59 @@
+TYPES: EarthObservation, distribution
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "EarthObservation",
+	"@id": "https://eovoc.spacebel.be/collections/datasets/items/KO2_OTPF_KO2_MSC_2F_20091107T041750_20091107T041750_017498_E082_N028",
+	"description": "Dataset KO2_OTPF_KO2_MSC_2F_20091107T041750_20091107T041750_017498_E082_N028 from TropForest acquired 2009-11-07T04:17:50Z",
+	"identifier": ["KO2_OTPF_KO2_MSC_2F_20091107T041750_20091107T041750_017498_E082_N028"],
+	"alternateName": "KO2_OTPF_KO2_MSC_2F_20091107T041750_20091107T041750_017498_E082_N028",
+	"dateModified": "2021-06-18T13:59:11Z",
+
+	"additionalType": "http://purl.org/dc/dcmitype/Dataset",
+	"temporalCoverage": "2009-11-07T04:17:50Z/2009-11-07T04:17:50Z",
+	"includedInDataCatalog": {
+		"@type": "DataCatalog",
+		"name": "FedEO Clearinghouse"
+	},
+	"isPartOf": "https://eovoc.spacebel.be/collections/series/items/TropForest",
+	"spatialCoverage": {
+		"geo": {
+			"polygon": "28.08365828 81.91450641 27.91026471 81.91450641 27.91026471 82.10769379 28.08365828 82.10769379",
+			"@type": "GeoShape",
+			"box": "27.91026471 81.91450641 28.08365828 82.10769379"
+		},
+		"@type": "Place"
+	},
+	"distribution": [
+	{
+		"contentUrl": "http://tpm-ds.eo.esa.int/oads/meta/Tropforest/browse/KO2_OTPF_KO2_MSC_2F_20091107T041750_20091107T041750_017498_E082_N028.ZIP_BID.JPG",
+		"@type": "DataDownload",
+		"name": "QUICKLOOK",
+		"encodingFormat": "image/jpeg"
+	},
+	{
+		"contentUrl": "http://tpm-ds.eo.esa.int/oads/meta/Tropforest/thumbnail/KO2_OTPF_KO2_MSC_2F_20091107T041750_20091107T041750_017498_E082_N028.ZIP_TIMG.jpg",
+		"@type": "DataDownload",
+		"name": "THUMBNAIL",
+		"encodingFormat": "image/jpeg"
+	},
+	{
+		"contentUrl": "https://tpm-ds.eo.esa.int/oads/data/Tropforest/KO2_OTPF_KO2_MSC_2F_20091107T041750_20091107T041750_017498_E082_N028.ZIP",
+		"@type": "DataDownload",
+		"contentSize": "85503826",
+		"name": "Download",
+		"encodingFormat": "application/x-binary"
+	}
+	]  
+}
+</script>
+

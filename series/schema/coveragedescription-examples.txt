@@ -1,0 +1,23 @@
+TYPES: CoverageDescription, snowCover, cloudCover
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "CoverageDescription",       
+	
+	"cloudCover": "8",
+	"snowCover": "0"
+ 
+}
+</script>
+
+
+

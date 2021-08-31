@@ -1,0 +1,23 @@
+TYPES: VerticalSpatialDomain, VirtualLocation
+
+PRE-MARKUP:
+
+
+MICRODATA:
+
+
+JSON:
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org/",
+	"@type": "VerticalSpatialDomain",       
+	
+	"maxValue": "50000",
+	"minValue": "40000",
+	"unitText": "m"	
+}
+</script>
+
+
+

@@ -1,0 +1,1018 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+
+schema:AcquisitionAngles a rdfs:Class ;
+    rdfs:label "AcquisitionAngles" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Contains the properties related to the acquisition angles." ;
+    rdfs:subClassOf schema:StructuredValue .
+
+schema:AcquisitionInformation a rdfs:Class ;
+    rdfs:label "AcquisitionInformation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html>,
+        <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html#44> ;
+    rdfs:comment "Acquisition information of the Earth Observation as defined in OGC 17-003r2." ;
+    rdfs:subClassOf schema:StructuredValue ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/AcquisitionInformation> .
+
+schema:AcquisitionParameters a rdfs:Class ;
+    rdfs:label "AcquisitionParameters" ;
+    rdfs:comment "Contains the properties related to the acquisition of the data." ;
+    rdfs:subClassOf schema:OrbitParameters .
+
+schema:AcquisitionStatusType a rdfs:Class ;
+    rdfs:label "AcquisitionStatusType" ;
+    schema:isPartOf <http://eo.schema.org> ;
+    rdfs:comment "Enumeration of acquisition status constants." ;
+    rdfs:subClassOf schema:Enumeration ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/statusType> .
+
+schema:AcquisitionType a rdfs:Class ;
+    rdfs:label "AcquisitionType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Enumeration of acquisitionType constants." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:AntennaLookDirectionType a rdfs:Class ;
+    rdfs:label "AntennaLookDirectionType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Enumeration of antennaLookDirectionType constants." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:CoverageDescription a rdfs:Class ;
+    rdfs:label "CoverageDescription" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Contains the properties related to the coverage. Its properties are inherited by the ProductInformation object." ;
+    rdfs:subClassOf schema:StructuredValue ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/CoverageDescription> .
+
+schema:EarthObservation a rdfs:Class ;
+    rdfs:label "EarthObservation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Earth Observation as defined in OGC 10-157r4 and OGC 17-003r2." ;
+    rdfs:subClassOf schema:Dataset ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/EarthObservation> .
+
+schema:Instrument a rdfs:Class ;
+    rdfs:label "Instrument" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Contains the properties of the instrument that was used to perform the observation.  Use as \"id\" the URI defined by GCMD to identify the instrument.  A list of URI can be downloaded from https://gcmdservices.gsfc.nasa.gov/static/kms/instruments/instruments.rdf." ;
+    rdfs:subClassOf schema:StructuredValue .
+
+schema:MeasurementType a rdfs:Class ;
+    rdfs:label "MeasurementType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Enumeration of measurementType constants." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:OrbitDirectionType a rdfs:Class ;
+    rdfs:label "OrbitDirectionType" ;
+    schema:isPartOf <http://eo.schema.org> ;
+    rdfs:comment "Enumeration of orbit direction constants." ;
+    rdfs:subClassOf schema:Enumeration ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/OrbitDirectionType> .
+
+schema:OrbitParameters a rdfs:Class ;
+    rdfs:label "OrbitParameters" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:isPartOf <http://eo.schema.org> ;
+    rdfs:comment "Contains the properties related to the orbit.  Its properties are inherited by the AcquisitionParameters object." ;
+    rdfs:subClassOf schema:StructuredValue ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/OrbitParameters> .
+
+schema:OrbitType a rdfs:Class ;
+    rdfs:label "OrbitType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Enumeration of orbitType constants." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:Platform a rdfs:Class ;
+    rdfs:label "Platform" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Contains the properties of the platform (satellite) that was used to perform the observation.  Use as \"id\" the URI defined by GCMD to identify the platform.  A list of URI can be downloaded from https://gcmdservices.gsfc.nasa.gov/static/kms/platforms/platforms.rdf." ;
+    rdfs:seeAlso <https://gcmdservices.gsfc.nasa.gov/static/kms/platforms/platforms.rdf> ;
+    rdfs:subClassOf schema:StructuredValue .
+
+schema:PolarisationChannelsType a rdfs:Class ;
+    rdfs:label "PolarisationChannelsType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Enumeration of polarisationChannels constants." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:PolarisationModeType a rdfs:Class ;
+    rdfs:label "PolarisationModeType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Enumeration of polarisationMode constants." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:ProcessingInformation a rdfs:Class ;
+    rdfs:label "ProcessingInformation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Contains the properties related to the processing of the data." ;
+    rdfs:subClassOf schema:StructuredValue ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/ProcessingInformation> .
+
+schema:ProductInformation a rdfs:Class ;
+    rdfs:label "ProductInformation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Product information of the Earth Observation product as defined in OGC 17-003r2." ;
+    rdfs:subClassOf schema:CoverageDescription,
+        schema:ProcessingInformation,
+        schema:StructuredValue ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/ProductInformation> .
+
+schema:QualityInformation a rdfs:Class ;
+    rdfs:label "QualityInformation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Contains the properties related to the quality of the product." ;
+    rdfs:subClassOf schema:StructuredValue ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/QualityInformation> .
+
+schema:SensorType a rdfs:Class ;
+    rdfs:label "SensorType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Enumeration of sensorType constants." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:SpectralRangeType a rdfs:Class ;
+    rdfs:label "SpectralRangeType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Enumeration of spectralRangeType constants." ;
+    rdfs:subClassOf schema:Enumeration .
+
+schema:VerticalSpatialDomain a rdfs:Class ;
+    rdfs:label "VerticalSpatialDomain" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:isPartOf <http://eo.schema.org> ;
+    rdfs:comment """Contains the properties related to the spatial extent in the vertical dimension.  Its properties are inherited by the AcquisitionParameters object. 
+  UnitText used to express minValue (lowestLocation) and maxValue (highestLocation) should be meter (m) or bar (bar). Default is meter (m).""";
+    rdfs:subClassOf schema:QuantitativeValue,
+        schema:VirtualLocation ;
+    owl:equivalentClass <http://www.opengis.net/ont/eo-geojson/1.0/VerticalSpatialDomain> .
+
+schema:WavelengthInformation a rdfs:Class ;
+    rdfs:label "WavelengthInformation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    rdfs:comment "Contains the properties of the instrument related to the wavelengths used for the observation." ;
+    rdfs:subClassOf schema:QuantitativeValue .
+
+schema:ABSORPTION a schema:MeasurementType ;
+    rdfs:label "ABSORPTION" ;
+    rdfs:comment "Measurement type constant (Absorption)." .
+
+schema:ACQUIRED a schema:AcquisitionStatusType ;
+    rdfs:label "ACQUIRED" ;
+    rdfs:comment "Acquisition status constant." .
+
+schema:ACQ_OTHER a schema:AcquisitionType ;
+    rdfs:label "OTHER" ;
+    rdfs:comment "Acquisition type constant." .
+
+schema:ALTIMETRIC a schema:SensorType ;
+    rdfs:label "ALTIMETRIC" ;
+    rdfs:comment "Sensor type constant." .
+
+schema:ARCHIVED a schema:AcquisitionStatusType ;
+    rdfs:label "ARCHIVED" ;
+    rdfs:comment "Acquisition status constant." .
+
+schema:ASCENDING a schema:OrbitDirectionType ;
+    rdfs:label "ASCENDING" ;
+    rdfs:comment "Orbit direction constant." .
+
+schema:ATMOSPHERIC a schema:SensorType ;
+    rdfs:label "ATMOSPHERIC" ;
+    rdfs:comment "Sensor type constant." .
+
+schema:CALIBRATION a schema:AcquisitionType ;
+    rdfs:label "CALIBRATION" ;
+    rdfs:comment "Acquisition type constant." .
+
+schema:CANCELLED a schema:AcquisitionStatusType ;
+    rdfs:label "CANCELLED" ;
+    rdfs:comment "Acquisition status constant." .
+
+schema:D a schema:PolarisationModeType ;
+    rdfs:label "D" ;
+    rdfs:comment "Polarisation mode constant (Dual)." .
+
+schema:DESCENDING a schema:OrbitDirectionType ;
+    rdfs:label "DESCENDING" ;
+    rdfs:comment "Orbit direction constant." .
+
+schema:EMISSION a schema:MeasurementType ;
+    rdfs:label "EMISSION" ;
+    rdfs:comment "Measurement type constant (Emission)." .
+
+schema:FAILED a schema:AcquisitionStatusType ;
+    rdfs:label "FAILED" ;
+    rdfs:comment "Acquisition status constant." .
+
+schema:FIR a schema:SpectralRangeType ;
+    rdfs:label "FIR" ;
+    rdfs:comment "SpectralRange type constant for Far Infrared (FIR)." .
+
+schema:GEO a schema:OrbitType ;
+    rdfs:label "GEO" ;
+    rdfs:comment "Orbit type constant." .
+
+schema:HH a schema:PolarisationChannelsType ;
+    rdfs:label "HH" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:HH_HV a schema:PolarisationChannelsType ;
+    rdfs:label "HH_HV" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:HH_HV_VH_VV a schema:PolarisationChannelsType ;
+    rdfs:label "HH_HV_VH_VV" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:HH_VH a schema:PolarisationChannelsType ;
+    rdfs:label "HH_VH" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:HH_VV a schema:PolarisationChannelsType ;
+    rdfs:label "HH_VV" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:HV a schema:PolarisationChannelsType ;
+    rdfs:label "HV" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:HV_VH a schema:PolarisationChannelsType ;
+    rdfs:label "HV_VH" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:INFRARED a schema:SpectralRangeType ;
+    rdfs:label "INFRARED" ;
+    rdfs:comment "SpectralRange type constant." .
+
+schema:LEFT a schema:AntennaLookDirectionType ;
+    rdfs:label "LEFT" ;
+    rdfs:comment "Antenna look direction constant." .
+
+schema:LEO a schema:OrbitType ;
+    rdfs:label "LEO" ;
+    rdfs:comment "Orbit type constant." .
+
+schema:LIMB a schema:SensorType ;
+    rdfs:label "LIMB" ;
+    rdfs:comment "Sensor type constant." .
+
+schema:LWIR a schema:SpectralRangeType ;
+    rdfs:label "LWIR" ;
+    rdfs:comment "SpectralRange type constant for Long Wavelength Infrared (LWIR)." .
+
+schema:MICROWAVE a schema:SpectralRangeType ;
+    rdfs:label "MICROWAVE" ;
+    rdfs:comment "SpectralRange type constant." .
+
+schema:MWIR a schema:SpectralRangeType ;
+    rdfs:label "MWIR" ;
+    rdfs:comment "SpectralRange type constant for Mid Wavelength Infrared (MWIR)." .
+
+schema:NIR a schema:SpectralRangeType ;
+    rdfs:label "NIR" ;
+    rdfs:comment "SpectralRange type constant for Near Infrared (NIR)." .
+
+schema:NOMINAL a schema:AcquisitionType ;
+    rdfs:label "NOMINAL" ;
+    rdfs:comment "Acquisition type constant." .
+
+schema:OPTICAL a schema:SensorType ;
+    rdfs:label "OPTICAL" ;
+    rdfs:comment "Sensor type constant." .
+
+schema:PC_UNDEFINED a schema:PolarisationChannelsType ;
+    rdfs:label "UNDEFINED" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:PLANNED a schema:AcquisitionStatusType ;
+    rdfs:label "PLANNED" ;
+    rdfs:comment "Acquisition status constant." .
+
+schema:PM_UNDEFINED a schema:PolarisationModeType ;
+    rdfs:label "UNDEFINED" ;
+    rdfs:comment "Polarisation mode constant." .
+
+schema:POTENTIAL a schema:AcquisitionStatusType ;
+    rdfs:label "POTENTIAL" ;
+    rdfs:comment "Acquisition status constant." .
+
+schema:Q a schema:PolarisationModeType ;
+    rdfs:label "Q" ;
+    rdfs:comment "Polarisation mode constant (Quad)." .
+
+schema:QUALITYDEGRADED a schema:AcquisitionStatusType ;
+    rdfs:label "QUALITYDEGRADED" ;
+    rdfs:comment "Acquisition status constant." .
+
+schema:RADAR a schema:SensorType ;
+    rdfs:label "RADAR" ;
+    rdfs:comment "Sensor type constant." .
+
+schema:REJECTED a schema:AcquisitionStatusType ;
+    rdfs:label "REJECTED" ;
+    rdfs:comment "Acquisition status constant." .
+
+schema:RIGHT a schema:AntennaLookDirectionType ;
+    rdfs:label "RIGHT" ;
+    rdfs:comment "Antenna look direction constant." .
+
+schema:S a schema:PolarisationModeType ;
+    rdfs:label "S" ;
+    rdfs:comment "Polarisation mode constant (Single)." .
+
+schema:SR_OTHER a schema:SpectralRangeType ;
+    rdfs:label "OTHER" ;
+    rdfs:comment "SpectralRange type constant." .
+
+schema:SWIR a schema:SpectralRangeType ;
+    rdfs:label "SWIR" ;
+    rdfs:comment "SpectralRange type constant for Short Wavelength Infrared (SWIR)." .
+
+schema:T a schema:PolarisationModeType ;
+    rdfs:label "T" ;
+    rdfs:comment "Polarisation mode constant (Twin)." .
+
+schema:UV a schema:SpectralRangeType ;
+    rdfs:label "UV" ;
+    rdfs:comment "SpectralRange type constant for Ultraviolet (UV)." .
+
+schema:VH a schema:PolarisationChannelsType ;
+    rdfs:label "VH" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:VH_HV a schema:PolarisationChannelsType ;
+    rdfs:label "VH_HV" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:VH_VV a schema:PolarisationChannelsType ;
+    rdfs:label "VH_VV" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:VISIBLE a schema:SpectralRangeType ;
+    rdfs:label "VISIBLE" ;
+    rdfs:comment "SpectralRange type constant." .
+
+schema:VV a schema:PolarisationChannelsType ;
+    rdfs:label "VV" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:VV_HV a schema:PolarisationChannelsType ;
+    rdfs:label "VV_HV" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:VV_VH a schema:PolarisationChannelsType ;
+    rdfs:label "VV_VH" ;
+    rdfs:comment "Polarisation channel constant." .
+
+schema:acquisitionAngles a rdf:Property ;
+    rdfs:label "acquisitionAngles" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:AcquisitionAngles ;
+    rdfs:comment "Acquisition angles." .
+
+schema:acquisitionInformation a rdf:Property ;
+    rdfs:label "acquisitionInformation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html#44> ;
+    schema:domainIncludes schema:EarthObservation ;
+    schema:isPartOf <http://eo.schema.org> ;
+    schema:rangeIncludes schema:AcquisitionInformation ;
+    rdfs:comment "Acquisition information related to the dataset." ;
+    owl:equivalentProperty <http://www.opengis.net/ont/eo-geojson/1.0/acquisitionInformation> .
+
+schema:acquisitionParameters a rdf:Property ;
+    rdfs:label "acquisitionParameters" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionInformation ;
+    schema:rangeIncludes schema:AcquisitionParameters ;
+    rdfs:comment "The acquisition parameters (i.e. pointing angles, etc.)." .
+
+schema:acquisitionStation a rdf:Property ;
+    rdfs:label "acquisitionStation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Acquisition / receiving station code. Possible values are mission specific and should be retrieved using codespace." .
+
+schema:acquisitionStatus a rdf:Property ;
+    rdfs:label "acquisitionStatus" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:EarthObservation ;
+    schema:isPartOf <http://eo.schema.org> ;
+    schema:rangeIncludes schema:AcquisitionStatusType ;
+    rdfs:comment """Refers to product status.
+
+Fixed Values :
+ - ARCHIVED
+ - ACQUIRED
+ - CANCELLED
+ - FAILED
+ - PLANNED
+ - POTENTIAL
+ - REJECTED
+ - QUALITYDEGRADED.""";
+    owl:equivalentProperty <http://www.opengis.net/ont/eo-geojson/1.0/status> .
+
+schema:acquisitionSubType a rdf:Property ;
+    rdfs:label "acquisitionSubType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "The broad value defined by the acquisitionType is too restrictive, so mission specific type definition should refer to mission/ground segment dedicated codeSpace." .
+
+schema:acquisitionType a rdf:Property ;
+    rdfs:label "acquisitionType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:AcquisitionType ;
+    rdfs:comment """AcquisitionType can be one of: 
+ - NOMINAL
+ - CALIBRATION
+ - OTHER.""".
+
+schema:acrossTrackIncidenceAngle a rdf:Property ;
+    rdfs:label "acrossTrackIncidenceAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Acquisition across track incidence angle in degrees (i.e. uom='deg')." .
+
+schema:alongTrackIncidenceAngle a rdf:Property ;
+    rdfs:label "alongTrackIncidenceAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Acquisition along track incidence angle in degrees (i.e. uom='deg')." .
+
+schema:antennaLookDirection a rdf:Property ;
+    rdfs:label "antennaLookDirection" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:AntennaLookDirectionType ;
+    rdfs:comment """Look direction of antenna taken from codelist
+Values:
+- LEFT
+- RIGHT.""".
+
+schema:archivingDate a rdf:Property ;
+    rdfs:label "archivingDate" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProductInformation ;
+    schema:rangeIncludes schema:DateTime ;
+    rdfs:comment "Archiving date time." .
+
+schema:ascendingNodeDate a rdf:Property ;
+    rdfs:label "ascendingNodeDate" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:OrbitParameters ;
+    schema:rangeIncludes schema:DateTime ;
+    rdfs:comment "UTC date and time at ascending node of orbit." .
+
+schema:ascendingNodeLongitude a rdf:Property ;
+    rdfs:label "ascendingNodeLongitude" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:OrbitParameters ;
+    schema:rangeIncludes schema:Number,
+        schema:Text ;
+    rdfs:comment "Longitude at ascending node of orbit. Should be expressed in degrees." ;
+    rdfs:subPropertyOf schema:longitude .
+
+schema:availabilityTime a rdf:Property ;
+    rdfs:label "availabilityTime" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProductInformation ;
+    schema:rangeIncludes schema:DateTime ;
+    rdfs:comment """The time when the result becomes available
+ dateTime in ISO 8601 format (CCYY-MM-DDThh:mm[:ss[.cc]]Z).""".
+
+schema:available a rdf:Property ;
+    rdfs:label "available" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:EarthObservation ;
+    schema:rangeIncludes schema:DateTime,
+        schema:Text ;
+    rdfs:comment "Date range during which the resource will be available ISO 8601." ;
+    owl:equivalentProperty dcterms:available .
+
+schema:cloudCover a rdf:Property ;
+    rdfs:label "cloudCover" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:CoverageDescription ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Cloud cover percentage (i.e. uom=’%’)." .
+
+schema:completionTimeFromAscendingNode a rdf:Property ;
+    rdfs:label "completionTimeFromAscendingNode" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Integer ;
+    rdfs:comment "Stop time of acquisition in milliseconds from ascending node date." .
+
+schema:compositeType a rdf:Property ;
+    rdfs:label "compositeType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:Duration ;
+    rdfs:comment "Type of composite product expressed as timeperiod that the composite product covers using ISO 8601 duration format P[n]Y[n]M[n]D encoding , e.g. P10D for a 10 day composite." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/ISO_8601#Durations> .
+
+schema:contentSize a rdf:Property ;
+    schema:domainIncludes schema:ProductInformation .
+
+schema:cycleNumber a rdf:Property ;
+    rdfs:label "cycleNumber" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Integer ;
+    rdfs:comment "Number of Cycles." .
+
+schema:description a rdf:Property ;
+    schema:domainIncludes schema:Instrument .
+
+schema:dopplerFrequency a rdf:Property ;
+    rdfs:label "dopplerFrequency" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Doppler Frequency of acquisition.   Unit of measure is SI base unit (m) without prefix." .
+
+schema:groundTrackUncertainty a rdf:Property ;
+    rdfs:label "groundTrackUncertainty" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Measure of the uncertainty of the ground track. Sometimes known as deadband e.g. 1000m (1Km) deadband.  Unit of measure is SI base unit (m) without prefix." .
+
+schema:holdingArchive a rdf:Property ;
+    schema:domainIncludes schema:ProductInformation .
+
+schema:illuminationAzimuthAngle a rdf:Property ;
+    rdfs:label "illuminationAzimuthAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Mean illumination/solar azimuth angle given in degrees (i.e. uom='deg')." .
+
+schema:illuminationElevationAngle a rdf:Property ;
+    rdfs:label "illuminationElevationAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Mean illumination/solar elevation angle in degrees (i.e. uom='deg')." .
+
+schema:illuminationZenithAngle a rdf:Property ;
+    rdfs:label "illuminationZenithAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Mean illumination/solar zenith angle in degrees (i.e. uom='deg')." .
+
+schema:incidenceAngle a rdf:Property ;
+    rdfs:label "incidenceAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:QuantitativeValue ;
+    rdfs:comment "Acquisition global incidence angle in degrees (i.e. uom='deg'), its minimum value and its maximum value." .
+
+schema:incidenceAngleVariation a rdf:Property ;
+    rdfs:label "incidenceAngleVariation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Incidence angle variation in degrees (i.e. uom='deg')." .
+
+schema:instrumentAzimuthAngle a rdf:Property ;
+    rdfs:label "instrumentAzimuthAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Mean instrument azimuth angle in degrees (i.e. uom='deg')." .
+
+schema:instrumentElevationAngle a rdf:Property ;
+    rdfs:label "instrumentElevationAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Mean instrument elevation angle in degrees (i.e. uom='deg')." .
+
+schema:instrumentZenithAngle a rdf:Property ;
+    rdfs:label "instrumentZenithAngle" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Mean instrument zenith angle in degrees (i.e. uom='deg')." .
+
+schema:lastOrbitDirection a rdf:Property ;
+    rdfs:label "lastOrbitDirection" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:OrbitParameters ;
+    schema:rangeIncludes schema:OrbitDirectionType ;
+    rdfs:comment """Acquisition orbit direction at the end of the acquisition/product. Assumed to be identical to orbitDirection if not present.
+Values:
+•	ASCENDING
+•	DESCENDING""".
+
+schema:lastOrbitNumber a rdf:Property ;
+    rdfs:label "lastOrbitNumber" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:OrbitParameters ;
+    schema:rangeIncludes schema:Integer ;
+    rdfs:comment "Acquisition last orbit number." .
+
+schema:location a rdf:Property ;
+    schema:domainIncludes schema:AcquisitionParameters .
+
+schema:measurementType a rdf:Property ;
+    rdfs:label "measurementType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:MeasurementType ;
+    rdfs:comment """Measurement type taken from codelist:
+Values:
+- ABSORPTION
+- EMISSION.""".
+
+schema:name a rdf:Property ;
+    schema:domainIncludes schema:Instrument,
+        schema:Platform .
+
+schema:operationalMode a rdf:Property ;
+    rdfs:label "operationalMode" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Sensor mode. Possible values are mission specific." .
+
+schema:orbitDirection a rdf:Property ;
+    rdfs:label "orbitDirection" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:OrbitParameters ;
+    schema:isPartOf <http://eo.schema.org> ;
+    schema:rangeIncludes schema:OrbitDirectionType ;
+    rdfs:comment """Acquisition orbit direction at the start of the acquisition/product.
+Values:
+•	ASCENDING
+•	DESCENDING""",
+        "Product information related to the dataset." ;
+    owl:equivalentProperty <http://www.opengis.net/ont/eo-geojson/1.0/orbitDirection> .
+
+schema:orbitDuration a rdf:Property ;
+    rdfs:label "orbitDuration" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:OrbitParameters ;
+    schema:rangeIncludes schema:Duration ;
+    rdfs:comment "Actual orbit duration in ISO 8601 duration format (range is TBD)." ;
+    rdfs:subPropertyOf schema:duration .
+
+schema:orbitNumber a rdf:Property ;
+    rdfs:label "orbitNumber" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:OrbitParameters ;
+    schema:rangeIncludes schema:Integer ;
+    rdfs:comment "Acquisition orbit number." .
+
+schema:orbitType a rdf:Property ;
+    rdfs:label "orbitType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:Platform ;
+    schema:rangeIncludes schema:OrbitType ;
+    rdfs:comment "High level characterisation of main mission types taken from a codelist." ;
+    owl:equivalentProperty <http://www.opengis.net/ont/eo-geojson/1.0/orbitType> .
+
+schema:parentIdentifier a rdf:Property ;
+    rdfs:label "parentIdentifier" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:EarthObservation ;
+    schema:isPartOf <http://eo.schema.org> ;
+    schema:rangeIncludes schema:Text,
+        schema:URL ;
+    rdfs:comment "Collection identifier." ;
+    rdfs:subPropertyOf schema:isPartOf .
+
+schema:pitch a rdf:Property ;
+    rdfs:label "pitch" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Satellite pitch angle in degrees (i.e. uom='deg')." .
+
+schema:platform a rdf:Property ;
+    rdfs:label "platform" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionInformation ;
+    schema:rangeIncludes schema:Platform ;
+    rdfs:comment "The Platform used for the acquisition.  If more than one platform is used for creating the product, then the AcquisitionInformation object occurs more than once." .
+
+schema:polarisationChannels a rdf:Property ;
+    rdfs:label "polarisationChannels" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:PolarisationChannelsType ;
+    rdfs:comment "Polarisation channel transmit/receive configuration." .
+
+schema:polarisationMode a rdf:Property ;
+    rdfs:label "polarisationMode" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:PolarisationModeType ;
+    rdfs:comment """Polarisation mode taken from codelist:
+S (for single),
+D (for dual),
+T (for twin),
+Q (for quad),
+UNDEFINED.""".
+
+schema:processingCenter a rdf:Property ;
+    rdfs:label "processingCenter" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Processing center code. Possible values are mission specific." .
+
+schema:processingDate a rdf:Property ;
+    rdfs:label "processingDate" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:DateTime ;
+    rdfs:comment "Processing date time." .
+
+schema:processingLevel a rdf:Property ;
+    rdfs:label "processingLevel" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Processing level applied to the product: \"1A\", \"1B\", \"1C\", \"2\", \"3\"." .
+
+schema:processingMethod a rdf:Property ;
+    rdfs:label "processingMethod" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Method used to compute datalayer. (e.g. Kalman filtering, ROSE)." .
+
+schema:processingMethodVersion a rdf:Property ;
+    rdfs:label "processingMethodVersion" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Method version (e.g. 1.0)." .
+
+schema:processingMode a rdf:Property ;
+    rdfs:label "processingMode" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment """Processing mode taken from mission specific code list.
+Examples of values are:
+•	NRT
+•	NOMINAL
+•	BACKLOGGED
+•	REPROCESSED
+•	VALIDATE.""".
+
+schema:processorName a rdf:Property ;
+    rdfs:label "processorName" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Processor software name (e.g. FastROSE)." .
+
+schema:productContentsType a rdf:Property ;
+    rdfs:label "productContentType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProcessingInformation ;
+    schema:rangeIncludes schema:DefinedTerm ;
+    rdfs:comment """Classification of product according to ground type covered. Note cardinality allows for multiple instances of this property.
+Allowed Values:
+•	COASTAL
+•	CONTINENTAL
+•	HYDROLOGY
+•	ICE
+•	OPEN_OCEAN
+•	OTHER
+•	REGIONAL.""".
+
+schema:productInformation a rdf:Property ;
+    rdfs:label "productInformation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:EarthObservation ;
+    schema:isPartOf <http://eo.schema.org> ;
+    schema:rangeIncludes schema:ProductInformation ;
+    rdfs:comment "Product information related to the dataset." ;
+    owl:equivalentProperty <http://www.opengis.net/ont/eo-geojson/1.0/productInformation> .
+
+schema:productType a rdf:Property ;
+    rdfs:label "productType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProductInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Describes the product type in case that mixed types are available within a single collection, this is a ground segment specific definition." ;
+    owl:equivalentProperty <http://www.opengis.net/ont/eo-geojson/1.0/productType> .
+
+schema:qualityDegradation a rdf:Property ;
+    rdfs:label "qualityDegradation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:QualityInformation ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Quality degradation percentage (i.e. uom=’%’)." .
+
+schema:qualityDegradationQuotationMode a rdf:Property ;
+    rdfs:label "qualityDegradationQuotationMode" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:QualityInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment """Indicator to know how the quality degradation percentage has been calculated.
+Values:
+AUTOMATIC, MANUAL.""".
+
+schema:qualityDegradationTag a rdf:Property ;
+    rdfs:label "qualityDegradationTag" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:QualityInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment """Contains further textual information concerning the quality degradation.  It shall be provided if qualityStatus value is DEGRADED. Possible values are mission specific and should refer to mission/ground segment dedicated codeSpace.
+Example of values could be "RADIOMETRY" or "GEOLOCATION".""".
+
+schema:qualityInformation a rdf:Property ;
+    rdfs:label "qualityInformation" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProductInformation ;
+    schema:rangeIncludes schema:QualityInformation ;
+    rdfs:comment "Contains properties related to the quality of the product." .
+
+schema:qualityStatus a rdf:Property ;
+    rdfs:label "qualityStatus" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:QualityInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment """Indicator that specifies whether the product quality is degraded or not.  This optional field shall be provided if the product has passed a quality check.
+Values:
+DEGRADED, NOMINAL.""".
+
+schema:relativeOrbitNumber a rdf:Property ;
+    rdfs:label "relativeOrbitNumber" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Integer ;
+    rdfs:comment "Orbit number since start of cycle." .
+
+schema:resolution a rdf:Property ;
+    rdfs:label "resolution" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Sensor resolution.  Unit of measure is SI base unit (m) without prefix." .
+
+schema:roll a rdf:Property ;
+    rdfs:label "roll" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Satellite roll angle in degrees (i.e. uom='deg')." .
+
+schema:samplingRate a rdf:Property ;
+    rdfs:label "samplingRates" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Rate at which samples are provided in product. Some products may contain more than one sampling rate, e.g. 1kHz and 20kHz. Cardinality is therefore zero to many.  Unit of measure (Hz) is SI derived unit without prefix." .
+
+schema:sensor a rdf:Property ;
+    rdfs:label "sensor" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionInformation ;
+    schema:rangeIncludes schema:Instrument ;
+    rdfs:comment """The Instrument/Sensor used for the acquisition.
+If more than one instrument is used for creating the product, then the AcquisitionInformation object occurs more than once.""".
+
+schema:sensorType a rdf:Property ;
+    rdfs:label "sensorType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:Instrument ;
+    schema:rangeIncludes schema:SensorType ;
+    rdfs:comment "Sensor type based on codelist." .
+
+schema:serialNumber a rdf:Property ;
+    schema:domainIncludes schema:Platform .
+
+schema:snowCover a rdf:Property ;
+    rdfs:label "snowCover" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:CoverageDescription ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Snow cover percentage (i.e. uom=’%’)." .
+
+schema:softwareVersion a rdf:Property ;
+    schema:domainIncludes schema:ProcessingInformation .
+
+schema:spectralRange a rdf:Property ;
+    rdfs:label "spectralRange" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:WavelengthInformation ;
+    schema:rangeIncludes schema:SpectralRangeType,
+        schema:Text ;
+    rdfs:comment "The observed Spectral Range." .
+
+schema:startTimeFromAscendingNode a rdf:Property ;
+    rdfs:label "startTimeFromAscendingNode" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Integer ;
+    rdfs:comment "Start time of acquisition in milliseconds from ascending node date." .
+
+schema:statusDetail a rdf:Property ;
+    rdfs:label "statusDetail" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProductInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "This field refers to the status value. It should be used to motivate the reason of a failure, cancelation, rejection or degraded quality." .
+
+schema:statusSubType a rdf:Property ;
+    rdfs:label "statusSubType" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProductInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment """Refines the status of a product when the “status” is set to “ARCHIVED”.  
+Possible values:
+- “ON-LINE”
+- “OFF-LINE”.""".
+
+schema:swathIdentifier a rdf:Property ;
+    rdfs:label "swathIdentifier" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Swath identifier (e.g. Envisat ASAR has 7 distinct swaths (I1,I2,I3...I7) that correspond to precise incidence angles for the sensor)." .
+
+schema:tileId a rdf:Property ;
+    rdfs:label "tileId" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment """While track/frame can be used to represent the first part of an MGRS coordinate (i.g. grid zone), the tileId identifies e.g. the second part of an MGRS coordinate (square identification), e.g. in case of Sentinel.
+Used when the world reference system coordinates can not be expressed in X/Y (Track/Frame) terms, such has for UTM tiles. (used for Sentinel-2 L1C granules).""".
+
+schema:timeliness a rdf:Property ;
+    rdfs:label "timeliness" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:ProductInformation ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment """Timeliness of the product, such as "near real time", "rush". Possible values are mission specific and shall refer to mission/ground segment dedicated codeSpace.
+Example of values could be "NRT", "NOMINAL", “NTC” or “STC”.""".
+
+schema:version a rdf:Property ;
+    schema:domainIncludes schema:ProductInformation .
+
+schema:verticalResolution a rdf:Property ;
+    rdfs:label "verticalResolution" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment """lmb: Vertical spacing of data (if regular)
+atm: Full width at half maximum of the rows of the vertical averaging kernel matrix
+Unit of measure is SI base unit (m) without prefix.""".
+
+schema:wavelengthResolution a rdf:Property ;
+    rdfs:label "wavelengthResolution" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:WavelengthInformation ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Spacing between consecutive wavelengths.   Unit of measure is SI base unit (m) without prefix." .
+
+schema:wavelengths a rdf:Property ;
+    rdfs:label "wavelengths" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:WavelengthInformation ;
+    rdfs:comment "List of discrete wavelengths observed in the product." .
+
+schema:wrsLatitudeGrid a rdf:Property ;
+    rdfs:label "wrsLatitudeGrid" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Neutral wrsLatitudeGrid equivalent to frame in track/frame,  J in K/J, etc." .
+
+schema:wrsLongitudeGrid a rdf:Property ;
+    rdfs:label "wrsLongitudeGrid" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionParameters ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "Neutral wrsLongitudeGrid equivalent to track in track/frame, K in K/J, etc." .
+
+schema:yaw a rdf:Property ;
+    rdfs:label "yaw" ;
+    dcterms:source <http://docs.opengeospatial.org/is/17-003r2/17-003r2.html> ;
+    schema:domainIncludes schema:AcquisitionAngles ;
+    schema:rangeIncludes schema:Number ;
+    rdfs:comment "Satellite yaw angle in degrees (i.e. uom='deg')." .
+
+schema:isPartOf a rdf:Property ;
+    schema:domainIncludes schema:ProductInformation .
