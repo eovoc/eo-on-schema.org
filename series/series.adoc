@@ -43,6 +43,8 @@ ifdef::env-github[]
 * <<5-eo-services-and-applications-encoding,5. EO Services and Applications Encoding>>
 ** <<51-service-identification,5.1 Service Identification>>
 ** <<52-acquisition-information,5.2 Acquisition Information>>
+** <<53-related-url,5.3 Related URL>>
+*** <<531-action,5.3.1 Action>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 ** <<61-granule-identification,6.1 Granule Identification>>
 * <<7-eo-granules-encoding-extension,7. EO Granules Encoding (Extension)>>
@@ -2192,6 +2194,60 @@ ifndef::env-github[]
 endif::[]
 
 The encoding proposed using `schema:potentialAction` in <<47-acquisition-information,4.7 Acquisition Information>> is only applicable to EO Collections and EO Granules.  For EO Services and Applications, Acquisition Information can be encoded as `DefinedTerm` from the platform and instrument thesaurus as in <<44-descriptive-keywords,4.4 Descriptive Keywords>>.
+
+
+// 5.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 5.3 Related URL
+endif::[]
+ifndef::env-github[]
+=== Related URL
+endif::[]
+
+// 5.3.1 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 5.3.1 Action
+endif::[]
+ifndef::env-github[]
+==== Action
+endif::[]
+
+Actions can be used to encode an OWC `offering` of a service record with multiple operations (OGC 14-055r2). The below example represents an offering corresponding to an OGC Web Coverage Service.  The service metadata record would use `potentialAction` to relate the service metadata record with one of its offerings.  as the `Action` uses the service, it is encoded as a `UseAction`.
+
+
+.UseAction encoding example (OGC WCS)
+[source,json]
+----
+{
+	"@context": "https://schema.org",
+	"@type": "UseAction",
+	"additionalType": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs",
+	"target": [
+		{
+			"@type": "EntryPoint",
+			"additionalType": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs#GetCapabilities",
+			"contentType": [
+				"text/xml"
+			],
+			"urlTemplate": "https://datacube.pdgs.eo.esa.int/wcs?service=WCS&Request=GetCapabilities&version=2.0.0",
+			"description": "GetCapabilities",
+			"httpMethod": "GET"
+		},
+		{
+			"@type": "EntryPoint",
+			"additionalType": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs#DescribeCoverage",
+			"contentType": [
+				"text/xml"
+			],
+			"urlTemplate": "https://datacube.pdgs.eo.esa.int/wcs?service=WCS&Request=DescribeCoverage&version=2.0.0&CoverageId=LE7_RGB",
+			"description": "DescribeCoverage",
+			"httpMethod": "GET"
+		}
+	]
+}
+----
+
+
 
 
 // 6 --------------------------------------------------------------------------------------------
