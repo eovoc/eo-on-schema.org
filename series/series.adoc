@@ -2212,7 +2212,7 @@ ifndef::env-github[]
 ==== Action
 endif::[]
 
-Actions can be used to encode an OWC `offering` of a service record with multiple operations (OGC 14-055r2). The below example represents an offering corresponding to an OGC Web Coverage Service.  The service metadata record would use `potentialAction` to relate the service metadata record with one of its offerings.  as the `Action` uses the service, it is encoded as a `UseAction`.
+Actions can be used to encode an OWC `offering` of a service record with multiple operations (See <<OGC14-055r2>>). The below example represents an offering corresponding to an OGC Web Coverage Service (WCS).  The service metadata record would use `potentialAction` to relate the service metadata record with the `Action`.   As the `Action` uses the service, it is encoded as a `UseAction`.
 
 
 .UseAction encoding example (OGC WCS)
