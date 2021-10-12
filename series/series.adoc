@@ -2212,7 +2212,7 @@ ifndef::env-github[]
 ==== Action
 endif::[]
 
-Actions can be used to encode an OWC `offering` of a service record with multiple operations (See <<OGC14-055r2>>). The below example represents an offering corresponding to an OGC Web Coverage Service (WCS).  The service metadata record would use `potentialAction` to relate the service metadata record with the `Action`.   As the `Action` uses the service, it is encoded as a `UseAction`.
+Actions can be used to encode an OWC `offering` of a service record with multiple operations (See <<OGC14-055r2>>). The example below represents an offering corresponding to an OGC Web Coverage Service (WCS).  The service metadata record would use `potentialAction` to relate the service metadata record with the `Action`.   As the `Action` uses the service, it is encoded as a `UseAction`.  The property `object` provides information about coupled EO collections and is equivalent to the ISO19119 `operatesOn` relation.  
 
 
 .UseAction encoding example (OGC WCS)
@@ -2221,11 +2221,16 @@ Actions can be used to encode an OWC `offering` of a service record with multipl
 {
 	"@context": "https://schema.org",
 	"@type": "UseAction",
-	"additionalType": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs",
+	"identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs",
+	"object": {
+			"@type": "Dataset",
+			"@id": "https://eovoc.spacebel.be/collections/series/items/LANDSAT.ETM.GTC",
+			"identifier": "LANDSAT.ETM.GTC"
+		},
 	"target": [
 		{
 			"@type": "EntryPoint",
-			"additionalType": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs#GetCapabilities",
+			"identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs#GetCapabilities",
 			"contentType": [
 				"text/xml"
 			],
@@ -2235,7 +2240,7 @@ Actions can be used to encode an OWC `offering` of a service record with multipl
 		},
 		{
 			"@type": "EntryPoint",
-			"additionalType": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs#DescribeCoverage",
+			"identifier": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs#DescribeCoverage",
 			"contentType": [
 				"text/xml"
 			],
@@ -3816,7 +3821,8 @@ Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM
 - version of <<DCAT-AP-SDO>> updated | Updated version for EOVOC MTR.
 
 |September 30, 2021 |Y. Coene | 0.4 |  - Added UseAction example representing WCS offering in new Related URL and Actions sections  +
-for EO Service. | Updated version for TBD.
+for EO Service. +
+- Added service to collection coupled resource encoding with `object` in <<531-action,§5.3.1>>| Updated version for TBD.
 
 |====================
 
