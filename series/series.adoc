@@ -43,7 +43,8 @@ ifdef::env-github[]
 * <<5-eo-services-and-applications-encoding,5. EO Services and Applications Encoding>>
 ** <<51-service-identification,5.1 Service Identification>>
 ** <<52-acquisition-information,5.2 Acquisition Information>>
-** <<53-related-url,5.3 Related URL>>
+** <<53-descriptive-keywords,5.3 Descriptive Keywords>>
+** <<54-related-url,5.4 Related URL>>
 *** <<531-action,5.3.1 Action>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 ** <<61-granule-identification,6.1 Granule Identification>>
@@ -2195,18 +2196,70 @@ endif::[]
 
 The encoding proposed using `schema:potentialAction` in <<47-acquisition-information,4.7 Acquisition Information>> is only applicable to EO Collections and EO Granules.  For EO Services and Applications, Acquisition Information can be encoded as `DefinedTerm` from the platform and instrument thesaurus as in <<44-descriptive-keywords,4.4 Descriptive Keywords>>.
 
-
 // 5.3 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
-=== 5.3 Related URL
+=== 5.3 Descriptive Keywords
+endif::[]
+ifndef::env-github[]
+=== Descriptive Keywords
+endif::[]
+
+The encoding of for Descriptive Keywords was presented in <<44-descriptive-keywords,§4.4 Descriptive Keywords>> and also applies to services.  The example below shows how INSPIRE Spatial data service type and category can be encoded using Descriptive Keywords.
+
+.Descriptive keywords encoding example (Service)
+[source,json]
+----
+{
+	"@context": "https://schema.org/",
+	"@type": "CreativeWork",
+	"@id": "https://eovoc.spacebel.be/collections/services/items/eo-pdgs-landsat-datacube",
+	"name": "Landsat DataCube",
+   	"keywords": [
+    		{
+      			"@type": "DefinedTerm",
+      			"name": "Landsat-7",
+      			"@id": "https://earth.esa.int/concept/landsat-7",
+      			"inDefinedTermSet": "https://earth.esa.int/concepts/concept_scheme/platforms"
+    		},
+    		{
+     			 "@type": "DefinedTerm",
+     			 "name": "EARTH SCIENCE SERVICES > DATA MANAGEMENT/DATA HANDLING > DATA ACCESS/RETRIEVAL",
+			 "@id": "https://gcmd.earthdata.nasa.gov/kms/concept/86cbb2d3-6783-4d9b-9dc1-b0aea78f98ea",
+			 "inDefinedTermSet": "https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"
+    		},
+    		{
+      			"@type": "DefinedTerm",
+      			"name": "Download Service",
+      			"@id": "http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download",
+      			"inDefinedTermSet": "https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"
+    		},
+    		{
+     		 	"@type": "DefinedTerm",
+      			"name": "OGC Web Coverage Service 2.0",
+      			"@id": "http://www.opengis.net/def/serviceType/ogc/wcs/2.0",
+      			"inDefinedTermSet": "https://inspire.ec.europa.eu/metadata-codelist/ProtocolValue"
+    		},
+    		{
+      			"@type": "DefinedTerm",
+      			"name": "Coverage access service",
+      			"@id": "https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory/infoCoverageAccessService",
+      			"inDefinedTermSet": "http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceCategory"
+    		}
+  	]
+}
+----
+
+// 5.4 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 5.4 Related URL
 endif::[]
 ifndef::env-github[]
 === Related URL
 endif::[]
 
-// 5.3.1 --------------------------------------------------------------------------------------------
+// 5.4.1 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
-==== 5.3.1 Action
+==== 5.4.1 Action
 endif::[]
 ifndef::env-github[]
 ==== Action
@@ -3822,7 +3875,7 @@ Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM
 
 |September 30, 2021 |Y. Coene | 0.4 |  - Added UseAction example representing WCS offering in new Related URL and Actions sections  +
 for EO Service. +
-- Added service to collection coupled resource encoding with `object` in <<531-action,§5.3.1>>| Updated version for TBD.
+- Added service to collection coupled resource encoding with `object` in <<541-action,§5.4.1>>| Updated version for TBD.
 
 |====================
 
