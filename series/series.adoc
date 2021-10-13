@@ -45,7 +45,7 @@ ifdef::env-github[]
 ** <<52-acquisition-information,5.2 Acquisition Information>>
 ** <<53-descriptive-keywords,5.3 Descriptive Keywords>>
 ** <<54-related-url,5.4 Related URL>>
-*** <<531-action,5.3.1 Action>>
+*** <<541-action,5.4.1 Action>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 ** <<61-granule-identification,6.1 Granule Identification>>
 * <<7-eo-granules-encoding-extension,7. EO Granules Encoding (Extension)>>
