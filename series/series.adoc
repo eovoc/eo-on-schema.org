@@ -2213,6 +2213,10 @@ The encoding of for Descriptive Keywords was presented in <<44-descriptive-keywo
 	"@context": "https://schema.org/",
 	"@type": "CreativeWork",
 	"@id": "https://eovoc.spacebel.be/collections/services/items/eo-pdgs-landsat-datacube",
+	"additionalType": [
+		"http://www.opengis.net/def/serviceType/ogc/wcs/2.0", 
+		"http://inspire.ec.europa.eu/metadata-codelist/ResourceType/service"
+		],
 	"name": "Landsat DataCube",
    	"keywords": [
     		{
@@ -2232,6 +2236,12 @@ The encoding of for Descriptive Keywords was presented in <<44-descriptive-keywo
       			"name": "Download Service",
       			"@id": "http://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType/download",
       			"inDefinedTermSet": "https://inspire.ec.europa.eu/metadata-codelist/SpatialDataServiceType"
+    		},
+		{
+     		 	"@type": "DefinedTerm",
+      			"name": "Spatial data service",
+      			"@id": "http://inspire.ec.europa.eu/metadata-codelist/ResourceType/service",
+      			"inDefinedTermSet": "http://inspire.ec.europa.eu/metadata-codelist/ResourceType"
     		},
     		{
      		 	"@type": "DefinedTerm",
