@@ -46,6 +46,7 @@ ifdef::env-github[]
 ** <<53-descriptive-keywords,5.3 Descriptive Keywords>>
 ** <<54-related-url,5.4 Related URL>>
 *** <<541-action,5.4.1 Action>>
+** <<55-quality-information,5.5 Quality Information>>
 * <<6-eo-granules-encoding,6. EO Granules Encoding>>
 ** <<61-granule-identification,6.1 Granule Identification>>
 * <<7-eo-granules-encoding-extension,7. EO Granules Encoding (Extension)>>
@@ -2315,6 +2316,40 @@ Actions can be used to encode an OWC `offering` of a service record with multipl
 }
 ----
 
+
+// 5.5 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+=== 5.5 Quality Information
+endif::[]
+ifndef::env-github[]
+=== Quality Information
+endif::[]
+
+Quality information can include conformity to implementing rules or specifications.  `Review` and `Rating` may be used to encode such information.
+
+.Conformance result encoding example
+[source,json]
+----
+{
+	"@context": "https://schema.org/",
+	"@type": "dcat:DataService",
+	"review": [
+		{
+			"@type": "Review",
+			"about": {
+				"@type": "CreativeWork",
+				"name": "COMMISSION REGULATION (EU) No 1089/2010 of 23 November 2010 implementing Directive 2007/2/EC of the European Parliament and of the Council as regards interoperability of spatial data sets and services",
+				"dateCreated": "2010-12-08T00:00:00Z"
+			},
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated",
+				"description": "See the referenced specification"
+			}
+		}
+	]
+}
+----
 
 
 
