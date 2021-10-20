@@ -2346,6 +2346,20 @@ Quality information can include conformity to implementing rules or specificatio
 				"ratingValue": "http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated",
 				"description": "See the referenced specification"
 			}
+		},
+		{
+			"@type": "Review",
+			"about": {
+				"@type": "CreativeWork",
+				"@id": "http://inspire.ec.europa.eu/id/ats/metadata/2.0/sds-invocable",
+				"name": "INSPIRE Invocable Spatial Data Services metadata",
+				"dateCreated": "2016-05-01T00:00:00Z"
+			},
+			"reviewRating": {
+				"@type": "Rating",
+				"ratingValue": "http://inspire.ec.europa.eu/metadata-codelist/DegreeOfConformity/notEvaluated",
+				"description": "See the referenced specification"
+			}
 		}
 	]
 }
@@ -3920,7 +3934,8 @@ Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM
 
 |September 30, 2021 |Y. Coene | 0.4 |  - Added UseAction example representing WCS offering in new Related URL and Actions sections  +
 for EO Service. +
-- Added service to collection coupled resource encoding with `object` in <<541-action,§5.4.1>>| Updated version for TBD.
+- Added service to collection coupled resource encoding with `object` in <<541-action,§5.4.1>> +
+- Added conformance encoding with `Review` in <<55-quality-information,§5.5>>| Updated version for TBD.
 
 |====================
 
