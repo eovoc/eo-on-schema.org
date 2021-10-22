@@ -164,6 +164,8 @@ endif::[]
 	OGC19-020r1, OGC Testbed-15: Catalogue and Discovery Engineering Report, https://docs.ogc.org/per/19-020r1.html.
 [[STAC-ITEM]][STAC-ITEM]::
 	STAC Item Specification, v1.0.0-beta-2, https://github.com/radiantearth/stac-spec/blob/v1.0.0-beta.2/item-spec/item-spec.md.
+[[WEBAPI]][WEBAPI]::
+	Machine Readable Web APIs with Schema.org Action Annotations, Procedia Computer Science Volume 137, 2018, Pages 255-261, https://doi.org/10.1016/j.procs.2018.09.025.
 
 
 
