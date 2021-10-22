@@ -1724,6 +1724,8 @@ ifndef::env-github[]
 ==== Action
 endif::[]
 
+REST elements can be described using `Action` where the `object` property refers to the RESTFul resource (See also <<WEBAPI>>). 
+
 [#img_object_action,reftext='{figure-caption} {counter:figure-num}']
 .Action schema
 image::diagrams/Action.png[align="center"]
