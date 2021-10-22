@@ -22,6 +22,7 @@ Class Action
 Class SearchAction
 Class EntryPoint
 Class PropertyValueSpecification
+Class Thing
 
 ' using blanks inside () creates separate objects
 
@@ -29,7 +30,11 @@ SearchAction .down.|> Action
 
 Action -down-> EntryPoint : "target"
 
-Action -left-> (Text ) : "target"
+Action -right-> (Text ) : "target"
+
+Action -left-> Thing : "object"
+
+Thing -right-> Action : "potentialAction"
 
 Action -right-> (URL) : "identifier"
 
