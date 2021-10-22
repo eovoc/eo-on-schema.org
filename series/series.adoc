@@ -2190,6 +2190,26 @@ Range: Number \| Text
 }
 ----
 
+`additionalType' can be used to identify the service type more precisely.  https://github.com/earthcubearchitecture-project418/p419dcatservices#wikidata-api-types[Project418] proposes using Wikidata API Types, but other identifiers can be used as well. 
+
+.Service type encoding example
+[source,json]
+----
+{
+	"@context": {
+		"@vocab": "https://schema.org/"
+	},
+	"@type": "CreativeWork",
+	"@id": "https://eovoc.spacebel.be/collections/services/items/eo-pdgs-landsat-datacube",
+	"name": "Landsat DataCube"
+	"additionalType": [	 
+		"http://inspire.ec.europa.eu/metadata-codelist/ResourceType/service",
+		"http://www.opengis.net/def/serviceType/ogc/wcs/2.0",
+		"http://www.wikidata.org/entity/Q2000194"
+		]
+}
+----
+
 
 // 5.2 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
