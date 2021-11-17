@@ -306,21 +306,21 @@ a| dateCreated +
 ~$.dateCreated~
 | Date of creation of the metadata document.
 | Domain: CreativeWork +
-Range: Date or Datetime
+Range: Date or DateTime
 | Zero or one (optional)
 
 a| dateModified +
 ~$.dateModified~
 | Date of last update of the metadata document.
 | Domain: CreativeWork +
-Range: Date or Datetime
+Range: Date or DateTime
 | One (Mandatory)
 
 a| datePublished +
 ~$.datePublished~
 | Date of first availability of the metadata document.
 | Domain: CreativeWork +
-Range: Date or Datetime
+Range: Date or DateTime
 | Zero or one (optional)
 
 a| encodingFormat +
