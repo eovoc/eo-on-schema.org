@@ -575,21 +575,21 @@ a| dateCreated +
 ~$.dateCreated~
 | Date of creation of the resource.
 | Domain: CreativeWork +
-Range: Date or Datetime
+Range: Date or DateTime
 | Zero or one (optional)
 
 a| dateModified +
 ~$.dateModified~
 | Date of last update of the resource.
 | Domain: CreativeWork +
-Range: Date or Datetime
+Range: Date or DateTime
 | One (Mandatory)
 
 a| datePublished +
 ~$.datePublished~
 | Date of publication of the resource.
 | Domain: CreativeWork +
-Range: Date or Datetime
+Range: Date or DateTime
 | Zero or one (optional)
 |===
 
