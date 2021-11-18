@@ -1255,10 +1255,10 @@ Range: URL
 
 a| additionalType +
 ~$.keywords[*].additionalType~
-| Identification of the code list or scheme defining the keyword.  For a `skos:Concept`, the URI of a `skos:broader` concept can be used as well.  In the instrument example below, this property is used to represent the instrument type.
+| Additional type of the keyword.  For a `skos:Concept`, the URI of a `skos:broader` concept can be used as well.  In the instrument example below, this property is used to represent the instrument type.
 | Domain: DefinedTerm +
 Range: URL 
-| Zero or one (optional)
+| Zero or more (optional)
 
 |===
 
