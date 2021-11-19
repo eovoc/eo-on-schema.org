@@ -1500,7 +1500,33 @@ Related URL cover both HATEOAS hypermedia links and OGC14-055r2 style `offerings
 A `MediaObject` is used to represent most hypermedia links.  If the link represents a data download link (`rel="enclosure"`) then also `DataDownload` objects can be used as recommended by <<ESIPFed>>.
 
 [NOTE] 
-The (pending) https://schema.org/LinkRole[LinkRole] class can represent URL with an IANA link registry relation via https://schema.org/linkRelationship[linkRelationship].  This class does not have a `contentType` property however, therefore `MediaObject` and `DataDownload` are used instead.
+The (pending) https://schema.org/LinkRole[LinkRole] class can represent URL with an IANA link registry relation via https://schema.org/linkRelationship[linkRelationship].  This class does not have a `contentType` property however, therefore `MediaObject` and `DataDownload` can be used instead.
+
+.LinkRole encoding example
+[source,json]
+----
+{
+	"@context": "https://schema.org",
+	"@type": "Dataset",
+	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
+	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
+	"url": [
+		{
+			"@type": "LinkRole",
+			"url": "https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing?text=landsat+tm+etm",
+			"name": "Landing page",
+			"linkRelationship": "describedby"
+		},
+		{
+			"@type": "LinkRole",
+			"url": "http://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC?httpAccept=application/vnd.iso.19139-2%2Bxml",
+			"name": "ISO 19139-2 metadata",
+			"linkRelationship": "alternate"
+		}
+	]
+}
+----
+
 
 [#table_iana_relation,reftext='{table-caption} {counter:table-num}']
 .IANA Relations
