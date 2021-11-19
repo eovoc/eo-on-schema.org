@@ -1529,7 +1529,7 @@ A list of Related URL properties is given in <<table_object_relatedurl>>.
 
 a| url +
 ~$.url~
-| URL or the resource, e.g. landing page for the collection.
+| URL of the resource, e.g. landing page for the collection.
 | Range: URL
 | Zero or more (optional)
 
