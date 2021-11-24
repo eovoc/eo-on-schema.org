@@ -1,0 +1,196 @@
+@startuml
+
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+skinparam class {
+BorderColor Black
+}
+
+'skinparam enum {
+'BackgroundColor LightYellow
+'BorderColor Black
+'ArrowColor Black
+'linetype Ortho
+
+'}
+
+hide class circle
+hide class attributes  
+
+left to right direction
+
+class ListItemShape <<NodeConditions>> #LightYellow {
+'    IRI: "schema:ListItemShape"
+    appliesOn class(schema:ListItem)
+}
+
+class DataIdentificationShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Dataset)
+}
+
+class ResourceDatesShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Dataset)
+}
+
+class ResourceConstraintsShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Dataset)
+}
+
+class DescriptiveKeywordsShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Dataset)
+}
+
+class ContactShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Contact)
+}
+
+class PropertyValueShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:PropertyValue)
+}
+
+class OrganizationShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Organization)
+}
+
+class PostalAddressShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:PostalAddress)
+}
+
+class PersonShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Person)
+}
+
+class RoleShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Role)
+}
+
+class CreativeWorkShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:CreativeWork)
+}
+
+class DefinedTermShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:DefinedTerm)
+}
+
+class PlaceShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Place)
+}
+
+class GeoShapeShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:GeoShape)
+}
+
+class SpatialInformationShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Dataset)
+}
+
+class RelatedUrlShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Dataset)
+}
+
+class AcquisitionInformationShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Dataset)
+}
+
+class AdditionalInformationShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Dataset)
+}
+
+class GeoCoordinatesShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:GeoCoordinates)
+}
+
+class LinkRoleShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:LinkRole)
+}
+
+class MediaObjectShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:MediaObject)
+}
+
+class ActionShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Action)
+    appliesOn class(schema:SearchAction)
+    appliesOn class(schema:CreateAction)
+    appliesOn class(schema:UseAction)
+}
+
+class EntryPointShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:EntryPoint)
+}
+
+class SearchActionShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:SearchAction)
+}
+
+class CreateActionShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:CreateAction)
+}
+
+class PropertyValueSpecificationShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:PropertyValueSpecification)
+}
+
+class LanguageShape <<NodeConditions>> #LightYellow {
+    appliesOn class(schema:Language)
+}
+
+class InLanguageShape <<NodeConditions>> #LightYellow {
+    appliesOn subjectsOf(schema:inLanguage)
+}
+
+' show "sh:NodeShape" attributes
+
+class "sh:NodeShape" #LightYellow {
+    IRI sh:NodeShape
+}
+
+
+DataIdentificationShape -up-|> "sh:NodeShape"
+ResourceDatesShape -up-|> "sh:NodeShape"
+AcquisitionInformationShape -up-|> "sh:NodeShape"
+AdditionalInformationShape -up-|> "sh:NodeShape"
+DescriptiveKeywordsShape -up-|> "sh:NodeShape"
+SpatialInformationShape -up-|> "sh:NodeShape"
+ResourceConstraintsShape -up-|> "sh:NodeShape"
+
+ListItemShape --|> "sh:NodeShape"
+PropertyValueShape --|> "sh:NodeShape"
+ContactShape -up-|> "sh:NodeShape"
+OrganizationShape --|> "sh:NodeShape"
+PostalAddressShape -up-|> "sh:NodeShape"
+PersonShape --|> "sh:NodeShape"
+RoleShape -up-|> "sh:NodeShape"
+
+CreativeWorkShape -up-|> "sh:NodeShape"
+
+PlaceShape --|> "sh:NodeShape"
+GeoShapeShape -up-|> "sh:NodeShape"
+GeoCoordinatesShape --|> "sh:NodeShape"
+RelatedUrlShape -up-|> "sh:NodeShape"
+LinkRoleShape --|> "sh:NodeShape"
+MediaObjectShape -up-|> "sh:NodeShape"
+ActionShape --|> "sh:NodeShape"
+SearchActionShape -up-|> "sh:NodeShape"
+CreateActionShape --|> "sh:NodeShape"
+EntryPointShape --|> "sh:NodeShape"
+LanguageShape --|> "sh:NodeShape"
+InLanguageShape --|> "sh:NodeShape"
+DefinedTermShape --|> "sh:NodeShape"
+PropertyValueSpecificationShape --|> "sh:NodeShape"
+
+
+@enduml
