@@ -3140,6 +3140,15 @@ The Web page https://schema.org/docs/howwework.html provides a https://schema.or
 
 * https://github.com/eovoc/eo-on-schema.org/blob/main/series/docs/jsonldcontext.json[jsonldcontext.json]
 
+=== SHACL
+The Shapes Constraint Language <<SHACL>> allows defining shape graphs to validate data graphs satisfying a set of conditions as expressed in this document.  The ShapeUML <<ShapeUML>> diagram below depicts a set of SHACL node shapes that correspond to the <<4-eo-collections-encoding, EO Collections encoding>>.
+
+[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+.SHACL node shapes for EO Collection Encoding
+image::diagrams/shacl-nodeshapes-collections.png[align="center"]
+
+The corresponding example shape graph is available at https://github.com/eovoc/eo-on-schema.org/blob/main/series/docs/shacl-nodeshapes-collections.ttl[shacl-nodeshapes-collections.ttl]
+
 [appendix]
 = Property Mapping
 
