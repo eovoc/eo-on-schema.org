@@ -2637,7 +2637,7 @@ A granule or product
 .EarthObservation Schema
 image::diagrams/diagram-EarthObservation.png[align="center"]
 
-.EarthObservation SHACL shape
+.EarthObservation SHACL Shape
 [source,turtle]
 ----
 eoshacl:EOEarthObservationShape
@@ -2787,6 +2787,17 @@ endif::[]
 .VerticalSpatialDomain Schema
 image::diagrams/diagram-VerticalSpatialDomain.png[align="center"]
 
+.VerticalSpatialDomain Shape
+[source,turtle]
+----
+eoshacl:EOVerticalSpatialDomainShape
+	a sh:NodeShape ;
+	sh:targetClass schema:VerticalSpatialDomain ;   # applies to all schema:VerticalSpatialDomain
+	sh:node eoshacl:QuantitativeValueShape ;
+	sh:ignoredProperties ( rdf:type schema:maxValue schema:minValue schema:unitText ) ;
+	sh:closed true .
+----
+
 .VerticalSpatialDomain encoding example
 [source,json]
 ----
@@ -2811,6 +2822,67 @@ endif::[]
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .OrbitParameters Schema
 image::diagrams/diagram-OrbitParameters.png[align="center"]
+
+.OrbitParameters Shape
+[source,turtle]
+----
+eoshacl:EOOrbitParametersShape
+	a sh:NodeShape ;
+	sh:targetClass schema:OrbitParameters ;   # applies to all schema:OrbitParameters
+	sh:closed false ;
+
+	sh:property [
+		sh:path schema:orbitDirection ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "ASCENDING" "DESCENDING" )
+	] ;
+	sh:property [
+		sh:path schema:lastOrbitDirection ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "ASCENDING" "DESCENDING" )
+	] ;
+	sh:property [
+		sh:path schema:orbitDuration ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:orbitNumber ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:minInclusive 0 ;
+		sh:datatype xsd:integer
+	] ;
+	sh:property [
+		sh:path schema:lastOrbitNumber ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:minInclusive 0 ;
+		sh:datatype xsd:integer
+	] ;
+	sh:property [
+		sh:path schema:ascendingNodeDate ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string   # schema:DateTime 
+	] ;
+	sh:property [
+		sh:path schema:ascendingNodeLongitude ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:maxInclusive 180 ;
+		sh:minInclusive -180 ;
+		sh:or (
+			[ sh:datatype xsd:integer ]
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+		)
+	] .
+----
 
 .OrbitParameters encoding example
 [source,json]
