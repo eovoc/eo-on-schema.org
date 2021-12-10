@@ -2835,8 +2835,11 @@ image::diagrams/diagram-AcquisitionInformation.png[align="center"]
 		"antennaLookDirection": "RIGHT",
 		"acquisitionAngles": {
 			"@type": "AcquisitionAngles", 
-			"minimumIncidenceAngle": 19.6,
-			"maximumIncidenceAngle": 9.6,
+			"incidenceAngle": {
+				"@type": "QuantitativeValue",
+				"maxValue": 19.6,
+				"minValue": 9.6
+			},
 			"incidenceAngleVariation": 9.6
 		}
 	}
@@ -2959,9 +2962,12 @@ image::diagrams/diagram-AcquisitionParameters.png[align="center"]
 	"orbitDirection": "DESCENDING",
 	"antennaLookDirection": "RIGHT",
 	"acquisitionAngles": {
-		"minimumIncidenceAngle": "19.6",
-		"maximumIncidenceAngle": "9.6",
-		"incidenceAngleVariation": "9.6"
+		"incidenceAngle": {
+			"@type": "QuantitativeValue",
+			"maxValue": 19.6,
+			"minValue": 9.6
+		},
+		"incidenceAngleVariation": 9.6
 	},
 	"operationalMode": "IM",
 	"polarisationMode": "S",
@@ -2996,10 +3002,10 @@ image::diagrams/diagram-AcquisitionAngles.png[align="center"]
 	
 	"incidenceAngle": {
 		"@type": "QuantitativeValue",
-		"maxValue": "19.6",
-		"minValue": "9.6",
+		"maxValue": 19.6,
+		"minValue": 9.6
 	},
-	"incidenceAngleVariation": "9.6"
+	"incidenceAngleVariation": 9.6
 }
 ----
 
