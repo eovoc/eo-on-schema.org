@@ -2670,8 +2670,7 @@ eoshacl:EOEarthObservationShape
 	] ;
 	sh:property [
 		sh:path schema:acquisitionInformation ;
-	  	sh:minCount 0 ;
-	  	sh:maxCount 1 ;
+	  	sh:minCount 1 ;
 		sh:class schema:AcquisitionInformation 
 	] ;
 	sh:property [
@@ -2682,12 +2681,11 @@ eoshacl:EOEarthObservationShape
 	] ;
 	sh:property [
 		sh:path schema:acquisitionStatus ;
-	  	sh:minCount 0 ;
+	  	sh:minCount 1 ;
 	  	sh:maxCount 1 ;
 		sh:datatype xsd:string ;
 		sh:in (  "ARCHIVED" "ACQUIRED" "CANCELLED" "FAILED" "PLANNED" "POTENTIAL" "REJECTED" "QUALITYDEGRADED" )
 	] .
-
 ----
 
 .EarthObservation encoding example
