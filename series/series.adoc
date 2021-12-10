@@ -2744,8 +2744,8 @@ image::diagrams/diagram-VerticalSpatialDomain.png[align="center"]
 	"@context": "https://schema.org/",
 	"@type": "VerticalSpatialDomain",       
 	
-	"maxValue": "50000",
-	"minValue": "40000",
+	"maxValue": 50000,
+	"minValue": 40000,
 	"unitText": "m"
 }
 ----
@@ -2768,11 +2768,11 @@ image::diagrams/diagram-OrbitParameters.png[align="center"]
 {
 	"@context": "https://schema.org/",
 	"@type": "OrbitParameters",
-	"orbitNumber": "20187",
-	"lastOrbitNumber": "20187",  
+	"orbitNumber": 20187,
+	"lastOrbitNumber": 20187,  
 	"orbitDirection": "DESCENDING",
 	"ascendingNodeDate": "2014-01-28T14:01:25Z",
-	"ascendingNodeLongitude": "74.784284"
+	"ascendingNodeLongitude": 74.784284
 }
 ----
 
