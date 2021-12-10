@@ -2830,14 +2830,14 @@ image::diagrams/diagram-AcquisitionInformation.png[align="center"]
 		
 		"acquisitionType": "NOMINAL",
 		"acquisitionSubType": "DEFAULT",
-		"orbitNumber": "1316",
+		"orbitNumber": 1316,
 		"orbitDirection": "DESCENDING",
 		"antennaLookDirection": "RIGHT",
 		"acquisitionAngles": {
 			"@type": "AcquisitionAngles", 
-			"minimumIncidenceAngle": "19.6",
-			"maximumIncidenceAngle": "9.6",
-			"incidenceAngleVariation": "9.6"
+			"minimumIncidenceAngle": 19.6,
+			"maximumIncidenceAngle": 9.6,
+			"incidenceAngleVariation": 9.6
 		}
 	}
 }
@@ -2955,7 +2955,7 @@ image::diagrams/diagram-AcquisitionParameters.png[align="center"]
 	
 	"acquisitionType": "NOMINAL",
 	"acquisitionSubType": "DEFAULT",
-	"orbitNumber": "1316",
+	"orbitNumber": 1316,
 	"orbitDirection": "DESCENDING",
 	"antennaLookDirection": "RIGHT",
 	"acquisitionAngles": {
