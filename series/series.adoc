@@ -3182,6 +3182,47 @@ endif::[]
 .QualityInformation Schema
 image::diagrams/diagram-QualityInformation.png[align="center"]
 
+.QualityInformation Shape
+[source,turtle]
+----
+eoshacl:EOPQualityInformationShape
+	a sh:NodeShape ;
+	sh:targetClass schema:QualityInformation ;   # applies to all schema:QualityInformation
+	
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+
+	sh:property [
+		sh:path schema:qualityStatus ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:qualityDegradation ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:maxInclusive 100 ;
+		sh:minInclusive 0 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:qualityDegradationQuotationMode ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:qualityDegradationTag ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] .
+----
+
 .QualityInformation encoding example
 [source,json]
 ----
@@ -3189,7 +3230,7 @@ image::diagrams/diagram-QualityInformation.png[align="center"]
 	"@context": "https://schema.org/",
 	"@type": "QualityInformation",       
 	
-	"qualityDegradation": "75",
+	"qualityDegradation": 75,
 	"qualityStatus": "DEGRADED",
 	"qualityDegradationQuotationMode": "AUTOMATIC",
 	"qualityDegradationTag": "GEOLOCATION"
