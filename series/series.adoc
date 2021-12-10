@@ -2637,6 +2637,58 @@ A granule or product
 .EarthObservation Schema
 image::diagrams/diagram-EarthObservation.png[align="center"]
 
+.EarthObservation SHACL shape
+[source,turtle]
+----
+eoshacl:EOEarthObservationShape
+	a sh:NodeShape ;
+	sh:targetClass schema:EarthObservation ;   # applies to all schema:EarthObservation
+	# Must respect all shapes that have as explicit targetClass 'Dataset'.
+	sh:node eoshacl:ResourceConstraintsShape ;
+	sh:node eoshacl:AcquisitionInformationShape ;
+	sh:node eoshacl:GranuleIdentificationShape ;
+
+	sh:closed false ;
+
+	sh:property [
+		sh:path schema:parentIdentifier ;
+	  	sh:minCount 1 ;
+	  	sh:maxCount 1 ;
+	  	sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:datatype xsd:string ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:available ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+	  	sh:or (
+			[ sh:datatype schema:DateTime ]
+			[ sh:datatype xsd:string ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:acquisitionInformation ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:AcquisitionInformation 
+	] ;
+	sh:property [
+		sh:path schema:productInformation ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:ProductInformation
+	] ;
+	sh:property [
+		sh:path schema:acquisitionStatus ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "ARCHIVED" "ACQUIRED" "CANCELLED" "FAILED" "PLANNED" "POTENTIAL" "REJECTED" "QUALITYDEGRADED" )
+	] .
+
+----
 
 .EarthObservation encoding example
 [source,json]
