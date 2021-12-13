@@ -3977,7 +3977,11 @@ The Shapes Constraint Language <<SHACL>> allows defining shape graphs to validat
 .SHACL node shapes for EO Collection Encoding
 image::diagrams/shacl-nodeshapes-collections.png[align="center"]
 
-The corresponding example shape graph is available at https://github.com/eovoc/eo-on-schema.org/blob/main/series/shacl/shacl-nodeshapes-collections.ttl[shacl-nodeshapes-collections.ttl]
+The corresponding shape graphs are available at:
+
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/shacl/shacl-collection.ttl[shacl-collection.ttl]
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/shacl/shacl-granule.ttl[shacl-granule.ttl]
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/shacl/shacl-granule-extension.ttl[shacl-granule-extension.ttl]
 
 [appendix]
 = Property Mapping
