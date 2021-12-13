@@ -1,0 +1,1094 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dctype: <http://purl.org/dc/dcmitype/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix eoshacl: <http://eovoc.esa.int/eoshacl#> .
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# <http://eovoc.esa.int/eoshacl#> owl:imports <http://datashapes.org/dash.ttl> .
+
+#
+#  Note: to consume schema.org encoding as JSON-LD, the context has to be provided in the data file.
+#         
+# "@context": "https://schema.org/docs/jsonldcontext.json".
+# "@context": "https://eovoc.spacebel.be//schema-org/docs/jsonldcontext.json",
+#
+
+# 
+#  EO Collections Encoding
+#
+
+#
+#  §4.1 Metadata Information
+#
+
+
+eoshacl:ListItemShape
+	a sh:NodeShape ;
+	sh:targetClass schema:ListItem ;   # applies to all schema:ListItem
+	sh:closed false ;
+	sh:property [
+		sh:path schema:encodingFormat ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+	  	sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:datatype xsd:string ]
+		)
+	] ;
+
+    # optional schema:inLanguage
+
+   	sh:property [
+	  	sh:path schema:dateCreated ; 
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 
+   	] ;
+
+    	sh:property [
+	  	sh:path schema:dateModified ;
+	  	sh:minCount 1 ;
+	  	sh:maxCount 1 
+	] ;
+
+	sh:property [
+		sh:path schema:datePublished ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] .
+
+
+eoshacl:DateRangeShape  #  shape for datePublished, etc. range.
+	a sh:NodeShape ;
+	sh:targetObjectsOf schema:dateModified ;
+	sh:targetObjectsOf schema:datePublished ;
+	sh:targetObjectsOf schema:dateCreated ;    
+	
+	# sh:resultMessage "Value does not correspond to expected range." ;
+	sh:closed false ;
+	sh:minLength 10 ;  # format: 2021-12-08
+	sh:maxLength 24 ;  # format: 2020-09-29T11:07:54.000Z
+	sh:or (
+			[ sh:datatype xsd:dateTime ]
+			[ sh:datatype xsd:date ]
+			[ sh:datatype schema:Date ]
+			[ sh:datatype schema:DateTime ]
+	) .
+	
+
+#
+#  4.2 Data Identification
+#
+
+
+#eoshacl:CollectionDatasetShape
+#    a sh:NodeShape ;
+#	sh:target [
+#		a dash:HasValueTarget ;  # applies to all schema:Dataset
+#		dash:predicate schema:additionalType ;
+#		dash:object dctype:Collection;
+#	] ;
+#    sh:property [
+#		a sh:PropertyShape ;
+#        sh:path schema:collection ;
+#        sh:datatype xsd:string ;
+#        sh:name "collection" ;
+#        sh:minCount 1       
+#    ] .
+	
+
+eoshacl:DataIdentificationShape
+    a sh:NodeShape ;
+    sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+    sh:property [
+        sh:path schema:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1       
+    ] ;
+  
+    sh:property [
+        sh:path schema:description ;
+        sh:datatype xsd:string ;
+        sh:name "description" ;
+        sh:minCount 1 
+   	] ;
+ 
+    sh:property eoshacl:IdentifierPropertyShape;
+
+    # additionalType is to include the constant <http://purl.org/dc/dcmitype/>
+    sh:property [
+       sh:path schema:additionalType ;
+       sh:nodeKind sh:IRI ;  # ?
+       sh:qualifiedValueShape [
+          sh:hasValue dctype:Collection
+       ] ;
+       sh:qualifiedMinCount   1 ;
+       sh:qualifiedMaxCount   1 ;
+    ];
+
+   	sh:property [
+       sh:path schema:alternateName ;
+       sh:datatype xsd:string ;
+       sh:minCount 0 ;
+   	] ;
+
+   	sh:property [
+       sh:path schema:citation ;
+       sh:datatype xsd:string ;
+       sh:minCount 0 ;
+   	] ;
+
+   	# optional schema:inLanguage
+
+   	sh:property [
+       	sh:path schema:subjectOf ;    
+       	sh:minCount 1 ;
+       	sh:or (
+	   		[ sh:class schema:ListItem ]
+	   		[ sh:class schema:MediaObject ]
+		)
+   	] ;
+
+   	sh:property [
+       	sh:path schema:publishingPrinciples ; 
+       	sh:name "publishingPrinciples" ;   
+       	sh:description "An established standard to which the resource conforms." ;
+       	sh:minCount 0 ;
+       	sh:or (
+	   		[ sh:nodeKind sh:IRI ]
+	   		[ sh:class schema:CreativeWork ]
+		)
+	] ;
+
+   	sh:property [
+       	sh:path schema:version ; 
+       	sh:name "version" ;   
+       	sh:minCount 0 ;
+       	sh:maxCount 1 ;
+       	# schema:Number or schema:Text
+       	sh:or (
+	   		[ sh:datatype xsd:string ]
+	   		[ sh:datatype xsd:double ]
+	   		[ sh:datatype xsd:integer ]
+		)
+   	] ;
+
+   	sh:property [
+       	sh:path schema:contactPoint ;
+       	sh:node eoshacl:OrganizationShape ;
+   	] .
+
+
+#
+#  4.2.1 Resource Dates 
+#
+
+eoshacl:ResourceDatesShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+  	sh:closed false ;
+
+	sh:property [
+		sh:path schema:dateCreated ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;	 
+	sh:property [
+		sh:path schema:dateModified ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:datePublished ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:temporalCoverage ;
+		sh:datatype xsd:string ;
+		sh:minCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:dateTime ]
+		)
+	] .
+
+
+
+#
+#  4.2.2 PropertyValue
+#
+
+eoshacl:PropertyValueShape
+	a sh:NodeShape ;
+	sh:targetClass schema:PropertyValue ;  # applies to all schema:PropertyValue
+	# Be stricter than schema.org
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	sh:property [
+		sh:path schema:value ;
+		sh:minLength 1 ;    
+		sh:minCount 1 ;
+		# sh:maxCount 1 ;                  # Multiple values can be used for "schema:additionalProperty"
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:url ;
+		sh:nodeKind sh:IRI ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:propertyID ;
+		sh:datatype xsd:string ;         # According to schema.org, should be schema:URL.
+		sh:minCount 1 ;
+		sh:maxCount 1 
+	] .
+
+
+#
+#  4.2.3 Contact
+#
+
+eoshacl:ContactShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+  	sh:closed false ;
+  	sh:property [
+       	sh:path schema:author ;
+       	sh:minCount 0 ;
+#       	sh:or (
+#	   		[ sh:class schema:Organization ]
+#	   		[ sh:class schema:Person ]
+#	   		[ sh:class schema:Role ]
+#		)
+  	] ;
+  	sh:property [
+       	sh:path schema:creator ;
+       	sh:minCount 0 ;
+#       	sh:or (
+#	   		[ sh:class schema:Organization ]
+#	   		[ sh:class schema:Person ]
+#	   		[ sh:class schema:Role ]
+#		)
+  	] ;
+  	sh:property [
+       	sh:path schema:contributor ;
+       	sh:minCount 0 ;
+#		sh:or (
+#		   	[ sh:class schema:Organization ]
+#	   		[ sh:class schema:Person ]
+#	   		[ sh:class schema:Role ]
+#		)
+  	] ;
+  	sh:property [
+       	sh:path schema:provider ;
+       	sh:minCount 0 ;
+       	# replace by ?  sh:node eoshacl:PersonOrOrganisationShape ;
+#       sh:or (
+#	   		[ sh:class schema:Organization ]
+#	   		[ sh:class schema:Person ]
+#		)
+  	] ;
+  	sh:property [
+    	sh:path schema:publisher ;
+       	sh:minCount 0 ;
+#       sh:or (
+#	   		[ sh:class schema:Organization ]
+#	   		[ sh:class schema:Person ]
+#		)
+ 	] .
+
+
+eoshacl:ActorRangeShape  #  shape for "author", "creator" etc. range.
+	a sh:NodeShape ;
+	sh:targetObjectsOf schema:author ; 
+	sh:targetObjectsOf schema:creator ;
+	sh:targetObjectsOf schema:contributor ;
+	sh:targetObjectsOf schema:provider ;
+	sh:targetObjectsOf schema:publisher ;
+
+	# sh:name "schema:author, creator range" ;
+	# sh:resultMessage "Value does not correspond to expected range." ;
+	sh:closed false ;
+	sh:property [
+		sh:path rdf:type ;
+		sh:minCount 1 ; 
+		sh:in ( schema:Organization schema:Person schema:Role )
+	] .
+
+
+
+#
+#  4.2.4 Organization
+#
+
+eoshacl:OrganizationShape
+	a sh:NodeShape ;
+   	sh:targetClass schema:Organization ;  # applies to all schema:Organization
+	sh:closed true ;
+   	sh:ignoredProperties ( rdf:type schema:sameAs  ) ;
+
+  	sh:property [
+    	sh:path schema:name ;
+    	sh:datatype xsd:string ;
+      	sh:minCount 0 
+	] ;
+   	sh:property [
+       	sh:path schema:address ;
+       	sh:class schema:PostalAddress ;
+       	sh:minCount 0 
+	] ;
+	sh:property [
+      	sh:path schema:telephone ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 0 
+ 	] ;
+	sh:property [
+    	sh:path schema:faxNumber ;
+     	sh:datatype xsd:string ;
+      	sh:minCount 0 
+  	] ;
+  	sh:property [
+      	sh:path schema:email ;
+      	sh:datatype xsd:string ;
+      	sh:minCount 0 
+  	] ;
+  	sh:property [
+      	sh:path schema:url ;
+      	sh:nodeKind sh:IRI ;
+       	sh:minCount 0 
+  	] .
+
+
+eoshacl:PostalAddressShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:PostalAddress ; # applies to all schema:PostalAddress
+  	sh:closed false ;
+  	sh:property [
+      	sh:path schema:addressCountry ;
+      	sh:datatype xsd:string ;
+      	sh:minCount 1 ;
+  	] ;
+  	sh:property [
+     	sh:path schema:addressLocality ;
+      	sh:datatype xsd:string ;
+  	] ;
+  	sh:property [
+      	sh:path schema:streetAddress ;
+      	sh:datatype xsd:string ;
+  	] ;
+  	sh:property [
+      	sh:path schema:postalCode ;
+      	sh:datatype xsd:string ;
+  	] .
+
+#
+#  4.2.5 Person
+#
+
+eoshacl:PersonShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Person ;  # applies to all schema:Person
+
+  	sh:property [
+      	sh:path schema:identifier ;
+      	sh:name "identifier" ;
+      	sh:minCount 0 ;
+      	# simplified definition matching §4.2.5
+      	sh:class schema:PropertyValue ;
+#       sh:or (
+#			[
+#				sh:datatype xsd:string ;
+#			]
+#			[
+#				sh:class schema:PropertyValue ;
+#			]
+#                       [
+#				sh:nodeKind sh:IRI ;
+#			]
+#		)
+  	] ;
+
+  	sh:property [
+      	sh:path schema:name ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 0 ;
+  	] ;
+  	sh:property [
+      	sh:path schema:familyName ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 0 ;
+   	] ;
+  	sh:property [
+      	sh:path schema:givenName ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 0 ;
+  	] ;
+  	sh:property [
+      	sh:path schema:address ;
+      	sh:class schema:PostalAddress ;
+       	sh:minCount 0 ;
+  	] ;
+  	sh:property [
+      	sh:path schema:telephone ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 0 ;
+  	] ;
+  	sh:property [
+      	sh:path schema:faxNumber ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 0 ;
+  	] ;
+  	sh:property [
+      	sh:path schema:email ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 0 ;
+  	] ;
+  	sh:property [
+      	sh:path schema:url ;
+      	sh:nodeKind sh:IRI ;
+       	sh:minCount 0 ;
+  	] ;
+  	sh:property [
+      	sh:path schema:sameAs ;
+      	sh:nodeKind sh:IRI ;
+       	sh:minCount 0 ;
+  	] .
+
+
+#
+#  4.2.6 Role
+#
+
+eoshacl:RoleShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Role ;  # applies to all schema:Role
+  	sh:closed false ;
+ 	sh:property [
+      	sh:path schema:roleName ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 1 ;
+ 	] ;
+ 	sh:property [
+      	sh:path schema:description ;
+      	sh:datatype xsd:string ;
+       	sh:minCount 0 ;
+ 	] ;
+
+ 	sh:or (
+		[
+        	sh:path schema:author ;
+         	sh:minCount 1 ;
+#        	sh:or (
+#	     		[ sh:class schema:Organization ]
+#	     		[ sh:class schema:Person ]
+#	   		)
+      	]
+
+		[
+	  		sh:path schema:creator ;
+       		sh:minCount 1 ;
+#       	sh:or (
+#	  	     	[ sh:class schema:Organization ]
+#	     		[ sh:class schema:Person ]
+#	   		)
+		]
+
+		[
+	  		sh:path schema:contributor ;
+       		sh:minCount 1 ;
+#       	sh:or (
+#		     	[ sh:class schema:Organization ]
+#	     		[ sh:class schema:Person ]
+#	   		)
+		]
+
+		[
+	  		sh:path schema:publisher ;
+       		sh:minCount 1 ;
+#       	sh:or (
+#	   			[ sh:class schema:Organization ]
+#	     		[ sh:class schema:Person ]
+#	   		)
+		]
+
+		[
+	  		sh:path schema:provider ;
+       		sh:minCount 1 ;
+#       	sh:or (
+#	     		[ sh:class schema:Organization ]
+#	     		[ sh:class schema:Person ]
+#	   		)
+		]
+	) .
+
+#
+#  4.3 Resource Constraints
+#
+
+eoshacl:ResourceConstraintsShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+	sh:closed false ;
+	sh:property [
+		sh:path schema:license ;
+		sh:minCount 0 ;
+	
+		sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:class schema:CreativeWork ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:conditionsOfAccess ;
+		sh:datatype xsd:string ;
+		sh:minCount 0 ;
+	] .
+
+
+eoshacl:CreativeWorkShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreativeWork ;  # applies to all schema:CreativeWork (range of schema:license)
+	sh:closed false ;
+	sh:property [
+		sh:path schema:description ;
+		sh:datatype xsd:string ;
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+		sh:path schema:url ;
+		sh:nodeKind sh:IRI ;
+		sh:minCount 1 ;
+	] .
+
+#
+#  4.4 DescriptiveKeywords
+#
+
+eoshacl:DescriptiveKeywordsShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+  	sh:closed false ;
+  	sh:property [
+      	sh:path schema:keywords ;
+       	sh:minCount 0 ; 
+      	sh:or (
+	   		[
+	    		sh:datatype xsd:string ; 
+	   		]
+	   		[
+            	sh:class schema:DefinedTerm;
+	   		]
+		)
+  	] .
+
+#
+#  4.4.1 DefinedTerm
+#
+
+eoshacl:DefinedTermShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:DefinedTerm ;  # applies to all schema:DefinedTerm
+  	sh:closed false ;
+  	sh:property [
+      	sh:path schema:name ;
+       	sh:datatype xsd:string ;
+       	sh:minCount 0 ; 
+      	sh:maxCount 1 ; 
+ 	] ;
+  	sh:property [
+     	sh:path schema:sameAs ;
+      	sh:nodeKind sh:IRI ;
+      	sh:minCount 0 ; 
+ 	] ;
+ 	sh:property [
+      	sh:path schema:inDefinedTermSet ;
+      	sh:nodeKind sh:IRI ;
+     	sh:minCount 0 ; 
+      	sh:maxCount 1 ; 
+  	] ;
+ 	sh:property [
+      	sh:path schema:additionalType ;
+      	sh:nodeKind sh:IRI ;
+       	sh:minCount 0 ; 
+       	sh:maxCount 1 ;
+ 	] .
+
+
+#
+#  4.5 SpatialInformation
+#
+
+eoshacl:SpatialInformationShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+  	sh:closed false ;
+ 	sh:property [
+      	sh:path schema:spatialCoverage ;
+      	sh:class schema:Place;
+       	sh:minCount 1  
+	] .
+
+eoshacl:PlaceShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Place ;    # applies to all schema:Place
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	
+	sh:property [
+		sh:path schema:additionalProperty ;
+		sh:class schema:PropertyValue;
+		sh:minCount 0  
+	] ;
+	sh:property [
+		sh:path schema:geo ;
+		sh:minCount 1 ; 
+		sh:or (
+			[ sh:class schema:GeoCoordinates ]
+			[ sh:class schema:GeoShape ]
+		)
+	] .
+
+#
+#  4.5.1 GeoShape
+#
+
+eoshacl:GeoShapeShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:GeoShape ;   # applies to all schema:GeoShape
+  	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+ 	sh:property [
+    	sh:path schema:box ;
+     	sh:datatype xsd:string ;
+       	sh:minCount 0 
+  	] ;
+ 	sh:property [
+    	sh:path schema:polygon ;
+    	sh:datatype xsd:string ;
+      	sh:minCount 0  
+ 	] ;
+ 	sh:property [
+      	sh:path schema:line ;
+       	sh:datatype xsd:string ;
+       	sh:minCount 0  
+ 	] .
+
+
+#
+#  4.5.2 GeoCoordinates
+#
+
+eoshacl:GeoCoordinatesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:GeoCoordinates ;   # applies to all schema:GeoCoordinates
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	sh:property [
+		sh:path schema:latitude ;   
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:maxInclusive 90 ;
+		sh:minInclusive -90 ;
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		) 
+	] ;
+	sh:property [
+		sh:path schema:longitude ;
+		sh:minCount 0 ; 
+		sh:maxCount 1 ;
+		sh:maxInclusive 180 ;
+		sh:minInclusive -180 ;
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+
+	sh:property [
+		sh:path schema:elevation ;
+		sh:minCount 0 ; 
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] .
+
+
+#
+#  4.6 Related URL
+#
+
+eoshacl:RelatedUrlShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;   # applies to all schema:Dataset
+  	sh:closed false ;
+ 		sh:property [
+		sh:path schema:url ;       
+		sh:minCount 0 ;
+		sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:class schema:LinkRole ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:thumbnailUrl ;  
+		sh:nodeKind sh:IRI ; 
+		sh:minCount 0 
+	] ;
+	sh:property [
+		sh:path schema:potentialAction ; 
+		# how to indicate that any subclass of Action is allowed also without enumerating them ?
+		sh:minCount 0 ; 
+		sh:or (
+			[ sh:class schema:Action  ]
+			[ sh:class schema:SearchAction ]
+			[ sh:class schema:CreateAction ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:distribution ;  
+		sh:class schema:DataDownload ; 
+		sh:minCount 0 
+	] ;
+	sh:property [
+		sh:path schema:subjectOf ;  
+		sh:minCount 1 ;
+		sh:or (
+			[ sh:class schema:MediaObject]
+			[ sh:class schema:ListItem ]     # See DataIdentificationShape
+		)
+	] .
+
+
+eoshacl:LinkRoleShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:LinkRole ;   # applies to all schema:LinkRole
+  	sh:closed false ;
+ 	sh:property [
+     	sh:path schema:url ;   
+      	sh:nodeKind sh:IRI ;     
+     	sh:minCount 1 
+  	] ;
+  	sh:property [
+      	sh:path schema:name ;   
+      	sh:datatype xsd:string ;     
+     	sh:minCount 0 
+  	] ;
+  	sh:property [
+      	sh:path schema:linkRelationship ;   
+      	sh:datatype xsd:string ;     
+     	sh:minCount 1 
+ 	] .
+
+
+#
+#  4.6.1 MediaObject
+#
+
+eoshacl:MediaObjectShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:MediaObject ;   # applies to all schema:MediaObject
+ 	sh:targetClass schema:DataDownload ;  # applies to all schema:DataDownload 
+  	#  Not allowing additional properties to have stricter validation.
+	sh:closed true ;
+   	sh:ignoredProperties ( rdf:type schema:additionalType schema:inLanguage  ) ;
+
+	sh:property [
+		sh:path schema:contentUrl ;   
+		sh:nodeKind sh:IRI ;     
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+	  	sh:path schema:name ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 ;
+	] ;
+	sh:property [
+		sh:path schema:description ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 0 ;
+	] ;
+	sh:property [
+	  	sh:path schema:contentSize ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 ;
+	] ;
+	sh:property [
+	  	sh:path schema:encodingFormat ;        
+		sh:minCount 0 ;
+	  	sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:datatype xsd:string ]
+		)
+	] .
+
+
+eoshacl:DataDownloadShape
+  	a sh:NodeShape ;
+ 	sh:targetClass schema:DataDownload ;  	# applies to all schema:DataDownload 
+	sh:deactivated true ;					# specialisation of MediaObject 
+  	sh:closed false ;
+ 	sh:property [
+    	sh:path schema:contentUrl ;   
+      	sh:nodeKind sh:IRI ;     
+     	sh:minCount 1 ;
+  	] .
+
+
+#
+#  4.6.2 Action
+#
+
+
+eoshacl:ActionShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Action ;   # applies to all schema:Action including listed subclasses
+	sh:targetClass schema:SearchAction ;
+	sh:targetClass schema:CreateAction ;
+	sh:targetClass schema:UseAction ;
+
+	sh:closed false ;
+	sh:property [
+	  	sh:path schema:identifier ;        
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+	  	sh:or (
+			[ sh:datatype xsd:string ]
+			[	sh:nodeKind sh:IRI ]
+	  	)
+	] ;
+	sh:property [
+		sh:path schema:target ;
+		sh:minCount 0 ;
+		# sh:maxCount 1 ;
+		sh:or (
+			[ sh:class schema:EntryPoint ]
+			[ sh:datatype xsd:string ]
+		)
+	] .
+
+
+
+#
+#  EntryPoint
+#
+
+eoshacl:EntryPointShape
+	a sh:NodeShape ;
+	sh:targetClass schema:EntryPoint ;   # applies to all schema:EntryPoint
+	sh:closed true ;
+   	sh:ignoredProperties ( rdf:type ) ;
+
+	sh:property [
+	  	sh:path schema:identifier ;    
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	  	# range and multiplicity checked by schema:IdentifierPropertyShape
+	] ;
+	sh:property [
+	  	sh:path schema:description ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;
+	sh:property [
+	  	sh:path schema:contentType ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;   
+	sh:property [
+	  	sh:path schema:encodingType ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;
+	sh:property [
+	  	sh:path schema:httpMethod ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;
+	sh:property [
+	  	sh:path schema:urlTemplate ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 1 
+	] .
+
+#
+#  SearchAction
+#
+
+eoshacl:SearchActionShape
+	a sh:NodeShape ;
+	sh:targetClass schema:SearchAction ;   # applies to all schema:SearchAction
+
+	sh:closed true ;
+   	sh:ignoredProperties ( rdf:type schema:target ) ;
+	sh:property [
+		sh:path schema:query-input ;   
+		sh:class schema:PropertyValueSpecification ;     
+		sh:minCount 0 ;
+	] .
+
+
+#
+#  PropertyValueSpecification
+#
+
+eoshacl:PropertyValueSpecificationShape
+	a sh:NodeShape ;
+	sh:targetClass schema:PropertyValueSpecification ;   # applies to all schema:PropertyValueSpecification
+
+	sh:closed true ;
+   	sh:ignoredProperties ( rdf:type ) ;
+
+	sh:property [
+		sh:path schema:valueName ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+		sh:path schema:description ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 0 ;
+	] ;   
+	sh:property [
+		sh:path schema:valueRequired ;   
+		sh:datatype xsd:boolean ;     
+		sh:minCount 0 ;
+	] ; 
+	sh:property [
+		sh:path schema:valuePattern ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 0 ;
+	] .
+
+
+#
+#  4.7 AcquisitionInformation
+#
+
+eoshacl:AcquisitionInformationShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;   # applies to all schema:Dataset
+  	sh:closed false ;
+
+  	sh:property [
+		sh:path schema:measurementTechnique ;       
+		sh:minCount 0 ;
+	  	sh:or (
+	   		[	sh:nodeKind sh:IRI ]
+	   		[  	sh:datatype xsd:string ]
+		)
+ 	] ;
+ 	sh:property [
+	  	sh:path schema:potentialAction ; 
+	  	sh:minCount 0 ; 
+	 	sh:or (
+	   		[  	sh:class schema:CreateAction ]
+	   		[	sh:class schema:Action ]        # possible due to other Shape
+	   		[  	sh:class schema:SearchAction ]  # possible due to other Shape
+		)
+  	] .
+
+
+#
+#  CreateAction
+#
+
+eoshacl:CreateActionShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreateAction ;   # applies to all schema:CreateAction
+
+	# Be more strict than allowed by schema.org
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	sh:property [
+		sh:path schema:instrument ;        
+		sh:minCount 1 ;
+		sh:class schema:DefinedTerm     
+	] .
+
+
+#
+#  4.8 Additional Information
+#
+
+eoshacl:AdditionalInformationShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;   # applies to all schema:Dataset
+  	sh:closed false ;
+
+ 	sh:property [
+    	sh:path schema:additionalProperty ;       
+     	sh:minCount 0 ;
+      	sh:class schema:PropertyValue;
+  	] .
+
+
+#
+#  Language
+#
+
+
+eoshacl:LanguageShape
+  	a sh:NodeShape ;
+ 	sh:targetClass schema:Language ;  # applies to all schema:Language
+  	sh:closed false ;
+  	sh:property [
+    	sh:path schema:name ;
+     	sh:minLength 2;
+     	sh:maxLength 2;
+      	sh:datatype xsd:string ;
+      	sh:minCount 1 ;
+      	sh:maxCount 1 ;
+  	] .
+
+
+
+eoshacl:InLanguageShape
+  	a sh:NodeShape ;
+  	sh:targetSubjectsOf schema:inLanguage ;  # applies to all classes with this attribute
+  	sh:closed false ;
+  	sh:property [
+    	sh:path schema:inLanguage ;
+     	sh:minCount 1 ; # redundant as the same as the relation mentioned in sh:targetSubjectsOf
+      	sh:maxCount 1 ;
+      	sh:or (
+	   		[
+            	sh:nodeKind sh:IRI ;
+            	sh:class schema:Language
+	   		]
+	   		[
+            	sh:datatype xsd:string 
+	   		]
+		)
+  	] .
+
+
+#
+# Reusable (mandatory) property definitions
+#
+
+eoshacl:IdentifierPropertyShape
+	a sh:PropertyShape ;
+
+	sh:path schema:identifier ;
+	sh:minCount 1 ;
+	sh:or (
+		[ sh:datatype xsd:string ]
+		[ sh:class schema:PropertyValue ]
+		[ sh:nodeKind sh:IRI ]
+  	).
