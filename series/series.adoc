@@ -2445,6 +2445,60 @@ A granule or product is the finest granularity of data that can be independently
 .Granule Identification Schema
 image::diagrams/GranuleIdentification.png[align="center"]
 
+.GranuleIdentification Shape
+[source,turtle]
+----
+eoshacl:GranuleIdentificationShape
+	a sh:NodeShape ;
+	# sh:targetClass schema:Dataset ;       # applies to all schema:Dataset
+	sh:targetSubjectsOf schema:isPartOf ;   # applies to all classes with this attribute, thus not the parent class.
+
+	sh:property [
+		sh:path schema:name ;
+		sh:datatype xsd:string ;
+		sh:minCount 1       
+	] ; 
+	sh:property [
+		sh:path schema:description ;
+		sh:datatype xsd:string ;
+		sh:minCount 1 
+	] ;
+	sh:property eoshacl:IdentifierPropertyShape;
+	# additionalType is to include the constant <http://purl.org/dc/dcmitype/>
+   	sh:property [
+	  	sh:path schema:additionalType ;
+	  	sh:nodeKind sh:IRI ;  
+	  	sh:qualifiedValueShape [
+		  	sh:hasValue dctype:Dataset
+	  	] ;
+	  	sh:qualifiedMinCount   1 ;
+	  	sh:qualifiedMaxCount   1 ;
+	];
+   	sh:property [
+	   	sh:path schema:isPartOf ;
+	   	sh:minCount 1 ;
+   	] ;
+   	sh:property [
+	   	sh:path schema:includedInDataCatalog ;
+	   	sh:class schema:DataCatalog ;
+	   	sh:minCount 1 ;
+   	] ;
+   	sh:property [
+	   	sh:path schema:alternateName ;
+	   	sh:datatype xsd:string ;
+	   	sh:minCount 0 ;
+   	] ;
+   	# optional schema:inLanguage
+   	sh:property [
+	   	sh:path schema:subjectOf ;    
+	   	sh:minCount 1 ;
+	   	sh:or (
+			[ sh:class schema:ListItem  ]
+			[ sh:class schema:MediaObject ]
+		)
+	] .
+----
+
 A list of Granule Identification properties is given in <<table_object_granule>>.  All properties available for Data Identification (<<table_object_dataset>>) can be reused, but `additionalType` shall be set to `http://purl.org/dc/dcmitype/Dataset`.
 
 [#table_object_granule,reftext='{table-caption} {counter:table-num}']
@@ -2631,13 +2685,13 @@ ifndef::env-github[]
 === Earth Observation
 endif::[]
 
-A granule or product
+An `EarthObservation` represents an indoividual granule or product.
 
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .EarthObservation Schema
 image::diagrams/diagram-EarthObservation.png[align="center"]
 
-.EarthObservation SHACL Shape
+.EarthObservation Shape
 [source,turtle]
 ----
 eoshacl:EOEarthObservationShape
