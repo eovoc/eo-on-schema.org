@@ -2919,6 +2919,35 @@ endif::[]
 .AcquisitionInformation Schema
 image::diagrams/diagram-AcquisitionInformation.png[align="center"]
 
+.AcquisitionInformation Shape
+[source,turtle]
+----
+eoshacl:EOAcquisitionInformationShape
+	a sh:NodeShape ;
+	sh:targetClass schema:AcquisitionInformation ;   # applies to all schema:AcquisitionInformation
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+
+	sh:property [
+		sh:path schema:platform ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:Platform 
+	] ;
+	sh:property [
+		sh:path schema:sensor ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:Instrument 
+	] ;
+	sh:property [
+		sh:path schema:acquisitionParameters ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:AcquisitionParameters
+	] .
+----
+
 .AcquisitionInformation encoding example
 [source,json]
 ----
@@ -2980,6 +3009,37 @@ endif::[]
 .Platform Schema
 image::diagrams/diagram-Platform.png[align="center"]
 
+.Platform Shape
+[source,turtle]
+----
+eoshacl:EOPlatformShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Platform ;   # applies to all schema:Platform
+	sh:node eoshacl:DefinedTermShape ;
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type schema:sameAs schema:url schema:inDefinedTermSet schema:alternateName schema:termCode schema:additionalType ) ;
+
+	sh:property [
+		sh:path schema:name ;
+	  	sh:minCount 1 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string 
+	] ;
+	sh:property [
+		sh:path schema:serialNumber ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string 
+	] ;
+	sh:property [
+		sh:path schema:orbitType ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "LEO" "GEO" )
+	] .
+----
+
 .Platform encoding example
 [source,json]
 ----
@@ -3014,6 +3074,36 @@ endif::[]
 .Instrument Schema
 image::diagrams/diagram-Instrument.png[align="center"]
 
+.Instrument Shape
+[source,turtle]
+----
+eoshacl:EOInstrumentShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Instrument ;   # applies to all schema:Instrument
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type schema:sameAs schema:url schema:inDefinedTermSet schema:alternateName schema:termCode schema:additionalType ) ;
+
+	sh:property [
+		sh:path schema:name ;
+	  	sh:minCount 1 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string 
+	] ;
+	sh:property [
+		sh:path schema:description ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string 
+	] ;
+	sh:property [
+		sh:path schema:sensorType ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		# TBD: enums should become URI ?
+		sh:in (  "OPTICAL" "ATMOSPHERIC" "ALTIMETRIC"  "LIMB"  "RADAR" )
+	] .
+----
 
 .Instrument encoding example
 [source,json]
@@ -3047,6 +3137,31 @@ endif::[]
 .WavelengthInformation Schema
 image::diagrams/diagram-WavelengthInformation.png[align="center"]
 
+.WavelengthInformation Shape
+[source,turtle]
+----
+eoshacl:EOWavelengthInformationShape
+	a sh:NodeShape ;
+	sh:targetClass schema:WavelengthInformation ;   # applies to all schema:WavelengthInformation
+	sh:node eoshacl:QuantitativeValueShape ;
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type schema:value schema:minValue schema:maxValue ) ;
+
+	sh:property [
+		sh:path schema:spectralRange ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "INFRARED" "SWIR" "VISIBLE"  "LWIR"  "NIR"  "FIR"  "UV"  "MWIR" "MICROWAVE"  "SR_OTHER"  )
+	] ;
+	sh:property [
+		sh:path schema:wavelengthResolution ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:double 
+	] .
+----
+
 .WavelengthInformation encoding example
 [source,json]
 ----
@@ -3070,6 +3185,182 @@ endif::[]
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .AcquisitionParameters Schema
 image::diagrams/diagram-AcquisitionParameters.png[align="center"]
+
+.AcquisitionAngles Shape
+[source,turtle]
+----
+eoshacl:EOAcquisitionParametersShape
+	a sh:NodeShape ;
+	sh:targetClass schema:AcquisitionParameters ;   # applies to all schema:AcquisitionParameters
+	sh:node eoshacl:EOOrbitParametersShape ;        # check inherited properties
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type schema:value schema:minValue schema:maxValue schema:orbitDirection schema:lastOrbitDirection schema:orbitDuration schema:orbitNumber schema:lastOrbitNumber schema:ascendingNodeDate schema:ascendingNodeLongitude ) ;
+	
+	sh:property [
+		sh:path schema:location ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:VerticalSpatialDomain       # subclass of VirtualLocation
+	] ;
+	sh:property [
+		sh:path schema:acquisitionType ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "NOMINAL"  "CALIBRATION"  "ACQ_OTHER"  )
+	] ;
+	sh:property [
+		sh:path schema:acquisitionSubType ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string 
+	] ;
+	sh:property [
+		sh:path schema:startTimeFromAscendingNode ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:integer 
+	] ;
+	sh:property [
+		sh:path schema:completionTimeFromAscendingNode ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:integer 
+	] ;
+	sh:property [
+		sh:path schema:relativeOrbitNumber ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:integer 
+	] ;
+	sh:property [
+		sh:path schema:wrsLongitudeGrid ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:wrsLatitudeGrid ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:tileId ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:groundTrackUncertainty ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:cycleNumber ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:integer 
+	] ;
+	sh:property [
+		sh:path schema:antennaLookDirection ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "LEFT"  "RIGHT"  )
+	] ;
+	sh:property [
+		sh:path schema:acquisitionStation ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string 	
+	] ;
+	sh:property [
+		sh:path schema:acquisitionAngles ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:AcquisitionAngles 	
+	] ;
+	sh:property [
+		sh:path schema:operationalMode ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string 
+	] ;
+	sh:property [
+		sh:path schema:swathIdentifier ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string 
+	] ;
+	sh:property [
+		sh:path schema:polarisationMode ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "Q"  "S"  "D"  "T" "PM_UNDEFINED"  )
+	] ;
+	sh:property [
+		sh:path schema:polarisationChannels ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "HH_VV"  "HH_VH"  "VH_VV"  "HH" "VH"  "VV_HV"  "HH_HV"  "VV_VH"  "VH_HV"  "HH_HV_VH_VV"  "HV_VH"  "HV" "VV" "PC_UNDEFINED" )
+	] ;
+	sh:property [
+		sh:path schema:resolution ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:verticalResolution ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:wavelengths ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:WavelengthInformation 	
+	] ;
+	sh:property [
+		sh:path schema:measurementType ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "EMISSION"  "ABSORPTION" )
+	] ;
+	sh:property [
+		sh:path schema:dopplerFrequency ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:samplingRate ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] .
+----
 
 .AcquisitionParameters encoding example
 [source,json]
@@ -3115,6 +3406,132 @@ endif::[]
 .AcquisitionAngles Schema
 image::diagrams/diagram-AcquisitionAngles.png[align="center"]
 
+.AcquisitionAngles Shape
+[source,turtle]
+----
+eoshacl:EOAcquisitionAnglesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:AcquisitionAngles ;   # applies to all schema:AcquisitionAngles
+
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	
+	sh:property [
+		sh:path schema:illuminationAzimuthAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:illuminationZenithAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:illuminationElevationAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:incidenceAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:QuantitativeValue
+	] ;
+	sh:property [
+		sh:path schema:incidenceAngleVariation ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:acrossTrackIncidenceAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:alongTrackIncidenceAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:instrumentAzimuthAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:instrumentZenithAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:instrumentElevationAngle ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:pitch ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:yaw ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:roll ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] .
+----
+
 .AcquisitionAngles encoding example
 [source,json]
 ----
@@ -3143,6 +3560,88 @@ endif::[]
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .ProductInformation Schema
 image::diagrams/diagram-ProductInformation.png[align="center"]
+
+.ProductInformation Shape
+[source,turtle]
+----
+eoshacl:EOProductInformationShape
+	a sh:NodeShape ;
+	sh:targetClass schema:ProductInformation ;   # applies to all schema:ProductInformation
+	sh:shape schema:EOCoverageDescriptionShape ;
+	sh:shape schema:EOProcessingInformationShape ;
+	
+	sh:closed true ;
+	# ignore properties of the subclasses
+	sh:ignoredProperties ( rdf:type schema:cloudCover schema:snowCover schema:compositeType schema:processingMethod schema:processingMethodVersion schema:processingCenter schema:processingDate schema:processingLevel schema:processingMode  schema:processorName schema:softwareVersion schema:productContentsType ) ;
+
+	sh:property [
+		sh:path schema:productType ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:contentSize ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:statusSubType ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:statusDetail ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:availabilityTime ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  # schema:DateTime ? 
+	] ;
+	sh:property [
+		sh:path schema:timeliness ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  
+	] ;
+	# productgroupId as isPartOf 
+	sh:property [
+		sh:path schema:version ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  
+	] ;
+	sh:property [
+		sh:path schema:holdingArchive ;
+	  	sh:minCount 0 	
+	] ;
+	sh:property [
+		sh:path schema:archivingDate ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  # schema:DateTime ? 
+	] ;
+	sh:property [
+		# referenceSystemIdentifier encoded as additionalProperty
+		sh:path schema:additionalProperty ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:PropertyValue
+	] ;
+	sh:property [
+		sh:path schema:qualityInformation ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:class schema:QualityInformation 
+	] .
+----
+
 
 .ProductInformation encoding example
 [source,json]
@@ -3249,6 +3748,78 @@ endif::[]
 .ProcessingInformation Schema
 image::diagrams/diagram-ProcessingInformation.png[align="center"]
 
+.ProcessingInformation Shape
+[source,turtle]
+----
+eoshacl:EOProcessingInformationShape
+	a sh:NodeShape ;
+	sh:targetClass schema:ProcessingInformation ;   # applies to all schema:ProcessingInformation
+	sh:targetClass schema:ProductInformation ;      # parent class
+	sh:closed false ;
+
+	sh:property [
+		sh:path schema:compositeType ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string   # (actual schema:Duration)
+	] ;
+	sh:property [
+		sh:path schema:processingMethod ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	];
+	sh:property [
+		sh:path schema:processingMethodVersion ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:processingCenter ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string
+	] ;
+	sh:property [
+		sh:path schema:processingDate ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  # schema:DateTime ? 
+	] ; 
+	sh:property [
+		sh:path schema:processingLevel ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string ;
+		sh:in (  "1A"  "1B" "1C"  "2"  "3" )
+	] ;
+	sh:property [
+		sh:path schema:processingMode ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  
+	] ;
+	sh:property [
+		sh:path schema:processorName ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  
+	] ;
+	sh:property [
+		sh:path schema:softwareVersion ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  
+	] ;
+	sh:property [
+		sh:path schema:productContentsType ;
+	  	sh:minCount 0 ;
+		sh:class schema:DefinedTerm 
+	] .
+----
+
+
 .ProcessingInformation encoding example
 [source,json]
 ----
@@ -3276,6 +3847,39 @@ endif::[]
 .CoverageDescription Schema
 image::diagrams/diagram-CoverageDescription.png[align="center"]
 
+.CoverageDescription Shape
+[source,turtle]
+----
+eoshacl:EOCoverageDescriptionShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CoverageDescription ;   # applies to all schema:CoverageDescription
+	sh:targetClass schema:ProductInformation  ;   # parent class	
+	sh:closed false ;
+
+	sh:property [
+		sh:path schema:cloudCover ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:minInclusive 0 ;
+		sh:maxInclusive 100 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:snowCover ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:minInclusive 0 ;
+		sh:maxInclusive 100 ;
+		sh:or (
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] .
+----
+
 .CoverageDescription encoding example
 [source,json]
 ----
@@ -3283,8 +3887,8 @@ image::diagrams/diagram-CoverageDescription.png[align="center"]
 	"@context": "https://schema.org/",
 	"@type": "CoverageDescription",       
 	
-	"cloudCover": "8",
-	"snowCover": "0"
+	"cloudCover": 8,
+	"snowCover": 0
  
 }
 ----
