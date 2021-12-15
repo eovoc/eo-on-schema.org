@@ -20,11 +20,12 @@ Issue 1.0, September 2019.]
   * [Google structured Data Testing Tool](https://search.google.com/structured-data/testing-tool) - deprecated
   * [Schema.org Validator](https://validator.schema.org/)
   * [Google Rich Results Test](https://search.google.com/test/rich-results)
+  * [SHACL Playground](https://shacl.org/playground/)
   * [Structured Data Linter](http://linter.structured-data.org/)
   * [RDF Translator](https://rdf-translator.appspot.com/)
   * [Yandex Structured Data Validator](https://webmaster.yandex.com/tools/microtest/)
 * Implementations
-  * https://geo.spacebel.be/opensearch/readme.html
+  * https://eovoc.spacebel.be/readme.html
 * Related work
   * [ESIPFed/science-on-schema.org, "Schema.org Publishing Guidelines for the
 Geosciences"](https://github.com/ESIPFed/science-on-schema.org), https://doi.org/10.5281/zenodo.3736235
