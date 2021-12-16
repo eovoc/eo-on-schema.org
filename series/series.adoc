@@ -2706,7 +2706,8 @@ eoshacl:EOEarthObservationShape
 
 	sh:property [
 		sh:path schema:parentIdentifier ;
-	  	sh:minCount 1 ;
+		# optional, can be replaced by isPartOf as well.
+	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
 	  	sh:or (
 			[ sh:nodeKind sh:IRI ]
@@ -2735,10 +2736,11 @@ eoshacl:EOEarthObservationShape
 	] ;
 	sh:property [
 		sh:path schema:acquisitionStatus ;
-	  	sh:minCount 1 ;
+	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "ARCHIVED" "ACQUIRED" "CANCELLED" "FAILED" "PLANNED" "POTENTIAL" "REJECTED" "QUALITYDEGRADED" )
+		# sh:datatype xsd:string ;
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <ARCHIVED> <ACQUIRED> <CANCELLED> <FAILED> <PLANNED> <POTENTIAL> <REJECTED> <QUALITYDEGRADED> )
 	] .
 ----
 
@@ -2803,6 +2805,58 @@ endif::[]
 
 No extension is required.  The encoding presented in <<41-metadata-information,section 4.1 Metadata Information>> also applies for EO granules.
 
+.MetadataInformation Shape
+[source,turtle]
+----
+eoshacl:ListItemShape
+	a sh:NodeShape ;
+	sh:targetClass schema:ListItem ;   # applies to all schema:ListItem
+	sh:closed false ;
+	sh:property [
+		sh:path schema:encodingFormat ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+	  	sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:datatype xsd:string ]
+		)
+	] ;
+    	# optional schema:inLanguage
+   	sh:property [
+	  	sh:path schema:dateCreated ; 
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 
+   	] ;
+    	sh:property [
+	  	sh:path schema:dateModified ;
+	  	sh:minCount 1 ;
+	  	sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:datePublished ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] .
+
+
+eoshacl:DateRangeShape  #  shape for all date ranges.
+	a sh:NodeShape ;
+	sh:targetObjectsOf schema:dateModified ;
+	sh:targetObjectsOf schema:datePublished ;
+	sh:targetObjectsOf schema:dateCreated ;    
+	
+	# sh:resultMessage "Value does not correspond to expected range." ;
+	sh:closed false ;
+	sh:minLength 10 ;  # format: 2021-12-08
+	sh:maxLength 24 ;  # format: 2020-09-29T11:07:54.000Z
+	sh:or (
+			[ sh:datatype xsd:dateTime ]
+			[ sh:datatype xsd:date ]
+			[ sh:datatype schema:Date ]
+			[ sh:datatype schema:DateTime ]
+	) .
+----
+
 // 7.3 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
 === 7.3 Data Identification
@@ -2828,6 +2882,41 @@ ifndef::env-github[]
 endif::[]
 
 No extension is required.  The encoding presented in <<45-spatial-information,section 4.5 Spatial Information>> also applies for EO granules.
+
+.SpatialInformation Shape
+[source,turtle]
+----
+eoshacl:SpatialInformationShape
+	a sh:NodeShape ;
+	# sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+   	sh:targetSubjectsOf schema:isPartOf ;   # applies to all classes (Dataset) with this attribute, thus not the parent class.
+	sh:closed false ;
+	sh:property [
+		sh:path schema:spatialCoverage ;
+		sh:class schema:Place;
+		sh:minCount 1				# mandatory footprint
+	] .
+
+eoshacl:PlaceShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Place ;	# applies to all schema:Place
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	
+	sh:property [
+		sh:path schema:additionalProperty ;
+		sh:class schema:PropertyValue;
+		sh:minCount 0  
+	] ;
+	sh:property [
+		sh:path schema:geo ;
+		sh:minCount 1 ; 
+		sh:or (
+			[ sh:class schema:GeoCoordinates ]
+			[ sh:class schema:GeoShape ]
+		)
+	] .
+----
 
 // 7.4.2 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
@@ -2883,26 +2972,29 @@ image::diagrams/diagram-OrbitParameters.png[align="center"]
 eoshacl:EOOrbitParametersShape
 	a sh:NodeShape ;
 	sh:targetClass schema:OrbitParameters ;   # applies to all schema:OrbitParameters
+	# See https://github.com/TopQuadrant/shacl-js/issues/22 
+	sh:targetClass schema:AcquisitionParameters ;   # Parent inherits below properties.
 	sh:closed false ;
 
 	sh:property [
 		sh:path schema:orbitDirection ;
-	  	sh:minCount 0 ;
+	  	sh:minCount 1 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "ASCENDING" "DESCENDING" )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <ASCENDING> <DESCENDING> )
 	] ;
 	sh:property [
 		sh:path schema:lastOrbitDirection ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "ASCENDING" "DESCENDING" )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <ASCENDING> <DESCENDING> )
 	] ;
 	sh:property [
 		sh:path schema:orbitDuration ;
 	  	sh:minCount 0 ;
-	  	sh:maxCount 1 
+	  	sh:maxCount 1 ;
+		# sh:datatype xsd:string   # (actual schema:Duration - see https://schema.org/docs/gs.html#advanced_dates and https://schema.org/Invoice example "billingPeriod": "P30D").
 	] ;
 	sh:property [
 		sh:path schema:orbitNumber ;
@@ -2922,7 +3014,7 @@ eoshacl:EOOrbitParametersShape
 		sh:path schema:ascendingNodeDate ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string   # schema:DateTime 
+		sh:datatype schema:DateTime
 	] ;
 	sh:property [
 		sh:path schema:ascendingNodeLongitude ;
@@ -2936,6 +3028,8 @@ eoshacl:EOOrbitParametersShape
 			[ sh:datatype xsd:double ]
 		)
 	] .
+
+
 ----
 
 .OrbitParameters encoding example
@@ -2976,30 +3070,28 @@ image::diagrams/diagram-AcquisitionInformation.png[align="center"]
 .AcquisitionInformation Shape
 [source,turtle]
 ----
-eoshacl:EOAcquisitionInformationShape
-	a sh:NodeShape ;
-	sh:targetClass schema:AcquisitionInformation ;   # applies to all schema:AcquisitionInformation
-	sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) ;
+eoshacl:AcquisitionInformationShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;   # applies to all schema:Dataset
+  	sh:closed false ;
 
-	sh:property [
-		sh:path schema:platform ;
-	  	sh:minCount 0 ;
-	  	sh:maxCount 1 ;
-		sh:class schema:Platform 
-	] ;
-	sh:property [
-		sh:path schema:sensor ;
-	  	sh:minCount 0 ;
-	  	sh:maxCount 1 ;
-		sh:class schema:Instrument 
-	] ;
-	sh:property [
-		sh:path schema:acquisitionParameters ;
-	  	sh:minCount 0 ;
-	  	sh:maxCount 1 ;
-		sh:class schema:AcquisitionParameters
-	] .
+  	sh:property [
+		sh:path schema:measurementTechnique ;       
+		sh:minCount 0 ;
+	  	sh:or (
+	   		[	sh:nodeKind sh:IRI ]
+	   		[  	sh:datatype xsd:string ]
+		)
+ 	] ;
+ 	sh:property [
+	  	sh:path schema:potentialAction ; 
+	  	sh:minCount 0 ; 
+	 	sh:or (
+	   		[  	sh:class schema:CreateAction ]
+	   		[	sh:class schema:Action ]        # possible due to other Shape
+	   		[  	sh:class schema:SearchAction ]  # possible due to other Shape
+		)
+  	] .
 ----
 
 .AcquisitionInformation encoding example
@@ -3089,8 +3181,8 @@ eoshacl:EOPlatformShape
 		sh:path schema:orbitType ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "LEO" "GEO" )
+		sh:nodeKind sh:IRI ; 
+		sh:in ( <LEO> <GEO> )
 	] .
 ----
 
@@ -3153,9 +3245,8 @@ eoshacl:EOInstrumentShape
 		sh:path schema:sensorType ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		# TBD: enums should become URI ?
-		sh:in (  "OPTICAL" "ATMOSPHERIC" "ALTIMETRIC"  "LIMB"  "RADAR" )
+		sh:nodeKind sh:IRI ;
+		sh:in ( <OPTICAL> <ATMOSPHERIC> <ALTIMETRIC> <LIMB> <RADAR> )
 	] .
 ----
 
@@ -3205,8 +3296,8 @@ eoshacl:EOWavelengthInformationShape
 		sh:path schema:spectralRange ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "INFRARED" "SWIR" "VISIBLE"  "LWIR"  "NIR"  "FIR"  "UV"  "MWIR" "MICROWAVE"  "SR_OTHER"  )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <INFRARED> <SWIR> <VISIBLE> <LWIR> <NIR> <FIR> <UV> <MWIR> <MICROWAVE> <SR_OTHER> )
 	] ;
 	sh:property [
 		sh:path schema:wavelengthResolution ;
@@ -3240,7 +3331,7 @@ endif::[]
 .AcquisitionParameters Schema
 image::diagrams/diagram-AcquisitionParameters.png[align="center"]
 
-.AcquisitionAngles Shape
+.AcquisitionParameters Shape
 [source,turtle]
 ----
 eoshacl:EOAcquisitionParametersShape
@@ -3256,12 +3347,13 @@ eoshacl:EOAcquisitionParametersShape
 	  	sh:maxCount 1 ;
 		sh:class schema:VerticalSpatialDomain       # subclass of VirtualLocation
 	] ;
+	
 	sh:property [
 		sh:path schema:acquisitionType ;
-	  	sh:minCount 0 ;
+	  	sh:minCount 1 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "NOMINAL"  "CALIBRATION"  "ACQ_OTHER"  )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <NOMINAL>  <CALIBRATION>  <ACQ_OTHER>  )
 	] ;
 	sh:property [
 		sh:path schema:acquisitionSubType ;
@@ -3324,8 +3416,8 @@ eoshacl:EOAcquisitionParametersShape
 		sh:path schema:antennaLookDirection ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "LEFT"  "RIGHT"  )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <LEFT>  <RIGHT>  )
 	] ;
 	sh:property [
 		sh:path schema:acquisitionStation ;
@@ -3355,15 +3447,15 @@ eoshacl:EOAcquisitionParametersShape
 		sh:path schema:polarisationMode ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "Q"  "S"  "D"  "T" "PM_UNDEFINED"  )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <Q>  <S>  <D>  <T> <PM_UNDEFINED>  )
 	] ;
 	sh:property [
 		sh:path schema:polarisationChannels ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "HH_VV"  "HH_VH"  "VH_VV"  "HH" "VH"  "VV_HV"  "HH_HV"  "VV_VH"  "VH_HV"  "HH_HV_VH_VV"  "HV_VH"  "HV" "VV" "PC_UNDEFINED" )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <HH_VV> <HH_VH> <VH_VV> <HH> <VH> <VV_HV> <HH_HV> <VV_VH> <VH_HV> <HH_HV_VH_VV> <HV_VH> <HV> <VV> <PC_UNDEFINED> )
 	] ;
 	sh:property [
 		sh:path schema:resolution ;
@@ -3393,8 +3485,8 @@ eoshacl:EOAcquisitionParametersShape
 		sh:path schema:measurementType ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "EMISSION"  "ABSORPTION" )
+		sh:nodeKind sh:IRI ; 
+		sh:in ( <EMISSION> <ABSORPTION> )
 	] ;
 	sh:property [
 		sh:path schema:dopplerFrequency ;
@@ -3414,6 +3506,7 @@ eoshacl:EOAcquisitionParametersShape
 			[ sh:datatype xsd:integer ]
 		)
 	] .
+
 ----
 
 .AcquisitionParameters encoding example
@@ -3810,6 +3903,7 @@ eoshacl:EOProcessingInformationShape
 	sh:targetClass schema:ProcessingInformation ;   # applies to all schema:ProcessingInformation
 	sh:targetClass schema:ProductInformation ;      # parent class
 	sh:closed false ;
+	# sh:ignoredProperties ( rdf:type schema:cloudCover schema:snowCover schema:productType schema:contentSize schema:statusSubType schema:statusDetail schema:availabilityTime schema:timeliness schema:version schema:holdingArchive schema:archivingDate schema:additionalProperty schema:qualityInformation) ;
 
 	sh:property [
 		sh:path schema:compositeType ;
@@ -3839,7 +3933,7 @@ eoshacl:EOProcessingInformationShape
 		sh:path schema:processingDate ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string  # schema:DateTime ? 
+		sh:datatype schema:DateTime 
 	] ; 
 	sh:property [
 		sh:path schema:processingLevel ;
@@ -3909,7 +4003,6 @@ eoshacl:EOCoverageDescriptionShape
 	sh:targetClass schema:CoverageDescription ;   # applies to all schema:CoverageDescription
 	sh:targetClass schema:ProductInformation  ;   # parent class	
 	sh:closed false ;
-
 	sh:property [
 		sh:path schema:cloudCover ;
 	  	sh:minCount 0 ;
