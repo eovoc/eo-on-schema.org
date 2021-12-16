@@ -3970,13 +3970,13 @@ The Web page https://schema.org/docs/howwework.html provides a https://schema.or
 
 * https://github.com/eovoc/eo-on-schema.org/blob/main/series/docs/jsonldcontext.json[jsonldcontext.json]
 
-When the extensions defined in chapter 7 are used as well, then the corresponding context document is to be used in addition:
+When the EO Granule Encoding Extensions defined in <<7-eo-granules-encoding-extension,Chapter 7>> are used as well, then the corresponding context document is to be used in addition:
 
 * https://github.com/eovoc/eo-on-schema.org/blob/main/series/docs/jsonldcontext-eo.json[jsonldcontext-eo.json]
 
 They can be used to define the `@context` in data graphs as follows:
 
-.JSOn-LD @context encoding example
+.JSON-LD @context encoding example
 [source,json]
 ----
 "@context": [
