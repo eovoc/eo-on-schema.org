@@ -1,0 +1,75 @@
+{
+	"@context": {
+		"@vocab": "https://schema.org/",
+		"schema": "https://schema.org/",
+		"@base": "https://schema.org/",
+		"acquisitionStatus": {
+			"@id": "schema:acquisitionStatus",
+			"@type": "@id"
+		},
+		"acquisitionType": {
+			"@id": "schema:acquisitionType",
+			"@type": "@id"
+		},
+		"antennaLookDirection": {
+			"@id": "schema:antennaLookDirection",
+			"@type": "@id"
+		},
+		"archivingDate": {
+			"@id": "schema:archivingDate",
+			"@type": "DateTime"
+		},
+		"availabilityTime": {
+			"@id": "schema:availabilityTime",
+			"@type": "DateTime"
+		},
+		"available": {
+			"@id": "schema:available",
+			"@type": "DateTime"
+		},
+		"ascendingNodeDate": {
+			"@id": "schema:ascendingNodeDate",
+			"@type": "DateTime"
+		},
+		"lastOrbitDirection": {
+			"@id": "schema:lastOrbitDirection",
+			"@type": "@id"
+		},
+		"measurementType": {
+			"@id": "schema:measurementType",
+			"@type": "@id"
+		},
+		"orbitDirection": {
+			"@id": "schema:orbitDirection",
+			"@type": "@id"
+		},
+		"orbitType": {
+			"@id": "schema:orbitType",
+			"@type": "@id"
+		},
+		"parentIdentifier": {
+			"@id": "schema:parentIdentifier",
+			"@type": "@id"
+		},
+		"polarisationChannels": {
+			"@id": "schema:polarisationChannels",
+			"@type": "@id"
+		},
+		"polarisationMode": {
+			"@id": "schema:polarisationMode",
+			"@type": "@id"
+		},
+		"processingDate": {
+			"@id": "schema:processingDate",
+			"@type": "DateTime"
+		},
+		"sensorType": {
+			"@id": "schema:sensorType",
+			"@type": "@id"
+		},
+		"spectralRange": {
+			"@id": "schema:spectralRange",
+			"@type": "@id"
+		}
+	}
+}
