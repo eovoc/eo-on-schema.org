@@ -1232,6 +1232,24 @@ a| variableMeasured +
 |===
 
 
+.DescriptiveKeywords Shape
+[source,turtle]
+----
+eoshacl:DescriptiveKeywordsShape
+  a sh:NodeShape ;
+  sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+  sh:closed false ;
+  sh:property [
+      	sh:path schema:keywords ;
+       	sh:minCount 0 ; 
+      	sh:or (
+	   		[ sh:datatype xsd:string ]
+	   		[ sh:class schema:DefinedTerm ]
+	)
+  ] .
+----
+
+
 .Descriptive keywords encoding example
 [source,json]
 ----
