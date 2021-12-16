@@ -2213,6 +2213,48 @@ eoshacl:SearchActionShape
 	] .
 ----
 
+.EntryPoint Shape
+[source,turtle]
+----
+eoshacl:EntryPointShape
+	a sh:NodeShape ;
+	sh:targetClass schema:EntryPoint ;   # applies to all schema:EntryPoint
+	sh:closed true ;
+   	sh:ignoredProperties ( rdf:type ) ;
+
+	sh:property [
+	  	sh:path schema:identifier ;    
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	  	# range and multiplicity checked by schema:IdentifierPropertyShape
+	] ;
+	sh:property [
+	  	sh:path schema:description ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;
+	sh:property [
+	  	sh:path schema:contentType ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;   
+	sh:property [
+	  	sh:path schema:encodingType ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;
+	sh:property [
+	  	sh:path schema:httpMethod ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;
+	sh:property [
+	  	sh:path schema:urlTemplate ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 1 
+	] .
+----
+
 .SearchAction encoding example (Long)
 [source,json]
 ----
