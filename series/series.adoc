@@ -723,6 +723,41 @@ a| url +
 
 |===
 
+.PropertyValue Shape
+[source,turtle]
+----
+eoshacl:PropertyValueShape
+	a sh:NodeShape ;
+	sh:targetClass schema:PropertyValue ;  # applies to all schema:PropertyValue
+	# Be stricter than schema.org
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	sh:property [
+		sh:path schema:value ;
+		sh:minLength 1 ;    
+		sh:minCount 1 ;
+		# sh:maxCount 1 ;                  # Multiple values can be used for "schema:additionalProperty"
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:url ;
+		sh:nodeKind sh:IRI ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:propertyID ;
+		sh:datatype xsd:string ;         # According to schema.org, should be schema:URL or schema:Text.
+		sh:minCount 1 ;
+		sh:maxCount 1 
+	] .
+----
+
+
 In the example below, PropertyValue is used to associate a https://doi.org[DOI] identifier to a Dataset.
 
 .PropertyValue encoding example (Collection DOI)
@@ -1111,6 +1146,28 @@ Range: Text
 
 |===
 
+.ResourceConstraints Shape
+[source,turtle]
+----
+eoshacl:ResourceConstraintsShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+	sh:closed false ;
+	sh:property [
+		sh:path schema:license ;
+		sh:minCount 0 ;
+		sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:class schema:CreativeWork ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:conditionsOfAccess ;
+		sh:datatype xsd:string ;
+		sh:minCount 0 ;
+	] .
+----
+
 .Resource Constraints encoding example
 [source,json]
 ----
@@ -1316,6 +1373,45 @@ Range: URL
 
 |===
 
+
+.DefinedTerm Shape
+[source,turtle]
+----
+eoshacl:DefinedTermShape
+	a sh:NodeShape ;
+	sh:targetClass schema:DefinedTerm ;  # applies to all schema:DefinedTerm
+	sh:closed false ;
+	# sh:ignoredProperties ( rdf:type schema:url schema:description schema:alternateName) ;
+	sh:property [
+		sh:path schema:name ;
+		sh:datatype xsd:string ;
+		sh:minCount 0 ; 
+		sh:maxCount 1 ; 
+	] ;
+	sh:property [
+		sh:path schema:sameAs ;
+		sh:nodeKind sh:IRI ;
+		sh:minCount 0 ; 
+	] ;
+	sh:property [
+		sh:path schema:inDefinedTermSet ;
+		sh:nodeKind sh:IRI ;
+		sh:minCount 0 ; 
+		sh:maxCount 1 ; 
+	] ;
+	sh:property [
+		sh:path schema:termCode ;
+		sh:datatype xsd:string ;
+		sh:minCount 0 ; 
+		sh:maxCount 1 ; 
+	] ;
+	sh:property [
+		sh:path schema:additionalType ;
+		sh:nodeKind sh:IRI ;
+		sh:minCount 0 ; 
+		sh:maxCount 1 ;
+	] .
+----
 
 .DefinedTerm encoding example (Science keyword)
 [source,json]
@@ -5210,11 +5306,13 @@ Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM
 - <<7-eo-granules-encoding-extension,Chapter 7. EO Granules Encoding (Extension)>> added with extension for EO granule encoding. +
 - version of <<DCAT-AP-SDO>> updated | Updated version for EOVOC MTR.
 
-|September 30, 2021 |Y. Coene | 0.4 |  - Added UseAction example representing WCS offering in new Related URL and Actions sections  +
+|December 16, 2021 |Y. Coene | 0.4 |  - Added UseAction example representing WCS offering in new Related URL and Actions sections  +
 for EO Service. +
 - Added service to collection coupled resource encoding with `object` in <<541-action,§5.4.1>> +
 - Added conformance encoding with `Review` in <<55-quality-information,§5.5>>
-- Added SHACL information in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>> | Updated version for TBD.
+- Added SHACL information in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>> +
+- Added SHACL shapes in various sections of the document. +
+- Included separate JSON-LD context file for EO extension in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>.| Updated version for TBD.
 
 |====================
 
