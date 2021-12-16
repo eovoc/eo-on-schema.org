@@ -3976,7 +3976,7 @@ When the extensions defined in chapter 7 are used as well, then the correspondin
 
 They can be used to define the `@context` in data graphs as follows:
 
-.LinkRole encoding example
+.JSOn-LD @context encoding example
 [source,json]
 ----
 "@context": [
