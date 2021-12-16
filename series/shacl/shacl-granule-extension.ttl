@@ -9,15 +9,27 @@
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
+@base <https://schema.org/> .
+
 <http://eovoc.esa.int/eoshacl> 
 	owl:imports <http://datashapes.org/dash> ;
   	owl:imports <http://datashapes.org/schema> .
 
 #
-#  Note: to consume schema.org encoding as JSON-LD, the context has to be provided in the data file.
+#	Note:	To consume schema.org encoding as JSON-LD, the context has to be provided in the data file.
+# 			When EO extensions to schema.org are used, also the jsonldcontext-eo context has to be included.
 #         
-# "@context": "https://schema.org/docs/jsonldcontext.json".
-# "@context": "https://eovoc.spacebel.be//schema-org/docs/jsonldcontext.json",
+#   "@context": "https://schema.org/docs/jsonldcontext.json".
+# 
+#	"@context": [
+#		"https://raw.githubusercontent.com/eovoc/eo-on-schema.org/main/series/docs/jsonldcontext.json",
+#		"https://raw.githubusercontent.com/eovoc/eo-on-schema.org/main/series/docs/jsonldcontext-eo.json"
+#	],
+#
+#	"@context": [
+#		"https://eovoc.spacebel.be/schema-org/docs/jsonldcontext.json",
+#		"https://eovoc.spacebel.be/schema-org/docs/jsonldcontext-eo-short.json"
+#	],
 #
 
 # 
@@ -36,7 +48,8 @@ eoshacl:EOEarthObservationShape
 
 	sh:property [
 		sh:path schema:parentIdentifier ;
-	  	sh:minCount 1 ;
+		# optional, can be replaced by isPartOf as well.
+	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
 	  	sh:or (
 			[ sh:nodeKind sh:IRI ]
@@ -65,10 +78,11 @@ eoshacl:EOEarthObservationShape
 	] ;
 	sh:property [
 		sh:path schema:acquisitionStatus ;
-	  	sh:minCount 1 ;
+	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "ARCHIVED" "ACQUIRED" "CANCELLED" "FAILED" "PLANNED" "POTENTIAL" "REJECTED" "QUALITYDEGRADED" )
+		# sh:datatype xsd:string ;
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <ARCHIVED> <ACQUIRED> <CANCELLED> <FAILED> <PLANNED> <POTENTIAL> <REJECTED> <QUALITYDEGRADED> )
 	] .
 
 
@@ -90,21 +104,23 @@ eoshacl:EOVerticalSpatialDomainShape
 eoshacl:EOOrbitParametersShape
 	a sh:NodeShape ;
 	sh:targetClass schema:OrbitParameters ;   # applies to all schema:OrbitParameters
+	# See https://github.com/TopQuadrant/shacl-js/issues/22 
+	sh:targetClass schema:AcquisitionParameters ;   # Parent inherits below properties.
 	sh:closed false ;
 
 	sh:property [
 		sh:path schema:orbitDirection ;
-	  	sh:minCount 0 ;
+	  	sh:minCount 1 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "ASCENDING" "DESCENDING" )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <ASCENDING> <DESCENDING> )
 	] ;
 	sh:property [
 		sh:path schema:lastOrbitDirection ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "ASCENDING" "DESCENDING" )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <ASCENDING> <DESCENDING> )
 	] ;
 	sh:property [
 		sh:path schema:orbitDuration ;
@@ -130,7 +146,7 @@ eoshacl:EOOrbitParametersShape
 		sh:path schema:ascendingNodeDate ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string   # schema:DateTime ?
+		sh:datatype schema:DateTime
 	] ;
 	sh:property [
 		sh:path schema:ascendingNodeLongitude ;
@@ -202,8 +218,8 @@ eoshacl:EOPlatformShape
 		sh:path schema:orbitType ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "LEO" "GEO" )
+		sh:nodeKind sh:IRI ; 
+		sh:in ( <LEO> <GEO> )
 	] .
 
 
@@ -233,9 +249,8 @@ eoshacl:EOInstrumentShape
 		sh:path schema:sensorType ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		# TBD: enums should become URI ?
-		sh:in (  "OPTICAL" "ATMOSPHERIC" "ALTIMETRIC"  "LIMB"  "RADAR" )
+		sh:nodeKind sh:IRI ;
+		sh:in ( <OPTICAL> <ATMOSPHERIC> <ALTIMETRIC> <LIMB> <RADAR> )
 	] .
 
 
@@ -254,8 +269,8 @@ eoshacl:EOWavelengthInformationShape
 		sh:path schema:spectralRange ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "INFRARED" "SWIR" "VISIBLE"  "LWIR"  "NIR"  "FIR"  "UV"  "MWIR" "MICROWAVE"  "SR_OTHER"  )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <INFRARED> <SWIR> <VISIBLE> <LWIR> <NIR> <FIR> <UV> <MWIR> <MICROWAVE> <SR_OTHER> )
 	] ;
 	sh:property [
 		sh:path schema:wavelengthResolution ;
@@ -282,12 +297,13 @@ eoshacl:EOAcquisitionParametersShape
 	  	sh:maxCount 1 ;
 		sh:class schema:VerticalSpatialDomain       # subclass of VirtualLocation
 	] ;
+	
 	sh:property [
 		sh:path schema:acquisitionType ;
-	  	sh:minCount 0 ;
+	  	sh:minCount 1 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "NOMINAL"  "CALIBRATION"  "ACQ_OTHER"  )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <NOMINAL>  <CALIBRATION>  <ACQ_OTHER>  )
 	] ;
 	sh:property [
 		sh:path schema:acquisitionSubType ;
@@ -350,8 +366,8 @@ eoshacl:EOAcquisitionParametersShape
 		sh:path schema:antennaLookDirection ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "LEFT"  "RIGHT"  )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <LEFT>  <RIGHT>  )
 	] ;
 	sh:property [
 		sh:path schema:acquisitionStation ;
@@ -381,15 +397,15 @@ eoshacl:EOAcquisitionParametersShape
 		sh:path schema:polarisationMode ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "Q"  "S"  "D"  "T" "PM_UNDEFINED"  )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <Q>  <S>  <D>  <T> <PM_UNDEFINED>  )
 	] ;
 	sh:property [
 		sh:path schema:polarisationChannels ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "HH_VV"  "HH_VH"  "VH_VV"  "HH" "VH"  "VV_HV"  "HH_HV"  "VV_VH"  "VH_HV"  "HH_HV_VH_VV"  "HV_VH"  "HV" "VV" "PC_UNDEFINED" )
+		sh:nodeKind sh:IRI ; 
+		sh:in (  <HH_VV> <HH_VH> <VH_VV> <HH> <VH> <VV_HV> <HH_HV> <VV_VH> <VH_HV> <HH_HV_VH_VV> <HV_VH> <HV> <VV> <PC_UNDEFINED> )
 	] ;
 	sh:property [
 		sh:path schema:resolution ;
@@ -419,8 +435,8 @@ eoshacl:EOAcquisitionParametersShape
 		sh:path schema:measurementType ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string ;
-		sh:in (  "EMISSION"  "ABSORPTION" )
+		sh:nodeKind sh:IRI ; 
+		sh:in ( <EMISSION> <ABSORPTION> )
 	] ;
 	sh:property [
 		sh:path schema:dopplerFrequency ;
@@ -610,7 +626,7 @@ eoshacl:EOProductInformationShape
 		sh:path schema:availabilityTime ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string  # schema:DateTime ? 
+		sh:datatype schema:DateTime
 	] ;
 	sh:property [
 		sh:path schema:timeliness ;
@@ -633,7 +649,7 @@ eoshacl:EOProductInformationShape
 		sh:path schema:archivingDate ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string  # schema:DateTime ? 
+		sh:datatype schema:DateTime
 	] ;
 	sh:property [
 		# referenceSystemIdentifier encoded as additionalProperty
@@ -995,7 +1011,7 @@ eoshacl:PropertyValueShape
 	] ;
 	sh:property [
 		sh:path schema:propertyID ;
-		sh:datatype xsd:string ;         # According to schema.org, should be schema:URL.
+		sh:datatype xsd:string ;         # According to schema.org, should be schema:URL or schema:Text.
 		sh:minCount 1 ;
 		sh:maxCount 1 
 	] .
@@ -1031,12 +1047,12 @@ eoshacl:CreativeWorkShape
 	sh:property [
 		sh:path schema:description ;
 		sh:datatype xsd:string ;
-		sh:minCount 1 ;
+		sh:minCount 1 
 	] ;
 	sh:property [
 		sh:path schema:url ;
 		sh:nodeKind sh:IRI ;
-		sh:minCount 1 ;
+		sh:minCount 1 
 	] .
 
 #
@@ -1091,12 +1107,12 @@ eoshacl:SpatialInformationShape
 	sh:property [
 		sh:path schema:spatialCoverage ;
 		sh:class schema:Place;
-		sh:minCount 1               # mandatory footprint
+		sh:minCount 1				# mandatory footprint
 	] .
 
 eoshacl:PlaceShape
 	a sh:NodeShape ;
-	sh:targetClass schema:Place ;    # applies to all schema:Place
+	sh:targetClass schema:Place ;	# applies to all schema:Place
 	sh:closed true ;
 	sh:ignoredProperties ( rdf:type ) ;
 	
@@ -1175,7 +1191,6 @@ eoshacl:GeoCoordinatesShape
 			[ sh:datatype xsd:integer ]
 		)
 	] ;
-
 	sh:property [
 		sh:path schema:elevation ;
 		sh:minCount 0 ; 
@@ -1590,7 +1605,7 @@ eoshacl:LanguageShape
 		sh:maxLength 2;
 		sh:datatype xsd:string ;
 		sh:minCount 1 ;
-		sh:maxCount 1 ;
+		sh:maxCount 1 
 	] .
 
 
@@ -1603,13 +1618,13 @@ eoshacl:InLanguageShape
 		sh:minCount 1 ; # redundant as the same as the relation mentioned in sh:targetSubjectsOf
 		sh:maxCount 1 ;
 		sh:or (
-			   [
-				sh:nodeKind sh:IRI ;
-				sh:class schema:Language
-			   ]
-			   [
-				sh:datatype xsd:string 
-			   ]
+				[
+					sh:nodeKind sh:IRI ;
+					sh:class schema:Language
+			   	]
+			   	[
+					sh:datatype xsd:string 
+			   	]
 		)
 	] .
 
@@ -1631,21 +1646,18 @@ eoshacl:IdentifierPropertyShape
 
 
 
-eoshacl:isPartOfShape  #  shape for Dataset representing the granule
+eoshacl:isPartOfShape  #  Shape for Dataset representing the granule
 	a sh:NodeShape ;
-	sh:targetSubjectsOf schema:isPartOf ;  # applies to all classes with this attribute
+	sh:targetSubjectsOf schema:isPartOf ;  # applies to objects in domain of "isPartOf"
 	sh:closed false ;
 	sh:property [
 		sh:path schema:isPartOf ;
 		sh:minCount 1 ; # redundant as the same as the relation mentioned in sh:targetSubjectsOf
 		sh:maxCount 1 ;
-		sh:nodeKind sh:IRI ;
-		sh:class schema:Dataset ;  # will fail is only the @id is provided and no type
-		sh:resultSeverity sh:Warning ;
-		# sh:node eoshacl:ParentShape ;
+		sh:nodeKind sh:IRI 
 	] ;
 	sh:property [
-		# check that the child class has type schema:Dataset as this is not checked in its Shape.
+		# check that the domain class has type schema:Dataset or EarthObservation as this is not checked in its Shape.
 		sh:path rdf:type ; 
 		sh:qualifiedValueShape [
 			sh:or (
@@ -1657,28 +1669,32 @@ eoshacl:isPartOfShape  #  shape for Dataset representing the granule
 		sh:qualifiedMaxCount   1 
 	].
 
+
+
 eoshacl:ParentShape  #  Shape for Dataset representing the collection the granule is partOf
 	a sh:NodeShape ;
 	# avoid checking the Dataset object as we require a minimal number of properties
 	sh:targetObjectsOf schema:isPartOf ; # applies to objects in range of "isPartOf"
 
 	sh:closed false ;
+	
 	sh:property [
-		# How to require that the @id is present ?
-		sh:path schema:url;
-		sh:minCount 0 ; 
-	] ;
-	sh:property [
-		# Check that the parent/collection class has type schema:Dataset as this is not checked in its Shape.
-		# Limitation: this does not allow to encode as "isPartOf": "https://..."
-		sh:resultSeverity sh:Warning ;
-		sh:path rdf:type ; 
-		sh:qualifiedValueShape [
-			sh:or (
-				[ sh:hasValue schema:EarthObservation ]
-				[ sh:hasValue schema:Dataset ]
-  			)
-		] ;
-		sh:qualifiedMinCount   1 ;
-		sh:qualifiedMaxCount   1 
+		# Allow for object of type Dataset or for a URI (without a type)
+		sh:or (
+			[
+				sh:path rdf:type ; 
+				sh:qualifiedValueShape [	
+					sh:hasValue schema:Dataset 
+				] ;
+				sh:qualifiedMinCount   1 ;
+				sh:qualifiedMaxCount   1 
+			]
+			[ 	
+				sh:nodeKind sh:IRI ;
+				sh:not [
+					sh:path rdf:type ;
+					sh:minCount 1 
+				]
+			]
+		)
 	  ].
