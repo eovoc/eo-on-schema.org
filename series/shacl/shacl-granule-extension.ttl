@@ -747,7 +747,7 @@ eoshacl:EOProcessingInformationShape
 		sh:path schema:processingDate ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
-		sh:datatype xsd:string  # schema:DateTime ? 
+		sh:datatype schema:DateTime 
 	] ; 
 	sh:property [
 		sh:path schema:processingLevel ;
@@ -905,13 +905,13 @@ eoshacl:ListItemShape
 			[ sh:datatype xsd:string ]
 		)
 	] ;
-    # optional schema:inLanguage
+	# optional schema:inLanguage
    	sh:property [
 	  	sh:path schema:dateCreated ; 
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 
    	] ;
-    sh:property [
+	sh:property [
 	  	sh:path schema:dateModified ;
 	  	sh:minCount 1 ;
 	  	sh:maxCount 1 
@@ -995,8 +995,8 @@ eoshacl:PropertyValueShape
 	sh:property [
 		sh:path schema:value ;
 		sh:minLength 1 ;    
-		sh:minCount 1 ;
-		# sh:maxCount 1 ;                  # Multiple values can be used for "schema:additionalProperty"
+		sh:minCount 0 ;				# Optional when used with "variableMeasured"
+		# sh:maxCount 1 ;           # Multiple values can be used for "schema:additionalProperty"
 		sh:or (
 			[ sh:datatype xsd:string ]
 			[ sh:datatype xsd:double ]
@@ -1006,6 +1006,24 @@ eoshacl:PropertyValueShape
 	sh:property [
 		sh:path schema:url ;
 		sh:nodeKind sh:IRI ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:description ;
+		sh:datatype xsd:string ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:unitText ;
+		sh:datatype xsd:string ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:name ;
+		sh:datatype xsd:string ;
 		sh:minCount 0 ;
 		sh:maxCount 1 
 	] ;
@@ -1344,7 +1362,7 @@ eoshacl:ActionShape
 	  	sh:maxCount 1 ;
 	  	sh:or (
 			[ sh:datatype xsd:string ]
-			[	sh:nodeKind sh:IRI ]
+			[ sh:nodeKind sh:IRI ]
 	  	)
 	] ;
 	sh:property [

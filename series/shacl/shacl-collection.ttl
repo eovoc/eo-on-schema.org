@@ -232,8 +232,8 @@ eoshacl:PropertyValueShape
 	sh:property [
 		sh:path schema:value ;
 		sh:minLength 1 ;    
-		sh:minCount 1 ;
-		# sh:maxCount 1 ;                  # Multiple values can be used for "schema:additionalProperty"
+		sh:minCount 0 ;					# Optional when used with "variableMeasured"
+		# sh:maxCount 1 ;               # Multiple values can be used for "schema:additionalProperty"
 		sh:or (
 			[ sh:datatype xsd:string ]
 			[ sh:datatype xsd:double ]
@@ -243,6 +243,24 @@ eoshacl:PropertyValueShape
 	sh:property [
 		sh:path schema:url ;
 		sh:nodeKind sh:IRI ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:description ;
+		sh:datatype xsd:string ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:unitText ;
+		sh:datatype xsd:string ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:name ;
+		sh:datatype xsd:string ;
 		sh:minCount 0 ;
 		sh:maxCount 1 
 	] ;
@@ -578,16 +596,20 @@ eoshacl:DescriptiveKeywordsShape
   	a sh:NodeShape ;
   	sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
   	sh:closed false ;
-  	sh:property [
-      	sh:path schema:keywords ;
+	sh:property [
+		sh:path schema:keywords ;
        	sh:minCount 0 ; 
       	sh:or (
-	   		[
-	    		sh:datatype xsd:string ; 
-	   		]
-	   		[
-            	sh:class schema:DefinedTerm;
-	   		]
+	   		[ sh:datatype xsd:string ]
+	   		[ sh:class schema:DefinedTerm ]
+		)
+  	] ;
+	sh:property [
+		sh:path schema:variableMeasured ;
+       	sh:minCount 0 ; 
+      	sh:or (
+	   		[ sh:datatype xsd:string ]
+	   		[ sh:class schema:PropertyValue ]
 		)
   	] .
 
