@@ -3970,6 +3970,22 @@ The Web page https://schema.org/docs/howwework.html provides a https://schema.or
 
 * https://github.com/eovoc/eo-on-schema.org/blob/main/series/docs/jsonldcontext.json[jsonldcontext.json]
 
+When the extensions defined in chapter 7 are used as well, then the corresponding context document is to be used in addition:
+
+* https://github.com/eovoc/eo-on-schema.org/blob/main/series/docs/jsonldcontext-eo.json[jsonldcontext-eo.json]
+
+They can be used to define the `@context` in data graphs as follows:
+
+.LinkRole encoding example
+[source,json]
+----
+"@context": [
+		"https://raw.githubusercontent.com/eovoc/eo-on-schema.org/main/series/docs/jsonldcontext.json",
+		"https://raw.githubusercontent.com/eovoc/eo-on-schema.org/main/series/docs/jsonldcontext-eo.json"
+	]
+----
+
+
 === SHACL
 The Shapes Constraint Language <<SHACL>> allows defining shape graphs to validate data graphs satisfying a set of conditions as expressed in this document.  The ShapeUML <<ShapeUML>> diagram below depicts a set of SHACL node shapes that correspond to the <<4-eo-collections-encoding, EO Collections encoding>>.
 
