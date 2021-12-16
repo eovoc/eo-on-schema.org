@@ -343,6 +343,57 @@ Range: Language or Text
 
 |===
 
+.ListItem Shape
+[source,turtle]
+----
+eoshacl:ListItemShape
+	a sh:NodeShape ;
+	sh:targetClass schema:ListItem ;   # applies to all schema:ListItem
+	sh:closed false ;
+	sh:property [
+		sh:path schema:encodingFormat ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+	  	sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:datatype xsd:string ]
+		)
+	] ;
+    	# optional schema:inLanguage
+   	sh:property [
+	  	sh:path schema:dateCreated ; 
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 
+   	] ;
+    	sh:property [
+	  	sh:path schema:dateModified ;
+	  	sh:minCount 1 ;
+	  	sh:maxCount 1 
+	] ;
+	sh:property [
+		sh:path schema:datePublished ;
+		sh:minCount 0 ;
+		sh:maxCount 1 
+	] .
+
+
+eoshacl:DateRangeShape  #  shape for all date ranges.
+	a sh:NodeShape ;
+	sh:targetObjectsOf schema:dateModified ;
+	sh:targetObjectsOf schema:datePublished ;
+	sh:targetObjectsOf schema:dateCreated ;    
+	
+	# sh:resultMessage "Value does not correspond to expected range." ;
+	sh:closed false ;
+	sh:minLength 10 ;  # format: 2021-12-08
+	sh:maxLength 24 ;  # format: 2020-09-29T11:07:54.000Z
+	sh:or (
+			[ sh:datatype xsd:dateTime ]
+			[ sh:datatype xsd:date ]
+			[ sh:datatype schema:Date ]
+			[ sh:datatype schema:DateTime ]
+	) .
+----
 
 .ListItem encoding example
 [source,json]
@@ -1361,6 +1412,40 @@ Range: PropertyValue  (<<table_object_propertyvalue>>)
 
 |===
 
+.SpatialInformation Shape
+[source,turtle]
+----
+eoshacl:SpatialInformationShape
+	a sh:NodeShape ;
+	# sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+   	sh:targetSubjectsOf schema:isPartOf ;   # applies to all classes (Dataset) with this attribute, thus not the parent class.
+	sh:closed false ;
+	sh:property [
+		sh:path schema:spatialCoverage ;
+		sh:class schema:Place;
+		sh:minCount 1				# mandatory footprint
+	] .
+
+eoshacl:PlaceShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Place ;	# applies to all schema:Place
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	
+	sh:property [
+		sh:path schema:additionalProperty ;
+		sh:class schema:PropertyValue;
+		sh:minCount 0  
+	] ;
+	sh:property [
+		sh:path schema:geo ;
+		sh:minCount 1 ; 
+		sh:or (
+			[ sh:class schema:GeoCoordinates ]
+			[ sh:class schema:GeoShape ]
+		)
+	] .
+----
 
 .Spatial information encoding example
 [source,json]
@@ -1424,6 +1509,32 @@ a| line +
 
 |===
 
+.GeoShape Shape
+[source,turtle]
+----
+eoshacl:GeoShapeShape
+	a sh:NodeShape ;
+	sh:targetClass schema:GeoShape ;   # applies to all schema:GeoShape
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+
+	sh:property [
+		sh:path schema:box ;
+		sh:datatype xsd:string ;
+	  	sh:minCount 0 
+	] ;
+	sh:property [
+		sh:path schema:polygon ;
+		sh:datatype xsd:string ;
+	  	sh:minCount 0  
+	] ;
+	sh:property [
+	  	sh:path schema:line ;
+	  	sh:datatype xsd:string ;
+	  	sh:minCount 0  
+	] .
+----
+
 .GeoShape encoding example
 [source,json]
 ----
@@ -1472,6 +1583,49 @@ a| longitude +
 
 |===
 
+.GeoCoordinates Shape
+[source,turtle]
+----
+eoshacl:GeoCoordinatesShape
+	a sh:NodeShape ;
+	sh:targetClass schema:GeoCoordinates ;   # applies to all schema:GeoCoordinates
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	sh:property [
+		sh:path schema:latitude ;   
+		sh:minCount 0 ;
+		sh:maxCount 1 ;
+		sh:maxInclusive 90 ;
+		sh:minInclusive -90 ;
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		) 
+	] ;
+	sh:property [
+		sh:path schema:longitude ;
+		sh:minCount 0 ; 
+		sh:maxCount 1 ;
+		sh:maxInclusive 180 ;
+		sh:minInclusive -180 ;
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:elevation ;
+		sh:minCount 0 ; 
+		sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:datatype xsd:double ]
+			[ sh:datatype xsd:integer ]
+		)
+	] .
+----
+
 .GeoCoordinates encoding example
 [source,json]
 ----
@@ -1504,6 +1658,31 @@ A `MediaObject` is used to represent most hypermedia links.  If the link represe
 
 [NOTE] 
 The (pending) https://schema.org/LinkRole[LinkRole] class can represent URL with an IANA link registry relation via https://schema.org/linkRelationship[linkRelationship].  This class does not have a `contentType` property however, therefore `MediaObject` and `DataDownload` can be used instead.
+
+.LinkRole Shape
+[source,turtle]
+----
+eoshacl:LinkRoleShape
+	a sh:NodeShape ;
+	sh:targetClass schema:LinkRole ;   # applies to all schema:LinkRole
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	sh:property [
+		sh:path schema:url ;   
+		sh:nodeKind sh:IRI ;     
+		sh:minCount 1 
+	] ;
+	sh:property [
+		sh:path schema:name ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;
+	sh:property [
+		sh:path schema:linkRelationship ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 1 
+	] .
+----
 
 .LinkRole encoding example
 [source,json]
@@ -1595,6 +1774,51 @@ a| thumbnailUrl +
 
 |===
 
+.Related URL Shape
+[source,turtle]
+----
+eoshacl:RelatedUrlShape
+	a sh:NodeShape ;
+	# sh:targetClass schema:Dataset ;   # applies to all schema:Dataset
+	sh:targetSubjectsOf schema:isPartOf ;   # applies to all classes (Dataset) with this attribute, thus not the parent class.
+	sh:closed false ;
+	sh:property [
+		sh:path schema:url ;       
+		sh:minCount 0 ;
+		sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:class schema:LinkRole ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:thumbnailUrl ;  
+		sh:nodeKind sh:IRI ; 
+		sh:minCount 0 
+	] ;
+	sh:property [
+		sh:path schema:potentialAction ; 
+		# how to indicate that any subclass of Action is allowed also without enumerating them ?
+		sh:minCount 0 ; 
+		sh:or (
+			[ sh:class schema:Action  ]
+			[ sh:class schema:SearchAction ]
+			[ sh:class schema:CreateAction ]
+		)
+	] ;
+	sh:property [
+		sh:path schema:distribution ;  
+		sh:class schema:DataDownload ; 
+		sh:minCount 0 
+	] ;
+	sh:property [
+		sh:path schema:subjectOf ;  
+		sh:minCount 1 ;
+		sh:or (
+			[ sh:class schema:MediaObject]
+			[ sh:class schema:ListItem ]     # See DataIdentificationShape
+		)
+	] .
+----
 
 .Related URL encoding example
 [source,json]
@@ -1730,6 +1954,57 @@ a| inLanguage +
 
 |===
 
+.MediaObject Shape
+[source,turtle]
+----
+eoshacl:MediaObjectShape
+	a sh:NodeShape ;
+	sh:targetClass schema:MediaObject ;   # applies to all schema:MediaObject
+	sh:targetClass schema:DataDownload ;  # applies to all schema:DataDownload 
+	#  Not allowing additional properties to have stricter validation.
+	sh:closed true ;
+   	sh:ignoredProperties ( rdf:type schema:additionalType schema:inLanguage  ) ;
+
+	sh:property [
+		sh:path schema:contentUrl ;   
+		sh:nodeKind sh:IRI ;     
+		sh:minCount 1 ;
+	] ;
+	sh:property [
+	  	sh:path schema:name ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 ;
+	] ;
+	sh:property [
+		sh:path schema:description ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 0 ;
+	] ;
+	sh:property [
+	  	sh:path schema:contentSize ;   
+	  	sh:datatype xsd:string ;     
+		sh:minCount 0 ;
+	] ;
+	sh:property [
+	  	sh:path schema:encodingFormat ;        
+		sh:minCount 0 ;
+	  	sh:or (
+			[ sh:nodeKind sh:IRI ]
+			[ sh:datatype xsd:string ]
+		)
+	] .
+
+eoshacl:DataDownloadShape
+	a sh:NodeShape ;
+	sh:targetClass schema:DataDownload ;  		# applies to all schema:DataDownload 
+	sh:deactivated true ;				# specialisation of MediaObject 
+	sh:closed false ;
+	sh:property [
+		sh:path schema:contentUrl ;   
+	  	sh:nodeKind sh:IRI ;     
+		sh:minCount 1 ;
+	] .
+----
 
 .MediaObject encoding example
 [source,json]
@@ -1795,6 +2070,52 @@ Range: https://schema.org/PropertyValueSpecification[PropertyValueSpecification]
 
 |===
 
+.Action Shape
+[source,turtle]
+----
+eoshacl:ActionShape
+	a sh:NodeShape ;
+	sh:targetClass schema:Action ;   # applies to all schema:Action including listed subclasses
+	sh:targetClass schema:SearchAction ;
+	sh:targetClass schema:CreateAction ;
+	sh:targetClass schema:UseAction ;
+
+	sh:closed false ;
+	sh:property [
+	  	sh:path schema:identifier ;        
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+	  	sh:or (
+			[ sh:datatype xsd:string ]
+			[ sh:nodeKind sh:IRI ]
+	  	)
+	] ;
+	sh:property [
+		sh:path schema:target ;
+		sh:minCount 0 ;
+		# sh:maxCount 1 ;
+		sh:or (
+			[ sh:class schema:EntryPoint ]
+			[ sh:datatype xsd:string ]
+		)
+	] .
+----
+
+.SearchAction Shape
+[source,turtle]
+----
+eoshacl:SearchActionShape
+	a sh:NodeShape ;
+	sh:targetClass schema:SearchAction ;   # applies to all schema:SearchAction
+
+	sh:closed true ;
+   	sh:ignoredProperties ( rdf:type schema:target ) ;
+	sh:property [
+		sh:path schema:query-input ;   
+		sh:class schema:PropertyValueSpecification ;     
+		sh:minCount 0 ;
+	] .
+----
 
 .SearchAction encoding example (Long)
 [source,json]
@@ -1908,6 +2229,45 @@ a| measurementTechnique +
 
 |===
 
+.AcquisitionInformation Shape
+[source,turtle]
+----
+eoshacl:AcquisitionInformationShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;   # applies to all schema:Dataset
+  	sh:closed false ;
+
+  	sh:property [
+		sh:path schema:measurementTechnique ;       
+		sh:minCount 0 ;
+	  	sh:or (
+	   		[	sh:nodeKind sh:IRI ]
+	   		[  	sh:datatype xsd:string ]
+		)
+ 	] ;
+ 	sh:property [
+	  	sh:path schema:potentialAction ; 
+	  	sh:minCount 0 ; 
+	 	sh:or (
+	   		[  sh:class schema:CreateAction ]
+	   		[  sh:class schema:Action ]        # possible due to other Shape
+	   		[  sh:class schema:SearchAction ]  # possible due to other Shape
+		)
+  	] .
+
+eoshacl:CreateActionShape
+	a sh:NodeShape ;
+	sh:targetClass schema:CreateAction ;   # applies to all schema:CreateAction
+
+	# Be more strict than allowed by schema.org
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	sh:property [
+		sh:path schema:instrument ;        
+		sh:minCount 1 ;
+		sh:class schema:DefinedTerm     
+	] .
+----
 
 .Acquisition Information encoding example
 [source,json]
@@ -2685,7 +3045,7 @@ ifndef::env-github[]
 === Earth Observation
 endif::[]
 
-An `EarthObservation` represents an indoividual granule or product.
+An `EarthObservation` represents an individual granule or product.
 
 [#img_object_person,reftext='{figure-caption} {counter:figure-num}']
 .EarthObservation Schema
@@ -2805,57 +3165,6 @@ endif::[]
 
 No extension is required.  The encoding presented in <<41-metadata-information,section 4.1 Metadata Information>> also applies for EO granules.
 
-.MetadataInformation Shape
-[source,turtle]
-----
-eoshacl:ListItemShape
-	a sh:NodeShape ;
-	sh:targetClass schema:ListItem ;   # applies to all schema:ListItem
-	sh:closed false ;
-	sh:property [
-		sh:path schema:encodingFormat ;
-	  	sh:minCount 0 ;
-	  	sh:maxCount 1 ;
-	  	sh:or (
-			[ sh:nodeKind sh:IRI ]
-			[ sh:datatype xsd:string ]
-		)
-	] ;
-    	# optional schema:inLanguage
-   	sh:property [
-	  	sh:path schema:dateCreated ; 
-	  	sh:minCount 0 ;
-	  	sh:maxCount 1 
-   	] ;
-    	sh:property [
-	  	sh:path schema:dateModified ;
-	  	sh:minCount 1 ;
-	  	sh:maxCount 1 
-	] ;
-	sh:property [
-		sh:path schema:datePublished ;
-		sh:minCount 0 ;
-		sh:maxCount 1 
-	] .
-
-
-eoshacl:DateRangeShape  #  shape for all date ranges.
-	a sh:NodeShape ;
-	sh:targetObjectsOf schema:dateModified ;
-	sh:targetObjectsOf schema:datePublished ;
-	sh:targetObjectsOf schema:dateCreated ;    
-	
-	# sh:resultMessage "Value does not correspond to expected range." ;
-	sh:closed false ;
-	sh:minLength 10 ;  # format: 2021-12-08
-	sh:maxLength 24 ;  # format: 2020-09-29T11:07:54.000Z
-	sh:or (
-			[ sh:datatype xsd:dateTime ]
-			[ sh:datatype xsd:date ]
-			[ sh:datatype schema:Date ]
-			[ sh:datatype schema:DateTime ]
-	) .
-----
 
 // 7.3 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
@@ -2883,40 +3192,7 @@ endif::[]
 
 No extension is required.  The encoding presented in <<45-spatial-information,section 4.5 Spatial Information>> also applies for EO granules.
 
-.SpatialInformation Shape
-[source,turtle]
-----
-eoshacl:SpatialInformationShape
-	a sh:NodeShape ;
-	# sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
-   	sh:targetSubjectsOf schema:isPartOf ;   # applies to all classes (Dataset) with this attribute, thus not the parent class.
-	sh:closed false ;
-	sh:property [
-		sh:path schema:spatialCoverage ;
-		sh:class schema:Place;
-		sh:minCount 1				# mandatory footprint
-	] .
 
-eoshacl:PlaceShape
-	a sh:NodeShape ;
-	sh:targetClass schema:Place ;	# applies to all schema:Place
-	sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) ;
-	
-	sh:property [
-		sh:path schema:additionalProperty ;
-		sh:class schema:PropertyValue;
-		sh:minCount 0  
-	] ;
-	sh:property [
-		sh:path schema:geo ;
-		sh:minCount 1 ; 
-		sh:or (
-			[ sh:class schema:GeoCoordinates ]
-			[ sh:class schema:GeoShape ]
-		)
-	] .
-----
 
 // 7.4.2 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
