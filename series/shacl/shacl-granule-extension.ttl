@@ -1074,6 +1074,31 @@ eoshacl:CreativeWorkShape
 	] .
 
 #
+#  4.4 DescriptiveKeywords
+#
+
+eoshacl:DescriptiveKeywordsShape
+  	a sh:NodeShape ;
+  	sh:targetClass schema:Dataset ;  # applies to all schema:Dataset
+  	sh:closed false ;
+	sh:property [
+		sh:path schema:keywords ;
+       	sh:minCount 0 ; 
+      	sh:or (
+	   		[ sh:datatype xsd:string ]
+	   		[ sh:class schema:DefinedTerm ]
+		)
+  	] ;
+	sh:property [
+		sh:path schema:variableMeasured ;
+       	sh:minCount 0 ; 
+      	sh:or (
+	   		[ sh:datatype xsd:string ]
+	   		[ sh:class schema:PropertyValue ]
+		)
+  	] .
+
+#
 #  4.4.1 DefinedTerm
 #
 
@@ -1146,6 +1171,10 @@ eoshacl:PlaceShape
 			[ sh:class schema:GeoCoordinates ]
 			[ sh:class schema:GeoShape ]
 		)
+	] ;
+	sh:property [
+		sh:path schema:geoContains ;
+		sh:minCount 0 
 	] .
 
 
