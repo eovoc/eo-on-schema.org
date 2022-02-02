@@ -5015,6 +5015,27 @@ a| wasUsedBy +
 |===
 | GeoJSON Property | JSON-LD Property |   schema.org  | Reference
 
+a| acquisitionInformation +
+~$.properties.acquisitionInformation~     | eop:acquisitionInformation      |    schema:acquisitionInformation (Extension)         |  
+
+a| AcquisitionInformation +
+     | eop:AcquisitionInformation      |    schema:AcquisitionInformation (Extension)         | 
+     
+a| acquisitionParameters +
+~$..acquisitionInformation.acquisitionParameters~     | eop:acquisitionParameters      |    schema:acquisitionInformation/schema:acquisitionparameters (Extension)         |  
+
+a| AcquisitionParameters +
+                                      | eop:AcquisitionParameters      |    schema:AcquisitionParameters (Extension)     | 
+
+a| acquisitionStation +
+~$..acquisitionParameters.acquisitionStation~     | eop:acquisitionStation      |    schema:acquisitionParameters/schema:acquisitionStation (Extension)         |
+
+a| acquisitionSubType +
+~$..acquisitionParameters.acquisitionSubType~     | eop:acquisitionSubType      |    schema:acquisitionParameters/schema:acquisitionSubType (Extension)         |
+
+a| acquisitionType +
+~$..acquisitionParameters.acquisitionType~     | eop:acquisitionType      |    schema:acquisitionParameters/schema:acquisitionType (Extension)         |
+
 a| discreteWavelengths +
 ~$..wavelengths[*].discreteWavelengths~     | eop:discreteWavelength      |     https://schema.org/value[$..wavelengths[*].value]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
 
