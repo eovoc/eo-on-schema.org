@@ -5022,7 +5022,7 @@ a| AcquisitionInformation +
      | eop:AcquisitionInformation      |    schema:AcquisitionInformation (Extension)         | 
      
 a| acquisitionParameters +
-~$..acquisitionInformation.acquisitionParameters~     | eop:acquisitionParameters      |    schema:acquisitionInformation/<br />schema:acquisitionparameters (Extension)         |  
+~$..acquisitionInformation.acquisitionParameters~     | eop:acquisitionParameters      |    schema:acquisitionInformation/ <BR/> schema:acquisitionparameters (Extension)         |  
 
 a| AcquisitionParameters +
                                       | eop:AcquisitionParameters      |    schema:AcquisitionParameters (Extension)     | 
