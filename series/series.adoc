@@ -5015,6 +5015,8 @@ a| wasUsedBy +
 |===
 | GeoJSON Property | JSON-LD Property |   schema.org  | Reference
 
+a| acquisitionAngles +
+~$..acquisitionParameters.acquisitionAngles~     | eop:acquisitionAngles      |    schema:acquisitionParameters/ schema:acquisitionAngles (Extension)         |
 
 a| acquisitionInformation +
 ~$.properties.acquisitionInformation~     | eop:acquisitionInformation      |    schema:acquisitionInformation (Extension)         |  
@@ -5044,6 +5046,9 @@ a| acrossTrackIncidenceAngle +
 a| alongTrackIncidenceAngle +
 ~$..acquisitionAngles.alongTrackIncidenceAngle~    | eop:alongTrackIncidenceAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:alongTrackIncidenceAngle (Extension)    | 
 
+a| antennaLookDirection +
+~$..acquisitionParameters.antennaLookDirection~     | eop:antennaLookDirection     |    schema:acquisitionParameters/ schema:antennaLookDirection (Extension)         |
+
 
 a| bbox +
 ~$.bbox~     | gj:bbox      |    schema:spatialCoverage/ schema:geo/ schema:box         | 
@@ -5053,6 +5058,12 @@ a| beginningDateTime +
 
 a| cloudCover +
 ~$.properties.productInformation.cloudCover~     | eop:cloudCover      |    schema:productInformation/ schema:cloudCover  (Extension)       | 
+
+a| completionTimeFromAscendingNode +
+~$..acquisitionParameters.completionTimeFromAscendingNode~     | eop:completionTimeFromAscendingNode      |    schema:acquisitionParameters/ schema:completionTimeFromAscendingNode (Extension)         |
+
+a| cycleNumber +
+~$..acquisitionParameters.cycleNumber~     | eop:cycleNumber     |    schema:acquisitionParameters/ schema:cycleNumber (Extension)         |
 
 a| discreteWavelengths +
 ~$..wavelengths[*].discreteWavelengths~     | eop:discreteWavelength      |     https://schema.org/value[$..wavelengths[*].value]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
@@ -5065,6 +5076,10 @@ a| endWavelength +
 
 a| geometry +
 ~$.geometry~   | gj:geometry  |    https://schema.org/geo[$.spatialCoverage.geo]      |   <<table_object_geoshape>>, https://schema.org/GeoShape[GeoShape] 
+
+a| groundTrackUncertainty +
+~$..acquisitionParameters.groundTrackUncertainty~     | eop:groundTrackUncertainty     |    schema:acquisitionParameters/ schema:groundTrackUncertainty (Extension)         |
+
 
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[$.identifier] |  
@@ -5083,8 +5098,7 @@ a| incidenceAngleVariation +
 ~$..acquisitionAngles.incidenceAngleVariation~    | eop:incidenceAngleVariation   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:incidenceAngleVariation (Extension)    |  
 
 a| instrument +
-~$.acquisitionInformation[*].instrument~     | eop:instrument      |         schema:sensor (Extension) +
-                                                                           [Domain: schema:AcquisitionInformation]  |    <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$.acquisitionInformation[*].instrument~     | eop:instrument      |         schema:acquisitionInformation/ schema:sensor (Extension) |    <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
 a| Instrument  | eop:Instrument      |         schema:Instrument (Extension)   |   <<762-instrument,7.6.2 Instrument>>
 
@@ -5100,6 +5114,8 @@ a| instrumentElevationAngle +
 a| instrumentZenithAngle +
 ~$..acquisitionAngles.instrumentZenithAngle~    | eop:instrumentZenithAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentZenithAngle (Extension)    |  
 
+a| operationalMode +
+~$..acquisitionParameters.operationalMode~     | eop:operationalMode      |    schema:acquisitionParameters/ schema:operationalMode (Extension)         |
 
 a| parentIdentifier +
 ~$.properties.parentIdentifier~     | eop:parentIdentifier |         https://schema.org/isPartOf[$.isPartOf]        |    N/A
@@ -5108,24 +5124,24 @@ a| pitch +
 ~$..acquisitionAngles.pitch~    | eop:pitch   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:pitch (Extension)    |
 
 a| platform +
-~$.acquisitionInformation[*].platform~     | eop:platform      |         schema:platform  +
-                                                                    [Domain: schema:AcquisitionInformation]   |   <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$.acquisitionInformation[*].platform~     | eop:platform      |    schema:acquisitionInformation/ schema:platform   |   <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
 a| Platform  | eop:Platform      |         schema:Platform (Extension)   |   <<761-platform,7.6.1 Platform>>
 
 a| platformSerialIdentifier +
-~$..platform.platformSerialIdentifier~    | eop:platformSerialIdentifier   |   https://schema.org/serialNumber[$.acquisitionInformation.platform.serialNumber]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$..platform.platformSerialIdentifier~    | eop:platformSerialIdentifier   |   schema:acquisitionInformation/ schema:platform/ schema:serialNumber]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
 a| platformShortName +
-~$..platform.platformShortName~    | eop:platformShortName   |   https://schema.org/name +
-                                                                [Domain: schema:Platform]   |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$..platform.platformShortName~    | eop:platformShortName   |  schema:acquisitionInformation/  schema:platform/ schema:name  |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+
+a| relativeOrbitNumber +
+~$..acquisitionParameters.relativeOrbitNumber~     | eop:relativeOrbitNumber      |    schema:acquisitionParameters/ schema:relativeOrbitNumber (Extension)         |
 
 a| roll +
 ~$..acquisitionAngles.roll~    | eop:roll   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:roll (Extension)    |
 
 a| size +
-~$.properties.productInformation.size~ |   eop:size      |     https://schema.org/contentSize +
-                                      [Domain: schema:ProductInformation]  |     (Extension)
+~$.properties.productInformation.size~ |   eop:size      |     schema:productInformation/ schema:contentSize  |     (Extension)
 				      
 a| startTimeFromAscendingNode +
 ~$..acquisitionParameters.startTimeFromAscendingNode~     | eop:startTimeFromAscendingNode      |    schema:acquisitionParameters/ schemastartTimeFromAscendingNode (Extension)         |
@@ -5136,12 +5152,25 @@ a| startWavelengths +
 a| status +
 ~$.properties.status~ |   eop:status      |      schema:acquisitionStatus   +
                                       [Domain: schema:EarthObservation]  |     (Extension)
+				      
+a| TBDoperationalMode +
+~$..acquisitionParameters.operationalMode~     | eop:operationalMode      |    schema:acquisitionParameters/ schema:operationalMode (Extension)         |
+
+				      
+a| tileId +
+~$..acquisitionParameters.tileId~     | eop:tileId     |    schema:acquisitionParameters/ schema:tileId (Extension)         |
 
 a| WavelengthInformation     |   eop:WavelengthInformation      |      schema:WavelengthInformation      |     (Extension)
 
 a| wavelengths +
-~$..acquisitionParameters.wavelengths~     | eop:wavelengths      |     schema:wavelengths (Extension) +
-                                                                      [Domain: schema:AcquisitionParameters]      |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>  (Extension)
+~$..acquisitionParameters.wavelengths~     | eop:wavelengths      |   schema:acquisitionParameters/ schema:wavelengths (Extension)   |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>  (Extension)
+
+a| wrsLatitudeGrid +
+~$..acquisitionParameters.wrsLatitudeGrid~     | eop:wrsLatitudeGrid  |    schema:acquisitionParameters/ schema:wrsLatitudeGrid (Extension)         |
+
+a| wrsLongitudeGrid +
+~$..acquisitionParameters.wrsLongitudeGrid~     | eop:wrsLongitudeGrid     |    schema:acquisitionParameters/ schema:wrsLongitudeGrid (Extension)         |
+
 
 a| yaw +
 ~$..acquisitionAngles.yaw~    | eop:yaw   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:yaw (Extension)    |
