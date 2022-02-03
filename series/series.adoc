@@ -4854,15 +4854,20 @@ a| phone +
 a| Plan         | prov:Plan    |        |   
 
 a| platform +
-~$..acquisitionInformation[*].platform~   | prov:used |          https://schema.org/instrument[$.potentialAction[\].instrument] |  <<table_object_acquisitioninformation>>
+~$..acquisitionInformation[*].platform~   | prov:used |          schema:potentialAction/ schema:instrument/   |  <<table_object_acquisitioninformation>>
 
 a| Platform  | eop:Platform  |          https://schema.org/DefinedTerm[DefinedTerm] |  <<table_object_acquisitioninformation>>
 
 a| platformSerialIdentifier +
-~$..acquisitionInformation[*].SerialIdentifier~   | eop:platformSerialIdentifier |          https://schema.org/name[$.potentialAction[\].instrument[\].name]   |  <<table_object_acquisitioninformation>>
+~$..platform.platformSerialIdentifier~   | eop:platformSerialIdentifier |          schema:potentialAction/ schema:instrument/ schema:serialNumber   |  <<table_object_acquisitioninformation>>
+
+
 
 a| platformShortName +
-~$..acquisitionInformation[*].platformShortName~   | eop:platformShortName |          https://schema.org/name[$.potentialAction[\].instrument[\].name]   |  <<table_object_acquisitioninformation>>
+~$..platform.platformShortName~   | eop:platformShortName |          schema:potentialAction/ schema:instrument/ schema:name   |  <<table_object_acquisitioninformation>>
+
+a| platformShortName +
+~$..platform.platformShortName~   | eop:platformShortName |  schema:acquisitionInformation/ schema:platform/ schema:name  |  <<761-platform,7.6.1 Platform>>
 
 a| Point           | gj:Point    |    https://schema.org/GeoCoordinates[GeoCoordinates]    |   
 
@@ -5025,7 +5030,7 @@ a| AcquisitionInformation +
      | eop:AcquisitionInformation      |    schema:AcquisitionInformation (Extension)         | 
      
 a| acquisitionParameters +
-~$..acquisitionInformation.acquisitionParameters~     | eop:acquisitionParameters      |    schema:acquisitionInformation/ schema:acquisitionparameters (Extension)         |  
+~$..acquisitionInformation.acquisitionParameters~    | eop:acquisitionParameters   |    schema:acquisitionInformation/ schema:acquisitionparameters (Extension)  | <<76-acquisition-information,7.6 Acquisition Information>> 
 
 a| AcquisitionParameters +
                                       | eop:AcquisitionParameters      |    schema:AcquisitionParameters (Extension)     | 
@@ -5076,17 +5081,20 @@ a| completionTimeFromAscendingNode +
 a| cycleNumber +
 ~$..acquisitionParameters.cycleNumber~     | eop:cycleNumber     |    schema:acquisitionParameters/ schema:cycleNumber (Extension)         |
 
+a| description +
+~$..instrument.description~    | dct:description   |  schema:acquisitionInformation/  schema:sensor/ https://schema.org/description[schema:description]  |  <<762-instrument,7.6.2 Instrument>>
+
 a| discreteWavelengths +
-~$..wavelengths[*].discreteWavelengths~     | eop:discreteWavelength      |     https://schema.org/value[$..wavelengths[*].value]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+~$..wavelengths[*].discreteWavelengths~     | eop:discreteWavelength      |     schema:acquisitionParameters/ schema:wavelengths/ https://schema.org/value[schema:value]   |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
 
 a| endingDateTime +
-~$..acquisitionParameters.endingDateTime~     | dcat:endDate      |    schema:temporalCoverage         | 
+~$..acquisitionParameters.endingDateTime~     | dcat:endDate      |    https://schema.org/temporalCoverage[schema:temporalCoverage]         | 
 
 a| endWavelength +
-~$..wavelengths[*].endWavelength~     | eop:endWavelength      |     https://schema.org/maxValue[$..wavelengths[*].maxValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+~$..wavelengths[*].endWavelength~     | eop:endWavelength      |     schema:acquisitionParameters/ schema:wavelengths/ https://schema.org/maxValue[schema:maxValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
 
 a| geometry +
-~$.geometry~   | gj:geometry  |    https://schema.org/geo[$.spatialCoverage.geo]      |   <<table_object_geoshape>>, https://schema.org/GeoShape[GeoShape] 
+~$.geometry~   | gj:geometry  |    https://schema.org/geo[schema:geo]/ https://schema.org/spatialCoverage[schema:spatialCoverage]/ https://schema.org/geo[geo]      |   <<table_object_geoshape>>, https://schema.org/GeoShape[GeoShape] 
 
 a| groundTrackUncertainty +
 ~$..acquisitionParameters.groundTrackUncertainty~     | eop:groundTrackUncertainty     |    schema:acquisitionParameters/ schema:groundTrackUncertainty (Extension)         |
@@ -5116,7 +5124,7 @@ a| instrument +
 a| Instrument  | eop:Instrument      |         schema:Instrument (Extension)   |   <<762-instrument,7.6.2 Instrument>>
 
 a| instrumentShortName +
-~$..instrument.instrumentShortName~    | eop:instrumentShortName   |  schema:acquisitionInformation/ schema:sensor/ schema:name    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$..instrument.instrumentShortName~    | eop:instrumentShortName   |  schema:acquisitionInformation/ schema:sensor/ https://schema.org/name[schema:name]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
 
 a| instrumentAzimuthAngle +
 ~$..acquisitionAngles.instrumentAzimuthAngle~    | eop:instrumentAzimuthAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentAzimuthAngle (Extension)    |  
@@ -5154,22 +5162,25 @@ a| orbitDuration +
 a| orbitNumber +
 ~$..acquisitionParameters.orbitnumber~      |  eop:orbitNumber      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:orbitNumber (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
 
+a| orbitType +
+~$..platform.orbitType~    | eop:orbitType   |  schema:acquisitionInformation/  schema:platform/ schema:orbitType (Extension)  |  <<761-platform,7.6.1 Platform>>
+
 a| parentIdentifier +
-~$.properties.parentIdentifier~     | eop:parentIdentifier |         https://schema.org/isPartOf[$.isPartOf]   or schema:parentIdentifier     |   <<71-earth-observation,7.1 Earth Observation>>
+~$.properties.parentIdentifier~     | eop:parentIdentifier |         https://schema.org/isPartOf[schema:isPartOf]   or schema:parentIdentifier (Extension)    |   <<71-earth-observation,7.1 Earth Observation>>
 
 a| pitch +
 ~$..acquisitionAngles.pitch~    | eop:pitch   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:pitch (Extension)    |
 
 a| platform +
-~$.acquisitionInformation[*].platform~     | eop:platform      |    schema:acquisitionInformation/ schema:platform   |   <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$.acquisitionInformation[*].platform~     | eop:platform      |    schema:acquisitionInformation/ schema:platform  (Extension)  |   <<76-acquisition-information,7.6 Acquisition Information>> 
 
 a| Platform  | eop:Platform      |         schema:Platform (Extension)   |   <<761-platform,7.6.1 Platform>>
 
 a| platformSerialIdentifier +
-~$..platform.platformSerialIdentifier~    | eop:platformSerialIdentifier   |   schema:acquisitionInformation/ schema:platform/ schema:serialNumber]    |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$..platform.platformSerialIdentifier~    | eop:platformSerialIdentifier   |   schema:acquisitionInformation/ schema:platform/ schema:serialNumber]    |  <<761-platform,7.6.1 Platform>>
 
 a| platformShortName +
-~$..platform.platformShortName~    | eop:platformShortName   |  schema:acquisitionInformation/  schema:platform/ schema:name  |  <<76-acquisition-information,7.6 Acquisition Information>> (Extension)
+~$..platform.platformShortName~    | eop:platformShortName   |  schema:acquisitionInformation/  schema:platform/ https://schema.org/name[schema:name]  |  <<761-platform,7.6.1 Platform>>
 
 a| productInformation +
 ~$.properties.productInformation~     | eop:productInformation |     schema:productInformation (Extension)     |   <<71-earth-observation,7.1 Earth Observation>>
@@ -5180,19 +5191,31 @@ a| relativeOrbitNumber +
 a| roll +
 ~$..acquisitionAngles.roll~    | eop:roll   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:roll (Extension)    |
 
+a| instrument +
+~$.acquisitionInformation[*].instrument~     | eop:instrument      |    schema:acquisitionInformation/ schema:sensor (Extension)  | <<76-acquisition-information,7.6 Acquisition Information>>
+
+a| instrumentShortName +
+~$..instrument.instrumentShortName~    | eop:instrumentShortName   |  schema:acquisitionInformation/  schema:sensor/ https://schema.org/name[schema:name]  |  <<762-instrument,7.6.2 Instrument>>
+
+a| sensorType +
+~$..instrument.sensorType~    | eop:sensorType   |  schema:acquisitionInformation/  schema:sensor/ schema:sensorType (Extension)  |  <<762-instrument,7.6.2 Instrument>>
+
 a| size +
-~$.properties.productInformation.size~ |   eop:size      |     schema:productInformation/ schema:contentSize  |     (Extension)
+~$.properties.productInformation.size~ |   eop:size      |     schema:productInformation/ https://schema.org/contentSize[schema:contentSize]  |     (Extension)
+
+a| spectralRange +
+~$..wavelengths[*].spectralRange~     | eop:spectralRange     |     schema:acquisitionParameters/ schema:wavelengths/ schema:spectralRange (Extension)        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  
 				      
 a| startTimeFromAscendingNode +
-~$..acquisitionParameters.startTimeFromAscendingNode~     | eop:startTimeFromAscendingNode      |    schema:acquisitionParameters/ schemastartTimeFromAscendingNode (Extension)         |
+~$..acquisitionParameters.startTimeFromAscendingNode~     | eop:startTimeFromAscendingNode      |    schema:acquisitionParameters/ schema:startTimeFromAscendingNode (Extension)         |
 
-a| startWavelengths +
-~$..wavelengths[*].startWavelength~     | eop:startWavelength      |     https://schema.org/minValue[$..wavelengths[*].minValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+a| startWavelength +
+~$..wavelengths[*].startWavelength~     | eop:startWavelength      |      schema:acquisitionParameters/ schema:wavelengths/ https://schema.org/minValue[schema:minValue]         |  <<763-wavelength-information,7.6.3 Wavelength Information>>  
 
 a| status +
 ~$.properties.status~ |   eop:status      |      schema:acquisitionStatus (Extension) |  <<71-earth-observation,7.1 Earth Observation>>
 				      
-a| TBDoperationalMode +
+a| operationalMode +
 ~$..acquisitionParameters.operationalMode~     | eop:operationalMode      |    schema:acquisitionParameters/ schema:operationalMode (Extension)         |
 
 				      
@@ -5201,10 +5224,13 @@ a| tileId +
 
 a| VerticalSpatialDomain     |   N/A      |      schema:VerticalSpatialDomain (Extension)   |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
 
-a| WavelengthInformation     |   eop:WavelengthInformation      |      schema:WavelengthInformation      |     (Extension)
+a| WavelengthInformation     |   eop:WavelengthInformation      |      schema:WavelengthInformation      |     TBD (Extension)
 
 a| wavelengths +
 ~$..acquisitionParameters.wavelengths~     | eop:wavelengths      |   schema:acquisitionParameters/ schema:wavelengths (Extension)   |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>  (Extension)
+
+a| wavelengthResolution +
+~$..wavelengths[*].wavelengthResolution~     | eop:wavelengthResolution     |     schema:acquisitionParameters/ schema:wavelengths/ schema:wavelengthResolution (Extension)        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  
 
 a| wrsLatitudeGrid +
 ~$..acquisitionParameters.wrsLatitudeGrid~     | eop:wrsLatitudeGrid  |    schema:acquisitionParameters/ schema:wrsLatitudeGrid (Extension)         |
