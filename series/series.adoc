@@ -5056,12 +5056,20 @@ a| alongTrackIncidenceAngle +
 a| antennaLookDirection +
 ~$..acquisitionParameters.antennaLookDirection~     | eop:antennaLookDirection     |    schema:acquisitionParameters/ schema:antennaLookDirection (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
 
+a| archivingCenter +
+~$..productInformation.archivingCenter~     | eop:archivingCenter |     schema:productInformation/ https://schema.org/holdingArchive[schema:holdingArchive]      | <<77-product-information,7.7 Product Information>>
+
+a| archivingDate +
+~$..productInformation.archivingDate~     | eop:archivingDate |     schema:productInformation/ schema:archivingDate | <<77-product-information,7.7 Product Information>>
+
 a| ascendingNodeDate +
 ~$..acquisitionParameters.ascendingNodeDate~      |  eop:ascendingNodeDate      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:ascendingNodeDate (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
 
 a| ascendingNodeLongitude +
 ~$..acquisitionParameters.ascendingNodeLongitude~      |  eop:ascendingNodeLongitude      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:ascendingNodeLongitude (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
 
+a| availabilityTime +
+~$.properties.productInformation.availabilityTime~ |   eop:availabilityTime      |     schema:productInformation/ schema:availabilityTime (Extension) |  <<77-product-information,7.7 Product Information>>
 
 a| available +
 ~$.properties.available~     | dct:available |     schema:available (Extension)     |   <<71-earth-observation,7.1 Earth Observation>>
@@ -5205,9 +5213,23 @@ a| polarisationChannels +
 a| polarisationMode +
 ~$..acquisitionParameters.polarisationMode~     | eop:polarisationMode      |    schema:acquisitionParameters/ schema:polarisationMode (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
 
+a| timeliness +
+~$.properties.productInformation.timeliness~ |   eop:timeliness      |     schema:productInformation/ schema:timeliness (Extension) |  <<77-product-information,7.7 Product Information>>
 
-a| productInformation +
-~$.properties.productInformation~     | eop:productInformation |     schema:productInformation (Extension)     |   <<71-earth-observation,7.1 Earth Observation>>
+a| productGroupId +
+~$..productInformation.productGroupId~     | eop:productGroupId |     https://schema.org/isPartOf[schema:isPartOf]     |   <<71-earth-observation,7.1 Earth Observation>>
+
+a| productType +
+~$..productInformation.productType~     | eop:productType |     schema:productInformation/ schema:productType (Extension)     | <<77-product-information,7.7 Product Information>>
+
+a| productVersion +
+~$..productInformation.productVersion~     | eop:productVersion |     schema:productInformation/ https://schema.org/version[schema:version]      | <<77-product-information,7.7 Product Information>>
+
+a| qualityInformation +
+~$..productInformation.qualityInformation~     | eop:qualityInformation |     schema:productInformation/ schema:qualityInformation (Extension) | <<77-product-information,7.7 Product Information>>
+
+a| referenceSystemIdentifier +
+~$..productInformation.referenceSystemIdentifier~     | eop:referenceSystemIdentifier |     schema:productInformation/ https://schema.org/additionalProperty[schema:additionalProperty] | <<77-product-information,7.7 Product Information>>
 
 a| relativeOrbitNumber +
 ~$..acquisitionParameters.relativeOrbitNumber~     | eop:relativeOrbitNumber      |    schema:acquisitionParameters/ schema:relativeOrbitNumber (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
@@ -5226,10 +5248,10 @@ a| sensorType +
 ~$..instrument.sensorType~    | eop:sensorType   |  schema:acquisitionInformation/  schema:sensor/ schema:sensorType (Extension)  |  <<762-instrument,7.6.2 Instrument>>
 
 a| size +
-~$.properties.productInformation.size~ |   eop:size      |     schema:productInformation/ https://schema.org/contentSize[schema:contentSize]  |     (Extension)
+~$.properties.productInformation.size~ |   eop:size      |     schema:productInformation/ https://schema.org/contentSize[schema:contentSize]  |  <<77-product-information,7.7 Product Information>>
 
 a| spectralRange +
-~$..wavelengths[*].spectralRange~     | eop:spectralRange     |     schema:acquisitionParameters/ schema:wavelengths/ schema:spectralRange (Extension)        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  
+~$..wavelengths[*].spectralRange~     | eop:spectralRange     |    schema:acquisitionParameters/ schema:wavelengths/ schema:spectralRange (Extension)   |  <<763-wavelength-information,7.6.3 Wavelength Information>>  
 				      
 a| startTimeFromAscendingNode +
 ~$..acquisitionParameters.startTimeFromAscendingNode~     | eop:startTimeFromAscendingNode      |    schema:acquisitionParameters/ schema:startTimeFromAscendingNode (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
@@ -5239,6 +5261,12 @@ a| startWavelength +
 
 a| status +
 ~$.properties.status~ |   eop:status      |      schema:acquisitionStatus (Extension) |  <<71-earth-observation,7.1 Earth Observation>>
+
+a| statusDetail +
+~$.properties.productInformation.statusDetail~ |   eop:statusDetail      |     schema:productInformation/ schema:statusDetail (Extension)  |  <<77-product-information,7.7 Product Information>>
+
+a| statusSubType +
+~$.properties.productInformation.statusSubType~ |   eop:statusSubType      |     schema:productInformation/ schema:statusSubType (Extension) |  <<77-product-information,7.7 Product Information>>
 				      
 a| swathIdentifier +
 ~$..acquisitionParameters.swathIdentifier~     | eop:swathIdentifier      |    schema:acquisitionParameters/ schema:swathIdentifier (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
@@ -5246,6 +5274,9 @@ a| swathIdentifier +
 				      
 a| tileId +
 ~$..acquisitionParameters.tileId~     | eop:tileId     |    schema:acquisitionParameters/ schema:tileId (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
+
+a| timeliness +
+~$.properties.productInformation.timeliness~ |   eop:timeliness      |     schema:productInformation/ schema:timeliness (Extension) |  <<77-product-information,7.7 Product Information>>
 
 a| verticalResolution +
 ~$..acquisitionParameters.verticalResolution~     | eop:verticalResolution      |    schema:acquisitionParameters/ schema:verticalResolution (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
