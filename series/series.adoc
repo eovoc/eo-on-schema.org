@@ -5085,10 +5085,10 @@ a| groundTrackUncertainty +
 ~$..acquisitionParameters.groundTrackUncertainty~     | eop:groundTrackUncertainty     |    schema:acquisitionParameters/ schema:groundTrackUncertainty (Extension)         |
 
 a| highestLocation +
-~$.properties.highestLocation~      |   N/A      |      schema:acquisitionParameters/ [schema:maxValue](https://schema.org/maxValue) |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
+~$.properties.highestLocation~      |   N/A      |      schema:acquisitionParameters/ https://schema.org/maxValue[schema:maxValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
 
 a| identifier +
-~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[$.identifier] |  
+~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[schema:identifier] |  
 
 
 a| illuminationAzimuthAngle +
