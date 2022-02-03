@@ -5084,7 +5084,7 @@ a| cloudCover +
 ~$.properties.productInformation.cloudCover~     | eop:cloudCover      |    schema:productInformation/ schema:cloudCover  (Extension)       | 
 
 a| completionTimeFromAscendingNode +
-~$..acquisitionParameters.completionTimeFromAscendingNode~     | eop:completionTimeFromAscendingNode      |    schema:acquisitionParameters/ schema:completionTimeFromAscendingNode (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
+~$..acquisitionParameters.completionTime FromAscendingNode~     | eop:completionTime FromAscendingNode      |    schema:acquisitionParameters/ schema:completionTime FromAscendingNode (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
 
 a| cycleNumber +
 ~$..acquisitionParameters.cycleNumber~     | eop:cycleNumber     |    schema:acquisitionParameters/ schema:cycleNumber (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
