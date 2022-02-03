@@ -5067,10 +5067,10 @@ a| available +
 ~$.properties.available~     | dct:available |     schema:available (Extension)     |   <<71-earth-observation,7.1 Earth Observation>>
 
 a| bbox +
-~$.bbox~     | gj:bbox      |    schema:spatialCoverage/ schema:geo/ schema:box         | 
+~$.bbox~     | gj:bbox      |    https://schema.org/spatialCoverage[schema:spatialCoverage]/ https://schema.org/geo[schema:geo]/ https://schema.org/box[schema:box]         | 
 
 a| beginningDateTime +
-~$..acquisitionParameters.beginningDateTime~     | dcat:startDate      |    schema:temporalCoverage         | 
+~$..acquisitionParameters.beginningDateTime~     | dcat:startDate      |    https://schema.org/temporalCoverage[schema:temporalCoverage]         | 
 
 a| cloudCover +
 ~$.properties.productInformation.cloudCover~     | eop:cloudCover      |    schema:productInformation/ schema:cloudCover  (Extension)       | 
@@ -5177,7 +5177,7 @@ a| platform +
 a| Platform  | eop:Platform      |         schema:Platform (Extension)   |   <<761-platform,7.6.1 Platform>>
 
 a| platformSerialIdentifier +
-~$..platform.platformSerialIdentifier~    | eop:platformSerialIdentifier   |   schema:acquisitionInformation/ schema:platform/ schema:serialNumber]    |  <<761-platform,7.6.1 Platform>>
+~$..platform.platformSerialIdentifier~    | eop:platformSerialIdentifier   |   schema:acquisitionInformation/ schema:platform/ https://schema.org/serialNumber[schema:serialNumber]    |  <<761-platform,7.6.1 Platform>>
 
 a| platformShortName +
 ~$..platform.platformShortName~    | eop:platformShortName   |  schema:acquisitionInformation/  schema:platform/ https://schema.org/name[schema:name]  |  <<761-platform,7.6.1 Platform>>
