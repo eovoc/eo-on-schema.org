@@ -5103,7 +5103,7 @@ a| groundTrackUncertainty +
 ~$..acquisitionParameters.groundTrackUncertainty~     | eop:groundTrackUncertainty     |    schema:acquisitionParameters/ schema:groundTrackUncertainty (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
 
 a| highestLocation +
-~$.properties.highestLocation~      |  eop:maximumAltitude      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/maxValue[schema:maxValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
+~$.properties.highestLocation~      |  eop:maximumAltitude      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/location[schema:location]/  https://schema.org/maxValue[schema:maxValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
 
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[schema:identifier] |  
@@ -5149,11 +5149,14 @@ a| lastOrbitNumber +
 ~$..acquisitionParameters.lastOrbitnumber~      |  eop:lastOrbitNumber      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:lastOrbitNumber (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
 
 a| locationUnit +
-~$.properties.lowestLocation~      |  eop:altitudeUnit      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/unitText[schema:unitText] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
+~$.properties.lowestLocation~      |  eop:altitudeUnit      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/location[schema:location]/ https://schema.org/unitText[schema:unitText] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
+
+a| locationUnit +
+~$.properties.lowestLocation~      |  eop:altitudeUnit      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/location[schema:location]/ https://schema.org/unitText[schema:unitText] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
 
 
 a| lowestLocation +
-~$.properties.lowestLocation~      |  eop:minimumAltitude      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/minValue[schema:minValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
+~$.properties.lowestLocation~      |  eop:minimumAltitude      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/location[schema:location]/  https://schema.org/minValue[schema:minValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
 
 a| measurementType +
 ~$..acquisitionParameters.measurementType~      |  eop:measurementType      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:measurementType (Extension) |  <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
