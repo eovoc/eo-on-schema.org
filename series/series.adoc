@@ -5051,6 +5051,13 @@ a| alongTrackIncidenceAngle +
 a| antennaLookDirection +
 ~$..acquisitionParameters.antennaLookDirection~     | eop:antennaLookDirection     |    schema:acquisitionParameters/ schema:antennaLookDirection (Extension)         |
 
+a| ascendingNodeDate +
+~$..acquisitionParameters.ascendingNodeDate~      |  eop:ascendingNodeDate      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:ascendingNodeDate (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
+
+a| ascendingNodeLongitude +
+~$..acquisitionParameters.ascendingNodeLongitude~      |  eop:ascendingNodeLongitude      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:ascendingNodeLongitude (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
+
+
 a| available +
 ~$.properties.available~     | dct:available |     schema:available (Extension)     |   <<71-earth-observation,7.1 Earth Observation>>
 
@@ -5085,7 +5092,7 @@ a| groundTrackUncertainty +
 ~$..acquisitionParameters.groundTrackUncertainty~     | eop:groundTrackUncertainty     |    schema:acquisitionParameters/ schema:groundTrackUncertainty (Extension)         |
 
 a| highestLocation +
-~$.properties.highestLocation~      |   N/A      |      schema:acquisitionParameters/ https://schema.org/maxValue[schema:maxValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
+~$.properties.highestLocation~      |  eop:maximumAltitude      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/maxValue[schema:maxValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
 
 a| identifier +
 ~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[schema:identifier] |  
@@ -5120,8 +5127,32 @@ a| instrumentElevationAngle +
 a| instrumentZenithAngle +
 ~$..acquisitionAngles.instrumentZenithAngle~    | eop:instrumentZenithAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentZenithAngle (Extension)    |  
 
+a| lastOrbitDirection +
+~$..acquisitionParameters.lastOrbitDirection~      |  eop:lastOrbitDirection      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:lastOrbitDirection (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
+
+a| lastOrbitNumber +
+~$..acquisitionParameters.lastOrbitnumber~      |  eop:lastOrbitNumber      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:lastOrbitNumber (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
+
+a| locationUnit +
+~$.properties.lowestLocation~      |  eop:altitudeUnit      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/unitText[schema:unitText] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
+
+
+a| lowestLocation +
+~$.properties.lowestLocation~      |  eop:minimumAltitude      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/minValue[schema:minValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
+
+
+
 a| operationalMode +
 ~$..acquisitionParameters.operationalMode~     | eop:operationalMode      |    schema:acquisitionParameters/ schema:operationalMode (Extension)         |
+
+a| orbitDirection +
+~$..acquisitionParameters.orbitDirection~      |  eop:orbitDirection      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:orbitDirection (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
+
+a| orbitDuration +
+~$..acquisitionParameters.orbitDuration~      |  eop:orbitDuration      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:orbitDuration (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
+
+a| orbitNumber +
+~$..acquisitionParameters.orbitnumber~      |  eop:orbitNumber      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:orbitNumber (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
 
 a| parentIdentifier +
 ~$.properties.parentIdentifier~     | eop:parentIdentifier |         https://schema.org/isPartOf[$.isPartOf]   or schema:parentIdentifier     |   <<71-earth-observation,7.1 Earth Observation>>
