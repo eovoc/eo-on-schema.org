@@ -1,0 +1,29 @@
+@startuml
+!include include.iuml
+Class ProcessingInformation #orange
+Class StructuredValue
+ProcessingInformation --|> StructuredValue
+Class ProcessingInformation #orange
+Class ProcessingInformation #orange
+Class Duration
+ProcessingInformation --> Duration : "compositeType"
+Class ProcessingInformation #orange
+ProcessingInformation --> (Text) : "processingCenter"
+Class ProcessingInformation #orange
+ProcessingInformation --> (DateTime) : "processingDate"
+Class ProcessingInformation #orange
+ProcessingInformation --> (Text) : "processingLevel"
+Class ProcessingInformation #orange
+ProcessingInformation --> (Text) : "processingMethod"
+Class ProcessingInformation #orange
+ProcessingInformation --> (Text) : "processingMethodVersion"
+Class ProcessingInformation #orange
+ProcessingInformation --> (Text) : "processingMode"
+Class ProcessingInformation #orange
+ProcessingInformation --> (Text) : "processorName"
+ProcessingInformation --> (Text) : "encodingFormat"
+ProcessingInformation --> (URL) : "encodingFormat"
+Class ProcessingInformation #orange
+Class DefinedTerm
+ProcessingInformation --> DefinedTerm : "productContentType"
+@enduml
