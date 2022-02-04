@@ -5376,42 +5376,42 @@ a| yaw +
 |*https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#item-fields[Item
 Fields]* | | |
 
-|id | |$.properties.identifier |
+|id | |$.properties.identifier |  https://schema.org/identifier[schema:identifier]
 
-|collection | |$.properties.parentIdentifier |
+|collection | |$.properties.parentIdentifier | [schema:identifier] (extension) \| https://schema.org/isPartOf[schema:isPartOf]
 
 | | | |
 
 |*https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md[Common
 Metadata]* | | |
 
-|title |string |$.properties.title |
+|title |string |$.properties.title |  https://schema.org/name[schema:name]
 
-|description |string |$.properties.abstract (See OGC 17-084r1) |
+|description |string |$.properties.abstract (See OGC 17-084r1) |  https://schema.org/description[schema:description]
 
-|created |string |$.properties.creationDate |
+|created |string |$.properties.creationDate | https://schema.org/dateCreated[schema:dateCreated]
 
-|updated |string |$.properties.updated (metadata) |
+|updated |string |$.properties.updated (metadata) |  https://schema.org/subjectOf[schema:subjectOf]/ https://schema.org/dateModified[schema:dateModified]
 
 |links |[Link Object] |$.properties.links |
 
 |assets.*.updated |string |$.properties.availabilityTime (data) |
 
-|assets.* (role="data") |Asset Object |$.properties.links.data |
+|assets.* (role="data") |Asset Object |$.properties.links.data |  https://schema.org/distribution[schema:distribution]
  
-|assets.* (role="thumbnail") |Asset Object |$.properties.links.previews |
+|assets.* (role="thumbnail") |Asset Object |$.properties.links.previews |   https://schema.org/thumbnailUrl[schema:thumbnailUrl]
 
-|assets.* (role="metadata") |Asset Object |$.properties.links.alternates |
+|assets.* (role="metadata") |Asset Object |$.properties.links.alternates |  https://schema.org/distribution[schema:distribution]
 
-|datetime |string \| null |$.properties.date |
+|datetime |string \| null |$.properties.date |  https://schema.org/temporalCoverage[schema:temporalCoverage]
 
-|start_datetime |string   |$..acquisitionInformation[*]. acquisitionParameters.beginningDateTime |
+|start_datetime |string   |$..acquisitionInformation[*]. acquisitionParameters.beginningDateTime | https://schema.org/temporalCoverage[schema:temporalCoverage]
 
-|end_datetime |string     |$..acquisitionInformation[*]. acquisitionParameters.endingDateTime |
+|end_datetime |string     |$..acquisitionInformation[*]. acquisitionParameters.endingDateTime | https://schema.org/temporalCoverage[schema:temporalCoverage]
 
-|providers |[Provider Object] |See OGC 17-084r1 |
+|providers |[Provider Object] |See OGC 17-084r1 |  https://schema.org/provider[schema:provider] and https://schema.org/Role[schema:Role]
 
-|license |string |See OGC 17-084r1 |
+|license |string |See OGC 17-084r1 |  https://schema.org/license[schema:license]
 
 |platform |string
 |$..acquisitionInformation[*]. platform.platformShortName
@@ -5431,7 +5431,7 @@ $..acquisitionInformation[*]. platform.platformSerialIdentifier |
 
 |*https://github.com/stac-extensions/eo[EO Extension]* | | |
 
-|eo:cloud_cover |number |$.properties.productInformation.cloudCover |
+|eo:cloud_cover |number |$.properties.productInformation.cloudCover | schema:productInformation/ schema:cloudCover (Extension)
 
 |eo:bands |[Band Object] | |
 
@@ -5439,72 +5439,72 @@ $..acquisitionInformation[*]. platform.platformSerialIdentifier |
 
 |*https://github.com/stac-extensions/sar[SAR Extension]* | | |
 
-|sar:instrument_mode (M) |string    |$..acquisitionParameters.operationalMode |
+|sar:instrument_mode (M) |string    |$..acquisitionParameters.operationalMode |  schema:acquisitionParameters/ schema:operationalMode (Extension)
 
-|sar:polarizations (M) |[string]    |$..acquisitionParameters.polarisationChannels |
+|sar:polarizations (M) |[string]    |$..acquisitionParameters.polarisationChannels |   schema:acquisitionParameters/ schema:polarisationChannels (Extension)
 
-|sar:product_type (M) |string       |$.properties.productInformation.productType |
+|sar:product_type (M) |string       |$.properties.productInformation.productType |  schema:productInformation/ schema:productType (Extension)
 
-|sar:observation_direction |string   |$..acquisitionParameters.antennaLookDirection |
+|sar:observation_direction |string   |$..acquisitionParameters.antennaLookDirection |  schema:acquisitionParameters/ schema:antennaLookDirection (Extension)
 
 | | | |
 
 |*https://github.com/stac-extensions/sat[SAT Extension]* | | |
 
 |sat:orbit_state |string
-|$.properties.acquisitionInformation[*]. acquisitionParameters.orbitDirection |
+|$.properties.acquisitionInformation[*]. acquisitionParameters.orbitDirection |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:lastOrbitDirection (Extension)
 
-|sat:relative_orbit |integer    |$..acquisitionParameters.relativeOrbitNumber |
+|sat:relative_orbit |integer    |$..acquisitionParameters.relativeOrbitNumber |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:relativeOrbitNumber (Extension)
 
 | | | |
 
 |*https://github.com/stac-extensions/scientific[Scientific Extension]* | | |
 
-|sci:doi |string |$.properties.doi |
+|sci:doi |string |$.properties.doi |   	https://schema.org/identifier[schema:identifier]/  https://schema.org/value[schema:value]
 
 | | | |
 
 |*https://github.com/stac-extensions/version[Version Extension]* | | |
 
-|version |string |$properties.productInformation.version |
+|version |string |$properties.productInformation.version |   schema:productInformation/ https://schema.org/version[schema:version]
 
 | | | |
 
 |*https://github.com/stac-extensions/view[View Extension]* | | |
 
-|view:off_nadir |number |$..acquisitionAngles.instrumentElevationAngle |
+|view:off_nadir |number |$..acquisitionAngles.instrumentElevationAngle |  schema:instrumentElevationAngle (Extension)
 
-|view:incidence_angle |number |$..acquisitionAngles.incidenceAngle |
+|view:incidence_angle |number |$..acquisitionAngles.incidenceAngle | schema:incidenceAngle (Extension)
 
-|view:azimuth |number |$..acquisitionAngles.instrumentAzimuthAngle |
+|view:azimuth |number |$..acquisitionAngles.instrumentAzimuthAngle |  schema:instrumentAzimuthAngle (Extension)
 
-|view:sun_azimuth |number |$..acquisitionAngles.illuminationAzimuthAngle |
+|view:sun_azimuth |number |$..acquisitionAngles.illuminationAzimuthAngle | schema:illuminationAzimuthAngle (Extension)
 
-|view:sun_elevation |number |$..acquisitionAngles.illuminationElevationAngle |
+|view:sun_elevation |number |$..acquisitionAngles.illuminationElevationAngle | schema:illuminationElevationAngle (Extension)
 
 | | | |
 
 |*https://github.com/stac-extensions/projection[Projection Extension]* | | |
 
 |proj:epsg (M) |integer
-|$.properties.productInformation.referenceSystemIdentifier |
+|$.properties.productInformation.referenceSystemIdentifier |   schema:productInformation/ https://schema.org/additionalProperty[schema:additionalProperty]
 
 | | | |
 
 |*https://github.com/stac-extensions/timestamps[Timestamps Extension]* | | |
 
-|published |string |$.properties.published |
+|published |string |$.properties.published |  ttps://schema.org/datepublished[schema:datePublished]
 
 | | | |
 
 |*https://landsat.usgs.gov/stac/landsat-extension/schema.json[Landsat
 Extension]* | | |
 
-|landsat:wrs_path |string |$..acquisitionParameters.wrsLongitudeGrid |
+|landsat:wrs_path |string |$..acquisitionParameters.wrsLongitudeGrid |  schema:acquisitionParameters/ schema:wrsLongitudeGrid (Extension)
 
-|landsat:wrs_row |string |$..acquisitionParameters.wrsLatitudeGrid |
+|landsat:wrs_row |string |$..acquisitionParameters.wrsLatitudeGrid |   schema:acquisitionParameters/ schema:wrsLatitudeGrid (Extension)
 
-|landsat:scene_id |string | |
+|landsat:scene_id |string | $..acquisitionParameters.tileId  |  schema:acquisitionParameters/ schema:tileId (Extension)
 |===
 
 
@@ -5830,7 +5830,8 @@ for EO Service. +
 - Added SHACL information in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>> +
 - Added SHACL shapes in various sections of the document. +
 - Updated mapping table for OGC 17-003r2 properties.
-- Included separate JSON-LD context file for EO extension in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>.| Updated version for PM-2 milestone.
+- Updated mapping table for STAC Item properties.
+- Included separate JSON-LD context file for EO extension in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>.| Updated version for EOVOC PM-2 Meeting.
 
 |====================
 
