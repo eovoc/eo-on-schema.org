@@ -5493,7 +5493,7 @@ $..acquisitionInformation[*]. platform.platformSerialIdentifier |
 
 |*https://github.com/stac-extensions/timestamps[Timestamps Extension]* | | |
 
-|published |string |$.properties.published |  ttps://schema.org/datepublished[schema:datePublished]
+|published |string |$.properties.published |  https://schema.org/datepublished[schema:datePublished]
 
 | | | |
 
