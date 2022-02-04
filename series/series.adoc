@@ -5369,144 +5369,142 @@ a| yaw +
 === STAC Item Metadata
 
 
-[cols=",,",options="header",]
+[cols=",,,",options="header",]
 |===
-|*STAC Property* | |*OGC 17-003r2 Property*
+|*STAC Property* | |*OGC 17-003r2 Property* | schema.org
+
 |*https://github.com/radiantearth/stac-spec/blob/master/item-spec/item-spec.md#item-fields[Item
-Fields]* | |
+Fields]* | | |
 
-|id | |$.properties.identifier
+|id | |$.properties.identifier |
 
-|collection | |$.properties.parentIdentifier
+|collection | |$.properties.parentIdentifier |
 
-| | |
+| | | |
 
 |*https://github.com/radiantearth/stac-spec/blob/master/item-spec/common-metadata.md[Common
-Metadata]* | |
+Metadata]* | | |
 
-|title |string |$.properties.title
+|title |string |$.properties.title |
 
-|description |string |$.properties.abstract (See OGC 17-084r1)
+|description |string |$.properties.abstract (See OGC 17-084r1) |
 
-|created |string |$.properties.creationDate
+|created |string |$.properties.creationDate |
 
-|updated |string |$.properties.updated (metadata)
+|updated |string |$.properties.updated (metadata) |
 
-|links |[Link Object] |$.properties.links
+|links |[Link Object] |$.properties.links |
 
-|assets.*.updated |string |$.properties.availabilityTime (data)
+|assets.*.updated |string |$.properties.availabilityTime (data) |
 
-|assets.* (role="data") |Asset Object |$.properties.links.data
+|assets.* (role="data") |Asset Object |$.properties.links.data |
+ 
+|assets.* (role="thumbnail") |Asset Object |$.properties.links.previews |
 
-|assets.* (role="thumbnail") |Asset Object |$.properties.links.previews
+|assets.* (role="metadata") |Asset Object |$.properties.links.alternates |
 
-|assets.* (role="metadata") |Asset Object |$.properties.links.alternates
+|datetime |string \| null |$.properties.date |
 
-|datetime |string \| null |$.properties.date
+|start_datetime |string   |$..acquisitionInformation[*]. acquisitionParameters.beginningDateTime |
 
-|start_datetime |string   |$..acquisitionInformation[*]. acquisitionParameters.beginningDateTime
+|end_datetime |string     |$..acquisitionInformation[*]. acquisitionParameters.endingDateTime |
 
-|end_datetime |string     |$..acquisitionInformation[*]. acquisitionParameters.endingDateTime
+|providers |[Provider Object] |See OGC 17-084r1 |
 
-|providers |[Provider Object] |See OGC 17-084r1
-
-|license |string |See OGC 17-084r1
+|license |string |See OGC 17-084r1 |
 
 |platform |string
 |$..acquisitionInformation[*]. platform.platformShortName
-$..acquisitionInformation[*]. platform.platformSerialIdentifier
+$..acquisitionInformation[*]. platform.platformSerialIdentifier |
 
 |instruments |[string]
-|$..acquisitionInformation[*]. instrument.instrumentShortName
+|$..acquisitionInformation[*]. instrument.instrumentShortName |
 
 |constellation |string
-|$..acquisitionInformation[*]. platform.platformShortName
+|$..acquisitionInformation[*]. platform.platformShortName |
 
-|mission |string |
+|mission |string | |
 
-|gsd |number |
+|gsd |number | |
 
-| | |
+| | | |
 
-|*https://github.com/stac-extensions/eo[EO Extension]* | |
+|*https://github.com/stac-extensions/eo[EO Extension]* | | |
 
-|eo:cloud_cover |number |$.properties.productInformation.cloudCover
+|eo:cloud_cover |number |$.properties.productInformation.cloudCover |
 
-|eo:bands |[Band Object] |
+|eo:bands |[Band Object] | |
 
-| | |
+| | | |
 
-|*https://github.com/stac-extensions/sar[SAR Extension]* | |
+|*https://github.com/stac-extensions/sar[SAR Extension]* | | |
 
-|sar:instrument_mode (M) |string    |$..acquisitionParameters.operationalMode
+|sar:instrument_mode (M) |string    |$..acquisitionParameters.operationalMode |
 
-|sar:polarizations (M) |[string]    |$..acquisitionParameters.polarisationChannels
+|sar:polarizations (M) |[string]    |$..acquisitionParameters.polarisationChannels |
 
-|sar:product_type (M) |string       |$.properties.productInformation.productType
+|sar:product_type (M) |string       |$.properties.productInformation.productType |
 
-|sar:observation_direction |string   |$..acquisitionParameters.antennaLookDirection
+|sar:observation_direction |string   |$..acquisitionParameters.antennaLookDirection |
 
-| | |
+| | | |
 
-|*https://github.com/stac-extensions/sat[SAT Extension]* | |
+|*https://github.com/stac-extensions/sat[SAT Extension]* | | |
 
 |sat:orbit_state |string
-|$.properties.acquisitionInformation[*]. acquisitionParameters.orbitDirection
+|$.properties.acquisitionInformation[*]. acquisitionParameters.orbitDirection |
 
-|sat:relative_orbit |integer    |$..acquisitionParameters.relativeOrbitNumber
+|sat:relative_orbit |integer    |$..acquisitionParameters.relativeOrbitNumber |
 
-| | |
+| | | |
 
-|*https://github.com/stac-extensions/scientific[Scientific Extension]* |
-|
+|*https://github.com/stac-extensions/scientific[Scientific Extension]* | | |
 
-|sci:doi |string |$.properties.doi
+|sci:doi |string |$.properties.doi |
 
-| | |
+| | | |
 
-|*https://github.com/stac-extensions/version[Version Extension]* | |
+|*https://github.com/stac-extensions/version[Version Extension]* | | |
 
-|version |string |$properties.productInformation.version
+|version |string |$properties.productInformation.version |
 
-| | |
+| | | |
 
-|*https://github.com/stac-extensions/view[View Extension]* | |
+|*https://github.com/stac-extensions/view[View Extension]* | | |
 
-|view:off_nadir |number |$..acquisitionAngles.instrumentElevationAngle
+|view:off_nadir |number |$..acquisitionAngles.instrumentElevationAngle |
 
-|view:incidence_angle |number |$..acquisitionAngles.incidenceAngle
+|view:incidence_angle |number |$..acquisitionAngles.incidenceAngle |
 
-|view:azimuth |number |$..acquisitionAngles.instrumentAzimuthAngle
+|view:azimuth |number |$..acquisitionAngles.instrumentAzimuthAngle |
 
-|view:sun_azimuth |number |$..acquisitionAngles.illuminationAzimuthAngle
+|view:sun_azimuth |number |$..acquisitionAngles.illuminationAzimuthAngle |
 
-|view:sun_elevation |number |$..acquisitionAngles.illuminationElevationAngle
+|view:sun_elevation |number |$..acquisitionAngles.illuminationElevationAngle |
 
-| | |
+| | | |
 
-|*https://github.com/stac-extensions/projection[Projection Extension]* |
-|
+|*https://github.com/stac-extensions/projection[Projection Extension]* | | |
 
 |proj:epsg (M) |integer
-|$.properties.productInformation.referenceSystemIdentifier
+|$.properties.productInformation.referenceSystemIdentifier |
 
-| | |
+| | | |
 
-|*https://github.com/stac-extensions/timestamps[Timestamps Extension]* |
-|
+|*https://github.com/stac-extensions/timestamps[Timestamps Extension]* | | |
 
-|published |string |$.properties.published
+|published |string |$.properties.published |
 
-| | |
+| | | |
 
 |*https://landsat.usgs.gov/stac/landsat-extension/schema.json[Landsat
-Extension]* | |
+Extension]* | | |
 
-|landsat:wrs_path |string |$..acquisitionParameters.wrsLongitudeGrid
+|landsat:wrs_path |string |$..acquisitionParameters.wrsLongitudeGrid |
 
-|landsat:wrs_row |string |$..acquisitionParameters.wrsLatitudeGrid
+|landsat:wrs_row |string |$..acquisitionParameters.wrsLatitudeGrid |
 
-|landsat:scene_id |string |
+|landsat:scene_id |string | |
 |===
 
 
