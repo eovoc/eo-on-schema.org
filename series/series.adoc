@@ -75,6 +75,7 @@ ifdef::env-github[]
 * <<appendix-c-property-mapping,Appendix C: Property Mapping>>
 ** <<ogc17-084r1-metadata,C.1: OGC17-084r1 Metadata>>
 ** <<ogc17-003r2-metadata,C.2: OGC17-003r2 Metadata>>
+** <<stac-item-metadata,C.3: STAC Item Metadata>>
 * <<appendix-d-design-justification,Appendix D: Design Justification>>
 ** <<eo-granule-encoding,D.1: EO Granule Encoding>>
 ** <<method-1---additionalproperty,D.1.1: Method 1 - additionalProperty>>
@@ -5437,27 +5438,22 @@ $..acquisitionInformation[*]. platform.platformSerialIdentifier
 
 |*https://github.com/stac-extensions/sar[SAR Extension]* | |
 
-|sar:instrument_mode (M) |string
-|$..acquisitionParameters.operationalMode
+|sar:instrument_mode (M) |string    |$..acquisitionParameters.operationalMode
 
-|sar:polarizations (M) |[string]
-|$..acquisitionParameters.polarisationChannels
+|sar:polarizations (M) |[string]    |$..acquisitionParameters.polarisationChannels
 
-|sar:product_type (M) |string
-|$.properties.productInformation.productType
+|sar:product_type (M) |string       |$.properties.productInformation.productType
 
-|sar:observation_direction |string
-|$..acquisitionParameters.antennaLookDirection
+|sar:observation_direction |string   |$..acquisitionParameters.antennaLookDirection
 
 | | |
 
 |*https://github.com/stac-extensions/sat[SAT Extension]* | |
 
 |sat:orbit_state |string
-|$.properties.acquisitionInformation[*].acquisitionParameters.orbitDirection
+|$.properties.acquisitionInformation[*]. acquisitionParameters.orbitDirection
 
-|sat:relative_orbit |integer
-|$..acquisitionParameters.relativeOrbitNumber
+|sat:relative_orbit |integer    |$..acquisitionParameters.relativeOrbitNumber
 
 | | |
 
@@ -5484,8 +5480,7 @@ $..acquisitionInformation[*]. platform.platformSerialIdentifier
 
 |view:sun_azimuth |number |$..acquisitionAngles.illuminationAzimuthAngle
 
-|view:sun_elevation |number
-|$..acquisitionAngles.illuminationElevationAngle
+|view:sun_elevation |number |$..acquisitionAngles.illuminationElevationAngle
 
 | | |
 
