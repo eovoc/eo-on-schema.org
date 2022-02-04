@@ -5229,7 +5229,7 @@ a| qualityDegradation +
 ~$..qualityInformation.qualityDegradation~     | eop:qualityDegradation |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradation (Extension) | <<771-quality-information,7.7.1 Quality Information>>
 
 a| qualityDegradationQuotationMode +
-~$..qualityInformation.~ ~qualityDegradationQuotationMode~     | eop:qualityDegradationQuotationMode |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationQuotationMode (Extension) | <<771-quality-information,7.7.1 Quality Information>>
+~$..qualityInformation.qualityDegradation~ ~QuotationMode~     | eop:qualityDegradation QuotationMode |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationQuotationMode (Extension) | <<771-quality-information,7.7.1 Quality Information>>
 
 a| qualityDegradationTag +
 ~$..qualityInformation.~ ~qualityDegradationTag~     | eop:qualityDegradationTag |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationTag (Extension) | <<771-quality-information,7.7.1 Quality Information>>
@@ -5268,7 +5268,7 @@ a| spectralRange +
 ~$..wavelengths[*].spectralRange~     | eop:spectralRange     |    schema:acquisitionParameters/ schema:wavelengths/ schema:spectralRange (Extension)   |  <<763-wavelength-information,7.6.3 Wavelength Information>>  
 				      
 a| startTimeFromAscendingNode +
-~$..acquisitionParameters.startTimeFromAscendingNode~     | eop:startTimeFromAscendingNode      |    schema:acquisitionParameters/ schema:startTimeFromAscendingNode (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
+~$..acquisitionParameters.startTimeFrom~ ~AscendingNode~     | eop:startTimeFrom AscendingNode      |    schema:acquisitionParameters/ schema:startTimeFromAscendingNode (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
 
 a| startWavelength +
 ~$..wavelengths[*].startWavelength~     | eop:startWavelength      |      schema:acquisitionParameters/ schema:wavelengths/ https://schema.org/minValue[schema:minValue]         |  <<763-wavelength-information,7.6.3 Wavelength Information>>  
