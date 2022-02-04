@@ -1,0 +1,33 @@
+@startuml
+
+!define Class agent
+!define Property usecase
+
+skinparam Property {
+BackgroundColor LightBlue
+BorderColor Black
+  ArrowColor Black
+  linetype Ortho
+}
+
+skinparam Class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+linetype Ortho
+}
+
+Class Dataset
+Class LinkRole
+
+Dataset -right-> LinkRole : "url,\nthumbnailUrl"
+
+LinkRole -down-> (URL) : "url,\nthumbnailUrl\nroleName"
+
+LinkRole -down-> (Text) : "linkRelationship,\nname\nroleName"
+
+
+
+
+
+@enduml
