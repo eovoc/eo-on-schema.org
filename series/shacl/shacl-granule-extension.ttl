@@ -596,7 +596,7 @@ eoshacl:EOProductInformationShape
 	
 	sh:closed true ;
 	# ignore properties of the subclasses
-	sh:ignoredProperties ( rdf:type schema:cloudCover schema:snowCover schema:compositeType schema:processingMethod schema:processingMethodVersion schema:processingCenter schema:processingDate schema:processingLevel schema:processingMode  schema:processorName schema:softwareVersion schema:productContentsType ) ;
+	sh:ignoredProperties ( rdf:type schema:cloudCover schema:snowCover schema:compositeType schema:processingMethod schema:processingMethodVersion schema:processingCenter schema:processingDate schema:processingLevel schema:processingMode  schema:processorName schema:softwareVersion schema:productContentsType schema:encodingFormat) ;
 
 	sh:property [
 		sh:path schema:productType ;
@@ -770,6 +770,12 @@ eoshacl:EOProcessingInformationShape
 	] ;
 	sh:property [
 		sh:path schema:softwareVersion ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  
+	] ;
+	sh:property [
+		sh:path schema:encodingFormat ;
 	  	sh:minCount 0 ;
 	  	sh:maxCount 1 ;
 		sh:datatype xsd:string  
