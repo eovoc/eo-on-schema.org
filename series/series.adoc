@@ -5081,10 +5081,13 @@ a| beginningDateTime +
 ~$..acquisitionParameters.beginningDateTime~     | dcat:startDate      |    https://schema.org/temporalCoverage[schema:temporalCoverage]         |   <<table_object_dates>>
 
 a| cloudCover +
-~$.properties.productInformation.cloudCover~     | eop:cloudCover      |    schema:productInformation/ schema:cloudCover  (Extension)       | 
+~$.properties.productInformation.cloudCover~     | eop:cloudCover      |    schema:productInformation/ schema:cloudCover  (Extension)       |  <<773-coverage-description,7.7.3 Coverage Description>>
 
 a| completionTimeFromAscendingNode +
 ~$..acquisitionParameters.completion~ ~TimeFromAscendingNode~     | eop:completionTime FromAscendingNode      |    schema:acquisitionParameters/ schema:completionTime FromAscendingNode (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
+
+a| compositeType +
+~$..productInformation.compositeType~     | eop:compositeType |   schema:productInformation/ schema:compositeType  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
 
 a| cycleNumber +
 ~$..acquisitionParameters.cycleNumber~     | eop:cycleNumber     |    schema:acquisitionParameters/ schema:cycleNumber (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
@@ -5103,6 +5106,10 @@ a| endingDateTime +
 
 a| endWavelength +
 ~$..wavelengths[*].endWavelength~     | eop:endWavelength      |     schema:acquisitionParameters/ schema:wavelengths/ https://schema.org/maxValue[schema:maxValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
+
+a| format +
+~$..productInformation.format~     | dct:format |   schema:productInformation/ https://schema.org/encodingFormat[schema:encodingFormat]  |   <<772-processing-information,7.7.2 Processing Information>>
+
 
 a| geometry +
 ~$.geometry~   | gj:geometry  |    https://schema.org/geo[schema:geo]/ https://schema.org/spatialCoverage[schema:spatialCoverage]/ https://schema.org/geo[geo]      |   <<table_object_geoshape>>, https://schema.org/GeoShape[GeoShape] 
@@ -5213,6 +5220,34 @@ a| polarisationChannels +
 a| polarisationMode +
 ~$..acquisitionParameters.polarisationMode~     | eop:polarisationMode      |    schema:acquisitionParameters/ schema:polarisationMode (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
 
+a| processingCenter +
+~$..productInformation.processingCenter~     | eop:processingCenter |   schema:productInformation/ schema:processingCenter  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
+
+a| processingDate +
+~$..productInformation.processingDate~     | eop:processingDate |   schema:productInformation/ schema:processingDate  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
+
+a| processingLevel +
+~$..productInformation.processingLevel~     | eop:processingLevel |   schema:productInformation/ schema:processingLevel  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
+
+a| processingMethod +
+~$..productInformation.processingMethod~     | eop:processingMethod |   schema:productInformation/ schema:processingMethod  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
+
+
+a| processingMethodVersion +
+~$..productInformation.processingMethodVersion~     | eop:processingMethodVersion |   schema:productInformation/ schema:processingMethodVersion  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
+
+a| processingMode +
+~$..productInformation.processingMode~     | eop:processingMode |   schema:productInformation/ schema:processingMode  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
+
+a| processorName +
+~$..productInformation.processorName~     | eop:processorName |   schema:productInformation/ schema:processorName  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
+
+a| processorVersion +
+~$..productInformation.processorVersion~     | eop:processorVersion |   schema:productInformation/ https://schema.org/softwareVersion[schema:softwareVersion]  |   <<772-processing-information,7.7.2 Processing Information>>
+
+a| productContentsType +
+~$..productInformation.productContentsType~     | eop:productContentsType |   schema:productInformation/ schema:productContentsType  (Extension)  |   <<772-processing-information,7.7.2 Processing Information>>
+
 a| timeliness +
 ~$.properties.productInformation.timeliness~ |   eop:timeliness      |     schema:productInformation/ schema:timeliness (Extension) |  <<77-product-information,7.7 Product Information>>
 
@@ -5260,6 +5295,9 @@ a| samplingRates +
 
 a| sensorType +
 ~$..instrument.sensorType~    | eop:sensorType   |  schema:acquisitionInformation/  schema:sensor/ schema:sensorType (Extension)  |  <<762-instrument,7.6.2 Instrument>>
+
+a| snowCover +
+~$.properties.productInformation.snowCover~     | eop:snowCover      |    schema:productInformation/ schema:snowCover  (Extension)       |  <<773-coverage-description,7.7.3 Coverage Description>>
 
 a| size +
 ~$.properties.productInformation.size~ |   eop:size      |     schema:productInformation/ https://schema.org/contentSize[schema:contentSize]  |  <<77-product-information,7.7 Product Information>>
