@@ -5225,8 +5225,22 @@ a| productType +
 a| productVersion +
 ~$..productInformation.productVersion~     | eop:productVersion |     schema:productInformation/ https://schema.org/version[schema:version]      | <<77-product-information,7.7 Product Information>>
 
+a| qualityDegradation +
+~$..qualityInformation.qualityDegradation~     | eop:qualityDegradation |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradation (Extension) | <<771-quality-information,7.7.1 Quality Information>>
+
+a| qualityDegradationQuotationMode +
+~$..qualityInformation.qualityDegradationQuotationMode~     | eop:qualityDegradationQuotationMode |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationQuotationMode (Extension) | <<771-quality-information,7.7.1 Quality Information>>
+
+a| qualityDegradationTag +
+~$..qualityInformation.qualityDegradationTag~     | eop:qualityDegradationTag |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationTag (Extension) | <<771-quality-information,7.7.1 Quality Information>>
+
 a| qualityInformation +
 ~$..productInformation.qualityInformation~     | eop:qualityInformation |     schema:productInformation/ schema:qualityInformation (Extension) | <<77-product-information,7.7 Product Information>>
+
+a| QualityInformation     | eop:QualityInformation |     schema:QualityInformation (Extension) | <<771-quality-information,7.7.1 Quality Information>>
+
+a| qualityStatus +
+~$..qualityInformation.qualityStatus~     | eop:qualityStatus |     schema:productInformation/ schema:qualityInformation/ schema:qualityStatus (Extension) | <<771-quality-information,7.7.1 Quality Information>>
 
 a| referenceSystemIdentifier +
 ~$..productInformation.referenceSystemIdentifier~     | eop:referenceSystemIdentifier |     schema:productInformation/ https://schema.org/additionalProperty[schema:additionalProperty] | <<77-product-information,7.7 Product Information>>
