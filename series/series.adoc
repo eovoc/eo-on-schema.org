@@ -4411,6 +4411,12 @@ eoshacl:EOProcessingInformationShape
 		sh:datatype xsd:string  
 	] ;
 	sh:property [
+		sh:path schema:encodingFormat ;
+	  	sh:minCount 0 ;
+	  	sh:maxCount 1 ;
+		sh:datatype xsd:string  
+	] ;
+	sh:property [
 		sh:path schema:productContentsType ;
 	  	sh:minCount 0 ;
 		sh:class schema:DefinedTerm 
