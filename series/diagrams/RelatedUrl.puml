@@ -21,7 +21,9 @@ Class Dataset
 Class DataDownload
 Class MediaObject
 Class Action
+Class LinkRole
 
+Dataset -down-> LinkRole : "url,\nthumbnailUrl"
 
 Dataset -down-> (URL) : "url,\nthumbnailUrl"
 
