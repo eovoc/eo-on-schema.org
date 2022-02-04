@@ -3179,7 +3179,7 @@ This section proposes an EO extension of schema.org for encoding of Earth Observ
 
 The extension defines a number of subclasses of `Enumeration`.  The subclasses are depicted below with the corresponding enumeration members.
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_enumerations,reftext='{figure-caption} {counter:figure-num}']
 .Enumeration Schema
 image::diagrams/diagram-Enumerations.png[align="center"]
 
@@ -3221,7 +3221,7 @@ endif::[]
 
 An `EarthObservation` represents an individual granule or product.
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_earthobservation,reftext='{figure-caption} {counter:figure-num}']
 .EarthObservation Schema
 image::diagrams/diagram-EarthObservation.png[align="center"]
 
@@ -3376,7 +3376,7 @@ ifndef::env-github[]
 ==== Vertical Spatial Domain
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_verticalspatialdomain,reftext='{figure-caption} {counter:figure-num}']
 .VerticalSpatialDomain Schema
 image::diagrams/diagram-VerticalSpatialDomain.png[align="center"]
 
@@ -3412,7 +3412,7 @@ ifndef::env-github[]
 ==== Orbit Parameters
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_orbitparameters,reftext='{figure-caption} {counter:figure-num}']
 .OrbitParameters Schema
 image::diagrams/diagram-OrbitParameters.png[align="center"]
 
@@ -3513,7 +3513,7 @@ ifndef::env-github[]
 === Acquisition Information
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_acquisitioninformation,reftext='{figure-caption} {counter:figure-num}']
 .AcquisitionInformation Schema
 image::diagrams/diagram-AcquisitionInformation.png[align="center"]
 
@@ -3601,7 +3601,7 @@ ifndef::env-github[]
 ==== Platform
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_platform,reftext='{figure-caption} {counter:figure-num}']
 .Platform Schema
 image::diagrams/diagram-Platform.png[align="center"]
 
@@ -3666,7 +3666,7 @@ ifndef::env-github[]
 ==== Instrument
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_instrument,reftext='{figure-caption} {counter:figure-num}']
 .Instrument Schema
 image::diagrams/diagram-Instrument.png[align="center"]
 
@@ -3728,7 +3728,7 @@ ifndef::env-github[]
 ==== Wavelength Information
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_wavelengthinformation,reftext='{figure-caption} {counter:figure-num}']
 .WavelengthInformation Schema
 image::diagrams/diagram-WavelengthInformation.png[align="center"]
 
@@ -3777,7 +3777,7 @@ ifndef::env-github[]
 ==== Acquisition Parameters
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_acquisitionparameters,reftext='{figure-caption} {counter:figure-num}']
 .AcquisitionParameters Schema
 image::diagrams/diagram-AcquisitionParameters.png[align="center"]
 
@@ -3999,7 +3999,7 @@ ifndef::env-github[]
 ==== Acquisition Angles
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_acquisitionangles,reftext='{figure-caption} {counter:figure-num}']
 .AcquisitionAngles Schema
 image::diagrams/diagram-AcquisitionAngles.png[align="center"]
 
@@ -4154,7 +4154,7 @@ ifndef::env-github[]
 === Product Information
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_productinformation,reftext='{figure-caption} {counter:figure-num}']
 .ProductInformation Schema
 image::diagrams/diagram-ProductInformation.png[align="center"]
 
@@ -4274,7 +4274,7 @@ ifndef::env-github[]
 ==== Quality Information
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_qualityinformation,reftext='{figure-caption} {counter:figure-num}']
 .QualityInformation Schema
 image::diagrams/diagram-QualityInformation.png[align="center"]
 
@@ -4341,7 +4341,7 @@ ifndef::env-github[]
 ==== Processing Information
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_processinginformation,reftext='{figure-caption} {counter:figure-num}']
 .ProcessingInformation Schema
 image::diagrams/diagram-ProcessingInformation.png[align="center"]
 
@@ -4450,7 +4450,7 @@ ifndef::env-github[]
 ==== CoverageDescription
 endif::[]
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_coveragedescription,reftext='{figure-caption} {counter:figure-num}']
 .CoverageDescription Schema
 image::diagrams/diagram-CoverageDescription.png[align="center"]
 
@@ -4541,7 +4541,7 @@ They can be used to define the `@context` in data graphs as follows:
 === SHACL
 The Shapes Constraint Language <<SHACL>> allows defining shape graphs to validate data graphs satisfying a set of conditions as expressed in this document.  The ShapeUML <<ShapeUML>> diagram below depicts a set of SHACL node shapes that correspond to the <<4-eo-collections-encoding, EO Collections encoding>>.
 
-[#img_object_person,reftext='{figure-caption} {counter:figure-num}']
+[#img_object_shaclnodeshapes,reftext='{figure-caption} {counter:figure-num}']
 .SHACL node shapes for EO Collection Encoding
 image::diagrams/shacl-nodeshapes-collections.png[align="center"]
 
