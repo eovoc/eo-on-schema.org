@@ -22,7 +22,7 @@ Class LinkRole
 
 Dataset -right-> LinkRole : "url,\nthumbnailUrl"
 
-LinkRole -down-> (URL) : "url,\nthumbnailUrl\nroleName"
+LinkRole -down-> (URL) : "url,\nroleName"
 
 LinkRole -down-> (Text) : "linkRelationship,\nname\nroleName"
 
