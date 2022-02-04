@@ -5401,13 +5401,11 @@ Metadata]* | |
 
 |assets.* (role="metadata") |Asset Object |$.properties.links.alternates
 
-|datetime |string | null |$.properties.date
+|datetime |string \| null |$.properties.date
 
-|start_datetime |string
-|$..acquisitionInformation[*]. acquisitionParameters.beginningDateTime
+|start_datetime |string   |$..acquisitionInformation[*]. acquisitionParameters.beginningDateTime
 
-|end_datetime |string
-|$..acquisitionInformation[*]. acquisitionParameters.endingDateTime
+|end_datetime |string     |$..acquisitionInformation[*]. acquisitionParameters.endingDateTime
 
 |providers |[Provider Object] |See OGC 17-084r1
 
