@@ -1244,8 +1244,11 @@ Example of values could be "RADIOMETRY" or "GEOLOCATION".</rdfs:comment>
   </rdf:Property>
   
   
-  <!-- format ? -->
-  
+  <!-- format -->
+  <rdf:Property rdf:about="https://schema.org/encodingFormat">
+    <schema:domainIncludes rdf:resource="https://schema.org/ProcessingInformation"/>
+   <!--   <dcterms:source rdf:resource="http://docs.opengeospatial.org/is/17-003r2/17-003r2.html"/>  -->
+  </rdf:Property>
     
   <rdf:Property rdf:about="https://schema.org/processingMethod">
     <rdfs:label>processingMethod</rdfs:label>
