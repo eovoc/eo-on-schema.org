@@ -5118,13 +5118,13 @@ a| identifier +
 
 
 a| illuminationAzimuthAngle +
-~$..acquisitionAngles.illuminationAzimuthAngle~    | eop:illuminationAzimuthAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:illuminationAzimuthAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
+~$..acquisitionAngles.illumination~ ~AzimuthAngle~    | eop:illuminationAzimuthAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:illuminationAzimuthAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
 
 a| illuminationElevationAngle +
-~$..acquisitionAngles.illuminationElevationAngle~    | eop:illuminationElevationAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:illuminationElevationAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
+~$..acquisitionAngles.illuminationv ~ElevationAngle~    | eop:illuminationElevationAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:illuminationElevationAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
 
 a| illuminationZenithAngle +
-~$..acquisitionAngles.illuminationZenithAngle~    | eop:instrumentZenithAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:illuminationZenithAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
+~$..acquisitionAngles.illumination~ ~ZenithAngle~    | eop:instrumentZenithAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:illuminationZenithAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
 
 a| incidenceAngle +
 ~$..acquisitionAngles.incidenceAngle~    | eop:incidenceAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:incidenceAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
@@ -5142,13 +5142,13 @@ a| instrumentShortName +
 
 
 a| instrumentAzimuthAngle +
-~$..acquisitionAngles.instrumentAzimuthAngle~    | eop:instrumentAzimuthAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentAzimuthAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
+~$..acquisitionAngles.instrument~ ~AzimuthAngle~    | eop:instrumentAzimuthAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentAzimuthAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
 
 a| instrumentElevationAngle +
-~$..acquisitionAngles.instrumentElevationAngle~    | eop:instrumentElevationAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentElevationAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
+~$..acquisitionAngles.instrument~ ~ElevationAngle~    | eop:instrumentElevationAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentElevationAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
 
 a| instrumentZenithAngle +
-~$..acquisitionAngles.instrumentZenithAngle~    | eop:instrumentZenithAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentZenithAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
+~$..acquisitionAngles.instrument~ ~ZenithAngle~    | eop:instrumentZenithAngle   |  schema:acquisitionInformation/ schema:acquisitionParameters/ schema:acquisitionAngles/ schema:instrumentZenithAngle (Extension)    |  <<765-acquisition-angles,7.6.5 Acquisition Angles>>
 
 a| lastOrbitDirection +
 ~$..acquisitionParameters.lastOrbitDirection~      |  eop:lastOrbitDirection      |    schema:acquisitionInformation/  schema:acquisitionParameters/ schema:lastOrbitDirection (Extension) |  <<743-orbit-parameters,7.4.3 Orbit Parameters>>
@@ -5229,10 +5229,10 @@ a| qualityDegradation +
 ~$..qualityInformation.qualityDegradation~     | eop:qualityDegradation |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradation (Extension) | <<771-quality-information,7.7.1 Quality Information>>
 
 a| qualityDegradationQuotationMode +
-~$..qualityInformation.qualityDegradationQuotationMode~     | eop:qualityDegradationQuotationMode |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationQuotationMode (Extension) | <<771-quality-information,7.7.1 Quality Information>>
+~$..qualityInformation.~ ~qualityDegradationQuotationMode~     | eop:qualityDegradationQuotationMode |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationQuotationMode (Extension) | <<771-quality-information,7.7.1 Quality Information>>
 
 a| qualityDegradationTag +
-~$..qualityInformation.qualityDegradationTag~     | eop:qualityDegradationTag |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationTag (Extension) | <<771-quality-information,7.7.1 Quality Information>>
+~$..qualityInformation.~ ~qualityDegradationTag~     | eop:qualityDegradationTag |     schema:productInformation/ schema:qualityInformation/ schema:qualityDegradationTag (Extension) | <<771-quality-information,7.7.1 Quality Information>>
 
 a| qualityInformation +
 ~$..productInformation.qualityInformation~     | eop:qualityInformation |     schema:productInformation/ schema:qualityInformation (Extension) | <<77-product-information,7.7 Product Information>>
@@ -5246,7 +5246,7 @@ a| referenceSystemIdentifier +
 ~$..productInformation.referenceSystemIdentifier~     | eop:referenceSystemIdentifier |     schema:productInformation/ https://schema.org/additionalProperty[schema:additionalProperty] | <<77-product-information,7.7 Product Information>>
 
 a| relativeOrbitNumber +
-~$..acquisitionParameters.relativeOrbitNumber~     | eop:relativeOrbitNumber      |    schema:acquisitionParameters/ schema:relativeOrbitNumber (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
+~$..acquisitionParameters.~ ~relativeOrbitNumber~     | eop:relativeOrbitNumber      |    schema:acquisitionParameters/ schema:relativeOrbitNumber (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
 
 a| resolution +
 ~$..acquisitionParameters.resolution~     | eop:resolution      |    schema:acquisitionParameters/ schema:resolution (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
@@ -5317,10 +5317,7 @@ a| yaw +
 
 |===
 
-// C.3
-=== STAC Collection Metadata
 
-TBD.
 
 // D
 [appendix]
