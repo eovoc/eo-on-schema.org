@@ -5027,13 +5027,13 @@ a| acquisitionInformation +
 ~$.properties.acquisitionInformation~     | eop:acquisitionInformation      |    schema:acquisitionInformation (Extension)         |  <<71-earth-observation,7.1 Earth Observation>>
 
 a| AcquisitionInformation +
-     | eop:AcquisitionInformation      |    schema:AcquisitionInformation (Extension)         | 
+     | eop:AcquisitionInformation      |    schema:AcquisitionInformation (Extension)         |  <<76-acquisition-information,7.6 Acquisition Information>> 
      
 a| acquisitionParameters +
 ~$..acquisitionInformation.acquisitionParameters~    | eop:acquisitionParameters   |    schema:acquisitionInformation/ schema:acquisitionparameters (Extension)  | <<76-acquisition-information,7.6 Acquisition Information>> 
 
 a| AcquisitionParameters +
-                                      | eop:AcquisitionParameters      |    schema:AcquisitionParameters (Extension)     | 
+                                      | eop:AcquisitionParameters      |    schema:AcquisitionParameters (Extension)     |   <<76-acquisition-information,7.6 Acquisition Information>> 
 
 a| acquisitionStation +
 ~$..acquisitionParameters.acquisitionStation~     | eop:acquisitionStation      |    schema:acquisitionParameters/ schema:acquisitionStation (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
@@ -5075,10 +5075,10 @@ a| available +
 ~$.properties.available~     | dct:available |     schema:available (Extension)     |   <<71-earth-observation,7.1 Earth Observation>>
 
 a| bbox +
-~$.bbox~     | gj:bbox      |    https://schema.org/spatialCoverage[schema:spatialCoverage]/ https://schema.org/geo[schema:geo]/ https://schema.org/box[schema:box]         | 
+~$.bbox~     | gj:bbox      |    https://schema.org/spatialCoverage[schema:spatialCoverage]/ https://schema.org/geo[schema:geo]/ https://schema.org/box[schema:box]  |   <<table_object_geoshape>>
 
 a| beginningDateTime +
-~$..acquisitionParameters.beginningDateTime~     | dcat:startDate      |    https://schema.org/temporalCoverage[schema:temporalCoverage]         | 
+~$..acquisitionParameters.beginningDateTime~     | dcat:startDate      |    https://schema.org/temporalCoverage[schema:temporalCoverage]         |   <<table_object_dates>>
 
 a| cloudCover +
 ~$.properties.productInformation.cloudCover~     | eop:cloudCover      |    schema:productInformation/ schema:cloudCover  (Extension)       | 
@@ -5099,7 +5099,7 @@ a| dopplerFrequency +
 ~$..acquisitionParameters.dopplerFrequency~     | eop:dopplerFrequency      |    schema:acquisitionInformation/ schema:acquisitionParameters/ schema:dopplerFrequency (Extension)         | <<764-acquisition-parameters,7.6.4 Acquisition Parameters>>
 
 a| endingDateTime +
-~$..acquisitionParameters.endingDateTime~     | dcat:endDate      |    https://schema.org/temporalCoverage[schema:temporalCoverage]         | 
+~$..acquisitionParameters.endingDateTime~     | dcat:endDate      |    https://schema.org/temporalCoverage[schema:temporalCoverage]    |   <<table_object_dates>>
 
 a| endWavelength +
 ~$..wavelengths[*].endWavelength~     | eop:endWavelength      |     schema:acquisitionParameters/ schema:wavelengths/ https://schema.org/maxValue[schema:maxValue]        |  <<763-wavelength-information,7.6.3 Wavelength Information>>  (Extension)
@@ -5114,7 +5114,7 @@ a| highestLocation +
 ~$.properties.highestLocation~      |  eop:maximumAltitude      |    schema:acquisitionInformation/    schema:acquisitionParameters/ https://schema.org/location[schema:location]/  https://schema.org/maxValue[schema:maxValue] |  <<742-vertical-spatial-domain,7.4.2 Vertical Spatial Domain>>
 
 a| identifier +
-~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[schema:identifier] |  
+~$.properties.identifier~   | dct:identifier |          https://schema.org/identifier[schema:identifier] |  <<table_object_dataset>>
 
 
 a| illuminationAzimuthAngle +
