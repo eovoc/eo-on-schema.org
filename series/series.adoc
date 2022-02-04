@@ -38,6 +38,7 @@ ifdef::env-github[]
 ** <<46-related-url,4.6 Related URL>>
 *** <<461-mediaobject,4.6.1 MediaObject>>
 *** <<462-action,4.6.2 Action>>
+*** <<463-linkrole,4.6.3 LinkRole>>
 ** <<47-acquisition-information,4.7 Acquisition Information>>
 ** <<48-additional-information,4.8 Additional Information>>
 * <<5-eo-services-and-applications-encoding,5. EO Services and Applications Encoding>>
@@ -1792,56 +1793,6 @@ A `MediaObject` is used to represent most hypermedia links.  If the link represe
 [NOTE] 
 The (pending) https://schema.org/LinkRole[LinkRole] class can represent URL with an IANA link registry relation via https://schema.org/linkRelationship[linkRelationship].  This class does not have a `contentType` property however, therefore `MediaObject` and `DataDownload` can be used instead.
 
-.LinkRole Shape
-[source,turtle]
-----
-eoshacl:LinkRoleShape
-	a sh:NodeShape ;
-	sh:targetClass schema:LinkRole ;   # applies to all schema:LinkRole
-	sh:closed true ;
-	sh:ignoredProperties ( rdf:type ) ;
-	sh:property [
-		sh:path schema:url ;   
-		sh:nodeKind sh:IRI ;     
-		sh:minCount 1 
-	] ;
-	sh:property [
-		sh:path schema:name ;   
-		sh:datatype xsd:string ;     
-		sh:minCount 0 
-	] ;
-	sh:property [
-		sh:path schema:linkRelationship ;   
-		sh:datatype xsd:string ;     
-		sh:minCount 1 
-	] .
-----
-
-.LinkRole encoding example
-[source,json]
-----
-{
-	"@context": "https://schema.org",
-	"@type": "Dataset",
-	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
-	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
-	"url": [
-		{
-			"@type": "LinkRole",
-			"url": "https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing?text=landsat+tm+etm",
-			"name": "Landing page",
-			"linkRelationship": "describedby"
-		},
-		{
-			"@type": "LinkRole",
-			"url": "http://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC?httpAccept=application/vnd.iso.19139-2%2Bxml",
-			"name": "ISO 19139-2 metadata",
-			"linkRelationship": "alternate"
-		}
-	]
-}
-----
-
 
 [#table_iana_relation,reftext='{table-caption} {counter:table-num}']
 .IANA Relations
@@ -2360,6 +2311,70 @@ eoshacl:EntryPointShape
 }
 ----
 
+// 4.6.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.6.3 LinkRole
+endif::[]
+ifndef::env-github[]
+==== LinkRole
+endif::[]
+
+The (pending) https://schema.org/LinkRole[LinkRole] class can represent URL with an IANA link registry relation via https://schema.org/linkRelationship[linkRelationship].  This class does not have a `contentType` property however, therefore `MediaObject` and `DataDownload` can be used instead.
+
+[#img_object_linkrole,reftext='{figure-caption} {counter:figure-num}']
+.LinkRole schema
+image::diagrams/LinkRole.png[align="center"]
+
+
+.LinkRole Shape
+[source,turtle]
+----
+eoshacl:LinkRoleShape
+	a sh:NodeShape ;
+	sh:targetClass schema:LinkRole ;   # applies to all schema:LinkRole
+	sh:closed true ;
+	sh:ignoredProperties ( rdf:type ) ;
+	sh:property [
+		sh:path schema:url ;   
+		sh:nodeKind sh:IRI ;     
+		sh:minCount 1 
+	] ;
+	sh:property [
+		sh:path schema:name ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 0 
+	] ;
+	sh:property [
+		sh:path schema:linkRelationship ;   
+		sh:datatype xsd:string ;     
+		sh:minCount 1 
+	] .
+----
+
+.LinkRole encoding example
+[source,json]
+----
+{
+	"@context": "https://schema.org",
+	"@type": "Dataset",
+	"name": "LANDSAT 7 ETM+ (Enhanced Thematic Mapper Plus) Geolocated Terrain Corrected Systematic processing (LANDSAT.ETM.GTC)",
+	"description": "This dataset contains all the Landsat 7 Enhanced Thematic Mapper high-quality ortho-rectified L1T dataset over Kiruna, Maspalomas and Matera visibility masks. The Landsat 7 ETM+ scenes typically covers 185 x 170 km. A standard full scene is nominally centred on the intersection between a Path and Row (the actual image centre can vary by up to 100m). Each band requires 50MB (uncompressed), and Band 8 requires 200MB (panchromatic band with resolution of 15m opposed to 30m).",
+	"url": [
+		{
+			"@type": "LinkRole",
+			"url": "https://earth.esa.int/eogateway/catalog/landsat-7-etm-enhanced-thematic-mapper-plus-geolocated-terrain-corrected-systematic-processing?text=landsat+tm+etm",
+			"name": "Landing page",
+			"linkRelationship": "describedby"
+		},
+		{
+			"@type": "LinkRole",
+			"url": "http://fedeo.esa.int/collections/series/items/LANDSAT.ETM.GTC?httpAccept=application/vnd.iso.19139-2%2Bxml",
+			"name": "ISO 19139-2 metadata",
+			"linkRelationship": "alternate"
+		}
+	]
+}
+----
 
 // 4.7 --------------------------------------------------------------------------------------------
 ifdef::env-github[]
