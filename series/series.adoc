@@ -5680,13 +5680,14 @@ Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM
 - <<7-eo-granules-encoding-extension,Chapter 7. EO Granules Encoding (Extension)>> added with extension for EO granule encoding. +
 - version of <<DCAT-AP-SDO>> updated | Updated version for EOVOC MTR.
 
-|December 16, 2021 |Y. Coene | 0.4 |  - Added UseAction example representing WCS offering in new Related URL and Actions sections  +
+|February 10, 2022 |Y. Coene | 0.4 |  - Added UseAction example representing WCS offering in new Related URL and Actions sections  +
 for EO Service. +
 - Added service to collection coupled resource encoding with `object` in <<541-action,§5.4.1>> +
 - Added conformance encoding with `Review` in <<55-quality-information,§5.5>>
 - Added SHACL information in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>> +
 - Added SHACL shapes in various sections of the document. +
-- Included separate JSON-LD context file for EO extension in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>.| Updated version for TBD.
+- Updated mapping table for OGC 17-003r2 properties.
+- Included separate JSON-LD context file for EO extension in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>.| Updated version for PM-2 milestone.
 
 |====================
 
