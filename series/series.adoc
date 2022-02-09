@@ -5393,7 +5393,7 @@ Fields]* | | |
 
 |id | |$.properties.identifier |  https://schema.org/identifier[schema:identifier]
 
-|collection | |$.properties.parentIdentifier | [schema:identifier] (extension) \| https://schema.org/isPartOf[schema:isPartOf]
+|collection | |$.properties.parentIdentifier | [schema:parentIdentifier] (extension) \| https://schema.org/isPartOf[schema:isPartOf]
 
 | | | |
 
