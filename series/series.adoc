@@ -159,7 +159,7 @@ endif::[]
 [[SHACL-UC]][SHACL-UC]::  
 	SHACL Use Cases and Requirements, W3C Working Group Note, 20 July 2017, https://www.w3.org/TR/shacl-ucr/
 [[ESIPFed]][ESIPFed]::
-	"Schema.org Publishing Guidelines for the Geosciences", V1.1.0, https://doi.org/10.5281/zenodo.3736235, https://github.com/ESIPFed/science-onschema.org
+	"Schema.org Publishing Guidelines for the Geosciences", V1.1.0, https://doi.org/10.5281/zenodo.3736235, https://github.com/ESIPFed/science-on-schema.org/releases/tag/1.1.0
 [[DCAT-AP-SDO]][DCAT-AP-SDO]::
 	DCAT-AP to Schema.org Mapping, Unofficial Draft 30 April 2021, https://ec-jrc.github.io/dcat-ap-to-schema-org/
 [[OGC19-020r1]][OGC19-020r1]::
