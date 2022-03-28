@@ -1788,6 +1788,8 @@ GeoSPARQL interfaces may be used to query RDF stores providing triples encoded u
 .GeoSPARQL schema
 image::diagrams/Geometry.png[align="center"]
 
+The example below searches for granules from the PROBA satellite over the location of Mount Etna and returns their identifier, temporal coverage and quicklook image.
+
 .GeoSPARQL encoding example
 [source]
 ----
