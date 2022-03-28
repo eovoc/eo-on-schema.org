@@ -1782,11 +1782,32 @@ ifndef::env-github[]
 ==== GeoSPARQL
 endif::[]
 
-GeoSPARQL interfaces may be used to query RDF stores providing triples encoded using schema.org.  The relation between the schema.org classes and properties and GeoSPARQL 1.1 are depicted in the diagram below which is based on https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_e_7_schema_org.
+GeoSPARQL interfaces may be used to query RDF stores providing triples encoded using schema.org.  The relation between the schema.org classes and properties (green) and GeoSPARQL 1.1 (orange) are depicted in the diagram below which is based on https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_e_7_schema_org.
 
 [#img_object_geosparql,reftext='{figure-caption} {counter:figure-num}']
 .GeoSPARQL schema
 image::diagrams/Geometry.png[align="center"]
+
+.GeoSPARQL encoding example
+[source]
+----
+PREFIX schema: <https://schema.org/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+SELECT ?p ?id ?polygon ?time ?preview
+WHERE
+{
+  ?p schema:additionalType <http://purl.org/dc/dcmitype/Dataset>.  
+  ?p schema:potentialAction/schema:instrument/schema:name "PROBA".        
+  ?p schema:spatialCoverage/schema:geoIntersects/geo:asWKT "POINT(14.995 37.755)"^^geo:wktLiteral.
+  ?p schema:spatialCoverage/schema:geo/schema:polygon ?polygon.
+  ?p schema:identifier ?id.
+  ?p schema:temporalCoverage ?time.
+  ?p schema:thumbnailUrl ?preview.
+}
+LIMIT 5
+
+----
 
 
 // 4.6 --------------------------------------------------------------------------------------------
