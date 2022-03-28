@@ -1801,7 +1801,7 @@ WHERE
 {
   ?p schema:additionalType <http://purl.org/dc/dcmitype/Dataset>.  
   ?p schema:potentialAction/schema:instrument/schema:name "PROBA".        
-  ?p schema:spatialCoverage/schema:geo/schema:geoIntersects/geo:asWKT "POINT(14.995 37.755)"^^geo:wktLiteral.
+  ?p schema:spatialCoverage/schema:geoIntersects/geo:asWKT "POINT(14.995 37.755)"^^geo:wktLiteral.
   ?p schema:identifier ?id.
   ?p schema:temporalCoverage ?time.
   ?p schema:thumbnailUrl ?preview.
