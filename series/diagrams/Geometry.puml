@@ -50,6 +50,8 @@ GeoShape -up-|> GeospatialGeometry
 
 geo_SpatialObject ... GeospatialGeometry : "owl:equivalentClass"
 
+geo_SpatialObject --> geo_SpatialObject : "geo:sfContains, geo:sfIntersects,\n geo:sf:Overlaps, geo:sfWithin"
+
 
 
 
