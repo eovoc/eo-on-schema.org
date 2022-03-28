@@ -30,9 +30,10 @@ Class "geo:Feature"  as geo_Feature #orange
 
 
 Dataset -down-> Place : "spatialCoverage"
-Place -right-> GeoCoordinates : "geo"
-Place -right-> GeoShape : "geo"
+Place --> GeoCoordinates : "geo"
+Place --> GeoShape : "geo"
 GeospatialGeometry --> GeospatialGeometry : "geoContains, geoIntersects,\n geoOverlaps, geoWithin"
+Place --> GeospatialGeometry : "geoContains, geoIntersects,\n geoOverlaps, geoWithin"
 
 geo_Geometry --> (geo:wktLiteral) : "geo:asWKT"
 geo_Geometry --> (geo:geoJSONLiteral) : "geo:asGeoJSON"
