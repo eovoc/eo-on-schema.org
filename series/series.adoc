@@ -35,6 +35,7 @@ ifdef::env-github[]
 ** <<45-spatial-information,4.5 Spatial Information>>
 *** <<451-geoshape,4.5.1 GeoShape>>
 *** <<452-geocoordinates,4.5.2 GeoCoordinates>>
+*** <<453-geosparql,4.5.3 GeoSPARQL>>
 ** <<46-related-url,4.6 Related URL>>
 *** <<461-mediaobject,4.6.1 MediaObject>>
 *** <<462-action,4.6.2 Action>>
@@ -1771,6 +1772,21 @@ eoshacl:GeoCoordinatesShape
 }
 
 ----
+
+
+// 4.5.3 --------------------------------------------------------------------------------------------
+ifdef::env-github[]
+==== 4.5.3 GeoSPARQL
+endif::[]
+ifndef::env-github[]
+==== GeoSPARQL
+endif::[]
+
+GeoSPARQL interfaces may be used to query RDF stores providing triples encoded using schema.org.  The relation between the schema.org classes and properties and GeoSPARQL 1.1 are depicted in the diagram below which is based on https://opengeospatial.github.io/ogc-geosparql/geosparql11/spec.html#_e_7_schema_org.
+
+[#img_object_geosparql,reftext='{figure-caption} {counter:figure-num}']
+.GeoSPARQL schema
+image::diagrams/Geometry.png[align="center"]
 
 
 // 4.6 --------------------------------------------------------------------------------------------
