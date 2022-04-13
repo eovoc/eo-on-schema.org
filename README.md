@@ -22,6 +22,7 @@ Issue 1.0, September 2019.]
   * [Google Rich Results Test](https://search.google.com/test/rich-results)
   * [SHACL Playground](https://shacl.org/playground/)
   * [SHACL Play!](https://shacl-play.sparna.fr/play/)
+  * [ISAITB SHACL Validator](https://github.com/ISAITB/shacl-validator)
   * [Structured Data Linter](http://linter.structured-data.org/)
   * [RDF Translator](https://rdf-translator.appspot.com/)
   * [Yandex Structured Data Validator](https://webmaster.yandex.com/tools/microtest/)
