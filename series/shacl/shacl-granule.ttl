@@ -264,9 +264,10 @@ eoshacl:SpatialInformationShape
 		sh:minCount 1               # mandatory footprint
 	] .
 
+
 eoshacl:PlaceShape
 	a sh:NodeShape ;
-	sh:targetClass schema:Place ;    # applies to all schema:Place
+	sh:targetClass schema:Place ;	# applies to all schema:Place
 	sh:closed true ;
 	sh:ignoredProperties ( rdf:type ) ;
 	
@@ -282,7 +283,12 @@ eoshacl:PlaceShape
 			[ sh:class schema:GeoCoordinates ]
 			[ sh:class schema:GeoShape ]
 		)
+	] ;
+	sh:property [
+		sh:path schema:geoContains ;
+		sh:minCount 0 
 	] .
+
 
 
 #
@@ -815,7 +821,7 @@ eoshacl:isPartOfShape  #  shape for Dataset representing the granule
 		sh:minCount 1 ; # redundant as the same as the relation mentioned in sh:targetSubjectsOf
 		sh:maxCount 1 ;
 		sh:nodeKind sh:IRI ;
-		sh:class schema:Dataset ;  # will fail is only the @id is provided and no type
+		# sh:class schema:Dataset ;  # will fail is only the @id is provided and no type
 		sh:resultSeverity sh:Warning ;
 		# sh:node eoshacl:ParentShape ;
 	] ;
@@ -829,25 +835,4 @@ eoshacl:isPartOfShape  #  shape for Dataset representing the granule
 		sh:qualifiedMaxCount   1 
 	].
 
-eoshacl:ParentShape  #  Shape for Dataset representing the collection the granule is partOf
-	a sh:NodeShape ;
-	# avoid checking the Dataset object as we require a minimal number of properties
-	sh:targetObjectsOf schema:isPartOf ; # applies to objects in range of "isPartOf"
 
-	sh:closed false ;
-	sh:property [
-		# How to require that the @id is present ?
-		sh:path schema:url;
-		sh:minCount 0 ; 
-	] ;
-	sh:property [
-		# Check that the parent/collection class has type schema:Dataset as this is not checked in its Shape.
-		# Limitation: this does not allow to encode as "isPartOf": "https://..."
-		sh:resultSeverity sh:Warning ;
-		sh:path rdf:type ; 
-		sh:qualifiedValueShape [
-			sh:hasValue schema:Dataset
-		] ;
-		sh:qualifiedMinCount   1 ;
-		sh:qualifiedMaxCount   1 
-	  ].
