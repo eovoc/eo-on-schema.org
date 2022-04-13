@@ -2389,7 +2389,7 @@ eoshacl:LinkRoleShape
 	] .
 ----
 
-.LinkRole encoding example
+.LinkRole encoding example (Dataset)
 [source,json]
 ----
 {
