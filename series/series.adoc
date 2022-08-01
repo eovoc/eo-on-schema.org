@@ -155,7 +155,7 @@ ifndef::env-github[]
 endif::[]
 
 [[CEOS-OS-BP]][CEOS-OS-BP]::
-	CEOS OpenSearch Best Practice Document, Version 1.2, http://ceos.org/document_management/Working_Groups/WGISS/Interest_Groups/OpenSearch/CEOS-OPENSEARCH-BP-V1.2.pdf
+	CEOS OpenSearch Best Practice Document, Version 1.3, https://ceos.org/document_management/Working_Groups/WGISS/Documents/WGISS%20Best%20Practices/CEOS%20OpenSearch%20Best%20Practice.pdf
 [[JSONPath]][JSONPath]::
 	JSONPath, http://goessner.net/articles/JsonPath/index.html
 [[SHACL-UC]][SHACL-UC]::  
@@ -5884,6 +5884,7 @@ for EO Service. +
 - Updated mapping table for STAC Item properties.
 - Included separate JSON-LD context file for EO extension in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>. | Updated version for EOVOC PM-2 Meeting.
 |July 29, 2022 |Y. Coene | 0.9 |  - Added GeoSPARQL section as <<453-geosparql,§4.5.3>> +
+- <<CEOS-OS-BP>> reference updated.
 - Minor updates. | Updated version for EOVOC FP milestone.
 
 |====================
