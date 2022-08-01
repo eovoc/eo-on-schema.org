@@ -249,8 +249,6 @@ endif::[]
 * W3C		World Wide Web Consortium
 * WGISS		Working Group on Information Systems and Services
 * WKT		Well-Known Text
-* WPS  		Web Processing Service
-* WPS-T   	Transactional Web Processing Service
 * XML		eXtensible Markup Language
 * XSD		XML Schema Definition Language
 
