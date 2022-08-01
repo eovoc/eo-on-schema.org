@@ -5885,7 +5885,6 @@ for EO Service. +
 - Updated mapping table for OGC 17-003r2 properties.
 - Updated mapping table for STAC Item properties.
 - Included separate JSON-LD context file for EO extension in <<appendix-b-interpretation-as-w3c-json-ld,Appendix B: Interpretation as W3C JSON-LD>>.| Updated version for EOVOC PM-2 Meeting.
-
 |July 29, 2022 |Y. Coene | 0.9 |  - Added GeoSPARQL section as <<453-geosparql,§4.5.3>> +
 - Minor updates for EOVOC FP milestone.
 
