@@ -1,6 +1,6 @@
 # eo-on-schema.org
 
-This repository was initiated by the ESA `EOVOC` project.  It aims to encourage the use of structured data with schema.org encoding for Earth Observation (EO) resources including collections, granules and services. 
+This repository was initiated by [Spacebel](https://www.spacebel.com/) for the ESA `EOVOC` project.  It aims to encourage the use of structured data with schema.org encoding for Earth Observation (EO) resources including collections, granules and services. 
 
 ## Table of contents
 
