@@ -5870,7 +5870,7 @@ AcquisitionInformation encoding for EO Applications and Services added. +
 Preliminary eovoc-schema.rdf included as annex F. | Updated version for EOVOC PM-1 Meeting.
 |September 2, 2021 |Y. Coene | 0.3 |  - <<table_object_mediaobject>> (MediaObject) updated.  +
 - <<appendix-c-property-mapping,Appendix C: Property Mapping>> updated. +
-- $.publishingPrinciples added to encode $.conformsTo. +
+- publishingPrinciples added to encode $.conformsTo. +
 - <<7-eo-granules-encoding-extension,Chapter 7. EO Granules Encoding (Extension)>> added with extension for EO granule encoding. +
 - version of <<DCAT-AP-SDO>> updated | Updated version for EOVOC MTR.
 
