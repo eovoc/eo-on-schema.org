@@ -89,6 +89,7 @@ ifdef::env-github[]
 ** <<granule,E.3: Granule>>
 ** <<article,E.4: Article>>
 * <<appendix-f-schemaorg-extension-for-eo,Appendix F: Schema.org Extension for EO>>
+* <<appendix-g-revision-history,Appendix G: Revision History>>
 
 endif::[]
 
