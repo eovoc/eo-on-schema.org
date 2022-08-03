@@ -1,4 +1,4 @@
-TYPES: AcquisitionParameters, acquisitionParameters, wavelengths
+TYPES: AcquisitionParameters, acquisitionParameters, wavelengths, operationalMode, acquisitionType, orbitNumber, orbitDirection, antennaLookDirection, polarisationMode, polarisationChannels
 
 PRE-MARKUP:
 
@@ -11,30 +11,30 @@ JSON:
 <script type="application/ld+json">
 {
 	"@context": "https://schema.org/",
-	"@type": "AcquisitionParameters",       
+	"@type": "AcquisitionParameters",
 	
 	"acquisitionType": "NOMINAL",
 	"acquisitionSubType": "DEFAULT",
-	"orbitNumber": "1316",
+	"orbitNumber": 1316,
 	"orbitDirection": "DESCENDING",
 	"antennaLookDirection": "RIGHT",
 	"acquisitionAngles": {
-		"minimumIncidenceAngle": "19.6",
-		"maximumIncidenceAngle": "9.6",
-		"incidenceAngleVariation": "9.6"
+		"minimumIncidenceAngle": 19.6,
+		"maximumIncidenceAngle": 9.6,
+		"incidenceAngleVariation": 9.6
 	},
 	"operationalMode": "IM",
 	"polarisationMode": "S",
 	"polarisationChannels": "HH",
 	"wavelengths": {
-		"@type": "WavelengthInformation", 
+		"@type": "WavelengthInformation",
 		"spectralRange": "OTHER"
 	}
  
 }
 </script>
 
-TYPES: AcquisitionParameters, acquisitionParameters
+TYPES: AcquisitionParameters, acquisitionParameters, samplingRate, resolution, operationalMode
 
 PRE-MARKUP:
 
@@ -51,8 +51,8 @@ JSON:
 	
 	"acquisitionType": "NOMINAL",
 	"operationalMode": "LRM",
-	"resolution": "0.7",
-	"samplingRates": ["1000", "20000"]
+	"resolution": 0.7,
+	"samplingRate": [1000, 20000]
  
 }
 </script>

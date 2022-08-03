@@ -1,4 +1,4 @@
-TYPES: QualityInformation, qualityStatus
+TYPES: QualityInformation, qualityStatus, qualityDegradation, qualityDegradationQuotationMode, qualityDegradationTag
 
 PRE-MARKUP:
 
@@ -13,7 +13,7 @@ JSON:
 	"@context": "https://schema.org/",
 	"@type": "QualityInformation",       
 	
-	"qualityDegradation": "75",
+	"qualityDegradation": 75,
 	"qualityStatus": "DEGRADED",
 	"qualityDegradationQuotationMode": "AUTOMATIC",
 	"qualityDegradationTag": "GEOLOCATION"

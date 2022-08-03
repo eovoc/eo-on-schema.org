@@ -1,4 +1,4 @@
-TYPES: Platform, DefinedTerm, orbitType, OrbitType
+TYPES: Platform, DefinedTerm, orbitType, OrbitType, serialNumber
 
 PRE-MARKUP:
 

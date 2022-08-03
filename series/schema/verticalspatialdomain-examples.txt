@@ -13,8 +13,8 @@ JSON:
 	"@context": "https://schema.org/",
 	"@type": "VerticalSpatialDomain",       
 	
-	"maxValue": "50000",
-	"minValue": "40000",
+	"maxValue": 50000,
+	"minValue": 40000,
 	"unitText": "m"	
 }
 </script>

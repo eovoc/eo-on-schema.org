@@ -1,4 +1,4 @@
-TYPES: OrbitParameters
+TYPES: OrbitParameters, ascendingNodeLongitude, ascendingNodeDate, lastOrbitNumber, orbitNumber, orbitDirection
 
 PRE-MARKUP:
 
@@ -12,11 +12,11 @@ JSON:
 {
 	"@context": "https://schema.org/",
 	"@type": "OrbitParameters",
-	"orbitNumber": "20187",
-	"lastOrbitNumber": "20187",  
+	"orbitNumber": 20187,
+	"lastOrbitNumber": 20187,  
 	"orbitDirection": "DESCENDING",
 	"ascendingNodeDate": "2014-01-28T14:01:25Z",
-	"ascendingNodeLongitude": "74.784284"
+	"ascendingNodeLongitude": 74.784284
 }
 </script>
 

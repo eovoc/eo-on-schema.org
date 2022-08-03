@@ -17,7 +17,7 @@ JSON:
 		"@type": [
 			"DefinedTerm",
 			"Platform"
-		],   
+		],
 		"@id": "http://gcmd.earthdata.nasa.gov/kms/concept/1bffe898-f4a2-458e-92c5-cd7c9c1cd5f0",
 		"name": "Seasat",
 		"serialNumber": "1"
@@ -29,24 +29,24 @@ JSON:
 		],
 		"@id":  "http://gcmd.earthdata.nasa.gov/kms/concept/a37282d4-322c-4dd0-8edc-36099b9b586c",
 		"sensorType": "RADAR",
-		"name": "SAR"            
+		"name": "SAR"
 	},
 	"acquisitionParameters": {
-		"@type": "AcquisitionParameters",       
+		"@type": "AcquisitionParameters",
 		"operationalMode": "IM",
 		"polarisationMode": "S",
 		"polarisationChannels": "HH",
 		
 		"acquisitionType": "NOMINAL",
 		"acquisitionSubType": "DEFAULT",
-		"orbitNumber": "1316",
+		"orbitNumber": 1316,
 		"orbitDirection": "DESCENDING",
 		"antennaLookDirection": "RIGHT",
 		"acquisitionAngles": {
-			"@type": "AcquisitionAngles", 
-			"minimumIncidenceAngle": "19.6",
-			"maximumIncidenceAngle": "9.6",
-			"incidenceAngleVariation": "9.6"
+			"@type": "AcquisitionAngles",
+			"minimumIncidenceAngle": 19.6,
+			"maximumIncidenceAngle": 9.6,
+			"incidenceAngleVariation": 9.6
 		}
 	}
 }

@@ -1,4 +1,4 @@
-TYPES: ProcessingInformation, processingLevel, processorName, processingDate
+TYPES: ProcessingInformation, processingLevel, processorName, processingDate, processingCenter, processorName, softwareVersion
 
 PRE-MARKUP:
 

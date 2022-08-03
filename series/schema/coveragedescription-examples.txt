@@ -13,8 +13,8 @@ JSON:
 	"@context": "https://schema.org/",
 	"@type": "CoverageDescription",       
 	
-	"cloudCover": "8",
-	"snowCover": "0"
+	"cloudCover": 8,
+	"snowCover": 0
  
 }
 </script>
